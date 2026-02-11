@@ -1,0 +1,349 @@
+[
+    {
+        "id": 101,
+        "name": "iPhone 11",
+        "brand": "Apple",
+        "ebayPrice": 160,
+        "price": 1099,
+        "condition": "used",
+        "image": "/products/iphone11.jpg",
+        "description": "El clásico que sigue rindiendo. Chip A13 Bionic.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Black",
+            "White",
+            "Green",
+            "Purple",
+            "Yellow",
+            "Product Red"
+        ],
+        "storage": [
+            "64GB",
+            "128GB"
+        ],
+        "specs": {
+            "screen": "6.1\" Liquid Retina",
+            "processor": "A13 Bionic",
+            "camera": "12MP Ultra Wide",
+            "battery": "3110 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 102,
+        "name": "iPhone 12",
+        "brand": "Apple",
+        "ebayPrice": 190,
+        "price": 1599,
+        "condition": "used",
+        "image": "/products/iphone12.jpg",
+        "description": "Entrada al 5G y diseño plano. Pantalla OLED.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Black",
+            "White",
+            "Blue",
+            "Green",
+            "Purple",
+            "Product Red"
+        ],
+        "storage": [
+            "64GB",
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.1\" Super Retina XDR",
+            "processor": "A14 Bionic",
+            "camera": "12MP Dual",
+            "battery": "2815 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 103,
+        "name": "iPhone 13",
+        "brand": "Apple",
+        "ebayPrice": 230,
+        "price": 2099,
+        "condition": "used",
+        "image": "/products/iphone13.jpg",
+        "description": "El equilibrio perfecto. Modo Cine y gran batería.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Midnight",
+            "Starlight",
+            "Blue",
+            "Pink",
+            "Green"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.1\" Super Retina XDR",
+            "processor": "A15 Bionic",
+            "camera": "12MP Dual",
+            "battery": "3240 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 104,
+        "name": "iPhone 14 Pro Max",
+        "brand": "Apple",
+        "ebayPrice": 520,
+        "price": 3899,
+        "condition": "used",
+        "image": "/products/iphone14promax.jpg",
+        "description": "Dynamic Island y 48MP. Potencia sin límites.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Space Black",
+            "Silver",
+            "Gold",
+            "Deep Purple"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.7\" Always-On Retina",
+            "processor": "A16 Bionic",
+            "camera": "48MP Principal",
+            "battery": "4323 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 105,
+        "name": "iPhone 15",
+        "brand": "Apple",
+        "ebayPrice": 460,
+        "price": 3599,
+        "condition": "new",
+        "image": "/products/iphone15.jpg",
+        "description": "USB-C y Dynamic Island para todos.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Black",
+            "Blue",
+            "Green",
+            "Yellow",
+            "Pink"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.1\" Super Retina XDR",
+            "processor": "A16 Bionic",
+            "camera": "48MP",
+            "battery": "3349 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 106,
+        "name": "iPhone 15 Pro Max",
+        "brand": "Apple",
+        "ebayPrice": 750,
+        "price": 5799,
+        "condition": "new",
+        "image": "/products/iphone15promax.jpg",
+        "description": "Titanio aeroespacial. El iPhone mas ligero Pro.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Natural Titanium",
+            "Blue Titanium",
+            "White Titanium",
+            "Black Titanium"
+        ],
+        "storage": [
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.7\" Super Retina XDR",
+            "processor": "A17 Pro",
+            "camera": "48MP Teleobjetivo 5x",
+            "battery": "4441 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 201,
+        "name": "Google Pixel 6",
+        "brand": "Google",
+        "ebayPrice": 140,
+        "price": 1099,
+        "condition": "used",
+        "image": "/products/pixel6.jpg",
+        "description": "El reinicio de Pixel. Chip Tensor original.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Stormy Black",
+            "Sorta Seafoam",
+            "Kinda Coral"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.4\" OLED 90Hz",
+            "processor": "Google Tensor",
+            "camera": "50MP Dual",
+            "battery": "4614 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 202,
+        "name": "Google Pixel 6 Pro",
+        "brand": "Google",
+        "ebayPrice": 165,
+        "price": 1399,
+        "condition": "used",
+        "image": "/products/pixel6pro.jpg",
+        "description": "Experiencia premium de Google a bajo costo.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Stormy Black",
+            "Cloudy White",
+            "Sorta Sunny"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.7\" LTPO OLED 120Hz",
+            "processor": "Google Tensor",
+            "camera": "50MP Triple",
+            "battery": "5003 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 203,
+        "name": "Google Pixel 7",
+        "brand": "Google",
+        "ebayPrice": 180,
+        "price": 1899,
+        "condition": "used",
+        "image": "/products/pixel7.jpg",
+        "description": "Refinamiento total. Más compacto y brillante.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Obsidian",
+            "Snow",
+            "Lemongrass"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.3\" OLED 90Hz",
+            "processor": "Tensor G2",
+            "camera": "50MP Dual",
+            "battery": "4355 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 204,
+        "name": "Google Pixel 7 Pro",
+        "brand": "Google",
+        "ebayPrice": 220,
+        "price": 2499,
+        "condition": "used",
+        "image": "/products/pixel7pro.jpg",
+        "description": "Zoom Super Res y Macro Focus. Fotografía top.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Obsidian",
+            "Snow",
+            "Hazel"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.7\" LTPO OLED 120Hz",
+            "processor": "Tensor G2",
+            "camera": "50MP Triple",
+            "battery": "5000 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 205,
+        "name": "Google Pixel 8",
+        "brand": "Google",
+        "ebayPrice": 320,
+        "price": 2799,
+        "condition": "used",
+        "image": "/products/pixel8.jpg",
+        "description": "7 años de actualizaciones. El futuro hoy.",
+        "grade": "Como Nuevo (Open Box)",
+        "colors": [
+            "Obsidian",
+            "Hazel",
+            "Rose",
+            "Mint"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.2\" Actua OLED 120Hz",
+            "processor": "Tensor G3",
+            "camera": "50MP Dual",
+            "battery": "4575 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 206,
+        "name": "Google Pixel 8 Pro",
+        "brand": "Google",
+        "ebayPrice": 420,
+        "price": 3699,
+        "condition": "used",
+        "image": "/products/pixel8pro.jpg",
+        "description": "IA Generativa en tu mano. Magic Editor.",
+        "grade": "Como Nuevo (Open Box)",
+        "colors": [
+            "Obsidian",
+            "Porcelain",
+            "Bay",
+            "Mint"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.7\" Super Actua LTPO",
+            "processor": "Tensor G3",
+            "camera": "50MP Triple",
+            "battery": "5050 mAh"
+        },
+        "featured": true
+    }
+]

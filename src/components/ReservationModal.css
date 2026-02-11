@@ -1,0 +1,144 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent dimmer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: #666;
+    padding: 5px;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1D1D1F;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.modal-subtitle {
+    font-size: 14px;
+    color: #86868B;
+    margin-bottom: 24px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1D1D1F;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #D2D2D7;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #1D1D1F;
+    background: #FFFFFF;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #800020;
+    /* Vino Tinto focus */
+}
+
+.btn-confirm-reservation {
+    background-color: #800020;
+    /* Vino Tinto */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+
+.location-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 500px) {
+    .location-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+.secure-badge {
+    text-align: center;
+    font-size: 11px;
+    color: #86868B;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.modal-content.animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

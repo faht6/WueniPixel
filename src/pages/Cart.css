@@ -1,0 +1,223 @@
+.cart-page {
+    padding: 4rem 0;
+    min-height: 60vh;
+    background: var(--bg-primary);
+}
+
+.cart-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-align: center;
+}
+
+.cart-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cart-items {
+    background: white;
+    border-radius: 12px;
+    /* border: 1px solid var(--border-color); */
+}
+
+.cart-item {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item:first-child {
+    padding-top: 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-image {
+    width: 120px;
+    height: 120px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.item-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.remove-btn {
+    color: var(--accent-primary);
+    background: none;
+    padding: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    text-decoration: underline;
+    color: #ff3b30;
+}
+
+.item-price {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quantity-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #e5e5e5;
+}
+
+.quantity {
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 20px;
+    text-align: center;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 4rem;
+    color: var(--text-secondary);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 4rem;
+    color: var(--text-secondary);
+}
+
+.empty-cart a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.empty-cart a:hover {
+    text-decoration: underline;
+}
+
+/* MODO OSCURO: Cart Items */
+[data-theme='dark'] .cart-items {
+    background: #1C1C1E;
+    border: 1px solid #38383A;
+}
+
+[data-theme='dark'] .cart-item {
+    border-bottom: 1px solid #38383A;
+}
+
+[data-theme='dark'] .quantity-btn {
+    background: #2C2C2E;
+    color: white;
+}
+
+[data-theme='dark'] .quantity-btn:hover {
+    background: #3A3A3C;
+}
+
+/* Summary */
+.cart-summary {
+    background: var(--bg-secondary);
+    border-radius: 18px;
+    padding: 2rem;
+    height: fit-content;
+}
+
+[data-theme='dark'] .cart-summary {
+    background: #1C1C1E;
+    border: 1px solid #38383A;
+}
+
+.cart-summary h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.summary-row.total {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: var(--accent-primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.checkout-btn:hover {
+    background: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+    .cart-grid {
+        grid-template-columns: 1fr;
+    }
+}

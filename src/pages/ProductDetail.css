@@ -1,0 +1,821 @@
+.product-detail,
+.detail-page {
+    max-width: var(--container-max-width-grid);
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: var(--color-background);
+    /* display: flex; REMOVED to fix stacking */
+}
+
+/* Columna Izquierda (Galería) - 60% */
+.detail-image-container,
+.image-section {
+    flex: 0 0 60%;
+    /* Ancho fijo 60% */
+    display: grid;
+    gap: 20px;
+    background: transparent;
+    /* Fondo transparente, imágenes llevan fondo */
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* Simularemos galería grid. */
+.detail-image,
+.image-section img {
+    width: auto;
+    /* Auto width para mantener ratio */
+    height: auto;
+    /* Auto height */
+    max-height: 600px;
+    /* Límite máximo para pantallas grandes */
+    max-width: 100%;
+    /* No salirse del contenedor */
+    border-radius: var(--radius-lg);
+    background-color: transparent;
+    /* Quitar fondo gris, dejar que respire */
+    padding: 20px;
+    box-sizing: border-box;
+    mix-blend-mode: multiply;
+    filter: none;
+    object-fit: contain;
+    margin: 0 auto;
+    /* Centrado */
+    display: block;
+}
+
+[data-theme='dark'] .image-section img {
+    mix-blend-mode: normal;
+    filter: drop-shadow(0 20px 40px rgba(255, 255, 255, 0.05));
+}
+
+.image-section img:hover {
+    transform: scale(1.05);
+}
+
+/* COLUMNA DE DETALLES (Sticky) */
+.info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.info-section h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.005em;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 32px;
+}
+
+.description-container {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: 40px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    opacity: 0.9;
+}
+
+/* SELECTORES */
+.selector-group {
+    margin-bottom: 32px;
+}
+
+.selector-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Colores (Swatch) */
+.color-options {
+    display: flex;
+    gap: 12px;
+}
+
+.color-swatch {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.color-swatch.active {
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-accent);
+    transform: scale(1.1);
+}
+
+/* Almacenamiento (Chips) */
+.storage-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.storage-chip {
+    padding: 12px 24px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+    text-align: center;
+}
+
+.storage-chip:hover {
+    border-color: var(--color-text-secondary);
+}
+
+.storage-chip.active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(128, 0, 32, 0.05);
+    /* Tinte muy sutil del color acento */
+    font-weight: 600;
+}
+
+/* Specs */
+.shipping-info-dynamic {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(80, 200, 120, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(80, 200, 120, 0.3);
+}
+
+.shipping-header-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed rgba(80, 200, 120, 0.3);
+    padding-bottom: 8px;
+}
+
+.shipping-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.district-select-inline {
+    background: var(--color-background);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 6px;
+    padding: 4px 8px;
+    color: var(--color-text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.shipping-local,
+.shipping-agency,
+.shipping-default,
+.shipping-prompt {
+    font-size: 14px;
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease;
+}
+
+.shipping-prompt {
+    color: var(--color-text-secondary);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.shipping-cost,
+.shipping-note {
+    font-weight: 700;
+    color: #50C878;
+    display: block;
+    margin-top: 4px;
+}
+
+.icon-shipping {
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-top: -2px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.canete-trust-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--color-surface-secondary);
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+    border: 1px dashed var(--color-border-subtle);
+}
+
+.icon-trust {
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+border-radius: var(--radius-md);
+}
+
+[data-theme='dark'] .specs-grid {
+    background: #1C1C1E;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.spec-item .label {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.spec-item .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.2);
+}
+
+.add-to-cart-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.add-to-cart-btn.added {
+    background-color: #28a745;
+    /* Success Green */
+    box-shadow: none;
+}
+
+/* LAYOUT MELI (Estilo Mercado Libre) */
+.meli-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr 0.8fr;
+    /* Triple columna: Foto | Info | BuyBox */
+    gap: 40px;
+    align-items: start;
+    padding-top: 20px;
+}
+
+/* COLUMNA 1: GALERÍA */
+.image-section-meli {
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumb {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.thumb:hover,
+.thumb.active {
+    border-color: #3483fa;
+    /* Azul MELI */
+    border-width: 2px;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.main-image-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-height: 500px; */
+}
+
+.main-image-meli {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+[data-theme='dark'] .main-image-meli {
+    mix-blend-mode: normal;
+}
+
+/* COLUMNA 2: INFO CENTRAL */
+.info-section-meli {
+    display: flex;
+    flex-direction: column;
+}
+
+.condition-text {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+}
+
+.meli-title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.18;
+    color: var(--color-text-primary);
+    margin: 0 0 16px;
+}
+
+.stars-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.star {
+    color: #3483fa;
+    /* Azul MELI para estrellas */
+    font-size: 14px;
+}
+
+.reviews-count {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.meli-selector {
+    margin-bottom: 24px;
+}
+
+.selector-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--color-text-primary);
+}
+
+/* Colores MELI */
+.color-options-meli {
+    display: flex;
+    gap: 12px;
+}
+
+.color-swatch-meli {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    /* Cuadrado redondeado */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.color-swatch-meli.active {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3483fa;
+}
+
+/* Storage MELI (Pill buttons) */
+.storage-options-meli {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.storage-chip-meli {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--color-border-subtle);
+    background: transparent;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.storage-chip-meli.active {
+    border-color: #3483fa;
+    color: #3483fa;
+    background-color: rgba(52, 131, 250, 0.05);
+}
+
+/* Specs List */
+.specs-list-meli {
+    margin-top: 20px;
+}
+
+.specs-list-meli h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--color-text-primary);
+}
+
+.specs-list-meli ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.specs-list-meli li {
+    font-size: 14px;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 10px;
+}
+
+.specs-list-meli li::before {
+    content: "•";
+    color: var(--color-text-secondary);
+    position: absolute;
+    left: 0;
+}
+
+
+/* COLUMNA 3: BUY BOX */
+.buy-box-section {
+    position: sticky;
+    top: 100px;
+}
+
+.buy-box {
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 8px;
+    padding: 40px;
+    /* More whitespace */
+    background: var(--color-surface-secondary);
+    /* En MELI es blanco, aqui adaptamos */
+}
+
+[data-theme='light'] .buy-box {
+    background: #FFFFFF;
+    /* Blanco puro en light */
+    border-color: #e6e6e6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Softer shadow */
+}
+
+/* -----------------------------------------------------------------------------
+ * NEW BOUTIQUE STYLES (Appended)
+ * ----------------------------------------------------------------------------- */
+.aesthetics-grade {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F0F0F2;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-size: 13px;
+}
+
+.grade-label {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.grade-value {
+    color: var(--color-text-primary);
+    font-weight: 700;
+}
+
+.battery-health-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border-subtle);
+    font-size: 14px;
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.local-shipping-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #800020;
+    /* Vino Tinto */
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    background: rgba(128, 0, 32, 0.05);
+    /* Tinte suave */
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.local-shipping-badge p {
+    margin: 0;
+}
+
+/* TEXT OPTIONS FOR COLORS (No more circles) */
+.color-pill {
+    padding: 8px 16px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.color-pill.active {
+    border-color: #1D1D1F;
+    background: #1D1D1F;
+    color: white;
+}
+
+/* RESERVATION SUCCESS */
+.reservation-success-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-content {
+    text-align: center;
+    background: white;
+    padding: 60px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.success-content h2 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+    color: #1D1D1F;
+}
+
+.success-content p {
+    color: #86868B;
+    margin-bottom: 30px;
+}
+
+.btn-reset {
+    background: transparent;
+    border: 1px solid #D2D2D7;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1D1D1F;
+}
+
+.btn-reset:hover {
+    background: #F5F5F7;
+}
+
+[data-theme='dark'] .buy-box {
+    background: #1C1C1E;
+}
+
+.meli-price {
+    font-size: 32px;
+    font-weight: 700;
+    /* Bold */
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+}
+
+.price-neto-label {
+    font-size: 13px;
+    color: #50C878;
+    /* Verde esmeralda para resaltar 'Contado' */
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.meli-installments {
+    font-size: 16px;
+    color: var(--color-text-primary);
+    margin: 0 0 20px;
+}
+
+.meli-shipping-free {
+    color: #50C878;
+    /* Verde MELI */
+    font-size: 13px;
+    font-weight: 400;
+    /* Light/Regular */
+    margin-bottom: 24px;
+}
+
+.stock-label {
+    font-size: 14px;
+    font-weight: 400;
+    /* Light/Regular */
+    margin-bottom: 32px;
+    color: var(--color-text-primary);
+}
+
+.buy-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.btn-buy-now {
+    background-color: #3483fa;
+    /* MELI Azul */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-buy-now:hover {
+    background-color: #2968c8;
+}
+
+.btn-add-cart {
+    background-color: rgba(65, 137, 230, 0.15);
+    /* MELI Light Blue */
+    color: #3483fa;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-add-cart:hover {
+    background-color: rgba(65, 137, 230, 0.25);
+}
+
+.seller-info {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.mercado-lider {
+    color: #00a650;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.benefits-list {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.benefits-list p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.benefits-list p svg {
+    color: #3483fa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .meli-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buy-box-section {
+        position: static;
+        margin-top: 40px;
+    }
+
+    .image-section-meli {
+        flex-direction: column-reverse;
+    }
+
+    .thumbnail-list {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.related-products-section {
+    margin-top: 100px;
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: 60px;
+}
+
+.related-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+}
+
+.detail-image-container,
+.image-section {
+    width: 100%;
+    flex: auto;
+}
+
+.detail-info,
+.info-section {
+    position: static;
+    width: 100%;
+}
+}

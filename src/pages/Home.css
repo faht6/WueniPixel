@@ -1,0 +1,376 @@
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Centered layout for Apple style */
+    gap: 4rem;
+    align-items: center;
+    padding: 6rem 0;
+    min-height: 85vh;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    color: #bf4800;
+    /* New/Hot badge color */
+    font-weight: 600;
+    letter-spacing: 0em;
+    font-size: 0.9rem;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.05;
+    font-weight: 600;
+    margin: 0;
+    background: none;
+    -webkit-text-fill-color: var(--text-primary);
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+}
+
+/* HERO SECTION (Now Smart Match) */
+.hero {
+    background-color: var(--color-surface-secondary);
+    text-align: center;
+    padding-top: 120px;
+    /* More space for Navbar */
+    padding-bottom: 40px;
+    /* Reduced from 80px */
+    overflow: visible;
+    /* Allow shadows to pop */
+    margin-bottom: 0;
+    /* Removed margin (was 60px) so marquee sits flush or close */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[data-theme='dark'] .hero {
+    background-color: #000000;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    animation: fadeUp 1s ease-out forwards;
+    opacity: 0;
+    /* Inicio invisible para animación */
+}
+
+.hero-eyebrow {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    /* Naranja/Dorado Apple si se quisiera, aqui mantener sobrio */
+    margin: 0;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.hero-links {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: #0071E3;
+    /* Apple Blue Puro */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 980px;
+    /* Pill shape */
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
+.link-arrow {
+    color: #0071E3;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.link-arrow:hover {
+    text-decoration: underline;
+}
+
+.hero-image-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeUp 1s ease-out 0.3s forwards;
+    /* Delay de 0.3s */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    /* Fusión mágica */
+}
+
+[data-theme='dark'] .hero-image {
+    mix-blend-mode: normal;
+    /* En dark mode normal pero con fondo negro */
+}
+
+/* Animaciones */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación y estilo específico para el Logo Hero */
+.hero-logo {
+    max-width: 350px !important;
+    /* Más contenido que el teléfono */
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1));
+    animation: fadeUp 1s ease-out 0.3s forwards, breathe 6s ease-in-out infinite 1.5s !important;
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+[data-theme='dark'] .hero-logo {
+    mix-blend-mode: normal;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.15));
+    /* Resplandor en dark mode */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    max-width: 60ch;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--accent-primary);
+    color: white;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background: var(--accent-secondary);
+    box-shadow: none;
+    transform: none;
+}
+
+.btn-outline {
+    border: none;
+    color: var(--accent-primary);
+    background: none;
+    font-size: 1.1rem;
+}
+
+.btn-outline:hover {
+    border: none;
+    color: var(--accent-secondary);
+    background: none;
+    text-decoration: underline;
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 700px;
+    /* Bigger hero image */
+    z-index: 10;
+    position: relative;
+    border-radius: 0;
+    box-shadow: none;
+    animation: none;
+}
+
+.glow {
+    display: none;
+    /* No scifi glow */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 968px) {
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+.featured-section {
+    padding: 6rem 0;
+    background: var(--bg-secondary);
+    /* Grey background for product grid */
+}
+
+.catalog-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: var(--color-text-primary);
+    line-height: 1;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.catalog-tabs {
+    display: flex;
+    gap: 12px;
+}
+
+.tab-pill {
+    padding: 10px 24px;
+    border-radius: 99px;
+    border: 1px solid var(--color-border-subtle);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background: transparent;
+}
+
+.tab-pill:hover,
+.tab-pill.active {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+    border-color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+    .catalog-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.featured-section h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.view-all {
+    display: flex;
+    align-items: center;
+    color: var(--accent-primary);
+    font-weight: 500;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

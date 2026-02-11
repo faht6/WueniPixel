@@ -1,0 +1,166 @@
+:root {
+  /* 1. NÚCLEO DEL SISTEMA DE DISEÑO (CSS Tokens) */
+
+  /* Tipografía Quirúrgica */
+  --font-stack-primary: 'SF Pro Display', 'SF Pro Text', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --letter-spacing-heading: -0.015em;
+  --line-height-base: 1.47059;
+
+  /* Colorimetría (Light Mode Default) */
+  --color-background: #F5F5F5;
+  /* White Smoke */
+  --color-surface-secondary: #FFFFFF;
+  /* Pure White now serves as surface */
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #86868B;
+  /* CAMBIO AQUI: ROJO VINO TINTO PROFUNDO (#800020) */
+  --color-accent: #800020;
+  --color-border-subtle: #D2D2D7;
+
+  --scrollbar-track: #FFFFFF;
+  /* CAMBIO AQUI: SCROLLBAR VINO (#800020) */
+  --scrollbar-thumb: #800020;
+
+  /* Geometría */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --container-max-width-reading: 980px;
+  --container-max-width-grid: 1200px;
+
+  /* Utilities */
+  --header-height: 48px;
+  --antialiasing: antialiased;
+
+  /* Mapeo Legacy */
+  --bg-primary: var(--color-background);
+  --bg-secondary: var(--color-surface-secondary);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --accent-primary: var(--color-accent);
+  --border-color: var(--color-border-subtle);
+}
+
+/* MODO OSCURO */
+[data-theme='dark'] {
+  --color-background: #000000;
+  --color-surface-secondary: #1C1C1E;
+  --color-text-primary: #F5F5F7;
+  --color-text-secondary: #86868B;
+  --color-border-subtle: #38383A;
+
+  --scrollbar-track: #000000;
+
+  --bg-primary: var(--color-background);
+  --bg-secondary: var(--color-surface-secondary);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --border-color: var(--color-border-subtle);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-base);
+  font-weight: 300;
+  /* Light by default */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.container {
+  max-width: var(--container-max-width-grid);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* SCROLLBAR "VINO" */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 3px solid var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #600018;
+}
+
+/* 2. GLOBAL REFINEMENTS (The "Premium" Feel) */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  /* Tight tracking like Apple */
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  /* Better readability */
+  color: var(--color-text-secondary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Animations Utility */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

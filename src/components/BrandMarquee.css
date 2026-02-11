@@ -1,0 +1,77 @@
+.brand-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding: 10px 0;
+    /* Reduced padding */
+    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* Center the track if possible, but marquee moves */
+}
+
+.brand-marquee-container::before,
+.brand-marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.brand-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-background), transparent);
+}
+
+.brand-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-background), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    /* Ensure it takes necessary space */
+    gap: 80px;
+    /* Wider gap for better separation */
+    animation: scroll 40s linear infinite;
+    /* Slower, smoother */
+    padding-left: 0;
+    /* Remove padding that might off-center it */
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.7;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.marquee-item:hover {
+    opacity: 1;
+    color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.marquee-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

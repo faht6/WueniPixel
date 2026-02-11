@@ -1,0 +1,156 @@
+.logistics-section {
+    padding: 80px 20px;
+}
+
+.logistics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 800px) {
+    .logistics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature-card {
+    background: var(--color-surface-secondary);
+    border-radius: 40px;
+    padding: 40px;
+    border: 1px solid var(--color-border-subtle);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background: var(--color-text-primary);
+    color: var(--color-background);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* OPTION ITEMS */
+.option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-background);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.option-item:hover {
+    border-color: var(--color-accent);
+}
+
+.option-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.accent {
+    background: var(--color-accent);
+}
+
+.dot.gray {
+    background: #ccc;
+}
+
+.option-item h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.option-item p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.price {
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.price-text {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+/* PAYMENT */
+.payment-option {
+    padding: 24px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.yape-option {
+    background: var(--color-text-primary);
+    color: var(--color-background);
+}
+
+.yape-option p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.card-option {
+    background: var(--color-background);
+    border: 1px solid var(--color-border-subtle);
+}
+
+.payment-content h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.payment-content p {
+    margin: 4px 0 0;
+    font-size: 12px;
+}
+
+.badge-free {
+    color: var(--color-accent);
+    font-weight: 800;
+}
+
+.badge-fee {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}

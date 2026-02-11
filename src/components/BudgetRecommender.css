@@ -1,0 +1,399 @@
+.budget-recommender {
+    width: 100%;
+    max-width: 1200px;
+    /* Standard container width */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.recommender-card.glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 40px;
+    padding: 80px 40px;
+    width: 100%;
+    max-width: 1000px;
+    /* Slightly wider for better layout */
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+    /* Stronger shadow for Hero feel */
+    margin: 0 auto;
+    /* Ensure centering */
+}
+
+/* Use Case Selector */
+.use-case-selector {
+    display: flex;
+    flex-wrap: wrap;
+    /* Para móviles */
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.use-case-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--color-border-subtle);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+[data-theme='dark'] .use-case-btn {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.use-case-btn:hover {
+    background: rgba(80, 200, 120, 0.1);
+    color: var(--color-text-primary);
+}
+
+.use-case-btn.active {
+    background: #50C878;
+    /* Emerald Green */
+    color: white;
+    border-color: #50C878;
+    box-shadow: 0 4px 12px rgba(80, 200, 120, 0.3);
+    font-weight: 600;
+}
+
+/* Analyst Verdict Box */
+.analyst-verdict {
+    background: rgba(80, 200, 120, 0.1);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    border-left: 3px solid #50C878;
+}
+
+.analyst-verdict p {
+    font-size: 13px;
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+[data-theme='dark'] .analyst-verdict {
+    background: rgba(80, 200, 120, 0.05);
+}
+
+/* Update Recommendation Layout */
+.match-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);
+    color: #ffd700;
+    /* Gold text */
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+[data-theme='dark'] .match-tag {
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    .use-case-selector {
+        gap: 8px;
+    }
+
+    .use-case-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        flex: 1 1 calc(50% - 16px);
+        /* 2 columnas en móvil */
+        justify-content: center;
+    }
+}
+
+.badge-ai {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(128, 0, 32, 0.1);
+    /* Vino tint */
+    color: var(--color-accent);
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+}
+
+.hero-title-text {
+    font-size: 64px;
+    /* Big Hero Title */
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 24px;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+.highlight-gradient {
+    background: linear-gradient(90deg, var(--color-text-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.recommender-intro p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recommender-inputs {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.input-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    font-size: 18px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 20px 20px 20px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(128, 0, 32, 0.1);
+}
+
+.btn-recommend {
+    padding: 20px 40px;
+    background: var(--color-accent);
+    color: white;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+.btn-recommend:hover {
+    transform: scale(1.05);
+}
+
+/* RICH RESULT CARD */
+.recommendation-result {
+    background: var(--color-background);
+    border-radius: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    border: 1px solid var(--color-border-subtle);
+    overflow: hidden;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.rec-image-container {
+    width: 45%;
+    /* Slightly wider */
+    background: transparent;
+    /* Clean background */
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.rec-image {
+    max-height: 90%;
+    /* Bigger image */
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    /* Blends white bg of jpg */
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+    /* Real shadow instead of box shadow */
+    animation: floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatPhone {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+[data-theme='dark'] .rec-image {
+    mix-blend-mode: normal;
+    /* In dark mode, we might need a cutout or different handling, but for now this is safe */
+}
+
+.rec-content {
+    width: 55%;
+    padding: 50px;
+}
+
+.match-tag {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+    margin-bottom: 12px;
+    background: rgba(128, 0, 32, 0.08);
+    /* Vino tint */
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.rec-content h3 {
+    font-size: 32px;
+    margin: 0 0 12px 0;
+    color: var(--color-text-primary);
+}
+
+.rec-reason {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.rec-specs {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+    opacity: 0.8;
+}
+
+.rec-price {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+}
+
+.rec-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-text-primary);
+    color: var(--color-background);
+    padding: 14px 28px;
+    border-radius: 99px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-whatsapp-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #50C878;
+    /* Emerald Green */
+    color: white;
+    padding: 14px 28px;
+    border-radius: 99px;
+    font-weight: 700;
+    transition: all 0.2s;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(80, 200, 120, 0.3);
+}
+
+.btn-whatsapp-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(80, 200, 120, 0.5);
+    filter: brightness(1.05);
+}
+
+@media (max-width: 768px) {
+    .recommendation-result {
+        flex-direction: column;
+    }
+
+    .rec-image-container,
+    .rec-content {
+        width: 100%;
+    }
+
+    .rec-image-container {
+        height: 250px;
+    }
+
+    .rec-content {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .rec-specs {
+        justify-content: center;
+    }
+
+    .rec-actions {
+        justify-content: center;
+    }
+}
