@@ -1,43 +1,33 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Reveal = ({ children, width = 'fit-content', delay = 0 }) => {
     const ref = useRef(null);
-    const [isVisible, setIsVisible] = useState(false);
+    const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
+    const mainControls = useAnimation();
 
     useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                setIsVisible(true);
-                observer.unobserve(entry.target); // Only animate once
-            }
-        }, {
-            threshold: 0.1, // Trigger when 10% is visible
-            rootMargin: '0px 0px -50px 0px' // Trigger slightly before bottom
-        });
-
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (isInView) {
+            mainControls.start("visible");
         }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, []);
-
-    const style = {
-        width,
-        transition: `opacity 0.6s cubic-bezier(0.5, 0, 0, 1) ${delay}s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) ${delay}s`,
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-    };
+    }, [isInView, mainControls]);
 
     return (
-        <div ref={ref} style={style}>
-            {children}
+        <div ref={ref} style={{ width, overflow: 'hidden' }}>
+            <motion.div
+                variants={{
+                    hidden: { opacity: 0, y: 75 },
+                    visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 0.5, delay: delay, ease: "easeOut" }}
+            >
+                {children}
+            </motion.div>
         </div>
     );
 };
 
 export default Reveal;
+

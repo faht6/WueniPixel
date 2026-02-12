@@ -17,12 +17,14 @@
     padding: 80px 40px;
     width: 100%;
     max-width: 1000px;
-    /* Slightly wider for better layout */
     text-align: center;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
-    /* Stronger shadow for Hero feel */
     margin: 0 auto;
-    /* Ensure centering */
+}
+
+[data-theme='dark'] .recommender-card.glass-card {
+    background: rgba(30, 30, 30, 0.6);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
 }
 
 /* Use Case Selector */
@@ -194,8 +196,13 @@
     border: 1px solid var(--color-border-subtle);
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.8);
+    color: var(--color-text-primary);
     outline: none;
     transition: all 0.2s;
+}
+
+[data-theme='dark'] .input-wrapper input {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .input-wrapper input:focus {

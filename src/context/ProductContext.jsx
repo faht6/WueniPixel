@@ -1,0 +1,114 @@
+import React, { createContext, useState, useEffect, useContext } from 'react';
+import Papa from 'papaparse';
+
+const ProductContext = createContext();
+
+// CONFIGURACIÓN: REEMPLAZA ESTO CON TU URL DE GOOGLE SHEETS PUBLICADA COMO CSV
+// 1. En Google Sheets: Archivo > Compartir > Publicar en la web
+// 2. Elegir "Valores separados por comas (.csv)"
+// 3. Copiar el enlace y pegarlo aquí abajo
+const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6y_UaaW5J_W-X56fK--J6-j_6d7yK8aX0o-X-X-X/pub?output=csv";
+// NOTA: Si esta URL falla o está vacía, se usará 'catalog.json' como respaldo.
+
+export const ProductProvider = ({ children }) => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                console.log("Intentando cargar desde Google Sheets...");
+
+                // Intentar cargar desde Google Sheets primero
+                Papa.parse(GOOGLE_SHEET_CSV_URL, {
+                    download: true,
+                    header: true,
+                    complete: (results) => {
+                        if (results.data && results.data.length > 0) {
+                            console.log("Google Sheets cargado con éxito", results.data);
+                            const transformedData = transformSheetData(results.data);
+                            setProducts(transformedData);
+                            setLoading(false);
+                        } else {
+                            // Si no hay datos, lanzar error para ir al fallback
+                            throw new Error("No data in sheet");
+                        }
+                    },
+                    error: (err) => {
+                        console.warn("Error cargando Google Sheets, usando respaldo local:", err);
+                        fetchLocalCatalog();
+                    }
+                });
+
+            } catch (err) {
+                console.warn("Error general, usando respaldo local:", err);
+                fetchLocalCatalog();
+            }
+        };
+
+        const fetchLocalCatalog = async () => {
+            try {
+                const response = await fetch('/catalog.json');
+                if (!response.ok) throw new Error('Local catalog failed');
+                const data = await response.json();
+                setProducts(data);
+                setLoading(false);
+            } catch (localErr) {
+                console.error("Critical: Failed to load both Sheets and Local catalog", localErr);
+                setError(localErr.message);
+                setLoading(false);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
+    // Helper: Transforma las filas del CSV (Strings) a Objetos JS (Numbers, Arrays)
+    const transformSheetData = (rows) => {
+        return rows.map(row => {
+            // Filtrar filas vacías
+            if (!row.id || !row.name) return null;
+
+            return {
+                id: parseInt(row.id),
+                name: row.name,
+                brand: row.brand,
+                ebayPrice: row.ebayPrice ? parseFloat(row.ebayPrice) : 0,
+                price: row.price ? parseFloat(row.price) : 0,
+                condition: row.condition,
+                image: row.image,
+                description: row.description,
+                grade: row.grade,
+                colors: row.colors ? row.colors.split(',').map(c => c.trim()) : [],
+                storage: row.storage ? row.storage.split(',').map(s => s.trim()) : [],
+                specs: {
+                    screen: row.screen,
+                    processor: row.processor,
+                    camera: row.camera,
+                    battery: row.battery
+                },
+                featured: row.featured === 'TRUE' || row.featured === 'true'
+            };
+        }).filter(item => item !== null); // Eliminar nulos
+    };
+
+    // Helper to get product by ID
+    const getProductById = (id) => {
+        return products.find(p => p.id === parseInt(id));
+    };
+
+    return (
+        <ProductContext.Provider value={{ products, loading, error, getProductById }}>
+            {children}
+        </ProductContext.Provider>
+    );
+};
+
+export const useProducts = () => {
+    const context = useContext(ProductContext);
+    if (!context) {
+        throw new Error('useProducts must be used within a ProductProvider');
+    }
+    return context;
+};

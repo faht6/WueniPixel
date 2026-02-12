@@ -267,8 +267,7 @@
     color: var(--color-accent);
 }
 
-border-radius: var(--radius-md);
-}
+
 
 [data-theme='dark'] .specs-grid {
     background: #1C1C1E;
@@ -817,5 +816,4 @@ border-radius: var(--radius-md);
 .info-section {
     position: static;
     width: 100%;
-}
 }

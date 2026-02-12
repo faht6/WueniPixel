@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
+import PromoBanner from './components/PromoBanner';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
+import ComparePage from './pages/ComparePage';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import InfoPage from './pages/InfoPage';
 import Toast from './components/Toast';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
+import CompareBar from './components/CompareBar';
+import { ProductProvider } from './context/ProductContext';
 
 function App() {
     // Estado del Carrito
@@ -20,6 +26,7 @@ function App() {
         return savedCart ? JSON.parse(savedCart) : [];
     });
 
+    const location = useLocation();
     const [notification, setNotification] = useState(null);
 
     // Guardar carrito en localStorage cada vez que cambie
@@ -96,50 +103,114 @@ function App() {
         }));
     };
 
+    // Estado para Comparador
+    const [compareList, setCompareList] = useState([]);
+
+    const addToCompare = (product) => {
+        if (compareList.length >= 2) {
+            showToast("Máximo 2 productos para comparar");
+            return;
+        }
+        if (compareList.find(p => p.id === product.id)) {
+            showToast("Producto ya está en comparación");
+            return;
+        }
+        setCompareList(prev => [...prev, product]);
+    };
+
+    const removeFromCompare = (productId) => {
+        setCompareList(prev => prev.filter(p => p.id !== productId));
+    };
+
+    const clearCompare = () => {
+        setCompareList([]);
+    };
+
     return (
-        <div className="app">
-            <ScrollToTop />
-            <Navbar
-                cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)}
-                onCartClick={() => setIsCartOpen(true)}
-                theme={theme}
-                toggleTheme={toggleTheme}
-                district={district}
-                setDistrict={setDistrict}
-            />
+        <ProductProvider>
+            <div className="app">
+                <Helmet>
+                    <title>WueniPixel | iPhones y Pixels Seminuevos con Garantía</title>
+                    <meta name="description" content="La boutique de tecnología más confiable del Perú. Encuentra iPhones y Google Pixels seminuevos certificados y nuevos con garantía real." />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content="WueniPixel | Tecnología Premium al Mejor Precio" />
+                    <meta property="og:description" content="iPhones y Pixels con garantía, envío gratis y cuotas sin intereses." />
+                    <meta property="og:image" content="https://wuenipixel.com/og-image.jpg" /> {/* Pending real image */}
+                </Helmet>
 
-            <main>
-                <Routes>
-                    <Route path="/" element={<Home addToCart={addToCart} district={district} />} />
-                    <Route path="/products" element={<ProductList addToCart={addToCart} />} />
-                    <Route path="/products/:id" element={<ProductDetail addToCart={addToCart} district={district} setDistrict={setDistrict} />} />
-                    <Route path="/cart" element={
-                        <Cart
-                            items={cart}
-                            removeFromCart={removeFromCart}
-                            updateQuantity={updateQuantity}
-                        />
-                    } />
-                    <Route path="/checkout" element={
-                        <Checkout cart={cart} clearCart={() => setCart([])} />
-                    } />
-
-                    {/* Rutas de Información (Ayuda y Legal) */}
-                    <Route path="/help/:slug" element={<InfoPage />} />
-                    <Route path="/legal/:slug" element={<InfoPage />} />
-                </Routes>
-            </main>
-
-
-            <Footer />
-            {notification && (
-                <Toast
-                    message={notification}
-                    onClose={() => setNotification(null)}
+                <PromoBanner />
+                <ScrollToTop />
+                <Navbar
+                    cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)}
+                    onCartClick={() => setIsCartOpen(true)}
+                    theme={theme}
+                    toggleTheme={toggleTheme}
+                    district={district}
+                    setDistrict={setDistrict}
                 />
-            )}
-            <WhatsAppButton />
-        </div>
+
+                <main>
+                    {/* Rutas de Información (Ayuda y Legal) */}
+                    <AnimatePresence mode="wait">
+                        <Routes location={location} key={location.pathname}>
+                            <Route path="/" element={
+                                <Home
+                                    addToCart={addToCart}
+                                    district={district}
+                                    addToCompare={addToCompare}
+                                    compareList={compareList}
+                                />
+                            } />
+                            <Route path="/products" element={
+                                <ProductList
+                                    addToCart={addToCart}
+                                    addToCompare={addToCompare}
+                                    compareList={compareList}
+                                />
+                            } />
+                            <Route path="/products/:id" element={
+                                <ProductDetail
+                                    addToCart={addToCart}
+                                    district={district}
+                                    setDistrict={setDistrict}
+                                    addToCompare={addToCompare}
+                                    compareList={compareList}
+                                />
+                            } />
+                            <Route path="/compare" element={<ComparePage addToCart={addToCart} />} />
+                            <Route path="/cart" element={
+                                <Cart
+                                    items={cart}
+                                    removeFromCart={removeFromCart}
+                                    updateQuantity={updateQuantity}
+                                />
+                            } />
+                            <Route path="/checkout" element={
+                                <Checkout cart={cart} clearCart={() => setCart([])} />
+                            } />
+
+                            <Route path="/help/:slug" element={<InfoPage />} />
+                            <Route path="/legal/:slug" element={<InfoPage />} />
+                        </Routes>
+                    </AnimatePresence>
+                </main>
+
+
+                <Footer />
+                <CompareBar
+                    compareList={compareList}
+                    removeFromCompare={removeFromCompare}
+                    clearCompare={clearCompare}
+                />
+                {notification && (
+                    <Toast
+                        message={notification}
+                        onClose={() => setNotification(null)}
+                    />
+                )}
+                <WhatsAppButton />
+            </div>
+        </ProductProvider>
     );
 }
 

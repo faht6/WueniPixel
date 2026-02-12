@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Sparkles, ArrowRight, ShoppingBag, Camera, Gamepad2, Briefcase, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import products from '../data/products.json';
+import { useProducts } from '../context/ProductContext';
 import './BudgetRecommender.css';
 import { calculateSellingPrice, formatCurrency, fetchExchangeRate } from '../utils/pricing';
 
 const BudgetRecommender = ({ district }) => {
+    const { products } = useProducts();
     const [budget, setBudget] = useState("");
     const [useCase, setUseCase] = useState('social'); // social, photo, gaming, work
     const [recommendation, setRecommendation] = useState(null);

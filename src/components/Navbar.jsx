@@ -1,15 +1,22 @@
-import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingBag, Search, Menu, X, Sun, Moon, Smartphone } from 'lucide-react';
-import productsData from '../data/products.json';
+import { useProducts } from '../context/ProductContext';
+import { calculateSellingPrice, formatCurrency, fetchExchangeRate } from '../utils/pricing';
 import './Navbar.css';
 
 const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
+  const { products } = useProducts();
+  const [isScrolled, setIsScrolled] = useState(false);
   // Estado del menú móvil y búsqueda
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [exchangeRate, setExchangeRate] = useState(3.85);
+
+  useEffect(() => {
+    fetchExchangeRate().then(rate => setExchangeRate(rate));
+  }, []);
 
   // Estado para dropdowns
   const [activeMenu, setActiveMenu] = useState(null); // 'iphone' | 'pixel' | null
@@ -59,7 +66,7 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
     setSearchQuery(query);
 
     if (query.length > 0) {
-      const results = productsData.filter(product =>
+      const results = products.filter(product =>
         product.name.toLowerCase().includes(query.toLowerCase()) ||
         product.brand.toLowerCase().includes(query.toLowerCase())
       );
@@ -216,19 +223,25 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
           <div className="search-results">
             {searchResults.length > 0 ? (
               <div className="results-grid">
-                {searchResults.map(product => (
-                  <div
-                    key={product.id}
-                    className="search-result-item"
-                    onClick={() => handleResultClick(product.id)}
-                  >
-                    <img src={product.image} alt={product.name} />
-                    <div className="result-info">
-                      <h4>{product.name}</h4>
-                      <p>S/ {product.price}</p>
+                {searchResults.map(product => {
+                  const price = product.ebayPrice
+                    ? calculateSellingPrice(product.ebayPrice, exchangeRate)
+                    : product.price;
+
+                  return (
+                    <div
+                      key={product.id}
+                      className="search-result-item"
+                      onClick={() => handleResultClick(product.id)}
+                    >
+                      <img src={product.image} alt={product.name} />
+                      <div className="result-info">
+                        <h4>{product.name}</h4>
+                        <p>{formatCurrency(price)}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : searchQuery.length > 0 ? (
               <div className="no-results">

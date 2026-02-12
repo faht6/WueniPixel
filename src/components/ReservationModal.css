@@ -14,7 +14,7 @@
 }
 
 .modal-content {
-    background: #FFFFFF;
+    background: var(--color-surface-secondary);
     padding: 40px;
     border-radius: 12px;
     width: 90%;
@@ -22,18 +22,7 @@
     position: relative;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     animation: slideUp 0.3s ease-out;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    border: 1px solid var(--color-border-subtle);
 }
 
 .modal-close {
@@ -41,68 +30,56 @@
     top: 20px;
     right: 20px;
     background: transparent;
-    color: #666;
+    color: var(--color-text-secondary);
     padding: 5px;
+    cursor: pointer;
+    border: none;
 }
 
 .modal-close:hover {
-    color: #000;
+    color: var(--color-text-primary);
 }
 
 .modal-title {
     font-size: 24px;
     font-weight: 700;
-    color: #1D1D1F;
+    color: var(--color-text-primary);
     margin-bottom: 8px;
     letter-spacing: -0.02em;
 }
 
 .modal-subtitle {
     font-size: 14px;
-    color: #86868B;
+    color: var(--color-text-secondary);
     margin-bottom: 24px;
-}
-
-.reservation-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
 .form-group label {
     font-size: 13px;
     font-weight: 600;
-    color: #1D1D1F;
+    color: var(--color-text-primary);
 }
 
 .form-group input,
 .form-group select {
     padding: 12px;
-    border: 1px solid #D2D2D7;
+    border: 1px solid var(--color-border-subtle);
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    color: #1D1D1F;
-    background: #FFFFFF;
-    transition: border-color 0.2s;
+    color: var(--color-text-primary);
+    background: var(--color-background);
+    transition: all 0.2s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #800020;
-    /* Vino Tinto focus */
+    border-color: var(--color-accent);
 }
 
 .btn-confirm-reservation {
-    background-color: #800020;
-    /* Vino Tinto */
+    background-color: var(--color-accent);
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -112,7 +89,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.2s;
+    transition: filter 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-confirm-reservation:hover {
+    filter: brightness(1.1);
 }
 
 

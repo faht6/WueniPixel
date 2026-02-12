@@ -1,0 +1,21 @@
+.promo-banner {
+    background-color: #000;
+    color: white;
+    font-size: 11px;
+    padding: 8px 0;
+    text-align: center;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 10001;
+    /* Above Navbar */
+}
+
+.promo-content p {
+    margin: 0;
+    font-weight: 500;
+}
+
+[data-theme='dark'] .promo-banner {
+    background-color: #1c1c1e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
