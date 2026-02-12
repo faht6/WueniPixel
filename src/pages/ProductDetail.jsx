@@ -76,11 +76,18 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
         setIsModalOpen(false);
         if (success) {
             setReservationSuccess(true);
-            // Hide success message after a few seconds? Or keep it?
-            // User said: "Al terminar, muestra este mensaje en pantalla..."
-            // We'll render it conditionally in the JSX.
         }
     };
+
+    if (loading || !product) {
+        return (
+            <PageTransition>
+                <div className="container" style={{ padding: '4rem', textAlign: 'center' }}>
+                    <h2>Cargando producto...</h2>
+                </div>
+            </PageTransition>
+        );
+    }
 
     return (
         <PageTransition>
