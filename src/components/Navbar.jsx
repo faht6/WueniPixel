@@ -89,8 +89,9 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
   };
 
   // Datos filtrados para dropdowns
-  const iphones = productsData.filter(p => p.brand === 'Apple');
-  const pixels = productsData.filter(p => p.brand === 'Google');
+  // Datos filtrados para dropdowns
+  const iphones = products.filter(p => p.brand === 'Apple');
+  const pixels = products.filter(p => p.brand === 'Google');
 
   return (
     <>
