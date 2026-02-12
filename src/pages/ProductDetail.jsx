@@ -43,9 +43,11 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
             setSelectedStorage(product.storage[0]);
 
             // Calculo inicial de precio
-            const basePrice = product.ebayPrice
-                ? calculateSellingPrice(product.ebayPrice, exchangeRate)
-                : product.price;
+            // Calculo inicial de precio
+            // Prioridad: 1. Precio Manual (CSV 'price') | 2. Calculado (CSV 'ebayPrice')
+            const basePrice = product.price > 0
+                ? product.price
+                : (product.ebayPrice ? calculateSellingPrice(product.ebayPrice, exchangeRate) : 0);
 
             // setDisplayPrice(basePrice); // This was removed in the instruction
             setFinalPrice(basePrice);

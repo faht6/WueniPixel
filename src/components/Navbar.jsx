@@ -226,9 +226,10 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
             {searchResults.length > 0 ? (
               <div className="results-grid">
                 {searchResults.map(product => {
-                  const price = product.ebayPrice
-                    ? calculateSellingPrice(product.ebayPrice, exchangeRate)
-                    : product.price;
+                  // Prioridad: 1. Precio Manual (CSV 'price') | 2. Calculado (CSV 'ebayPrice')
+                  const price = product.price > 0
+                    ? product.price
+                    : (product.ebayPrice ? calculateSellingPrice(product.ebayPrice, exchangeRate) : 0);
 
                   return (
                     <div

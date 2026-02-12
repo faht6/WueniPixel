@@ -10,14 +10,17 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
 
   useEffect(() => {
     const initPrice = async () => {
-      if (product.ebayPrice) {
+      // Prioridad: 1. Precio Manual (CSV 'price') | 2. Calculado (CSV 'ebayPrice')
+      if (product.price > 0) {
+        setPrice(product.price);
+      } else if (product.ebayPrice) {
         const rate = await fetchExchangeRate();
         const calculated = calculateSellingPrice(product.ebayPrice, rate);
         setPrice(calculated);
       }
     };
     initPrice();
-  }, [product.ebayPrice]);
+  }, [product.price, product.ebayPrice]);
 
   return (
     <Reveal width="100%">
