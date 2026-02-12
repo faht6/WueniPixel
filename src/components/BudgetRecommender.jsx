@@ -117,104 +117,119 @@ const BudgetRecommender = ({ district }) => {
         }
     };
 
+    // Hero Images (Hardcoded for aesthetics, referencing existing assets)
+    const heroImages = {
+        pixel: "/products/pixel8pro.jpg",
+        iphone: "/products/iphone15promax.jpg"
+    };
+
     return (
-        <section className="budget-recommender">
-            <div className="recommender-card glass-card">
-                <div className="recommender-intro">
-                    <span className="badge-ai">Experiencia de Compra Inteligente</span>
-                    <h2 className="hero-title-text">Encuentra tu <span className="highlight-gradient">Celular Ideal</span></h2>
-                    <p>Cuéntanos tu presupuesto y uso principal.</p>
-                </div>
+        <section className="hero-section">
+            <div className="hero-background-aurora"></div>
 
-                {/* USE CASE SELECTOR */}
-                <div className="use-case-selector">
-                    <button
-                        className={`use-case-btn ${useCase === 'photo' ? 'active' : ''}`}
-                        onClick={() => { setUseCase('photo'); handleRecommend('photo'); }}
-                    >
-                        <Camera size={18} /> Fotografía
-                    </button>
-                    <button
-                        className={`use-case-btn ${useCase === 'gaming' ? 'active' : ''}`}
-                        onClick={() => { setUseCase('gaming'); handleRecommend('gaming'); }}
-                    >
-                        <Gamepad2 size={18} /> Gaming
-                    </button>
-                    <button
-                        className={`use-case-btn ${useCase === 'work' ? 'active' : ''}`}
-                        onClick={() => { setUseCase('work'); handleRecommend('work'); }}
-                    >
-                        <Briefcase size={18} /> Trabajo
-                    </button>
-                    <button
-                        className={`use-case-btn ${useCase === 'social' ? 'active' : ''}`}
-                        onClick={() => { setUseCase('social'); handleRecommend('social'); }}
-                    >
-                        <Instagram size={18} /> Estilo/Redes
-                    </button>
-                </div>
-
-                <div className="recommender-inputs">
-                    <div className="input-wrapper">
-                        <span className="currency-symbol">S/</span>
-                        <input
-                            type="number"
-                            value={budget}
-                            onChange={(e) => setBudget(e.target.value)}
-                            onKeyDown={(e) => e.key === 'Enter' && handleRecommend()}
-                            placeholder="Ej. 3500"
-                        />
+            <div className="hero-container">
+                {/* LEFT COLUMN: Search & Text */}
+                <div className="hero-content">
+                    <div className="hero-badge">
+                        <Sparkles size={14} />
+                        <span>Nueva Generación 2025</span>
                     </div>
-                    <button onClick={handleRecommend} className="btn-recommend">
-                        <Sparkles size={20} />
-                        ENCONTRAR MATCH
-                    </button>
+
+                    <h1 className="hero-title">
+                        Encuentra tu <br />
+                        <span className="text-gradient">Celular Ideal</span>
+                    </h1>
+
+                    <p className="hero-subtitle">
+                        Súmate a la economía circular con tecnología premium certificada.
+                    </p>
+
+                    {/* USE CASE SELECTOR */}
+                    <div className="hero-selector-group">
+                        <button
+                            className={`hero-chip ${useCase === 'photo' ? 'active' : ''}`}
+                            onClick={() => { setUseCase('photo'); setRecommendation(null); }}
+                        >
+                            <Camera size={18} /> Fotografía
+                        </button>
+                        <button
+                            className={`hero-chip ${useCase === 'gaming' ? 'active' : ''}`}
+                            onClick={() => { setUseCase('gaming'); setRecommendation(null); }}
+                        >
+                            <Gamepad2 size={18} /> Gaming
+                        </button>
+                        <button
+                            className={`hero-chip ${useCase === 'work' ? 'active' : ''}`}
+                            onClick={() => { setUseCase('work'); setRecommendation(null); }}
+                        >
+                            <Briefcase size={18} /> Trabajo
+                        </button>
+                        <button
+                            className={`hero-chip ${useCase === 'social' ? 'active' : ''}`}
+                            onClick={() => { setUseCase('social'); setRecommendation(null); }}
+                        >
+                            <Instagram size={18} /> Estilo
+                        </button>
+                    </div>
+
+                    {/* INPUTS */}
+                    <div className="hero-search-box">
+                        <div className="hero-input-wrapper">
+                            <span className="currency-prefix">S/</span>
+                            <input
+                                type="number"
+                                value={budget}
+                                onChange={(e) => setBudget(e.target.value)}
+                                onKeyDown={(e) => e.key === 'Enter' && handleRecommend()}
+                                placeholder="Ej. 3500"
+                                className="hero-budget-input"
+                            />
+                        </div>
+                        <button onClick={() => handleRecommend()} className="hero-search-btn">
+                            ENCONTRAR MATCH
+                        </button>
+                    </div>
                 </div>
 
-                {recommendation && (
-                    <div className="recommendation-result animate-fade-in">
-                        <div className="rec-image-container">
-                            <img src={recommendation.image} alt={recommendation.name} className="rec-image" />
-                        </div>
-                        <div className="rec-content">
-                            <span className="match-tag">✨ Match para {useCase === 'photo' ? 'Fotografía' : useCase === 'gaming' ? 'Gaming' : useCase === 'work' ? 'Trabajo' : 'Redes'}</span>
+                {/* RIGHT COLUMN: Phones OR Result */}
+                <div className="hero-visuals">
+                    {recommendation ? (
+                        // RESULT CARD (Replaces Phones)
+                        <div className="hero-result-card animate-pop-in">
+                            <div className="result-header">
+                                <span className="match-badge">✨ Match Perfecto</span>
+                                <button className="close-result" onClick={() => setRecommendation(null)}>×</button>
+                            </div>
+
+                            <div className="result-img-wrapper">
+                                <img src={recommendation.image} alt={recommendation.name} />
+                            </div>
+
                             <h3>{recommendation.name}</h3>
-                            <p className="rec-reason">{recommendation.reasonText}</p>
+                            <p className="result-price">{formatCurrency(recommendation.calculatedPrice)}</p>
 
-                            {/* ANALYST VERDICT */}
-                            <div className="analyst-verdict">
-                                <p>{recommendation.analysisText}</p>
-                            </div>
+                            <p className="result-reason">{recommendation.reasonText}</p>
 
-                            <div className="rec-specs">
-                                <span>{recommendation.specs.screen}</span>
-                                <span>•</span>
-                                <span>{recommendation.specs.camera}</span>
-                            </div>
-
-                            <div className="rec-price">
-                                {formatCurrency(recommendation.calculatedPrice)}
-                                <span style={{ fontSize: '12px', color: '#50C878', display: 'block', fontWeight: '600', marginTop: '4px' }}>
-                                    Precio neto al contado (Efectivo/Yape)
-                                </span>
-                            </div>
-
-                            <div className="rec-actions">
-                                <Link to={`/products/${recommendation.id}`} className="btn-details">
-                                    Ver Detalles <ArrowRight size={16} />
+                            <div className="result-actions">
+                                <Link to={`/products/${recommendation.id}`} className="btn-result-view">
+                                    Ver Detalles
                                 </Link>
-                                <a
-                                    href={`https://wa.me/51900000000?text=${encodeURIComponent(`Hola WueniPixel, deseo adquirir el ${recommendation.name} al contado en ${district || 'mi zona'}. ¿Está disponible?`)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-whatsapp-action"
-                                >
-                                    <ShoppingBag size={18} /> Consultar Stock Real
-                                </a>
                             </div>
                         </div>
-                    </div>
-                )}
+                    ) : (
+                        // FLOATING PHONES HERO
+                        <div className="hero-phones-composition">
+                            <div className="phone-card pixel-card floating-delayed">
+                                <img src={heroImages.pixel} alt="Pixel Concept" />
+                                <div className="phone-glow pixel-glow"></div>
+                            </div>
+                            <div className="phone-card iphone-card floating">
+                                <img src={heroImages.iphone} alt="iPhone Concept" />
+                                <div className="phone-glow iphone-glow"></div>
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
         </section>
     );
