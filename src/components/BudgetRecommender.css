@@ -3,49 +3,53 @@
     position: relative;
     width: 100%;
     min-height: 85vh;
-    /* Occupy most of the screen */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 40px 20px;
-    margin-bottom: 20px;
+    padding: 20px;
+    margin-bottom: 0;
+    /* Solid Dark Studio Background */
+    background: #1a1b26;
 }
 
-/* AURORA BACKGROUND */
+/* Background Highlight (Subtle Studio Light) */
 .hero-background-aurora {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 10% 20%, rgba(68, 0, 255, 0.45) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(128, 0, 32, 0.35) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 1) 0%, rgba(10, 10, 10, 1) 100%);
+    /* Very subtle spotlight behind the phones */
+    background: radial-gradient(circle at 70% 40%, rgba(40, 50, 70, 0.3) 0%, transparent 50%);
     z-index: 0;
 }
 
+[data-theme='light'] .hero-section {
+    background: #f0f2f5;
+}
+
 [data-theme='light'] .hero-background-aurora {
-    background: radial-gradient(circle at 10% 20%, rgba(80, 50, 240, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(240, 50, 80, 0.15) 0%, transparent 40%),
-        linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%);
+    background: radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
 }
 
 .hero-container {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 20px;
 }
 
 /* LEFT COLUMN */
 .hero-content {
-    flex: 1;
+    flex: 0 0 40%;
     max-width: 550px;
+    padding-left: 20px;
+    z-index: 10;
 }
 
 .hero-badge {
@@ -53,28 +57,29 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border-radius: 20px;
+    border-radius: 99px;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.95);
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 24px;
-    backdrop-filter: blur(10px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 [data-theme='light'] .hero-badge {
     background: rgba(0, 0, 0, 0.05);
     border-color: rgba(0, 0, 0, 0.1);
-    color: #333;
+    color: #444;
 }
 
 .hero-title {
-    font-size: 64px;
-    line-height: 1.1;
+    font-size: 68px;
+    line-height: 1.05;
     font-weight: 800;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     letter-spacing: -0.03em;
 }
 
@@ -83,7 +88,14 @@
 }
 
 .text-gradient {
-    background: linear-gradient(90deg, #A855F7 0%, #EC4899 100%);
+    /* Subtle metallic gradient */
+    background: linear-gradient(90deg, #fff 0%, #b0b0b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme='light'] .text-gradient {
+    background: linear-gradient(90deg, #1d1d1f 0%, #555 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -93,11 +105,80 @@
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 40px;
     line-height: 1.5;
-    max-width: 480px;
+    max-width: 460px;
 }
 
 [data-theme='light'] .hero-subtitle {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.65);
+}
+
+/* RIGHT COLUMN: VISUALS */
+.hero-visuals {
+    flex: 0 0 60%;
+    height: 85vh;
+    position: relative;
+    /* Key for cropping the "Close Up" look */
+    overflow: hidden;
+}
+
+/* PHONES COMPOSITION - PINNED TO EXACT REFERENCE */
+.hero-phones-composition {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.phone-card {
+    position: absolute;
+    /* No border radius here to simulate full bleeding images if needed, 
+       but keeping slight radius for 'device' feel if they are cutouts.
+       If they are full rectangular jpgs, we need to mask them or use transparent pngs. 
+       Assuming rectangular JPGs based on file extension. 
+       We will use object-fit and border-radius to make them look like phones. */
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease;
+}
+
+.phone-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Key: Focus on Top Center (Cameras) */
+    object-position: top center;
+    display: block;
+}
+
+/* PIXEL - LEFT (Blue) */
+.pixel-card {
+    width: 450px;
+    /* Large width */
+    height: 900px;
+    right: 35%;
+    /* Positioned towards center-left of the visual area */
+    top: 10%;
+    /* Start slightly off top to crop */
+    z-index: 5;
+    /* Straight or very slight tilt */
+    transform: rotate(0deg);
+    /* Specific styling to match reference color/tone if possible via filter */
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* IPHONE - RIGHT (Purple) */
+.iphone-card {
+    width: 480px;
+    height: 950px;
+    right: -5%;
+    /* Pushed to the right edge */
+    top: 15%;
+    /* Slightly lower */
+    z-index: 10;
+    /* In front */
+    transform: rotate(0deg);
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.6);
+    /* Shadow cast on Pixel */
 }
 
 /* CHIPS */
@@ -105,26 +186,27 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .hero-chip {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 24px;
+    border-radius: 99px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s;
 }
 
 [data-theme='light'] .hero-chip {
     border-color: rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     color: #333;
 }
 
@@ -132,23 +214,20 @@
 .hero-chip.active {
     background: #fff;
     color: #000;
-    border-color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 [data-theme='light'] .hero-chip:hover,
 [data-theme='light'] .hero-chip.active {
     background: #000;
     color: #fff;
-    border-color: #000;
 }
 
 /* SEARCH BOX */
 .hero-search-box {
     display: flex;
-    gap: 16px;
-    max-width: 500px;
+    gap: 12px;
+    max-width: 480px;
 }
 
 .hero-input-wrapper {
@@ -158,54 +237,52 @@
 
 .currency-prefix {
     position: absolute;
-    left: 20px;
+    left: 24px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
     font-size: 18px;
     font-weight: 500;
 }
 
 [data-theme='light'] .currency-prefix {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .hero-budget-input {
     width: 100%;
-    padding: 20px 20px 20px 50px;
+    padding: 22px 22px 22px 50px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border-radius: 20px;
     color: #fff;
     font-size: 18px;
     font-weight: 600;
     outline: none;
-    backdrop-filter: blur(10px);
     transition: all 0.3s;
 }
 
 [data-theme='light'] .hero-budget-input {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.8);
     border-color: rgba(0, 0, 0, 0.1);
     color: #000;
 }
 
 .hero-budget-input:focus {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     border-color: #fff;
 }
 
 .hero-search-btn {
-    padding: 0 32px;
+    padding: 0 36px;
     background: #fff;
     color: #000;
     font-weight: 700;
-    border-radius: 16px;
+    border-radius: 20px;
     border: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
     transition: transform 0.2s;
-    white-space: nowrap;
 }
 
 [data-theme='light'] .hero-search-btn {
@@ -214,105 +291,11 @@
 }
 
 .hero-search-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
-/* RIGHT COLUMN: VISUALS */
-.hero-visuals {
-    flex: 1;
-    height: 600px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-/* PHONES COMPOSITION */
-.hero-phones-composition {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.phone-card {
-    position: absolute;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-    transition: all 0.5s ease;
-}
-
-.phone-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Phone Positioning */
-/* IPHONE - Right Top */
-.iphone-card {
-    width: 280px;
-    height: 580px;
-    right: 20px;
-    top: 0;
-    z-index: 2;
-    transform: rotate(-10deg);
-}
-
-/* PIXEL - Left Bottom */
-.pixel-card {
-    width: 260px;
-    height: 540px;
-    right: 200px;
-    top: 60px;
-    z-index: 1;
-    transform: rotate(-5deg);
-    filter: brightness(0.9);
-}
-
-/* FLOATING ANIMATIONS */
-.floating {
-    animation: float 6s ease-in-out infinite;
-}
-
-.floating-delayed {
-    animation: float 7s ease-in-out infinite 1s;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px) rotate(-10deg);
-    }
-
-    50% {
-        transform: translateY(-20px) rotate(-10deg);
-    }
-
-    100% {
-        transform: translateY(0px) rotate(-10deg);
-    }
-}
-
-@keyframes floatPixel {
-    0% {
-        transform: translateY(0px) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(-5deg);
-    }
-
-    100% {
-        transform: translateY(0px) rotate(-5deg);
-    }
-}
-
-.pixel-card.floating-delayed {
-    animation: floatPixel 7s ease-in-out infinite 1s;
-}
-
-/* RESULT CARD */
+/* RESULT CARD (Centered) */
 .hero-result-card {
     background: rgba(20, 20, 20, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -321,14 +304,18 @@
     border-radius: 32px;
     width: 380px;
     text-align: center;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    margin: auto;
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
 }
 
 [data-theme='light'] .hero-result-card {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(0, 0, 0, 0.05);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
 
 .result-header {
@@ -339,12 +326,12 @@
 }
 
 .match-badge {
-    background: #A855F7;
+    background: #333;
     color: white;
     font-size: 11px;
     font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 12px;
+    padding: 6px 12px;
+    border-radius: 8px;
     text-transform: uppercase;
 }
 
@@ -354,7 +341,6 @@
     color: #fff;
     font-size: 24px;
     cursor: pointer;
-    line-height: 1;
 }
 
 [data-theme='light'] .close-result {
@@ -365,118 +351,85 @@
     height: 250px;
     object-fit: contain;
     margin-bottom: 20px;
-    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+    object-position: center;
+    /* Reset for result card */
 }
 
-.hero-result-card h3 {
-    margin: 0;
-    color: #fff;
-    font-size: 24px;
-}
-
-[data-theme='light'] .hero-result-card h3 {
-    color: #000;
-}
-
-.result-price {
-    font-size: 32px;
-    font-weight: 800;
-    color: #50C878;
-    margin: 8px 0 16px;
-}
-
-.result-reason {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 24px;
-    line-height: 1.4;
-}
-
-[data-theme='light'] .result-reason {
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.btn-result-view {
-    display: block;
-    width: 100%;
-    padding: 16px;
-    background: #fff;
-    color: #000;
-    text-align: center;
-    border-radius: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background 0.2s;
-}
-
-[data-theme='light'] .btn-result-view {
-    background: #000;
-    color: #fff;
-}
-
-.btn-result-view:hover {
-    background: #eee;
-}
-
-/* ANIMATIONS */
+/* Animations */
 .animate-pop-in {
-    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: popIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes popIn {
     0% {
-        transform: scale(0.9) translateY(20px);
-        opacity: 0;
+        transform: translateY(-30%) opacity: 0;
     }
 
     100% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
+        transform: translateY(-50%) opacity: 1;
     }
 }
 
-/* RESPONSIVE */
-@media (max-width: 968px) {
+/* Responsive */
+@media (max-width: 1024px) {
+    .pixel-card {
+        width: 350px;
+        height: 700px;
+        right: 200px;
+    }
+
+    .iphone-card {
+        width: 380px;
+        height: 750px;
+        right: -50px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 768px) {
     .hero-container {
         flex-direction: column;
         padding-top: 40px;
         text-align: center;
+        gap: 0;
     }
 
     .hero-content {
         max-width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .hero-title {
+        font-size: 42px;
     }
 
     .hero-selector-group {
         justify-content: center;
     }
 
-    .hero-search-box {
-        width: 100%;
-    }
-
     .hero-visuals {
-        height: 400px;
+        height: 500px;
         width: 100%;
-        margin-top: -40px;
-    }
-
-    .iphone-card {
-        width: 180px;
-        height: 380px;
-        right: 50%;
-        margin-right: -140px;
-        /* Offset center */
     }
 
     .pixel-card {
-        width: 160px;
-        height: 340px;
-        right: 50%;
-        margin-right: 20px;
-        top: 40px;
+        width: 240px;
+        height: 480px;
+        right: 45%;
+        top: 10%;
+    }
+
+    .iphone-card {
+        width: 260px;
+        height: 520px;
+        right: 0%;
+        top: 15%;
     }
 }
