@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingBag, Search, Menu, X, Sun, Moon, Smartphone } from 'lucide-react';
 import { useProducts } from '../context/ProductContext';
