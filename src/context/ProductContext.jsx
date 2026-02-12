@@ -7,7 +7,7 @@ const ProductContext = createContext();
 // 1. En Google Sheets: Archivo > Compartir > Publicar en la web
 // 2. Elegir "Valores separados por comas (.csv)"
 // 3. Copiar el enlace y pegarlo aquí abajo
-const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6y_UaaW5J_W-X56fK--J6-j_6d7yK8aX0o-X-X-X/pub?output=csv";
+const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ13YcoM57Rwi-JrPoxHwbJGjREPTlZvCAvVJJK2GW5fx46TMWCbSXLazIRUSUuBMlGHFtsgqySRATl/pub?gid=0&single=true&output=csv";
 // NOTA: Si esta URL falla o está vacía, se usará 'catalog.json' como respaldo.
 
 export const ProductProvider = ({ children }) => {
