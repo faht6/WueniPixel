@@ -158,15 +158,16 @@
     }
 }
 
-color: #F5F5F7;
-border: 1px solid #38383A;
+[data-theme='dark'] .brand-tab {
+    color: #F5F5F7;
+    border: 1px solid #38383A;
 }
 
-[data-theme='dark'] .brand-btn:hover {
+[data-theme='dark'] .brand-tab:hover {
     background-color: #2C2C2E;
 }
 
-[data-theme='dark'] .brand-btn.active {
+[data-theme='dark'] .brand-tab.active {
     background-color: #F5F5F7;
     color: #000000;
 }
