@@ -220,7 +220,8 @@
 /* RIGHT COLUMN: VISUALS */
 .hero-visuals {
     flex: 1;
-    height: 600px;
+    height: 650px;
+    /* Slightly taller for the detailed image */
     position: relative;
     display: flex;
     align-items: center;
@@ -228,59 +229,7 @@
     z-index: 10;
 }
 
-/* PHONES COMPOSITION */
-.hero-phones-composition {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.phone-card {
-    position: absolute;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-    transition: all 0.5s ease;
-}
-
-.phone-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Phone Positioning */
-/* IPHONE - Right Top */
-.iphone-card {
-    width: 280px;
-    height: 580px;
-    right: 20px;
-    top: 0;
-    z-index: 2;
-    transform: rotate(-10deg);
-}
-
-/* PIXEL - Left Bottom */
-.pixel-card {
-    width: 260px;
-    height: 540px;
-    right: 200px;
-    top: 60px;
-    z-index: 1;
-    transform: rotate(-5deg);
-    filter: brightness(0.9);
-}
-
-/* Hover Interaction for 3D Feel */
-.hero-phones-composition:hover .iphone-card {
-    transform: translateY(-50%) translateZ(80px) rotateY(-8deg);
-    /* Pop out more */
-}
-
-.hero-phones-composition:hover .pixel-card {
-    transform: translateY(-50%) translateZ(-20px) rotateY(8deg);
-    /* Push back */
+/* Push back */
 }
 
 /* FLOATING ANIMATIONS */

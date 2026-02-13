@@ -191,7 +191,7 @@ const BudgetRecommender = ({ district }) => {
                     </div>
                 </div>
 
-                {/* RIGHT COLUMN: Phones OR Result */}
+                {/* RIGHT COLUMN: VISUALS */}
                 <div className="hero-visuals">
                     {recommendation ? (
                         // RESULT CARD (Replaces Phones)
@@ -217,16 +217,9 @@ const BudgetRecommender = ({ district }) => {
                             </div>
                         </div>
                     ) : (
-                        // FLOATING PHONES HERO
-                        <div className="hero-phones-composition">
-                            <div className="phone-card pixel-card floating-delayed">
-                                <img src={heroImages.pixel} alt="Pixel Concept" />
-                                <div className="phone-glow pixel-glow"></div>
-                            </div>
-                            <div className="phone-card iphone-card floating">
-                                <img src={heroImages.iphone} alt="iPhone Concept" />
-                                <div className="phone-glow iphone-glow"></div>
-                            </div>
+                        // SINGLE HERO IMAGE (User Provided)
+                        <div className="hero-single-image-container">
+                            <img src="/hero-devices.png" alt="Premium Devices" className="hero-main-image" />
                         </div>
                     )}
                 </div>
