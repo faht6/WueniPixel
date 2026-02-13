@@ -219,11 +219,13 @@ const BudgetRecommender = ({ district }) => {
                     ) : (
                         // FLOATING PHONES HERO
                         <div className="hero-phones-composition">
-                            <div className="phone-card pixel-card">
+                            <div className="phone-card pixel-card floating-delayed">
                                 <img src={heroImages.pixel} alt="Pixel Concept" />
+                                <div className="phone-glow pixel-glow"></div>
                             </div>
-                            <div className="phone-card iphone-card">
+                            <div className="phone-card iphone-card floating">
                                 <img src={heroImages.iphone} alt="iPhone Concept" />
+                                <div className="phone-glow iphone-glow"></div>
                             </div>
                         </div>
                     )}
