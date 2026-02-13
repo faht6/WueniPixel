@@ -51,11 +51,11 @@ const LogisticsSection = () => {
                     </div>
 
                     <div className="payment-options">
-                        {/* DARK OPTION: Force colors to ensure visibility */}
-                        <div className="payment-option primary-option" style={{ background: '#111', color: 'white' }}>
+                        {/* DARK OPTION: Premium Gradient */}
+                        <div className="payment-option yape-premium-card">
                             <div className="payment-content">
                                 <h4>Yape / Transferencia</h4>
-                                <p style={{ color: '#aaa' }}>Sin comisiones adicionales</p>
+                                <p>Sin comisiones adicionales</p>
                             </div>
                             <div className="badge-free">0% Comisión</div>
                         </div>

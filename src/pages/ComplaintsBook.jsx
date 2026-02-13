@@ -22,6 +22,11 @@ const ComplaintsBook = () => {
 
     const [submitted, setSubmitted] = useState(false);
 
+    // Force scroll to top on mount
+    useState(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };

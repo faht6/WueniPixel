@@ -130,6 +130,25 @@
 
 /* .yape-option replaced by .primary-option inline styles for robustness */
 
+.yape-premium-card {
+    background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.yape-premium-card p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.yape-premium-card .badge-free {
+    color: #50C878;
+    /* Green pop */
+    background: rgba(80, 200, 120, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
 .card-option {
     background: var(--color-background);
     border: 1px solid var(--color-border-subtle);
