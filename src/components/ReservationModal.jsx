@@ -4,8 +4,6 @@ import locationsData from '../data/locations.json';
 import './ReservationModal.css';
 
 const ReservationModal = ({ isOpen, onClose, product, selectedColor, selectedStorage }) => {
-    if (!isOpen) return null;
-
     const [departments, setDepartments] = useState([]);
     const [provinces, setProvinces] = useState([]);
     const [districts, setDistricts] = useState([]);
@@ -22,6 +20,8 @@ const ReservationModal = ({ isOpen, onClose, product, selectedColor, selectedSto
     useEffect(() => {
         setDepartments(Object.keys(locationsData).sort((a, b) => a.localeCompare(b)));
     }, []);
+
+    if (!isOpen) return null;
 
     const handleChange = (e) => {
         const { name, value } = e.target;

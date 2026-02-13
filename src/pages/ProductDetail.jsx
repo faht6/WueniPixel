@@ -8,6 +8,7 @@ import ReservationModal from '../components/ReservationModal';
 import PageTransition from '../components/PageTransition';
 import './ProductDetail.css';
 import { calculateSellingPrice, formatCurrency, fetchExchangeRate } from '../utils/pricing';
+import { getColorHex } from '../utils/productColors';
 
 const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compareList }) => {
     const { id } = useParams();
@@ -141,18 +142,19 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                 <span className="grade-value">{product.grade || 'A+ (Impecable)'}</span>
                             </div>
 
-                            {/* SELECTORES */}
                             <div className="meli-selector">
                                 <span className="selector-label">Color: <strong>{selectedColor}</strong></span>
                                 {product.colors && (
-                                    <div className="color-options-meli text-options">
+                                    <div className="color-options-meli">
                                         {product.colors.map(color => (
                                             <button
                                                 key={color}
-                                                className={`color-pill ${selectedColor === color ? 'active' : ''}`}
+                                                className={`color-swatch ${selectedColor === color ? 'active' : ''}`}
                                                 onClick={() => setSelectedColor(color)}
+                                                title={color}
+                                                style={{ backgroundColor: getColorHex(color) }}
                                             >
-                                                {color}
+                                                {/* Visual only, text via tooltips/label */}
                                             </button>
                                         ))}
                                     </div>
