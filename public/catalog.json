@@ -60,7 +60,7 @@
         "brand": "Apple",
         "price": 5499,
         "condition": "new",
-        "image": "/products/iphoneair.jpg",
+        "image": "/products/iphone17_negro.jpg",
         "description": "Increíblemente delgado. Potencia Pro en un diseño aéreo.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -176,7 +176,7 @@
         "brand": "Apple",
         "price": 3999,
         "condition": "new",
-        "image": "/products/iphone16.jpg",
+        "image": "/products/iphone15.jpg",
         "description": "Colores vibrantes y pantalla OLED de 2000 nits.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -205,7 +205,7 @@
         "brand": "Apple",
         "price": 4699,
         "condition": "new",
-        "image": "/products/iphone16pro.jpg",
+        "image": "/products/iphone15promax.jpg",
         "description": "Titanio pulido y botón de captura dedicado.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -234,7 +234,7 @@
         "brand": "Apple",
         "price": 5299,
         "condition": "new",
-        "image": "/products/iphone16promax.jpg",
+        "image": "/products/iphone15promax.jpg",
         "description": "La mejor batería en un iPhone. Pantalla inmersiva.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -290,7 +290,7 @@
         "brand": "Apple",
         "price": 3899,
         "condition": "new",
-        "image": "/products/iphone15pro.jpg",
+        "image": "/products/iphone15.jpg",
         "description": "Potencia compacta en Titanio. Chip A17 Pro.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -377,7 +377,7 @@
         "brand": "Apple",
         "price": 3099,
         "condition": "used",
-        "image": "/products/iphone14pro.jpg",
+        "image": "/products/iphone14promax.jpg",
         "description": "La revolución del Dynamic Island.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -406,7 +406,7 @@
         "brand": "Apple",
         "price": 2599,
         "condition": "used",
-        "image": "/products/iphone14.jpg",
+        "image": "/products/iphone13.jpg",
         "description": "Gran autonomía y modo acción.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -436,7 +436,7 @@
         "brand": "Apple",
         "price": 2999,
         "condition": "used",
-        "image": "/products/iphone13promax.jpg",
+        "image": "/products/iphone13.jpg",
         "description": "Batería legendaria y pantalla ProMotion.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -466,7 +466,7 @@
         "brand": "Apple",
         "price": 2699,
         "condition": "used",
-        "image": "/products/iphone13pro.jpg",
+        "image": "/products/iphone13.jpg",
         "description": "Macro fotografía y rendimiento de cine.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -525,7 +525,7 @@
         "brand": "Apple",
         "price": 2399,
         "condition": "used",
-        "image": "/products/iphone12promax.jpg",
+        "image": "/products/iphone12.jpg",
         "description": "El fotógrafo profesional. Sensor Shift.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -553,7 +553,7 @@
         "brand": "Apple",
         "price": 2099,
         "condition": "used",
-        "image": "/products/iphone12pro.jpg",
+        "image": "/products/iphone12.jpg",
         "description": "Acero inoxidable y potencia A14.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -641,7 +641,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel10proxl.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "La experiencia Pixel definitiva. Pantalla gigante y batería de larga duración.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -669,7 +669,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel10pro.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "Potencia compacta. El Pro que cabe en tu mano con Tensor G5.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -698,7 +698,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel10.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "Chip Tensor G5. La inteligencia artificial llevada al siguiente nivel.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -725,7 +725,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel10a.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "La entrada al mundo Tensor G5. Económico y potente.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -752,7 +752,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel9proxl.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "Más pantalla, más batería. El flagship de Google.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -781,7 +781,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel9pro.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "El Pro perfecto. Cámaras de nivel profesional en tamaño ideal.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -810,7 +810,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel9.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "Diseño renovado y chip Tensor G4. Elegancia y poder.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -892,7 +892,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel8a.jpg",
+        "image": "/products/pixel8.jpg",
         "description": "La magia de Pixel a un precio increíble. Pantalla 120Hz.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -972,7 +972,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "new",
-        "image": "/products/pixel7a.jpg",
+        "image": "/products/pixel7.jpg",
         "description": "Increíble valor. Carga inalámbrica y gran cámara.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1051,7 +1051,7 @@
         "brand": "Google",
         "price": 0,
         "condition": "used",
-        "image": "/products/pixel6a.jpg",
+        "image": "/products/pixel6.jpg",
         "description": "Pequeño pero poderoso. La esencia de Pixel.",
         "grade": "Grado A+ Impecable",
         "colors": [
