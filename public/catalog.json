@@ -25,6 +25,33 @@
             "camera": "Dual 48MP + 48MP",
             "battery": "3,692 mAh"
         },
+        "colorImages": {
+            "Negro": [
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg"
+            ],
+            "Blanco": [
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg"
+            ],
+            "Lavanda": [
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg"
+            ],
+            "Azul Mist": [
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg"
+            ],
+            "Salvia": [
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg",
+                "/products/iphone17.jpg"
+            ]
+        },
         "featured": true
     },
     {

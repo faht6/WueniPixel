@@ -16,50 +16,37 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
     const [product, setProduct] = useState(null);
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedStorage, setSelectedStorage] = useState('');
+    const [currentImages, setCurrentImages] = useState([]);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
     // Estados
     const [added, setAdded] = useState(false);
 
-    // Dynamic Pricing State
-    const [finalPrice, setFinalPrice] = useState(0);
-    const [exchangeRate, setExchangeRate] = useState(3.85); // Keep this here, it's not in the provided snippet but is used.
+    // ...
 
-    // Modal State
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [reservationSuccess, setReservationSuccess] = useState(false);
-
+    // Update images when color changes
     useEffect(() => {
-        const init = async () => {
-            // Exchange rate fetch
-            const rate = await fetchExchangeRate();
-            setExchangeRate(rate);
-        };
-        init();
-    }, []);
-
-    // Actualizar estado cuando el producto (desde context) esté listo
-    useEffect(() => {
-        if (product) {
-            setSelectedColor(product.colors[0]);
-            setSelectedStorage(product.storage[0]);
-
-            // Calculo inicial de precio
-            // Calculo inicial de precio
-            // Prioridad: 1. Precio Manual (CSV 'price') | 2. Calculado (CSV 'ebayPrice')
-            const basePrice = product.price > 0
-                ? product.price
-                : (product.ebayPrice ? calculateSellingPrice(product.ebayPrice, exchangeRate) : 0);
-
-            // setDisplayPrice(basePrice); // This was removed in the instruction
-            setFinalPrice(basePrice);
+        if (product && selectedColor) {
+            const images = product.colorImages?.[selectedColor] || [product.image, product.image, product.image];
+            // Ensure we always have at least 3 images for the layout
+            const filledImages = [...images];
+            while (filledImages.length < 3) {
+                filledImages.push(product.image);
+            }
+            setCurrentImages(filledImages.slice(0, 3));
+            setSelectedImageIndex(0);
         }
-    }, [product, exchangeRate]);
+    }, [product, selectedColor]);
 
     // Fetch product data
     useEffect(() => {
         const fetchProduct = async () => {
             const fetchedProduct = await getProductById(id);
             setProduct(fetchedProduct);
+            if (fetchedProduct && fetchedProduct.colors && fetchedProduct.colors.length > 0) {
+                setSelectedColor(fetchedProduct.colors[0]);
+                setSelectedStorage(fetchedProduct.storage ? fetchedProduct.storage[0] : '');
+            }
         };
         fetchProduct();
     }, [id, getProductById]);
@@ -121,14 +108,23 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                         {/* COLUMNA 1: IMAGEN */}
                         <div className="image-section-meli">
                             <div className="thumbnail-list">
-                                {[1, 2, 3].map(i => (
-                                    <div key={i} className={`thumb ${i === 1 ? 'active' : ''}`}>
-                                        <img src={product.image} alt="Thumbnail" />
+                                {currentImages.map((img, i) => (
+                                    <div
+                                        key={i}
+                                        className={`thumb ${selectedImageIndex === i ? 'active' : ''}`}
+                                        onMouseEnter={() => setSelectedImageIndex(i)}
+                                        onClick={() => setSelectedImageIndex(i)}
+                                    >
+                                        <img src={img} alt={`Thumbnail ${i + 1}`} />
                                     </div>
                                 ))}
                             </div>
                             <div className="main-image-container">
-                                <img src={product.image} alt={product.name} className="main-image-meli" />
+                                <img
+                                    src={currentImages[selectedImageIndex]}
+                                    alt={product.name}
+                                    className="main-image-meli"
+                                />
                             </div>
                         </div>
 
