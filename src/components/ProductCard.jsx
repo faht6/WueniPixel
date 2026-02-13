@@ -26,7 +26,15 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
     <Reveal width="100%">
       <div className="product-card">
         <Link to={`/products/${product.id}`} className="card-image-container">
-          <img src={product.image} alt={product.name} className="card-image" />
+          <img
+            src={product.image}
+            alt={product.name}
+            className="card-image"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://placehold.co/400x400/1e1e2e/FFF?text=No+Image';
+            }}
+          />
           {product.featured && <span className="badge">Destacado</span>}
           {product.condition === 'used' && (
             <div className="badge-battery">
