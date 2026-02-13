@@ -227,6 +227,9 @@
     justify-content: center;
     z-index: 10;
     perspective: 1000px;
+    /* BLEND MASK: Fade the bottom edge into the next section for seamless look */
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 /* SINGLE HERO IMAGE - APPLE STYLE PRESENTATION */
@@ -245,26 +248,26 @@
 .hero-single-image-container::before {
     content: '';
     position: absolute;
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 70%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(60, 60, 100, 0.4) 0%, transparent 70%);
-    filter: blur(60px);
+    /* Soft Blue/Purple Ambient Glow to match reference usually */
+    background: radial-gradient(circle, rgba(80, 80, 120, 0.3) 0%, transparent 70%);
+    filter: blur(80px);
     z-index: -1;
-    animation: pulseGlow 4s ease-in-out infinite alternate;
+    animation: pulseGlow 5s ease-in-out infinite alternate;
 }
 
 .hero-main-image {
-    max-width: 130%;
-    /* Large, imposing size */
+    max-width: 125%;
     max-height: 100%;
     object-fit: contain;
-
-    100% {
-        transform: rotateY(-5deg) rotateX(2deg) translateY(0px);
-    }
+    /* Premium Drop Shadow + Reflection Simulation */
+    filter: drop-shadow(0 50px 80px rgba(0, 0, 0, 0.6));
+    transform: rotateY(-5deg) rotateX(2deg);
+    transition: transform 0.3s ease-out;
 }
 
 /* Interactive Parallax Effect on Hover */

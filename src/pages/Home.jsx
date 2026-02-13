@@ -44,7 +44,7 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                     {loading ? (
                         <div className="loading-state">Cargando destacados...</div>
                     ) : (
-                        <div className="product-grid">
+                        <div className="products-grid">
                             {featuredProducts.map(product => (
                                 <ProductCard
                                     key={product.id}

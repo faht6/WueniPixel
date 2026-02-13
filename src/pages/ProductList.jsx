@@ -119,7 +119,7 @@ const ProductList = ({ addToCart, addToCompare, compareList }) => {
 
                         {/* Grid */}
                         {filteredProducts.length > 0 ? (
-                            <div className="products-grid-list">
+                            <div className="products-grid">
                                 {filteredProducts.map(product => (
                                     <ProductCard
                                         key={product.id}

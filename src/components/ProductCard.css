@@ -1,80 +1,101 @@
 .product-card {
-    background: var(--color-background);
-    border-radius: 20px;
+    background: var(--color-surface);
+    /* Clean background */
+    border-radius: 24px;
+    /* Softer corners */
     overflow: hidden;
     position: relative;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 1px solid var(--color-border-subtle);
+    /* Remove Border, use Shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+[data-theme='dark'] .product-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    border-color: var(--color-accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .card-image-container {
-    padding: 30px;
-    background: var(--color-surface-secondary);
+    padding: 20px;
+    /* Transparent/White background instead of Gray */
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 280px;
+    height: 300px;
+    /* Taller image area */
     position: relative;
     overflow: hidden;
 }
 
+[data-theme='light'] .card-image-container {
+    background: #f9f9f9;
+    /* Very subtle light gray for light mode */
+}
+
 .card-image {
     max-height: 100%;
-    max-width: 90%;
+    max-width: 100%;
     object-fit: contain;
-    transition: transform 0.5s ease;
-    mix-blend-mode: multiply;
+    transition: transform 0.6s ease;
+    /* Remove mix-blend-mode if images are PNGs, keep if JPGs on white */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
 [data-theme='dark'] .card-image {
     mix-blend-mode: normal;
 }
 
-/* CLEAN HOVER EFFECT (No 3D) */
+/* APPLE-STYLE HOVER: Slight Zoom + Lift */
 .product-card:hover .card-image {
-    transform: scale(1.05);
-    /* Just a slight zoom */
+    transform: scale(1.08) translateY(-5px);
 }
-
-/* If using secondary image logic, we would toggle opacity between two imgs */
 
 .card-content {
     padding: 24px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    /* Glassmorphic separation if desired, or clean */
+    background: transparent;
 }
 
 .card-brand {
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-secondary);
-    margin-bottom: 8px;
-    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-text-tertiary);
+    /* Muted */
+    margin-bottom: 6px;
+    font-weight: 600;
 }
 
 .card-title {
     font-size: 18px;
-    margin: 0 0 8px;
-    font-weight: 700;
+    margin: 0 0 12px;
+    font-weight: 600;
     color: var(--color-text-primary);
+    line-height: 1.3;
 }
 
 .card-price {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .card-price.reverse-price {
