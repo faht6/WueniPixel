@@ -5,7 +5,7 @@
         "brand": "Apple",
         "price": 4999,
         "condition": "new",
-        "image": "/products/iphone17.jpg",
+        "image": "/products/iphone17_negro.jpg",
         "description": "El futuro es hoy. Chip A19 y cámaras duales de 48MP.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -87,7 +87,7 @@
         "brand": "Apple",
         "price": 5999,
         "condition": "new",
-        "image": "/products/iphone17pro.jpg",
+        "image": "/products/iphone17pro_deepblue.jpg",
         "description": "Poder absoluto. Pantalla de 3000 nits y zoom óptico.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -131,7 +131,7 @@
         "brand": "Apple",
         "price": 6599,
         "condition": "new",
-        "image": "/products/iphone17promax.jpg",
+        "image": "/products/iphone17promax_deepblue.jpg",
         "description": "El iPhone definitivo. Máxima batería y pantalla gigante.",
         "grade": "Nuevo Sellado",
         "colors": [
