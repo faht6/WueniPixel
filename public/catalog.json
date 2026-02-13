@@ -110,175 +110,6 @@
         "featured": true
     },
     {
-        "id": 213,
-        "name": "Google Pixel 10",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel10.jpg",
-        "description": "Chip Tensor G5. La inteligencia artificial llevada al siguiente nivel.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Frost",
-            "Indigo",
-            "Lemongrass",
-            "Obsidian"
-        ],
-        "storage": [
-            "128GB",
-            "256GB"
-        ],
-        "specs": {
-            "screen": "6.3\" OLED 120Hz",
-            "processor": "Google Tensor G5",
-            "camera": "48MP + 13MP + 10.8MP Tele",
-            "battery": "4970 mAh"
-        },
-        "featured": true
-    },
-    {
-        "id": 214,
-        "name": "Google Pixel 10 Pro",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel10pro.jpg",
-        "description": "Potencia compacta. El Pro que cabe en tu mano con Tensor G5.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Jade",
-            "Moonstone",
-            "Obsidian",
-            "Porcelain"
-        ],
-        "storage": [
-            "128GB",
-            "256GB",
-            "512GB",
-            "1TB"
-        ],
-        "specs": {
-            "screen": "6.3\" LTPO OLED 120Hz",
-            "processor": "Google Tensor G5",
-            "camera": "50MP + 48MP + 48MP Tele 5x",
-            "battery": "4870 mAh"
-        },
-        "featured": true
-    },
-    {
-        "id": 215,
-        "name": "Google Pixel 10 Pro XL",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel10proxl.jpg",
-        "description": "La experiencia Pixel definitiva. Pantalla gigante y batería de larga duración.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Jade",
-            "Moonstone",
-            "Obsidian",
-            "Porcelain"
-        ],
-        "storage": [
-            "256GB",
-            "512GB",
-            "1TB"
-        ],
-        "specs": {
-            "screen": "6.8\" LTPO OLED 120Hz",
-            "processor": "Google Tensor G5",
-            "camera": "50MP + 48MP + 48MP Tele 5x",
-            "battery": "5200 mAh"
-        },
-        "featured": true
-    },
-    {
-        "id": 210,
-        "name": "Google Pixel 9",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel9.jpg",
-        "description": "Diseño renovado y chip Tensor G4. Elegancia y poder.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Obsidian",
-            "Porcelain",
-            "Wintergreen",
-            "Peony"
-        ],
-        "storage": [
-            "128GB",
-            "256GB"
-        ],
-        "specs": {
-            "screen": "6.3\" OLED 120Hz",
-            "processor": "Google Tensor G4",
-            "camera": "50MP + 48MP UGA",
-            "battery": "4700 mAh"
-        },
-        "featured": true
-    },
-    {
-        "id": 211,
-        "name": "Google Pixel 9 Pro",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel9pro.jpg",
-        "description": "El Pro perfecto. Cámaras de nivel profesional en tamaño ideal.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Obsidian",
-            "Porcelain",
-            "Hazel",
-            "Rose Quartz"
-        ],
-        "storage": [
-            "128GB",
-            "256GB",
-            "512GB",
-            "1TB"
-        ],
-        "specs": {
-            "screen": "6.3\" LTPO OLED 120Hz",
-            "processor": "Google Tensor G4",
-            "camera": "50MP + 48MP + 48MP Tele 5x",
-            "battery": "4700 mAh"
-        },
-        "featured": true
-    },
-    {
-        "id": 212,
-        "name": "Google Pixel 9 Pro XL",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel9proxl.jpg",
-        "description": "Más pantalla, más batería. El flagship de Google.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Obsidian",
-            "Porcelain",
-            "Hazel",
-            "Rose Quartz"
-        ],
-        "storage": [
-            "128GB",
-            "256GB",
-            "512GB",
-            "1TB"
-        ],
-        "specs": {
-            "screen": "6.8\" LTPO OLED 120Hz",
-            "processor": "Google Tensor G4",
-            "camera": "50MP + 48MP + 48MP Tele 5x",
-            "battery": "5060 mAh"
-        },
-        "featured": true
-    },
-    {
         "id": 111,
         "name": "iPhone 16",
         "brand": "Apple",
@@ -447,166 +278,6 @@
             "processor": "A16 Bionic",
             "camera": "48MP",
             "battery": "3349 mAh"
-        },
-        "featured": false
-    },
-    {
-        "id": 206,
-        "name": "Google Pixel 8 Pro",
-        "brand": "Google",
-        "price": 3699,
-        "condition": "used",
-        "image": "/products/pixel8pro.jpg",
-        "description": "IA Generativa en tu mano. Magic Editor.",
-        "grade": "Como Nuevo (Open Box)",
-        "colors": [
-            "Obsidian",
-            "Porcelain",
-            "Bay",
-            "Mint"
-        ],
-        "storage": [
-            "128GB",
-            "256GB",
-            "512GB"
-        ],
-        "specs": {
-            "screen": "6.7\" Super Actua LTPO",
-            "processor": "Tensor G3",
-            "camera": "50MP Triple",
-            "battery": "5050 mAh"
-        },
-        "featured": true
-    },
-    {
-        "id": 209,
-        "name": "Google Pixel 8a",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel8a.jpg",
-        "description": "La magia de Pixel a un precio increíble. Pantalla 120Hz.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Obsidian",
-            "Porcelain",
-            "Bay",
-            "Aloe"
-        ],
-        "storage": [
-            "128GB",
-            "256GB"
-        ],
-        "specs": {
-            "screen": "6.1\" OLED 120Hz",
-            "processor": "Google Tensor G3",
-            "camera": "64MP + 13MP UGA",
-            "battery": "4492 mAh"
-        },
-        "featured": false
-    },
-    {
-        "id": 208,
-        "name": "Google Pixel 7a",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel7a.jpg",
-        "description": "Increíble valor. Carga inalámbrica y gran cámara.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Charcoal",
-            "Snow",
-            "Sea",
-            "Coral"
-        ],
-        "storage": [
-            "128GB"
-        ],
-        "specs": {
-            "screen": "6.1\" OLED 90Hz",
-            "processor": "Google Tensor G2",
-            "camera": "64MP + 13MP UGA",
-            "battery": "4385 mAh"
-        },
-        "featured": false
-    },
-    {
-        "id": 204,
-        "name": "Google Pixel 7 Pro",
-        "brand": "Google",
-        "price": 2499,
-        "condition": "used",
-        "image": "/products/pixel7pro.jpg",
-        "description": "Zoom Super Res y Macro Focus. Fotografía top.",
-        "grade": "Grado A+ Impecable",
-        "colors": [
-            "Obsidian",
-            "Snow",
-            "Hazel"
-        ],
-        "storage": [
-            "128GB",
-            "256GB",
-            "512GB"
-        ],
-        "specs": {
-            "screen": "6.7\" LTPO OLED 120Hz",
-            "processor": "Tensor G2",
-            "camera": "50MP Triple",
-            "battery": "5000 mAh"
-        },
-        "featured": false
-    },
-    {
-        "id": 216,
-        "name": "Google Pixel 10a",
-        "brand": "Google",
-        "price": 0,
-        "condition": "new",
-        "image": "/products/pixel10a.jpg",
-        "description": "La entrada al mundo Tensor G5. Económico y potente.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Indigo",
-            "Obsidian",
-            "Fog",
-            "Berry"
-        ],
-        "storage": [
-            "128GB",
-            "256GB"
-        ],
-        "specs": {
-            "screen": "6.2\" AMOLED 120Hz",
-            "processor": "Google Tensor G5",
-            "camera": "48MP + 13MP UGA",
-            "battery": "5100 mAh"
-        },
-        "featured": false
-    },
-    {
-        "id": 207,
-        "name": "Google Pixel 6a",
-        "brand": "Google",
-        "price": 0,
-        "condition": "used",
-        "image": "/products/pixel6a.jpg",
-        "description": "Pequeño pero poderoso. La esencia de Pixel.",
-        "grade": "Grado A+ Impecable",
-        "colors": [
-            "Charcoal",
-            "Chalk",
-            "Sage"
-        ],
-        "storage": [
-            "128GB"
-        ],
-        "specs": {
-            "screen": "6.1\" OLED 60Hz",
-            "processor": "Google Tensor",
-            "camera": "12.2MP + 12MP UGA",
-            "battery": "4410 mAh"
         },
         "featured": false
     },
@@ -870,6 +541,471 @@
             "processor": "A14 Bionic",
             "camera": "12MP Dual",
             "battery": "2815 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 101,
+        "name": "iPhone 11",
+        "brand": "Apple",
+        "price": 1299,
+        "condition": "used",
+        "image": "/products/iphone11.jpg",
+        "description": "El favorito de todos. Colores y doble cámara.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Black",
+            "White",
+            "Purple",
+            "Green",
+            "Yellow",
+            "Red"
+        ],
+        "storage": [
+            "64GB",
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.1\" Liquid Retina",
+            "processor": "A13 Bionic",
+            "camera": "12MP Dual",
+            "battery": "3110 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 215,
+        "name": "Google Pixel 10 Pro XL",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel10proxl.jpg",
+        "description": "La experiencia Pixel definitiva. Pantalla gigante y batería de larga duración.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Jade",
+            "Moonstone",
+            "Obsidian",
+            "Porcelain"
+        ],
+        "storage": [
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.8\" LTPO OLED 120Hz",
+            "processor": "Google Tensor G5",
+            "camera": "50MP + 48MP + 48MP Tele 5x",
+            "battery": "5200 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 214,
+        "name": "Google Pixel 10 Pro",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel10pro.jpg",
+        "description": "Potencia compacta. El Pro que cabe en tu mano con Tensor G5.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Jade",
+            "Moonstone",
+            "Obsidian",
+            "Porcelain"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.3\" LTPO OLED 120Hz",
+            "processor": "Google Tensor G5",
+            "camera": "50MP + 48MP + 48MP Tele 5x",
+            "battery": "4870 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 213,
+        "name": "Google Pixel 10",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel10.jpg",
+        "description": "Chip Tensor G5. La inteligencia artificial llevada al siguiente nivel.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Frost",
+            "Indigo",
+            "Lemongrass",
+            "Obsidian"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.3\" OLED 120Hz",
+            "processor": "Google Tensor G5",
+            "camera": "48MP + 13MP + 10.8MP Tele",
+            "battery": "4970 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 216,
+        "name": "Google Pixel 10a",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel10a.jpg",
+        "description": "La entrada al mundo Tensor G5. Económico y potente.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Indigo",
+            "Obsidian",
+            "Fog",
+            "Berry"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.2\" o 6.3\" AMOLED 120Hz",
+            "processor": "Google Tensor G5",
+            "camera": "48MP + 13MP UGA",
+            "battery": "5100 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 212,
+        "name": "Google Pixel 9 Pro XL",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel9proxl.jpg",
+        "description": "Más pantalla, más batería. El flagship de Google.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Obsidian",
+            "Porcelain",
+            "Hazel",
+            "Rose Quartz"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.8\" LTPO OLED 120Hz",
+            "processor": "Google Tensor G4",
+            "camera": "50MP + 48MP + 48MP Tele 5x",
+            "battery": "5060 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 211,
+        "name": "Google Pixel 9 Pro",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel9pro.jpg",
+        "description": "El Pro perfecto. Cámaras de nivel profesional en tamaño ideal.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Obsidian",
+            "Porcelain",
+            "Hazel",
+            "Rose Quartz"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.3\" LTPO OLED 120Hz",
+            "processor": "Google Tensor G4",
+            "camera": "50MP + 48MP + 48MP Tele 5x",
+            "battery": "4700 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 210,
+        "name": "Google Pixel 9",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel9.jpg",
+        "description": "Diseño renovado y chip Tensor G4. Elegancia y poder.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Obsidian",
+            "Porcelain",
+            "Wintergreen",
+            "Peony"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.3\" OLED 120Hz",
+            "processor": "Google Tensor G4",
+            "camera": "50MP + 48MP UGA",
+            "battery": "4700 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 206,
+        "name": "Google Pixel 8 Pro",
+        "brand": "Google",
+        "price": 3699,
+        "condition": "used",
+        "image": "/products/pixel8pro.jpg",
+        "description": "IA Generativa en tu mano. Magic Editor.",
+        "grade": "Como Nuevo (Open Box)",
+        "colors": [
+            "Obsidian",
+            "Porcelain",
+            "Bay",
+            "Mint"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.7\" Super Actua LTPO",
+            "processor": "Tensor G3",
+            "camera": "50MP Triple",
+            "battery": "5050 mAh"
+        },
+        "featured": true
+    },
+    {
+        "id": 205,
+        "name": "Google Pixel 8",
+        "brand": "Google",
+        "price": 2799,
+        "condition": "used",
+        "image": "/products/pixel8.jpg",
+        "description": "7 años de actualizaciones. El futuro hoy.",
+        "grade": "Como Nuevo (Open Box)",
+        "colors": [
+            "Obsidian",
+            "Hazel",
+            "Rose",
+            "Mint"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.2\" Actua OLED 120Hz",
+            "processor": "Tensor G3",
+            "camera": "50MP Dual",
+            "battery": "4575 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 209,
+        "name": "Google Pixel 8a",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel8a.jpg",
+        "description": "La magia de Pixel a un precio increíble. Pantalla 120Hz.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Obsidian",
+            "Porcelain",
+            "Bay",
+            "Aloe"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.1\" OLED 120Hz",
+            "processor": "Google Tensor G3",
+            "camera": "64MP + 13MP UGA",
+            "battery": "4492 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 204,
+        "name": "Google Pixel 7 Pro",
+        "brand": "Google",
+        "price": 2499,
+        "condition": "used",
+        "image": "/products/pixel7pro.jpg",
+        "description": "Zoom Super Res y Macro Focus. Fotografía top.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Obsidian",
+            "Snow",
+            "Hazel"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.7\" LTPO OLED 120Hz",
+            "processor": "Tensor G2",
+            "camera": "50MP Triple",
+            "battery": "5000 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 203,
+        "name": "Google Pixel 7",
+        "brand": "Google",
+        "price": 1899,
+        "condition": "used",
+        "image": "/products/pixel7.jpg",
+        "description": "Refinamiento total. Más compacto y brillante.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Obsidian",
+            "Snow",
+            "Lemongrass"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.3\" OLED 90Hz",
+            "processor": "Tensor G2",
+            "camera": "50MP Dual",
+            "battery": "4355 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 208,
+        "name": "Google Pixel 7a",
+        "brand": "Google",
+        "price": 0,
+        "condition": "new",
+        "image": "/products/pixel7a.jpg",
+        "description": "Increíble valor. Carga inalámbrica y gran cámara.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Charcoal",
+            "Snow",
+            "Sea",
+            "Coral"
+        ],
+        "storage": [
+            "128GB"
+        ],
+        "specs": {
+            "screen": "6.1\" OLED 90Hz",
+            "processor": "Google Tensor G2",
+            "camera": "64MP + 13MP UGA",
+            "battery": "4385 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 202,
+        "name": "Google Pixel 6 Pro",
+        "brand": "Google",
+        "price": 1399,
+        "condition": "used",
+        "image": "/products/pixel6pro.jpg",
+        "description": "Experiencia premium de Google a bajo costo.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Stormy Black",
+            "Cloudy White",
+            "Sorta Sunny"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.7\" LTPO OLED 120Hz",
+            "processor": "Google Tensor",
+            "camera": "50MP Triple",
+            "battery": "5003 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 201,
+        "name": "Google Pixel 6",
+        "brand": "Google",
+        "price": 1099,
+        "condition": "used",
+        "image": "/products/pixel6.jpg",
+        "description": "El reinicio de Pixel. Chip Tensor original.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Stormy Black",
+            "Sorta Seafoam",
+            "Kinda Coral"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.4\" OLED 90Hz",
+            "processor": "Google Tensor",
+            "camera": "50MP Dual",
+            "battery": "4614 mAh"
+        },
+        "featured": false
+    },
+    {
+        "id": 207,
+        "name": "Google Pixel 6a",
+        "brand": "Google",
+        "price": 0,
+        "condition": "used",
+        "image": "/products/pixel6a.jpg",
+        "description": "Pequeño pero poderoso. La esencia de Pixel.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Charcoal",
+            "Chalk",
+            "Sage"
+        ],
+        "storage": [
+            "128GB"
+        ],
+        "specs": {
+            "screen": "6.1\" OLED 60Hz",
+            "processor": "Google Tensor",
+            "camera": "12.2MP + 12MP UGA",
+            "battery": "4410 mAh"
         },
         "featured": false
     }
