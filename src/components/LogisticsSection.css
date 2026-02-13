@@ -138,7 +138,9 @@
 }
 
 .yape-premium-card p {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    /* Increased opacity for better readability */
+    font-weight: 500;
 }
 
 .yape-premium-card .badge-free {

@@ -22,7 +22,7 @@ const LogisticsSection = () => {
                                 <div className="dot accent"></div>
                                 <div>
                                     <h4>Envío Express</h4>
-                                    <p>Lima Metropolitana y Callao</p>
+                                    <p>San Vicente de Cañete, Imperial, San Luis y Cerro Azul</p>
                                 </div>
                             </div>
                             <span className="price-free">GRATIS</span>
