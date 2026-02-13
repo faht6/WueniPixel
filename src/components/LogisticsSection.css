@@ -102,6 +102,16 @@
     color: var(--color-text-primary);
 }
 
+.price-free {
+    font-weight: 800;
+    color: #50C878;
+    /* Green for Free */
+    background: rgba(80, 200, 120, 0.1);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
 .price-text {
     font-size: 14px;
     color: var(--color-text-secondary);
@@ -118,14 +128,7 @@
     margin-bottom: 16px;
 }
 
-.yape-option {
-    background: var(--color-text-primary);
-    color: var(--color-background);
-}
-
-.yape-option p {
-    color: rgba(255, 255, 255, 0.6);
-}
+/* .yape-option replaced by .primary-option inline styles for robustness */
 
 .card-option {
     background: var(--color-background);

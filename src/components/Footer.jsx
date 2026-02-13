@@ -55,7 +55,9 @@ const Footer = () => {
                         <span>|</span>
                         <Link to="/legal/terms">Términos de Uso</Link>
                         <span>|</span>
-                        <Link to="/legal/sitemap">Mapa del Sitio</Link>
+                        <Link to="/libro-de-reclamaciones" className="complaints-link">
+                            <span style={{ marginRight: '4px' }}>📖</span> Libro de Reclamaciones
+                        </Link>
                     </div>
                     <p>&copy; {new Date().getFullYear()} WueniPixel. Diseñado con precisión.</p>
                 </div>

@@ -17,6 +17,7 @@ import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
 import CompareBar from './components/CompareBar';
 import { ProductProvider } from './context/ProductContext';
+import ComplaintsBook from './pages/ComplaintsBook';
 
 function App() {
     // Estado del Carrito

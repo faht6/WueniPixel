@@ -11,7 +11,7 @@ const LogisticsSection = () => {
                 <div className="feature-card logistics-card">
                     <div className="card-header">
                         <div className="icon-box">
-                            <Package size={24} />
+                            <Truck size={24} />
                         </div>
                         <h3>Opciones de Entrega</h3>
                     </div>
@@ -21,22 +21,22 @@ const LogisticsSection = () => {
                             <div className="option-info">
                                 <div className="dot accent"></div>
                                 <div>
-                                    <h4>Delivery Local</h4>
-                                    <p>San Vicente, Imperial, San Luis</p>
+                                    <h4>Envío Express</h4>
+                                    <p>Lima Metropolitana y Callao</p>
                                 </div>
                             </div>
-                            <span className="price">S/ 5.00</span>
+                            <span className="price-free">GRATIS</span>
                         </div>
 
                         <div className="option-item">
                             <div className="option-info">
-                                <div className="dot gray"></div>
+                                <div className="dot accent"></div>
                                 <div>
                                     <h4>Envío Nacional</h4>
-                                    <p>Shalom / Olva Courier</p>
+                                    <p>Todo el Perú (Shalom / Olva)</p>
                                 </div>
                             </div>
-                            <span className="price-text">Varía destino</span>
+                            <span className="price-free">GRATIS</span>
                         </div>
                     </div>
                 </div>
@@ -51,12 +51,13 @@ const LogisticsSection = () => {
                     </div>
 
                     <div className="payment-options">
-                        <div className="payment-option yape-option">
+                        {/* DARK OPTION: Force colors to ensure visibility */}
+                        <div className="payment-option primary-option" style={{ background: '#111', color: 'white' }}>
                             <div className="payment-content">
                                 <h4>Yape / Transferencia</h4>
-                                <p>Sin comisiones adicionales</p>
+                                <p style={{ color: '#aaa' }}>Sin comisiones adicionales</p>
                             </div>
-                            <div className="badge-free">S/ 0 Comisión</div>
+                            <div className="badge-free">0% Comisión</div>
                         </div>
 
                         <div className="payment-option card-option">
