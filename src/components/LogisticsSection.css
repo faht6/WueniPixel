@@ -143,6 +143,10 @@
     font-weight: 500;
 }
 
+.yape-premium-card h4 {
+    color: #ffffff;
+}
+
 .yape-premium-card .badge-free {
     color: #50C878;
     /* Green pop */
