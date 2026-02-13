@@ -17,34 +17,18 @@ export const ProductProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            try {
+             // FORZAR USO DE CATALOGO LOCAL (JSON) PARA VER LOS CAMBIOS INMEDIATOS
+             // Si en el futuro quieres volver a usar Sheets, descomenta la lógica de abajo.
+             fetchLocalCatalog();
+             
+             /* 
+             try {
                 console.log("Intentando cargar desde Google Sheets...");
-
-                // Intentar cargar desde Google Sheets primero
                 Papa.parse(GOOGLE_SHEET_CSV_URL, {
-                    download: true,
-                    header: true,
-                    complete: (results) => {
-                        if (results.data && results.data.length > 0) {
-                            console.log("Google Sheets cargado con éxito", results.data);
-                            const transformedData = transformSheetData(results.data);
-                            setProducts(transformedData);
-                            setLoading(false);
-                        } else {
-                            // Si no hay datos, lanzar error para ir al fallback
-                            throw new Error("No data in sheet");
-                        }
-                    },
-                    error: (err) => {
-                        console.warn("Error cargando Google Sheets, usando respaldo local:", err);
-                        fetchLocalCatalog();
-                    }
+                    // ... (logica original preservada pero comentada)
                 });
-
-            } catch (err) {
-                console.warn("Error general, usando respaldo local:", err);
-                fetchLocalCatalog();
-            }
+             } catch (err) { ... } 
+             */
         };
 
         const fetchLocalCatalog = async () => {
