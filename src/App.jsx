@@ -132,10 +132,10 @@ function App() {
             <div className="app">
                 <Helmet>
                     <title>WueniPixel | iPhones y Pixels Seminuevos con Garantía</title>
-                    <meta name="description" content="La boutique de tecnología más confiable del Perú. Encuentra iPhones y Google Pixels seminuevos certificados y nuevos con garantía real." />
+                    <meta name="description" content="La tienda de tecnología más confiable del Perú. Encuentra iPhones y Google Pixels seminuevos certificados y nuevos con garantía real." />
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content="WueniPixel | Tecnología Premium al Mejor Precio" />
-                    <meta property="og:description" content="iPhones y Pixels con garantía, envío gratis y cuotas sin intereses." />
+                    <meta property="og:description" content="iPhones y Pixels con garantía, envío gratis y soporte personalizado." />
                     <meta property="og:image" content="https://wuenipixel.com/og-image.jpg" /> {/* Pending real image */}
                 </Helmet>
 

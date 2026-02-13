@@ -9,8 +9,8 @@ const faqs = [
         icon: <Truck size={20} />
     },
     {
-        question: "¿Aceptan cuotas?",
-        answer: "No ofrecemos cuotas directas, pero aceptamos todas las tarjetas de crédito (Visa, Mastercard, Amex) con un recargo del 5%, permitiéndote financiar tu compra con tu banco.",
+        question: "¿Medios de Pago?",
+        answer: "Aceptamos transferencias, Yape/Plin sin comisiones. También aceptamos todas las tarjetas de crédito (Visa, Mastercard, Amex) con un recargo del 5%.",
         icon: <CreditCard size={20} />
     },
     {
@@ -25,7 +25,7 @@ const faqs = [
     },
     {
         question: "¿Tienen tienda física?",
-        answer: "Somos una Boutique Digital. Operamos online para ofrecerte los mejores precios del mercado sin costos de alquiler inflados. Garantizamos seguridad y confianza en cada envío.",
+        answer: "Somos una Tienda 100% Online. Operamos digitalmente para ofrecerte los mejores precios del mercado sin costos de alquiler inflados. Garantizamos seguridad y confianza en cada envío.",
         icon: <Smartphone size={20} />
     }
 ];
