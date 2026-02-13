@@ -189,6 +189,7 @@ function App() {
                             <Route path="/checkout" element={
                                 <Checkout cart={cart} clearCart={() => setCart([])} />
                             } />
+                            <Route path="/libro-de-reclamaciones" element={<ComplaintsBook />} />
 
                             <Route path="/help/:slug" element={<InfoPage />} />
                             <Route path="/legal/:slug" element={<InfoPage />} />
