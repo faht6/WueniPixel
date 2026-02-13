@@ -27,29 +27,29 @@
         },
         "colorImages": {
             "Negro": [
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg"
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro1.jpg",
+                "/products/iphone17_negro2.jpg"
             ],
             "Blanco": [
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg"
+                "/products/iphone17_blanco.jpg",
+                "/products/iphone17_blanco1.jpg",
+                "/products/iphone17_blanco2.jpg"
             ],
             "Lavanda": [
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg"
+                "/products/iphone17_lavanda.jpg",
+                "/products/iphone17_lavanda1.jpg",
+                "/products/iphone17_lavanda2.jpg"
             ],
             "Azul Mist": [
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg"
+                "/products/iphone17_azulmist.jpg",
+                "/products/iphone17_azulmist1.jpg",
+                "/products/iphone17_azulmist2.jpg"
             ],
             "Salvia": [
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg",
-                "/products/iphone17.jpg"
+                "/products/iphone17_salvia.jpg",
+                "/products/iphone17_salvia1.jpg",
+                "/products/iphone17_salvia2.jpg"
             ]
         },
         "featured": true
@@ -106,6 +106,23 @@
             "camera": "Triple 48MP (Tele 4x)",
             "battery": "3,988 mAh"
         },
+        "colorImages": {
+            "Deep Blue": [
+                "/products/iphone17pro_deepblue.jpg",
+                "/products/iphone17pro_deepblue1.jpg",
+                "/products/iphone17pro_deepblue2.jpg"
+            ],
+            "Silver": [
+                "/products/iphone17pro_silver.jpg",
+                "/products/iphone17pro_silver1.jpg",
+                "/products/iphone17pro_silver2.jpg"
+            ],
+            "Cosmic Orange": [
+                "/products/iphone17pro_cosmicorange.jpg",
+                "/products/iphone17pro_cosmicorange1.jpg",
+                "/products/iphone17pro_cosmicorange2.jpg"
+            ]
+        },
         "featured": true
     },
     {
@@ -133,6 +150,23 @@
             "processor": "A19 Pro (12GB RAM)",
             "camera": "Triple 48MP (Tele 4x)",
             "battery": "4,832 mAh"
+        },
+        "colorImages": {
+            "Deep Blue": [
+                "/products/iphone17promax_deepblue.jpg",
+                "/products/iphone17promax_deepblue1.jpg",
+                "/products/iphone17promax_deepblue2.jpg"
+            ],
+            "Silver": [
+                "/products/iphone17promax_silver.jpg",
+                "/products/iphone17promax_silver1.jpg",
+                "/products/iphone17promax_silver2.jpg"
+            ],
+            "Cosmic Orange": [
+                "/products/iphone17promax_cosmicorange.jpg",
+                "/products/iphone17promax_cosmicorange1.jpg",
+                "/products/iphone17promax_cosmicorange2.jpg"
+            ]
         },
         "featured": true
     },
