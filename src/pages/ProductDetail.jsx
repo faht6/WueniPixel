@@ -76,6 +76,9 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
         fetchProduct();
     }, [id, getProductById]);
 
+    // Simple price logic for catalog items (already in Soles)
+    const finalPrice = product ? product.price : 0;
+
     const handleAddToCart = () => {
         addToCart({
             ...product,
