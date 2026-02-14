@@ -71,6 +71,13 @@ const ProductList = ({ addToCart, addToCompare, compareList }) => {
                 {loading ? (
                     <div className="loading-container" style={{ padding: '40px', textAlign: 'center' }}>
                         <p>Cargando catálogo...</p>
+                        <p style={{ fontSize: '10px', color: '#666' }}>Intentando leer /catalog.json</p>
+                    </div>
+                ) : error ? (
+                    <div className="error-container" style={{ padding: '40px', textAlign: 'center', color: 'red' }}>
+                        <h3>Error cargando el catálogo</h3>
+                        <p>{error}</p>
+                        <button onClick={() => window.location.reload()}>Reintentar</button>
                     </div>
                 ) : (
                     <>
