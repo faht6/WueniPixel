@@ -79,6 +79,23 @@
             "camera": "Single 48MP Fusion",
             "battery": "3,036 mAh"
         },
+        "colorImages": {
+            "Plata": [
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro.jpg"
+            ],
+            "Grafito": [
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro.jpg"
+            ],
+            "Oro": [
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro.jpg"
+            ]
+        },
         "featured": true
     },
     {
