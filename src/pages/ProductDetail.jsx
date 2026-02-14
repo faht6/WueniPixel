@@ -21,6 +21,29 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
 
     // Estados
     const [added, setAdded] = useState(false);
+    const [debugInfo, setDebugInfo] = useState({ status: 'Testing...', type: '', url: '' });
+
+    useEffect(() => {
+        if (currentImages.length > 0) {
+            const url = currentImages[selectedImageIndex];
+            setDebugInfo(prev => ({ ...prev, url: url, status: 'Fetching...' }));
+
+            fetch(url, { method: 'HEAD' })
+                .then(res => {
+                    setDebugInfo({
+                        url,
+                        status: res.status,
+                        type: res.headers.get('content-type'),
+                        ok: res.ok
+                    });
+                })
+                .catch(err => {
+                    setDebugInfo({ url, status: 'Network Error', error: err.message });
+                });
+        }
+    }, [currentImages, selectedImageIndex]);
+
+    // Dynamic Pricing State
 
     // ...
 
@@ -146,123 +169,133 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                     DEBUG SRC: {currentImages[selectedImageIndex]}
                                 </div>
                             </div>
-                        </div>
 
-                        {/* COLUMNA 2: INFO CENTRAL */}
-                        <div className="info-section-meli">
-                            <span className="condition-text">{product.condition === 'new' ? 'Nuevo' : 'Seminuevo Certificado'}</span>
-                            <h1 className="meli-title">{product.name}</h1>
-
-                            <div className="aesthetics-grade">
-                                <span className="grade-label">Grado Estético:</span>
-                                <span className="grade-value">{product.grade || 'A+ (Impecable)'}</span>
-                            </div>
-
-                            <div className="meli-selector">
-                                <span className="selector-label">Color: <strong>{selectedColor}</strong></span>
-                                {product.colors && (
-                                    <div className="color-options-meli">
-                                        {product.colors.map(color => (
-                                            <button
-                                                key={color}
-                                                className={`color-swatch ${selectedColor === color ? 'active' : ''}`}
-                                                onClick={() => setSelectedColor(color)}
-                                                title={color}
-                                                style={{ backgroundColor: getColorHex(color) }}
-                                            >
-                                                {/* Visual only, text via tooltips/label */}
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="meli-selector">
-                                <span className="selector-label">Almacenamiento: <strong>{selectedStorage}</strong></span>
-                                {product.storage && (
-                                    <div className="storage-options-meli">
-                                        {product.storage.map(size => (
-                                            <button
-                                                key={size}
-                                                className={`storage-chip-meli ${selectedStorage === size ? 'active' : ''}`}
-                                                onClick={() => setSelectedStorage(size)}
-                                            >
-                                                {size}
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="specs-list-meli">
-                                <h3>Lo que tienes que saber de este producto</h3>
-                                <ul>
-                                    <li><strong>Pantalla:</strong> {product.specs.screen}</li>
-                                    <li><strong>Procesador:</strong> {product.specs.processor}</li>
-                                    <li><strong>Cámara:</strong> {product.specs.camera}</li>
-                                    <li><strong>Batería:</strong> {product.specs.battery}</li>
-                                </ul>
-                            </div>
-
-                            <div className="battery-health-badge">
-                                <Battery size={20} color="#50C878" />
-                                <span>Salud de Batería: 85% - 100%</span>
-                            </div>
-                        </div>
-
-                        {/* COLUMNA 3: BUY BOX */}
-                        <div className="buy-box-section">
-                            <div className="buy-box">
-                                <p className="meli-price">{formatCurrency(finalPrice)}</p>
-                                <p className="price-neto-label">Precio neto al contado (Efectivo/Yape/Plin)</p>
-
-                                {/* LOGISTICA LOCAL */}
-                                {['San Vicente', 'Imperial'].includes(district) ? (
-                                    <div className="local-shipping-badge">
-                                        <MapPin size={16} />
-                                        <p>Stock físico en Cañete - <strong>Entrega hoy mismo</strong></p>
-                                    </div>
-                                ) : (
-                                    <p className="meli-shipping-free"><Truck size={16} style={{ display: 'inline', marginRight: '6px' }} />Envío Gratis a todo el Perú</p>
-                                )}
-
-                                <p className="stock-label">Stock disponible (Pocas unidades)</p>
-
-                                <div className="buy-actions">
-                                    <button
-                                        onClick={() => setIsModalOpen(true)}
-                                        className="btn-buy-now"
-                                        style={{
-                                            backgroundColor: '#800020', // Vino Tinto
-                                            textDecoration: 'none',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            fontWeight: 'bold',
-                                            color: 'white',
-                                            border: 'none',
-                                            cursor: 'pointer'
-                                        }}
-                                    >
-                                        Consultar Stock Real
-                                    </button>
-                                    {/* Optional Add to Cart */}
-                                </div>
+                            {/* DIAGNOSTIC PANEL */}
+                            <div style={{ marginTop: '20px', padding: '10px', background: '#333', color: '#0f0', fontFamily: 'monospace', fontSize: '12px' }}>
+                                <strong>NETWORK DIAGNOSTIC:</strong><br />
+                                URL: {debugInfo.url}<br />
+                                Status: {debugInfo.status}<br />
+                                Type: {debugInfo.type || 'N/A'}<br />
+                                {debugInfo.type && debugInfo.type.includes('html') && <span style={{ color: 'red' }}>⚠️ RED ALERT: Returning HTML instead of Image! Routing Issue!</span>}
                             </div>
                         </div>
                     </div>
-                )
+
+                        {/* COLUMNA 2: INFO CENTRAL */}
+                <div className="info-section-meli">
+                    <span className="condition-text">{product.condition === 'new' ? 'Nuevo' : 'Seminuevo Certificado'}</span>
+                    <h1 className="meli-title">{product.name}</h1>
+
+                    <div className="aesthetics-grade">
+                        <span className="grade-label">Grado Estético:</span>
+                        <span className="grade-value">{product.grade || 'A+ (Impecable)'}</span>
+                    </div>
+
+                    <div className="meli-selector">
+                        <span className="selector-label">Color: <strong>{selectedColor}</strong></span>
+                        {product.colors && (
+                            <div className="color-options-meli">
+                                {product.colors.map(color => (
+                                    <button
+                                        key={color}
+                                        className={`color-swatch ${selectedColor === color ? 'active' : ''}`}
+                                        onClick={() => setSelectedColor(color)}
+                                        title={color}
+                                        style={{ backgroundColor: getColorHex(color) }}
+                                    >
+                                        {/* Visual only, text via tooltips/label */}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="meli-selector">
+                        <span className="selector-label">Almacenamiento: <strong>{selectedStorage}</strong></span>
+                        {product.storage && (
+                            <div className="storage-options-meli">
+                                {product.storage.map(size => (
+                                    <button
+                                        key={size}
+                                        className={`storage-chip-meli ${selectedStorage === size ? 'active' : ''}`}
+                                        onClick={() => setSelectedStorage(size)}
+                                    >
+                                        {size}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="specs-list-meli">
+                        <h3>Lo que tienes que saber de este producto</h3>
+                        <ul>
+                            <li><strong>Pantalla:</strong> {product.specs.screen}</li>
+                            <li><strong>Procesador:</strong> {product.specs.processor}</li>
+                            <li><strong>Cámara:</strong> {product.specs.camera}</li>
+                            <li><strong>Batería:</strong> {product.specs.battery}</li>
+                        </ul>
+                    </div>
+
+                    <div className="battery-health-badge">
+                        <Battery size={20} color="#50C878" />
+                        <span>Salud de Batería: 85% - 100%</span>
+                    </div>
+                </div>
+
+                {/* COLUMNA 3: BUY BOX */}
+                <div className="buy-box-section">
+                    <div className="buy-box">
+                        <p className="meli-price">{formatCurrency(finalPrice)}</p>
+                        <p className="price-neto-label">Precio neto al contado (Efectivo/Yape/Plin)</p>
+
+                        {/* LOGISTICA LOCAL */}
+                        {['San Vicente', 'Imperial'].includes(district) ? (
+                            <div className="local-shipping-badge">
+                                <MapPin size={16} />
+                                <p>Stock físico en Cañete - <strong>Entrega hoy mismo</strong></p>
+                            </div>
+                        ) : (
+                            <p className="meli-shipping-free"><Truck size={16} style={{ display: 'inline', marginRight: '6px' }} />Envío Gratis a todo el Perú</p>
+                        )}
+
+                        <p className="stock-label">Stock disponible (Pocas unidades)</p>
+
+                        <div className="buy-actions">
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="btn-buy-now"
+                                style={{
+                                    backgroundColor: '#800020', // Vino Tinto
+                                    textDecoration: 'none',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontWeight: 'bold',
+                                    color: 'white',
+                                    border: 'none',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                Consultar Stock Real
+                            </button>
+                            {/* Optional Add to Cart */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            )
                 }
 
-                <ReservationModal
-                    isOpen={isModalOpen}
-                    onClose={handleReservationClose}
-                    product={product}
-                    selectedColor={selectedColor}
-                    selectedStorage={selectedStorage}
-                />
+            <ReservationModal
+                isOpen={isModalOpen}
+                onClose={handleReservationClose}
+                product={product}
+                selectedColor={selectedColor}
+                selectedStorage={selectedStorage}
+            />
 
-            </div >
+        </div >
         </PageTransition >
     );
 };
