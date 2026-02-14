@@ -23,27 +23,6 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [reservationSuccess, setReservationSuccess] = useState(false);
     const [added, setAdded] = useState(false);
-    const [debugInfo, setDebugInfo] = useState({ status: 'Testing...', type: '', url: '' });
-
-    useEffect(() => {
-        if (currentImages.length > 0) {
-            const url = currentImages[selectedImageIndex];
-            setDebugInfo(prev => ({ ...prev, url: url, status: 'Fetching...' }));
-
-            fetch(url, { method: 'HEAD' })
-                .then(res => {
-                    setDebugInfo({
-                        url,
-                        status: res.status,
-                        type: res.headers.get('content-type'),
-                        ok: res.ok
-                    });
-                })
-                .catch(err => {
-                    setDebugInfo({ url, status: 'Network Error', error: err.message });
-                });
-        }
-    }, [currentImages, selectedImageIndex]);
 
     // Dynamic Pricing State
 
@@ -147,41 +126,17 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                     </div>
                                 ))}
                             </div>
-                            <div className="main-image-container" style={{ position: 'relative' }}>
+                            <div className="main-image-container">
                                 <img
                                     src={currentImages[selectedImageIndex]}
                                     alt={product.name}
                                     className="main-image-meli"
                                     onError={(e) => {
-                                        e.target.style.border = '5px solid red';
                                         console.error('IMG ERROR:', e.target.src);
+                                        // Optional fallback if needed in future
+                                        // e.target.src = '/placeholder.jpg';
                                     }}
                                 />
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: '10px',
-                                    left: '10px',
-                                    background: 'rgba(255, 0, 0, 0.9)',
-                                    color: 'white',
-                                    padding: '10px',
-                                    zIndex: 9999,
-                                    fontSize: '14px',
-                                    fontWeight: 'bold',
-                                    border: '2px solid white',
-                                    borderRadius: '4px',
-                                    pointerEvents: 'none'
-                                }}>
-                                    DEBUG SRC: {currentImages[selectedImageIndex]}
-                                </div>
-                            </div>
-
-                            {/* DIAGNOSTIC PANEL */}
-                            <div style={{ marginTop: '20px', padding: '10px', background: '#333', color: '#0f0', fontFamily: 'monospace', fontSize: '12px' }}>
-                                <strong>NETWORK DIAGNOSTIC:</strong><br />
-                                URL: {debugInfo.url}<br />
-                                Status: {debugInfo.status}<br />
-                                Type: {debugInfo.type || 'N/A'}<br />
-                                {debugInfo.type && debugInfo.type.includes('html') && <span style={{ color: 'red' }}>⚠️ RED ALERT: Returning HTML instead of Image! Routing Issue!</span>}
                             </div>
                         </div>
 
