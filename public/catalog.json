@@ -350,7 +350,7 @@
         "brand": "Apple",
         "price": 5799,
         "condition": "new",
-        "image": "/products/iphone15promax.jpg",
+        "image": "/products/iphone15promax_naturaltitanium.jpg",
         "description": "Titanio aeroespacial. El iPhone más ligero Pro.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -370,6 +370,28 @@
             "camera": "48MP Teleobjetivo 5x",
             "battery": "4441 mAh"
         },
+        "colorImages": {
+            "Natural Titanium": [
+                "/products/iphone15promax_naturaltitanium.jpg",
+                "/products/iphone15promax_naturaltitanium1.jpg",
+                "/products/iphone15promax_naturaltitanium2.jpg"
+            ],
+            "Blue Titanium": [
+                "/products/iphone15promax_bluetitanium.jpg",
+                "/products/iphone15promax_bluetitanium1.jpg",
+                "/products/iphone15promax_bluetitanium2.jpg"
+            ],
+            "White Titanium": [
+                "/products/iphone15promax_whitetitanium.jpg",
+                "/products/iphone15promax_whitetitanium1.jpg",
+                "/products/iphone15promax_whitetitanium2.jpg"
+            ],
+            "Black Titanium": [
+                "/products/iphone15promax_blacktitanium.jpg",
+                "/products/iphone15promax_blacktitanium1.jpg",
+                "/products/iphone15promax_blacktitanium2.jpg"
+            ]
+        },
         "featured": true
     },
     {
@@ -378,7 +400,7 @@
         "brand": "Apple",
         "price": 3899,
         "condition": "new",
-        "image": "/products/iphone15.jpg",
+        "image": "/products/iphone15pro_titanionegro.jpg",
         "description": "Potencia compacta en Titanio. Chip A17 Pro.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -399,6 +421,28 @@
             "camera": "48MP + 12MP + 12MP (3x)",
             "battery": "3,274 mAh"
         },
+        "colorImages": {
+            "Titanio Negro": [
+                "/products/iphone15pro_titanionegro.jpg",
+                "/products/iphone15pro_titanionegro1.jpg",
+                "/products/iphone15pro_titanionegro2.jpg"
+            ],
+            "Blanco": [
+                "/products/iphone15pro_blanco.jpg",
+                "/products/iphone15pro_blanco1.jpg",
+                "/products/iphone15pro_blanco2.jpg"
+            ],
+            "Azul": [
+                "/products/iphone15pro_azul.jpg",
+                "/products/iphone15pro_azul1.jpg",
+                "/products/iphone15pro_azul2.jpg"
+            ],
+            "Natural": [
+                "/products/iphone15pro_natural.jpg",
+                "/products/iphone15pro_natural1.jpg",
+                "/products/iphone15pro_natural2.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -407,7 +451,7 @@
         "brand": "Apple",
         "price": 3599,
         "condition": "new",
-        "image": "/products/iphone15.jpg",
+        "image": "/products/iphone15_black.jpg",
         "description": "USB-C y Dynamic Island para todos.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -427,6 +471,33 @@
             "processor": "A16 Bionic",
             "camera": "48MP",
             "battery": "3349 mAh"
+        },
+        "colorImages": {
+            "Black": [
+                "/products/iphone15_black.jpg",
+                "/products/iphone15_black1.jpg",
+                "/products/iphone15_black2.jpg"
+            ],
+            "Blue": [
+                "/products/iphone15_blue.jpg",
+                "/products/iphone15_blue1.jpg",
+                "/products/iphone15_blue2.jpg"
+            ],
+            "Green": [
+                "/products/iphone15_green.jpg",
+                "/products/iphone15_green1.jpg",
+                "/products/iphone15_green2.jpg"
+            ],
+            "Yellow": [
+                "/products/iphone15_yellow.jpg",
+                "/products/iphone15_yellow1.jpg",
+                "/products/iphone15_yellow2.jpg"
+            ],
+            "Pink": [
+                "/products/iphone15_pink.jpg",
+                "/products/iphone15_pink1.jpg",
+                "/products/iphone15_pink2.jpg"
+            ]
         },
         "featured": false
     },
