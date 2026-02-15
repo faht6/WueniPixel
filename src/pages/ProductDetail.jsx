@@ -38,7 +38,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                 filledImages.push(product.image);
             }
             setCurrentImages(filledImages.slice(0, 3));
-            setSelectedImageIndex(0);
+            // Removed: setSelectedImageIndex(0); to persist view across color changes
         }
     }, [product, selectedColor]);
 
@@ -50,6 +50,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
             if (fetchedProduct && fetchedProduct.colors && fetchedProduct.colors.length > 0) {
                 setSelectedColor(fetchedProduct.colors[0]);
                 setSelectedStorage(fetchedProduct.storage ? fetchedProduct.storage[0] : '');
+                setSelectedImageIndex(0); // Reset image index on new product load
             }
         };
         fetchProduct();
