@@ -5,7 +5,7 @@
     /* Softer corners */
     overflow: hidden;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     /* Remove Border, use Shadow for depth */
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -20,9 +20,10 @@
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    z-index: 10;
 }
 
 .card-image-container {
@@ -47,18 +48,20 @@
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
     /* Remove mix-blend-mode if images are PNGs, keep if JPGs on white */
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    will-change: transform;
 }
 
 [data-theme='dark'] .card-image {
     mix-blend-mode: normal;
 }
 
-/* APPLE-STYLE HOVER: Slight Zoom + Lift */
+/* APPLE-STYLE HOVER: Slight Zoom + Lift + Pop */
 .product-card:hover .card-image {
-    transform: scale(1.08) translateY(-5px);
+    transform: scale(1.12) translateY(-8px);
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2)) contrast(1.05);
 }
 
 .card-content {

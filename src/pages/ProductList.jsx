@@ -8,7 +8,7 @@ import { useProducts } from '../context/ProductContext';
 import './ProductList.css';
 
 const ProductList = ({ addToCart, addToCompare, compareList }) => {
-    const { products, loading } = useProducts();
+    const { products, loading, error } = useProducts();
     const location = useLocation();
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
