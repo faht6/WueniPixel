@@ -16,7 +16,7 @@ const Reveal = ({ children, width = 'fit-content', delay = 0 }) => {
         <div ref={ref} style={{ width, overflow: 'hidden' }}>
             <motion.div
                 variants={{
-                    hidden: { opacity: 0, y: 75 },
+                    hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0 },
                 }}
                 initial="hidden"

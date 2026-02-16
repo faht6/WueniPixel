@@ -12,8 +12,8 @@
   --line-height-base: 1.5;
 
   /* Colorimetría (Light Mode Default) */
-  --color-background: #F8F9FA;
-  /* Boutique White */
+  /* Boutique White Smoke */
+  --color-background: #F5F5F5;
   --color-surface-secondary: #FFFFFF;
   --color-text-primary: #111111;
   --color-text-secondary: #555555;
