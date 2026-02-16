@@ -12,14 +12,14 @@ const fadeUp = (delay = 0) => ({
     }
 });
 
-const phoneReveal = (delay = 0, x = 0) => ({
-    hidden: { opacity: 0, y: 80, x, scale: 0.92 },
+const phoneSlide = (delay = 0, xStart = 0, rotateStart = 0) => ({
+    hidden: { opacity: 0, y: 100, x: xStart, rotate: rotateStart + 5 },
     visible: {
         opacity: 1,
         y: 0,
         x: 0,
-        scale: 1,
-        transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay }
+        rotate: rotateStart,
+        transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay }
     }
 });
 
@@ -28,11 +28,9 @@ const HeroSection = () => {
         <section className="hero-section">
             {/* Background */}
             <div className="hero-bg" />
-
-            {/* Subtle glow behind phone area */}
             <div className="hero-composition-glow" />
 
-            {/* ── Centered Text ── */}
+            {/* ── Text ── */}
             <div className="hero-text-area">
                 <motion.p
                     className="hero-eyebrow"
@@ -80,53 +78,55 @@ const HeroSection = () => {
 
             {/* ── Phone Composition ── */}
             <div className="hero-phones-area">
-                {/* Phone 1: Deep Blue — left, tilted */}
-                <motion.div
-                    className="hero-phone hero-phone-left"
-                    variants={phoneReveal(0.5, -30)}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover={{ y: -12, scale: 1.03, transition: { duration: 0.35 } }}
-                >
-                    <img
-                        src="/products/iphone17promax_deepblue.jpg"
-                        alt="iPhone 17 Pro Max — Deep Blue"
-                        loading="eager"
-                    />
-                    <div className="phone-shine" />
-                </motion.div>
+                <div className="hero-phones-row">
+                    {/* Left — Deep Blue, tilted left */}
+                    <motion.div
+                        className="hero-phone hero-phone-left"
+                        variants={phoneSlide(0.5, -40, -5)}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover={{ y: -10, scale: 1.03, rotate: -2, transition: { duration: 0.35 } }}
+                    >
+                        <img
+                            src="/products/iphone17promax_deepblue.jpg"
+                            alt="iPhone 17 Pro Max — Deep Blue"
+                            loading="eager"
+                        />
+                        <div className="phone-shine" />
+                    </motion.div>
 
-                {/* Phone 2: Cosmic Orange — center, dominant */}
-                <motion.div
-                    className="hero-phone hero-phone-center"
-                    variants={phoneReveal(0.6, 0)}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover={{ y: -16, scale: 1.04, transition: { duration: 0.35 } }}
-                >
-                    <img
-                        src="/products/iphone17promax_cosmicorange.jpg"
-                        alt="iPhone 17 Pro Max — Cosmic Orange"
-                        loading="eager"
-                    />
-                    <div className="phone-shine" />
-                </motion.div>
+                    {/* Center — Cosmic Orange, dominant */}
+                    <motion.div
+                        className="hero-phone hero-phone-center"
+                        variants={phoneSlide(0.6, 0, 0)}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover={{ y: -14, scale: 1.04, transition: { duration: 0.35 } }}
+                    >
+                        <img
+                            src="/products/iphone17promax_cosmicorange.jpg"
+                            alt="iPhone 17 Pro Max — Cosmic Orange"
+                            loading="eager"
+                        />
+                        <div className="phone-shine" />
+                    </motion.div>
 
-                {/* Phone 3: Lavanda — right, tilted */}
-                <motion.div
-                    className="hero-phone hero-phone-right"
-                    variants={phoneReveal(0.7, 30)}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover={{ y: -12, scale: 1.03, transition: { duration: 0.35 } }}
-                >
-                    <img
-                        src="/products/iphone17_lavanda.jpg"
-                        alt="iPhone 17 — Lavanda"
-                        loading="eager"
-                    />
-                    <div className="phone-shine" />
-                </motion.div>
+                    {/* Right — Lavanda, tilted right */}
+                    <motion.div
+                        className="hero-phone hero-phone-right"
+                        variants={phoneSlide(0.7, 40, 5)}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover={{ y: -10, scale: 1.03, rotate: 2, transition: { duration: 0.35 } }}
+                    >
+                        <img
+                            src="/products/iphone17_lavanda.jpg"
+                            alt="iPhone 17 — Lavanda"
+                            loading="eager"
+                        />
+                        <div className="phone-shine" />
+                    </motion.div>
+                </div>
             </div>
 
             {/* Bottom gradient fade */}
