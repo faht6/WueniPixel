@@ -1,5 +1,6 @@
 /* ============================================
-   HERO SECTION — Mesh Gradient + Floating Product
+   HERO SECTION — Light, Premium, Minimal
+   Palette: #FFFFFF / #F8F9FA / #3B82F6 / #8B5CF6
    ============================================ */
 
 .hero-section {
@@ -10,55 +11,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F4FF 60%, #F8F9FA 100%);
 }
 
-/* 1. MESH GRADIENT BACKGROUND */
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(78, 67, 118, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 60% at 10% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
-        linear-gradient(180deg, #0f0a1a 0%, #1a1035 30%, #0d0b1e 60%, #06050e 100%);
-}
-
-/* 2. ANIMATED BLUR SHAPES */
+/* ── Decorative Blur Shapes ── */
 .blur-shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.5;
-    z-index: 1;
     pointer-events: none;
+    z-index: 0;
 }
 
 .blur-shape-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, transparent 70%);
-    top: -10%;
-    right: 10%;
-    animation: drift1 12s ease-in-out infinite alternate;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+    filter: blur(100px);
+    top: -15%;
+    left: -5%;
+    animation: drift1 14s ease-in-out infinite alternate;
 }
 
 .blur-shape-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
-    bottom: 0%;
-    left: 5%;
-    animation: drift2 15s ease-in-out infinite alternate;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.10) 0%, transparent 70%);
+    filter: blur(120px);
+    bottom: -10%;
+    right: -5%;
+    animation: drift2 16s ease-in-out infinite alternate;
 }
 
 .blur-shape-3 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
-    top: 40%;
-    left: 50%;
-    animation: drift3 10s ease-in-out infinite alternate;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    filter: blur(90px);
+    top: 50%;
+    left: 45%;
+    animation: drift3 12s ease-in-out infinite alternate;
 }
 
 @keyframes drift1 {
@@ -67,7 +58,7 @@
     }
 
     100% {
-        transform: translate(-60px, 40px) scale(1.15);
+        transform: translate(40px, 30px) scale(1.1);
     }
 }
 
@@ -77,7 +68,7 @@
     }
 
     100% {
-        transform: translate(50px, -30px) scale(1.1);
+        transform: translate(-50px, -20px) scale(1.08);
     }
 }
 
@@ -87,25 +78,25 @@
     }
 
     100% {
-        transform: translate(-40px, -50px) scale(1.2);
+        transform: translate(-30px, -40px) scale(1.15);
     }
 }
 
-/* 3. GRID PATTERN OVERLAY */
+/* ── Grid Pattern ── */
 .hero-grid-pattern {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 0;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+        linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);
     pointer-events: none;
 }
 
-/* 4. MAIN CONTENT LAYOUT */
+/* ── Main Layout ── */
 .hero-content {
     position: relative;
     z-index: 10;
@@ -116,36 +107,36 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 2.5rem;
     padding-top: calc(var(--header-height, 48px) + 2rem);
 }
 
-/* 5. TEXT BLOCK */
+/* ── Text Block ── */
 .hero-text {
     flex: 1;
-    max-width: 560px;
+    max-width: 540px;
 }
 
 .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(167, 139, 250, 0.9);
+    color: #3B82F6;
     margin-bottom: 1.5rem;
-    padding: 6px 14px;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 7px 16px;
+    background: #EFF6FF;
+    border: 1px solid #DBEAFE;
     border-radius: 50px;
 }
 
 .hero-eyebrow-dot {
     width: 6px;
     height: 6px;
-    background: #a78bfa;
+    background: #3B82F6;
     border-radius: 50%;
     animation: pulse-dot 2s ease-in-out infinite;
 }
@@ -159,42 +150,47 @@
     }
 
     50% {
-        opacity: 0.5;
-        transform: scale(1.3);
+        opacity: 0.4;
+        transform: scale(1.4);
     }
 }
 
 .hero-title {
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.08;
     letter-spacing: -0.03em;
+    color: #1F2937;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 40%, #a78bfa 70%, #c084fc 100%);
+}
+
+.hero-title-accent {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+    color: #6B7280;
+    line-height: 1.7;
     margin-bottom: 2.5rem;
-    max-width: 440px;
+    max-width: 420px;
 }
 
-/* 6. CTA BUTTON */
+/* ── CTA Button ── */
 .hero-cta {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 16px 36px;
+    padding: 15px 34px;
     font-size: 1rem;
     font-weight: 600;
-    color: white;
-    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #8b5cf6 100%);
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #3B82F6 0%, #7C3AED 50%, #8B5CF6 100%);
+    background-size: 200% 200%;
     border: none;
     border-radius: 50px;
     text-decoration: none;
@@ -202,21 +198,23 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.25);
 }
 
 .hero-cta:hover {
-    transform: scale(1.06) translateY(-2px);
-    box-shadow: 0 12px 40px rgba(124, 58, 237, 0.5);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 12px 36px rgba(59, 130, 246, 0.4);
+    background-position: 100% 0;
 }
 
+/* Shine sweep on hover */
 .hero-cta::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
     transform: translateX(-100%);
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
 .hero-cta:hover::before {
@@ -228,10 +226,10 @@
 }
 
 .hero-cta:hover .hero-cta-icon {
-    transform: translateX(4px);
+    transform: translateX(5px);
 }
 
-/* 7. IMAGE BLOCK */
+/* ── Image Block ── */
 .hero-image-block {
     flex: 1;
     display: flex;
@@ -243,30 +241,51 @@
 .hero-product-container {
     position: relative;
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
+}
+
+/* The floating card behind the image */
+.hero-product-card {
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 2.5rem;
+    box-shadow:
+        0 25px 60px rgba(59, 130, 246, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: heroFloat 6s ease-in-out infinite;
+}
+
+.hero-product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 30px 70px rgba(59, 130, 246, 0.15),
+        0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
 .hero-product-img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 20px 50px rgba(139, 92, 246, 0.25)) drop-shadow(0 0 80px rgba(99, 102, 241, 0.15));
-    animation: heroFloat 6s ease-in-out infinite;
-    position: relative;
-    z-index: 2;
-    border-radius: 24px;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
 }
 
+.hero-product-card:hover .hero-product-img {
+    transform: scale(1.02);
+}
+
+/* Glow behind the card */
 .hero-image-glow {
     position: absolute;
-    width: 80%;
-    height: 80%;
-    top: 10%;
-    left: 10%;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(99, 102, 241, 0.1) 40%, transparent 70%);
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.10) 0%, rgba(139, 92, 246, 0.06) 40%, transparent 70%);
     filter: blur(60px);
-    z-index: 1;
-    animation: glowPulse 4s ease-in-out infinite alternate;
+    z-index: -1;
+    animation: glowPulse 5s ease-in-out infinite alternate;
 }
 
 @keyframes heroFloat {
@@ -275,7 +294,7 @@
     }
 
     50% {
-        transform: translateY(-16px);
+        transform: translateY(-14px);
     }
 
     100% {
@@ -285,7 +304,7 @@
 
 @keyframes glowPulse {
     0% {
-        opacity: 0.6;
+        opacity: 0.5;
         transform: scale(0.95);
     }
 
@@ -295,63 +314,63 @@
     }
 }
 
-/* 8. BOTTOM GRADIENT FADE */
+/* ── Bottom Fade ── */
 .hero-bottom-fade {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 120px;
-    background: linear-gradient(to top, var(--color-background, #F5F5F5) 0%, transparent 100%);
+    height: 100px;
+    background: linear-gradient(to top, #F5F5F5 0%, transparent 100%);
     z-index: 5;
     pointer-events: none;
 }
 
-/* 9. SCROLL INDICATOR */
+/* ── Scroll Indicator ── */
 .hero-scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.7rem;
+    gap: 6px;
+    color: #9CA3AF;
+    font-size: 0.65rem;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(167, 139, 250, 0.6), transparent);
+    width: 1.5px;
+    height: 36px;
+    background: linear-gradient(to bottom, #3B82F6, transparent);
+    border-radius: 2px;
     animation: scrollPulse 2s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
     0% {
-        opacity: 0.3;
-        height: 20px;
+        opacity: 0.2;
+        height: 18px;
     }
 
     50% {
-        opacity: 1;
-        height: 40px;
+        opacity: 0.8;
+        height: 36px;
     }
 
     100% {
-        opacity: 0.3;
-        height: 20px;
+        opacity: 0.2;
+        height: 18px;
     }
 }
 
 /* ============================================
    RESPONSIVE
    ============================================ */
-
 @media (max-width: 768px) {
     .hero-section {
         min-height: 100svh;
@@ -360,8 +379,8 @@
     .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 2rem;
-        padding-top: calc(var(--header-height, 48px) + 1rem);
+        gap: 2.5rem;
+        padding: calc(var(--header-height, 48px) + 1.5rem) 1.5rem 4rem;
         justify-content: center;
     }
 
@@ -372,38 +391,45 @@
 
     .hero-image-block {
         order: 1;
-        max-width: 260px;
+    }
+
+    .hero-product-container {
+        max-width: 240px;
+    }
+
+    .hero-product-card {
+        padding: 1.5rem;
     }
 
     .hero-title {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(2rem, 8vw, 2.8rem);
     }
 
     .hero-subtitle {
         font-size: 1rem;
         margin: 0 auto 2rem;
-        max-width: 360px;
+        max-width: 340px;
     }
 
     .hero-eyebrow {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         margin: 0 auto 1rem;
     }
 
     .hero-cta {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
         justify-content: center;
     }
 
     .blur-shape-1 {
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
     }
 
     .blur-shape-2 {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
 
     .blur-shape-3 {
@@ -412,19 +438,43 @@
     }
 
     .hero-scroll-indicator {
-        bottom: 20px;
+        bottom: 16px;
     }
 
     .hero-bottom-fade {
-        height: 80px;
+        height: 60px;
     }
 }
 
-/* Dark mode already covered by design (dark bg). Light mode override if needed */
-[data-theme='light'] .hero-bottom-fade {
-    background: linear-gradient(to top, #F5F5F5 0%, transparent 100%);
+/* ── Theme Overrides ── */
+[data-theme='dark'] .hero-section {
+    background: linear-gradient(180deg, #0a0a0a 0%, #111827 60%, #000000 100%);
+}
+
+[data-theme='dark'] .hero-title {
+    color: #F9FAFB;
+}
+
+[data-theme='dark'] .hero-subtitle {
+    color: #9CA3AF;
+}
+
+[data-theme='dark'] .hero-eyebrow {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+[data-theme='dark'] .hero-product-card {
+    background: #1F2937;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme='dark'] .hero-bottom-fade {
     background: linear-gradient(to top, #000000 0%, transparent 100%);
+}
+
+[data-theme='dark'] .hero-grid-pattern {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
