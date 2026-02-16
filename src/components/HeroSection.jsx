@@ -4,7 +4,7 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 import './HeroSection.css';
 
 const fadeUp = (delay = 0) => ({
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 28 },
     visible: {
         opacity: 1,
         y: 0,
@@ -12,124 +12,159 @@ const fadeUp = (delay = 0) => ({
     }
 });
 
-const phoneSlide = (delay = 0, xStart = 0, rotateStart = 0) => ({
-    hidden: { opacity: 0, y: 100, x: xStart, rotate: rotateStart + 5 },
+const phoneReveal = (delay = 0, xStart = 0, rotStart = 0) => ({
+    hidden: { opacity: 0, y: 70, x: xStart, rotate: rotStart + 8, scale: 0.9 },
     visible: {
         opacity: 1,
         y: 0,
         x: 0,
-        rotate: rotateStart,
-        transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay }
+        rotate: rotStart,
+        scale: 1,
+        transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1], delay }
     }
 });
+
+const bounceIn = {
+    hidden: { opacity: 0, scale: 0.5, y: 10 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: [0.34, 1.56, 0.64, 1], delay: 0.1 }
+    }
+};
 
 const HeroSection = () => {
     return (
         <section className="hero-section">
             {/* Background */}
             <div className="hero-bg" />
-            <div className="hero-composition-glow" />
 
-            {/* ── Text ── */}
-            <div className="hero-text-area">
-                <motion.p
-                    className="hero-eyebrow"
-                    variants={fadeUp(0.05)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    WueniPixel · Boutique Tecnológica
-                </motion.p>
+            {/* Brand accent blurs */}
+            <div className="hero-accent hero-accent-1" />
+            <div className="hero-accent hero-accent-2" />
 
-                <motion.h1
-                    className="hero-title"
-                    variants={fadeUp(0.15)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    iPhone <span className="hero-title-accent">17</span>
-                </motion.h1>
-
-                <motion.p
-                    className="hero-subtitle"
-                    variants={fadeUp(0.3)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    Conoce la nueva generación de iPhone. Disponible ahora en Cañete.
-                </motion.p>
-
-                <motion.div
-                    className="hero-buttons"
-                    variants={fadeUp(0.45)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <Link to="/catalog?brand=Apple" className="hero-btn-primary">
-                        Ver Colección
-                        <ArrowRight size={16} className="hero-btn-icon" />
-                    </Link>
-                    <Link to="/catalog" className="hero-btn-secondary">
-                        Explorar Todo
-                        <ChevronRight size={16} />
-                    </Link>
-                </motion.div>
-            </div>
-
-            {/* ── Phone Composition ── */}
-            <div className="hero-phones-area">
-                <div className="hero-phones-row">
-                    {/* Left — Deep Blue, tilted left */}
+            {/* Main Content — Asymmetric */}
+            <div className="hero-layout">
+                {/* ── Left: Text (35%) ── */}
+                <div className="hero-text-col">
                     <motion.div
-                        className="hero-phone hero-phone-left"
-                        variants={phoneSlide(0.5, -40, -5)}
+                        className="hero-badge"
+                        variants={bounceIn}
                         initial="hidden"
                         animate="visible"
-                        whileHover={{ y: -10, scale: 1.03, rotate: -2, transition: { duration: 0.35 } }}
                     >
-                        <img
-                            src="/products/iphone17promax_deepblue.jpg"
-                            alt="iPhone 17 Pro Max — Deep Blue"
-                            loading="eager"
-                        />
-                        <div className="phone-shine" />
+                        <span className="hero-badge-dot" />
+                        NUEVO EN WUENIPIXEL
                     </motion.div>
 
-                    {/* Center — Cosmic Orange, dominant */}
-                    <motion.div
-                        className="hero-phone hero-phone-center"
-                        variants={phoneSlide(0.6, 0, 0)}
+                    <motion.h1
+                        className="hero-title"
+                        variants={fadeUp(0.15)}
                         initial="hidden"
                         animate="visible"
-                        whileHover={{ y: -14, scale: 1.04, transition: { duration: 0.35 } }}
+                    >
+                        iPhone{' '}
+                        <span className="hero-gradient-text">17</span>
+                        <br />
+                        Pro Max
+                    </motion.h1>
+
+                    <motion.p
+                        className="hero-desc"
+                        variants={fadeUp(0.3)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        Titanio. Chip A19 Pro. La cámara más avanzada jamás creada.
+                        Ahora disponible en Cañete con entrega inmediata.
+                    </motion.p>
+
+                    <motion.div
+                        className="hero-ctas"
+                        variants={fadeUp(0.45)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <Link to="/catalog?brand=Apple" className="hero-cta-primary">
+                            <span>Ver Colección</span>
+                            <ArrowRight size={16} className="cta-arrow" />
+                        </Link>
+                        <Link to="/catalog" className="hero-cta-outline">
+                            <span>Explorar Todo</span>
+                            <ChevronRight size={16} className="cta-chevron" />
+                        </Link>
+                    </motion.div>
+                </div>
+
+                {/* ── Right: Product Composition (65%) ── */}
+                <div className="hero-product-col">
+                    {/* Phone A — Cosmic Orange, back view, dominant */}
+                    <motion.div
+                        className="hero-phone phone-a"
+                        variants={phoneReveal(0.4, 40, -6)}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover={{
+                            y: -14,
+                            scale: 1.04,
+                            rotate: -3,
+                            transition: { duration: 0.4 }
+                        }}
                     >
                         <img
                             src="/products/iphone17promax_cosmicorange.jpg"
-                            alt="iPhone 17 Pro Max — Cosmic Orange"
+                            alt="iPhone 17 Pro Max — Cosmic Orange, vista trasera"
                             loading="eager"
                         />
-                        <div className="phone-shine" />
                     </motion.div>
 
-                    {/* Right — Lavanda, tilted right */}
+                    {/* Phone B — Deep Blue alternate angle */}
                     <motion.div
-                        className="hero-phone hero-phone-right"
-                        variants={phoneSlide(0.7, 40, 5)}
+                        className="hero-phone phone-b"
+                        variants={phoneReveal(0.55, 30, 4)}
                         initial="hidden"
                         animate="visible"
-                        whileHover={{ y: -10, scale: 1.03, rotate: 2, transition: { duration: 0.35 } }}
+                        whileHover={{
+                            y: -12,
+                            scale: 1.04,
+                            rotate: 1,
+                            transition: { duration: 0.4 }
+                        }}
                     >
                         <img
-                            src="/products/iphone17_lavanda.jpg"
-                            alt="iPhone 17 — Lavanda"
+                            src="/products/iphone17promax_deepblue.jpg"
+                            alt="iPhone 17 Pro Max — Deep Blue, vista trasera"
                             loading="eager"
                         />
-                        <div className="phone-shine" />
                     </motion.div>
+
+                    {/* Phone C — Silver, third accent (optional, smaller) */}
+                    <motion.div
+                        className="hero-phone phone-c"
+                        variants={phoneReveal(0.7, 20, 8)}
+                        initial="hidden"
+                        animate="visible"
+                        whileHover={{
+                            y: -10,
+                            scale: 1.05,
+                            rotate: 5,
+                            transition: { duration: 0.4 }
+                        }}
+                    >
+                        <img
+                            src="/products/iphone17promax_silver.jpg"
+                            alt="iPhone 17 Pro Max — Silver"
+                            loading="eager"
+                        />
+                    </motion.div>
+
+                    {/* Glow behind the composition */}
+                    <div className="product-glow" />
                 </div>
             </div>
 
-            {/* Bottom gradient fade */}
+            {/* Bottom fade */}
             <div className="hero-bottom-fade" />
         </section>
     );
