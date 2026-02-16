@@ -1,33 +1,47 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import { Search, Filter, SlidersHorizontal, ChevronDown, Check } from 'lucide-react';
-import Reveal from '../components/Reveal';
+import { Search, SlidersHorizontal, ChevronDown, Sparkles, Smartphone, Battery } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import { useProducts } from '../context/ProductContext';
+import { motion, AnimatePresence } from 'framer-motion';
 import './ProductList.css';
 
 const ProductList = ({ addToCart, addToCompare, compareList }) => {
     const { products, loading, error } = useProducts();
-    const location = useLocation();
-    const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
+    // States
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedBrand, setSelectedBrand] = useState('All');
+    const [selectedCondition, setSelectedCondition] = useState('All');
     const [sortBy, setSortBy] = useState('featured');
     const [showSortMenu, setShowSortMenu] = useState(false);
 
-    // Sincronizar estado con URL al cargar    // Filtrado y Ordenamiento
+    // Sync with URL on load
     useEffect(() => {
         const brandParam = searchParams.get('brand');
-        if (brandParam) {
-            setSelectedBrand(brandParam);
-        } else {
-            setSelectedBrand('All');
-        }
+        const searchParam = searchParams.get('q');
+
+        if (brandParam) setSelectedBrand(brandParam);
+        if (searchParam) setSearchTerm(searchParam);
     }, [searchParams]);
 
+    // Derived Data
     const brands = ['All', ...new Set(products.map(p => p.brand))];
+    const conditions = ['All', 'excellent', 'good', 'fair']; // Based on typical data
+
+    // Handlers
+    const handleSearch = (e) => {
+        const term = e.target.value;
+        setSearchTerm(term);
+        if (term) {
+            searchParams.set('q', term);
+        } else {
+            searchParams.delete('q');
+        }
+        setSearchParams(searchParams);
+    };
 
     const handleBrandChange = (brand) => {
         setSelectedBrand(brand);
@@ -47,11 +61,15 @@ const ProductList = ({ addToCart, addToCompare, compareList }) => {
         }
     };
 
-    // Filtrado
+    // Filter Logic
     const filteredProducts = products.filter(product => {
         const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesBrand = selectedBrand === 'All' || product.brand === selectedBrand;
-        return matchesSearch && matchesBrand;
+        const matchesCondition = selectedCondition === 'All' ||
+            (product.grade && product.grade.toLowerCase().includes(selectedCondition.toLowerCase())) ||
+            (product.condition && product.condition.toLowerCase() === selectedCondition.toLowerCase());
+
+        return matchesSearch && matchesBrand && matchesCondition;
     }).sort((a, b) => {
         if (sortBy === 'price-asc') return a.price - b.price;
         if (sortBy === 'price-desc') return b.price - a.price;
@@ -64,87 +82,131 @@ const ProductList = ({ addToCart, addToCompare, compareList }) => {
 
                 {/* Header & Controls */}
                 <div className="list-header">
-                    <h1 className="list-title">Catálogo Completo</h1>
-                    <p className="list-subtitle">Encuentra tu próximo smartphone ideal.</p>
+                    <h1 className="list-title">Catálogo Premium</h1>
+                    <p className="list-subtitle">Tecnología certificada con estilo.</p>
+                </div>
+
+                {/* SEARCH BAR (New) */}
+                <div className="catalog-search-container">
+                    <div className="search-input-wrapper">
+                        <Search className="search-icon" size={20} />
+                        <input
+                            type="text"
+                            placeholder="Buscar modelo (ej: Pixel 7, iPhone 14)..."
+                            value={searchTerm}
+                            onChange={handleSearch}
+                            className="catalog-search-input"
+                        />
+                    </div>
                 </div>
 
                 {loading ? (
-                    <div className="loading-container" style={{ padding: '40px', textAlign: 'center' }}>
-                        <p>Cargando catálogo...</p>
-                        <p style={{ fontSize: '10px', color: '#666' }}>Intentando leer /catalog.json</p>
+                    <div className="loading-container">
+                        <div className="loading-spinner"></div>
+                        <p>Cargando colección...</p>
                     </div>
                 ) : error ? (
-                    <div className="error-container" style={{ padding: '40px', textAlign: 'center', color: 'red' }}>
-                        <h3>Error cargando el catálogo</h3>
+                    <div className="error-container">
+                        <h3>Error de conexión</h3>
                         <p>{error}</p>
                         <button onClick={() => window.location.reload()}>Reintentar</button>
                     </div>
                 ) : (
                     <>
+                        {/* FILTERS TOOLBAR */}
                         <div className="controls-bar">
-                            {/* Brand Tabs */}
-                            <div className="brand-tabs">
-                                {brands.map(brand => (
-                                    <button
-                                        key={brand}
-                                        className={`brand-tab ${selectedBrand === brand ? 'active' : ''}`}
-                                        onClick={() => handleBrandChange(brand)}
-                                    >
-                                        {brand === 'All' ? 'Todos' : brand}
-                                    </button>
-                                ))}
+
+                            <div className="filters-group">
+                                {/* Brand Chips */}
+                                <div className="filter-section">
+                                    <span className="filter-label"><Smartphone size={14} /> Marca:</span>
+                                    <div className="chips-row">
+                                        {brands.map(brand => (
+                                            <button
+                                                key={brand}
+                                                className={`filter-chip ${selectedBrand === brand ? 'active' : ''}`}
+                                                onClick={() => handleBrandChange(brand)}
+                                            >
+                                                {brand === 'All' ? 'Todas' : brand}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Condition Chips */}
+                                <div className="filter-section">
+                                    <span className="filter-label"><Sparkles size={14} /> Condición:</span>
+                                    <div className="chips-row">
+                                        {['All', 'Grado A+', 'Grado A', 'Grado B'].map(cond => (
+                                            <button
+                                                key={cond}
+                                                className={`filter-chip ${selectedCondition === cond ? 'active' : ''}`}
+                                                onClick={() => setSelectedCondition(cond)}
+                                            >
+                                                {cond === 'All' ? 'Cualquiera' : cond.replace('Grado ', '')}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Sort Dropdown */}
                             <div className="sort-dropdown-container">
                                 <button className="sort-btn" onClick={() => setShowSortMenu(!showSortMenu)}>
                                     <SlidersHorizontal size={16} />
-                                    <span>Ordenar: {getSortLabel(sortBy)}</span>
+                                    <span>{getSortLabel(sortBy)}</span>
                                     <ChevronDown size={14} />
                                 </button>
-
                                 {showSortMenu && (
                                     <div className="sort-menu">
-                                        <button onClick={() => { setSortBy('featured'); setShowSortMenu(false); }} className={sortBy === 'featured' ? 'active' : ''}>
-                                            Destacados
-                                        </button>
-                                        <button onClick={() => { setSortBy('price-asc'); setShowSortMenu(false); }} className={sortBy === 'price-asc' ? 'active' : ''}>
-                                            Precio: Bajo a Alto
-                                        </button>
-                                        <button onClick={() => { setSortBy('price-desc'); setShowSortMenu(false); }} className={sortBy === 'price-desc' ? 'active' : ''}>
-                                            Precio: Alto a Bajo
-                                        </button>
+                                        <button onClick={() => { setSortBy('featured'); setShowSortMenu(false); }}>Destacados</button>
+                                        <button onClick={() => { setSortBy('price-asc'); setShowSortMenu(false); }}>Precio: Bajo a Alto</button>
+                                        <button onClick={() => { setSortBy('price-desc'); setShowSortMenu(false); }}>Precio: Alto a Bajo</button>
                                     </div>
                                 )}
                             </div>
                         </div>
 
                         {/* Results Count */}
-                        <div className="results-count">
-                            Mostrando {filteredProducts.length} dispositivos
+                        <div className="results-meta">
+                            <span>Mostrando <strong>{filteredProducts.length}</strong> dispositivos</span>
                         </div>
 
-                        {/* Grid */}
-                        {filteredProducts.length > 0 ? (
-                            <div className="products-grid">
+                        {/* GRID with Animations */}
+                        <motion.div
+                            layout
+                            className="products-grid"
+                        >
+                            <AnimatePresence>
                                 {filteredProducts.map(product => (
-                                    <ProductCard
+                                    <motion.div
                                         key={product.id}
-                                        product={product}
-                                        addToCart={addToCart}
-                                        addToCompare={addToCompare}
-                                        compareList={compareList}
-                                    />
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.9 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <ProductCard
+                                            product={product}
+                                            addToCart={addToCart}
+                                            addToCompare={addToCompare}
+                                            compareList={compareList}
+                                        />
+                                    </motion.div>
                                 ))}
-                            </div>
-                        ) : (
+                            </AnimatePresence>
+                        </motion.div>
+
+                        {filteredProducts.length === 0 && (
                             <div className="no-results-list">
-                                <p>No se encontraron productos con estos filtros.</p>
+                                <p>No se encontraron resultados.</p>
                                 <button className="btn-reset-filters" onClick={() => {
                                     setSelectedBrand('All');
-                                    setSortBy('featured');
+                                    setSelectedCondition('All');
+                                    setSearchTerm('');
                                 }}>
-                                    Limpiar Filtros
+                                    Limpiar todo
                                 </button>
                             </div>
                         )}
