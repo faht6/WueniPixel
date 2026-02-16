@@ -73,13 +73,13 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
             </button>
 
             <a
-              href={`https://wa.me/51900000000?text=${encodeURIComponent(`Hola WueniPixel, deseo adquirir el ${product.name} al contado. ¿Está disponible?`)}`}
+              href={`https://wa.me/51900000000?text=${encodeURIComponent(`Hola WueniPixel, quiero información del ${product.name} que vi en la web.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-add-cart"
               style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
             >
-              <ShoppingCart size={18} /> Consultar
+              <ShoppingCart size={18} /> Reservar
             </a>
           </div>
         </div>
