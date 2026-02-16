@@ -23,12 +23,12 @@ const fadeUp = {
 };
 
 const fadeRight = {
-    hidden: { opacity: 0, x: 60, scale: 0.96 },
+    hidden: { opacity: 0, x: 80, scale: 0.9 },
     visible: {
         opacity: 1,
         x: 0,
         scale: 1,
-        transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.25 }
+        transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }
     }
 };
 
@@ -48,7 +48,7 @@ const HeroSection = () => {
             <div className="hero-bg" />
             <div className="hero-grid-pattern" />
 
-            {/* Animated Blur Shapes */}
+            {/* Animated Blur Shapes — behind everything */}
             <motion.div
                 className="blur-shape blur-shape-1"
                 initial={{ opacity: 0 }}
@@ -70,32 +70,28 @@ const HeroSection = () => {
 
             {/* Main Content */}
             <div className="hero-content">
-                {/* ── Text Block (Left 50%) ── */}
+                {/* ── Text Block (Left) ── */}
                 <motion.div
                     className="hero-text"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
-                    {/* Badge */}
                     <motion.div className="hero-eyebrow" variants={bounceIn}>
                         <span className="hero-eyebrow-dot" />
                         NUEVO EN WUENIPIXEL
                     </motion.div>
 
-                    {/* Title with gradient accent on "17" */}
                     <motion.h1 className="hero-title" variants={fadeUp}>
                         iPhone <span className="hero-title-accent">17</span><br />
                         Pro Max
                     </motion.h1>
 
-                    {/* Subtitle */}
                     <motion.p className="hero-subtitle" variants={fadeUp}>
                         Titanio. Chip A19 Pro. La cámara más avanzada de Apple.
                         Disponible ahora en Cañete con entrega inmediata.
                     </motion.p>
 
-                    {/* CTA */}
                     <motion.div variants={fadeUp}>
                         <Link to="/catalog?brand=Apple" className="hero-cta">
                             Ver Colección
@@ -104,7 +100,7 @@ const HeroSection = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* ── Image Block (Right 50%) ── */}
+                {/* ── Image Block (Right) — No card, just the phone floating ── */}
                 <motion.div
                     className="hero-image-block"
                     variants={fadeRight}
@@ -112,15 +108,15 @@ const HeroSection = () => {
                     animate="visible"
                 >
                     <div className="hero-product-container">
-                        <div className="hero-product-card">
-                            <img
-                                src="/products/iphone17promax_cosmicorange.jpg"
-                                alt="iPhone 17 Pro Max — Cosmic Orange"
-                                className="hero-product-img"
-                                loading="eager"
-                            />
-                        </div>
+                        {/* Glow behind the phone */}
                         <div className="hero-image-glow" />
+                        {/* The phone itself */}
+                        <img
+                            src="/products/iphone17promax_cosmicorange.jpg"
+                            alt="iPhone 17 Pro Max — Cosmic Orange"
+                            className="hero-product-img"
+                            loading="eager"
+                        />
                     </div>
                 </motion.div>
             </div>
