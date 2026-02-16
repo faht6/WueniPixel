@@ -65,9 +65,21 @@ const ProductList = ({ addToCart, addToCompare, compareList }) => {
     const filteredProducts = products.filter(product => {
         const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesBrand = selectedBrand === 'All' || product.brand === selectedBrand;
-        const matchesCondition = selectedCondition === 'All' ||
-            (product.grade && product.grade.toLowerCase().includes(selectedCondition.toLowerCase())) ||
-            (product.condition && product.condition.toLowerCase() === selectedCondition.toLowerCase());
+        const matchesCondition = (() => {
+            if (selectedCondition === 'All') return true;
+            if (selectedCondition === 'Nuevo') {
+                return product.condition === 'new' || (product.grade && product.grade.toLowerCase().includes('nuevo'));
+            }
+            if (selectedCondition === 'Excelente') {
+                return product.grade && (product.grade.includes('A+') || product.grade.toLowerCase().includes('impecable'));
+            }
+            if (selectedCondition === 'Good') {
+                // Matches "Grado A" (not plus), "Grado B", or just generic "Used" not A+
+                const g = product.grade ? product.grade.toLowerCase() : '';
+                return (g.includes('grado a') && !g.includes('a+')) || g.includes('grado b') || g.includes('bueno');
+            }
+            return false;
+        })();
 
         return matchesSearch && matchesBrand && matchesCondition;
     }).sort((a, b) => {
@@ -137,13 +149,13 @@ const ProductList = ({ addToCart, addToCompare, compareList }) => {
                                 <div className="filter-section">
                                     <span className="filter-label"><Sparkles size={14} /> Condición:</span>
                                     <div className="chips-row">
-                                        {['All', 'Grado A+', 'Grado A', 'Grado B'].map(cond => (
+                                        {['All', 'Nuevo', 'Excelente', 'Good'].map(cond => (
                                             <button
                                                 key={cond}
                                                 className={`filter-chip ${selectedCondition === cond ? 'active' : ''}`}
                                                 onClick={() => setSelectedCondition(cond)}
                                             >
-                                                {cond === 'All' ? 'Cualquiera' : cond.replace('Grado ', '')}
+                                                {cond === 'All' ? 'Cualquiera' : cond}
                                             </button>
                                         ))}
                                     </div>
