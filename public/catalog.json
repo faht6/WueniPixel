@@ -507,7 +507,7 @@
         "brand": "Apple",
         "price": 3899,
         "condition": "used",
-        "image": "/products/iphone14promax.jpg",
+        "image": "/products/iphone14promax_spaceblack.jpg",
         "description": "Dynamic Island y 48MP. Potencia sin límites.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -528,6 +528,28 @@
             "camera": "48MP Principal",
             "battery": "4323 mAh"
         },
+        "colorImages": {
+            "Space Black": [
+                "/products/iphone14promax_spaceblack.jpg",
+                "/products/iphone14promax_spaceblack1.jpg",
+                "/products/iphone14promax_spaceblack2.jpg"
+            ],
+            "Silver": [
+                "/products/iphone14promax_silver.jpg",
+                "/products/iphone14promax_silver1.jpg",
+                "/products/iphone14promax_silver2.jpg"
+            ],
+            "Gold": [
+                "/products/iphone14promax_gold.jpg",
+                "/products/iphone14promax_gold1.jpg",
+                "/products/iphone14promax_gold2.jpg"
+            ],
+            "Deep Purple": [
+                "/products/iphone14promax_deeppurple.jpg",
+                "/products/iphone14promax_deeppurple1.jpg",
+                "/products/iphone14promax_deeppurple2.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -536,7 +558,7 @@
         "brand": "Apple",
         "price": 3099,
         "condition": "used",
-        "image": "/products/iphone14promax.jpg",
+        "image": "/products/iphone14pro_negroespacial.jpg",
         "description": "La revolución del Dynamic Island.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -557,6 +579,28 @@
             "camera": "48MP + 12MP + 12MP",
             "battery": "3,200 mAh"
         },
+        "colorImages": {
+            "Negro Espacial": [
+                "/products/iphone14pro_negroespacial.jpg",
+                "/products/iphone14pro_negroespacial1.jpg",
+                "/products/iphone14pro_negroespacial2.jpg"
+            ],
+            "Plata": [
+                "/products/iphone14pro_plata.jpg",
+                "/products/iphone14pro_plata1.jpg",
+                "/products/iphone14pro_plata2.jpg"
+            ],
+            "Oro": [
+                "/products/iphone14pro_oro.jpg",
+                "/products/iphone14pro_oro1.jpg",
+                "/products/iphone14pro_oro2.jpg"
+            ],
+            "Morado Oscuro": [
+                "/products/iphone14pro_moradooscuro.jpg",
+                "/products/iphone14pro_moradooscuro1.jpg",
+                "/products/iphone14pro_moradooscuro2.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -565,7 +609,7 @@
         "brand": "Apple",
         "price": 2599,
         "condition": "used",
-        "image": "/products/iphone13.jpg",
+        "image": "/products/iphone14_medianoche.jpg",
         "description": "Gran autonomía y modo acción.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -586,6 +630,38 @@
             "processor": "A15 Bionic (6GB RAM)",
             "camera": "Dual 12MP",
             "battery": "3,279 mAh"
+        },
+        "colorImages": {
+            "Medianoche": [
+                "/products/iphone14_medianoche.jpg",
+                "/products/iphone14_medianoche1.jpg",
+                "/products/iphone14_medianoche2.jpg"
+            ],
+            "Púrpura": [
+                "/products/iphone14_púrpura.jpg",
+                "/products/iphone14_púrpura1.jpg",
+                "/products/iphone14_púrpura2.jpg"
+            ],
+            "Estelar": [
+                "/products/iphone14_estelar.jpg",
+                "/products/iphone14_estelar1.jpg",
+                "/products/iphone14_estelar2.jpg"
+            ],
+            "Rojo": [
+                "/products/iphone14_rojo.jpg",
+                "/products/iphone14_rojo1.jpg",
+                "/products/iphone14_rojo2.jpg"
+            ],
+            "Azul": [
+                "/products/iphone14_azul.jpg",
+                "/products/iphone14_azul1.jpg",
+                "/products/iphone14_azul2.jpg"
+            ],
+            "Amarillo": [
+                "/products/iphone14_amarillo.jpg",
+                "/products/iphone14_amarillo1.jpg",
+                "/products/iphone14_amarillo2.jpg"
+            ]
         },
         "featured": false
     },

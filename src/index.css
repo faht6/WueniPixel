@@ -4,25 +4,25 @@
   /* 1. NÚCLEO DEL SISTEMA DE DISEÑO (CSS Tokens) */
 
   /* Tipografía Quirúrgica */
-  --font-stack-primary: 'SF Pro Display', 'SF Pro Text', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Tipografía Quirúrgica */
+  --font-stack-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
-  --letter-spacing-heading: -0.015em;
-  --line-height-base: 1.47059;
+  --letter-spacing-heading: -0.02em;
+  --line-height-base: 1.5;
 
   /* Colorimetría (Light Mode Default) */
-  --color-background: #F5F5F5;
-  /* White Smoke */
+  --color-background: #F8F9FA;
+  /* Boutique White */
   --color-surface-secondary: #FFFFFF;
-  /* Pure White now serves as surface */
-  --color-text-primary: #1D1D1F;
-  --color-text-secondary: #86868B;
-  /* CAMBIO AQUI: ROJO VINO TINTO PROFUNDO (#800020) */
-  --color-accent: #800020;
-  --color-border-subtle: #D2D2D7;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
 
-  --scrollbar-track: #FFFFFF;
-  /* CAMBIO AQUI: SCROLLBAR VINO (#800020) */
+  /* Accent: Vino Tinto */
+  --color-accent: #800020;
+  --color-border-subtle: #E5E5E5;
+
+  --scrollbar-track: #F8F9FA;
   --scrollbar-thumb: #800020;
 
   /* Geometría */
