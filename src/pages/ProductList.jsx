@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import ProductQuickView from '../components/ProductQuickView';
 import { Search, SlidersHorizontal, ChevronDown, Sparkles, Smartphone, Battery } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import { useProducts } from '../context/ProductContext';
@@ -87,6 +88,9 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
         if (sortBy === 'price-desc') return b.price - a.price;
         return (a.featured === b.featured) ? 0 : a.featured ? -1 : 1;
     });
+
+    // Quick View State
+    const [quickViewProduct, setQuickViewProduct] = useState(null);
 
     const content = (
         <div className="product-list-container container" style={isEmbedded ? { paddingTop: '2rem' } : {}}>
@@ -204,6 +208,7 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
                                         addToCart={addToCart}
                                         addToCompare={addToCompare}
                                         compareList={compareList}
+                                        onQuickView={(p) => setQuickViewProduct(p)}
                                     />
                                 </motion.div>
                             ))}
@@ -222,6 +227,13 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
                             </button>
                         </div>
                     )}
+
+                    {/* Quick View Modal & AnimatePresence for it is handled inside the component or here */}
+                    <ProductQuickView
+                        product={quickViewProduct}
+                        isOpen={!!quickViewProduct}
+                        onClose={() => setQuickViewProduct(null)}
+                    />
                 </>
             )}
         </div>

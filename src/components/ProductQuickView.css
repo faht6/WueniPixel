@@ -1,0 +1,223 @@
+.quickview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.quickview-modal {
+    background: #F5F5F5;
+    width: 900px;
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    /* For scroll within columns if needed */
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+.quickview-grid {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    height: 100%;
+    min-height: 500px;
+}
+
+.quickview-image-col {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+}
+
+.quickview-image {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+.qv-badge {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.qv-badge.new {
+    background: #212121;
+    color: white;
+}
+
+.qv-badge.grade {
+    background: #FFD700;
+    color: #212121;
+}
+
+.quickview-info-col {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.qv-brand {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.qv-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #212121;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.qv-price-block {
+    margin-bottom: 2rem;
+}
+
+.qv-price {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #800020;
+}
+
+.qv-tax-text {
+    font-size: 0.875rem;
+    color: #888;
+}
+
+.qv-features {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.qv-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #444;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.text-green {
+    color: #50C878;
+}
+
+.qv-desc {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+}
+
+.qv-actions {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.btn-whatsapp-qv {
+    background: #800020;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 20px rgba(128, 0, 32, 0.2);
+}
+
+.btn-whatsapp-qv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(128, 0, 32, 0.3);
+    background: #600018;
+    color: white;
+}
+
+.btn-details-qv {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.btn-details-qv:hover {
+    color: #212121;
+}
+
+@media (max-width: 768px) {
+    .quickview-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .quickview-image-col {
+        padding: 2rem;
+        min-height: 250px;
+    }
+
+    .quickview-info-col {
+        padding: 2rem;
+    }
+
+    .qv-title {
+        font-size: 1.5rem;
+    }
+}

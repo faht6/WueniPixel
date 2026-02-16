@@ -5,7 +5,7 @@ import { calculateSellingPrice, formatCurrency, fetchExchangeRate } from '../uti
 import Reveal from './Reveal';
 import './ProductCard.css';
 
-const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList = [] }) => {
+const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList = [], onQuickView }) => {
   const [price, setPrice] = useState(product.price);
 
   useEffect(() => {
@@ -56,9 +56,16 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
           </div>
 
           <div className="card-actions">
-            <Link to={`/products/${product.id}`} className="btn-view-details">
+            <button
+              className="btn-view-details"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onQuickView) onQuickView(product);
+              }}
+              title="Vista Rápida"
+            >
               <Eye size={20} />
-            </Link>
+            </button>
 
             <button
               className="btn-compare-toggle"
