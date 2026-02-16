@@ -1,7 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
-import Reveal from '../components/Reveal';
 import PageTransition from '../components/PageTransition';
 import { useProducts } from '../context/ProductContext';
 import BudgetRecommender from '../components/BudgetRecommender';
@@ -9,74 +6,56 @@ import BrandMarquee from '../components/BrandMarquee';
 import CameraComparison from '../components/CameraComparison';
 import LogisticsSection from '../components/LogisticsSection';
 import FAQSection from '../components/FAQSection';
+import HeroCarousel from '../components/HeroCarousel';
+import ValuePillars from '../components/ValuePillars';
+import ProductList from './ProductList';
 import './Home.css';
 
 const Home = ({ addToCart, district, addToCompare, compareList }) => {
-    const { products, loading } = useProducts();
-    const featuredProducts = products.filter(p => p.featured).slice(0, 4);
-
     return (
         <PageTransition>
             <div className="home-container">
-                {/* 1. HERO SECTION: SMART MATCH (Budget Recommender) */}
-                <section className="hero">
-                    <Reveal width="100%">
+                {/* 1. NEW HERO CAROUSEL */}
+                <HeroCarousel />
+
+                {/* 2. VALUE PILLARS */}
+                <ValuePillars />
+
+                {/* 3. ORIGINAL BUDGET RECOMMENDER (Renamed/Contextualized) */}
+                <section className="bg-white py-4">
+                    <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+                        <p style={{ color: '#666', marginBottom: '1rem' }}>¿Indeciso? Déjanos ayudarte.</p>
                         <BudgetRecommender district={district} />
-                    </Reveal>
+                    </div>
                 </section>
 
                 {/* TRUST MARQUEE */}
                 <BrandMarquee />
 
-                {/* 2. CATALOG PREVIEW */}
-                <section className="featured-section container">
-                    <div className="catalog-header-flex">
-                        <div className="catalog-title-group">
-                            <h2 className="section-title">Explora el Catálogo</h2>
-                            <p className="section-subtitle">Dispositivos premium seleccionados para ti.</p>
+                {/* 4. MAIN CATALOG EMBEDDED */}
+                <section id="catalog" className="catalog-section" style={{ background: '#F5F5F5', paddingBottom: '4rem' }}>
+                    <div className="container" style={{ paddingTop: '4rem' }}>
+                        <div className="section-header center" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                            <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: 800 }}>Nuestro Catálogo</h2>
+                            <p className="section-subtitle">Explora la colección completa en San Vicente.</p>
                         </div>
-                        <div className="section-header">
-                            <h2>🔥 Destacados de la Semana</h2>
-                            <Link to="/products" className="view-all-link">Ver todo <ArrowRight size={16} /></Link>
-                        </div>
-                    </div>
-
-                    {loading ? (
-                        <div className="loading-state">Cargando destacados...</div>
-                    ) : (
-                        <div className="products-grid">
-                            {featuredProducts.map(product => (
-                                <ProductCard
-                                    key={product.id}
-                                    product={product}
-                                    addToCart={addToCart}
-                                    addToCompare={addToCompare}
-                                    compareList={compareList}
-                                />
-                            ))}
-                        </div>
-                    )}
-
-                    {/* TRUST BAR */}
-                    <div className="start-trust-bar">
-                        <p>🛡️ Garantía WueniPixel: 3 meses en seminuevos | 1 año oficial en nuevos (Apple/Google)</p>
+                        <ProductList
+                            addToCart={addToCart}
+                            addToCompare={addToCompare}
+                            compareList={compareList}
+                            isEmbedded={true}
+                        />
                     </div>
                 </section>
 
-                {/* 4. CAMERA COMPARISON */}
-                <Reveal width="100%">
-                    <CameraComparison />
-                </Reveal>
+                {/* 5. CAMERA COMPARISON */}
+                <CameraComparison />
 
-                {/* 5. LOGISTICS & PAYMENTS */}
-                <Reveal width="100%">
-                    <LogisticsSection />
-                </Reveal>
+                {/* 6. LOGISTICS & PAYMENTS */}
+                <LogisticsSection />
 
-                {/* 6. FAQ SECTION */}
-                <Reveal width="100%">
-                    <FAQSection />
-                </Reveal>
+                {/* 7. FAQ SECTION */}
+                <FAQSection />
             </div>
         </PageTransition>
     );
