@@ -3,136 +3,98 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './HeroSection.css';
 
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.18,
-            delayChildren: 0.3,
-        }
-    }
-};
-
-const fadeUp = {
-    hidden: { opacity: 0, y: 28 },
+const fadeUp = (delay = 0) => ({
+    hidden: { opacity: 0, y: 24 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
+        transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay }
     }
-};
+});
 
-const fadeRight = {
-    hidden: { opacity: 0, x: 80, scale: 0.9 },
+const scaleIn = (delay = 0) => ({
+    hidden: { opacity: 0, y: 60, scale: 0.95 },
     visible: {
         opacity: 1,
-        x: 0,
+        y: 0,
         scale: 1,
-        transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }
+        transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay }
     }
-};
-
-const bounceIn = {
-    hidden: { opacity: 0, scale: 0.6 },
-    visible: {
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }
-    }
-};
+});
 
 const HeroSection = () => {
     return (
         <section className="hero-section">
-            {/* Background Layers */}
+            {/* Clean Background */}
             <div className="hero-bg" />
-            <div className="hero-grid-pattern" />
 
-            {/* Animated Blur Shapes — behind everything */}
-            <motion.div
-                className="blur-shape blur-shape-1"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2, delay: 0.4 }}
-            />
-            <motion.div
-                className="blur-shape blur-shape-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2, delay: 0.7 }}
-            />
-            <motion.div
-                className="blur-shape blur-shape-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2, delay: 1 }}
-            />
-
-            {/* Main Content */}
-            <div className="hero-content">
-                {/* ── Text Block (Left) ── */}
-                <motion.div
-                    className="hero-text"
-                    variants={containerVariants}
+            {/* ── Centered Text Block ── */}
+            <div className="hero-text-area">
+                <motion.h1
+                    className="hero-title"
+                    variants={fadeUp(0.1)}
                     initial="hidden"
                     animate="visible"
                 >
-                    <motion.div className="hero-eyebrow" variants={bounceIn}>
-                        <span className="hero-eyebrow-dot" />
-                        NUEVO EN WUENIPIXEL
-                    </motion.div>
+                    iPhone <span className="hero-title-accent">17</span>
+                </motion.h1>
 
-                    <motion.h1 className="hero-title" variants={fadeUp}>
-                        iPhone <span className="hero-title-accent">17</span><br />
-                        Pro Max
-                    </motion.h1>
+                <motion.p
+                    className="hero-subtitle"
+                    variants={fadeUp(0.25)}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    Conoce la nueva generación de iPhone en WueniPixel.
+                </motion.p>
 
-                    <motion.p className="hero-subtitle" variants={fadeUp}>
-                        Titanio. Chip A19 Pro. La cámara más avanzada de Apple.
-                        Disponible ahora en Cañete con entrega inmediata.
-                    </motion.p>
-
-                    <motion.div variants={fadeUp}>
-                        <Link to="/catalog?brand=Apple" className="hero-cta">
-                            Ver Colección
-                            <ArrowRight size={18} className="hero-cta-icon" />
-                        </Link>
-                    </motion.div>
+                <motion.div
+                    className="hero-buttons"
+                    variants={fadeUp(0.4)}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <Link to="/catalog?brand=Apple" className="hero-btn-primary">
+                        Ver Colección
+                        <ArrowRight size={16} className="hero-btn-icon" />
+                    </Link>
+                    <Link to="/catalog" className="hero-btn-secondary">
+                        Explorar Todo
+                    </Link>
                 </motion.div>
+            </div>
 
-                {/* ── Image Block (Right) — No card, just the phone floating ── */}
+            {/* ── Multi-Phone Composition ── */}
+            <div className="hero-phones-area">
                 <motion.div
-                    className="hero-image-block"
-                    variants={fadeRight}
+                    className="hero-phones-row"
+                    variants={scaleIn(0.5)}
                     initial="hidden"
                     animate="visible"
                 >
-                    <div className="hero-product-container">
-                        {/* Glow behind the phone */}
-                        <div className="hero-image-glow" />
-                        {/* The phone itself */}
+                    <div className="hero-phone hero-phone-left">
+                        <img
+                            src="/products/iphone17promax_deepblue.jpg"
+                            alt="iPhone 17 Pro Max — Deep Blue"
+                            loading="eager"
+                        />
+                    </div>
+                    <div className="hero-phone hero-phone-center">
                         <img
                             src="/products/iphone17promax_cosmicorange.jpg"
                             alt="iPhone 17 Pro Max — Cosmic Orange"
-                            className="hero-product-img"
+                            loading="eager"
+                        />
+                    </div>
+                    <div className="hero-phone hero-phone-right">
+                        <img
+                            src="/products/iphone17_lavanda.jpg"
+                            alt="iPhone 17 — Lavanda"
                             loading="eager"
                         />
                     </div>
                 </motion.div>
             </div>
-
-            {/* Bottom Fade */}
-            <div className="hero-bottom-fade" />
-
-            {/* Scroll Indicator */}
-            <motion.div
-                className="hero-scroll-indicator"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.2, duration: 1 }}
-            >
-                <span className="scroll-line" />
-            </motion.div>
         </section>
     );
 };
