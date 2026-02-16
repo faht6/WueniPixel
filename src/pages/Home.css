@@ -39,7 +39,7 @@
 
 /* HERO SECTION (Now Smart Match) */
 .hero {
-    background-color: var(--color-surface-secondary);
+    background-color: var(--color-background);
     text-align: center;
     padding-top: 120px;
     /* More space for Navbar */

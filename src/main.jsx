@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { Analytics } from "@vercel/analytics/react"
 import App from './App.jsx'
-import './index.css'
+import './global.css'
 
 // Error Trap para que el usuario vea el fallo
 window.onerror = function (message, source, lineno, colno, error) {
