@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import ProductQuickView from '../components/ProductQuickView';
+import SkeletonCard from '../components/SkeletonCard';
 import { Search, SlidersHorizontal, ChevronDown, Sparkles, Smartphone, Battery } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import { useProducts } from '../context/ProductContext';
@@ -117,9 +118,10 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
             </div>
 
             {loading ? (
-                <div className="loading-container">
-                    <div className="loading-spinner"></div>
-                    <p>Cargando colección...</p>
+                <div className="products-grid">
+                    {Array.from({ length: 8 }).map((_, index) => (
+                        <SkeletonCard key={index} />
+                    ))}
                 </div>
             ) : error ? (
                 <div className="error-container">
