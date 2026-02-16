@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingBag, Search, Menu, X, Sun, Moon, Smartphone } from 'lucide-react';
 import { useProducts } from '../context/ProductContext';
 import { calculateSellingPrice, formatCurrency, fetchExchangeRate } from '../utils/pricing';
+import MobileMenu from './MobileMenu';
 import './Navbar.css';
 
 const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
@@ -203,6 +204,12 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
           </div>
         </div>
       </nav>
+
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        onSearchOpen={() => setIsSearchOpen(true)}
+      />
 
       {/* SEARCH OVERLAY */}
       <div className={`search-overlay ${isSearchOpen ? 'open' : ''}`}>

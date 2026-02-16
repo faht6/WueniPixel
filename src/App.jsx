@@ -14,7 +14,7 @@ import Checkout from './pages/Checkout';
 import InfoPage from './pages/InfoPage';
 import Toast from './components/Toast';
 import ScrollToTop from './components/ScrollToTop';
-import WhatsAppButton from './components/WhatsAppButton';
+import WhatsAppFloat from './components/WhatsAppFloat';
 import CompareBar from './components/CompareBar';
 import { ProductProvider } from './context/ProductContext';
 import ComplaintsBook from './pages/ComplaintsBook';
@@ -210,7 +210,7 @@ function App() {
                         onClose={() => setNotification(null)}
                     />
                 )}
-                <WhatsAppButton />
+                <WhatsAppFloat />
             </div>
         </ProductProvider>
     );
