@@ -6,7 +6,7 @@ import BrandMarquee from '../components/BrandMarquee';
 import CameraComparison from '../components/CameraComparison';
 import LogisticsSection from '../components/LogisticsSection';
 import FAQSection from '../components/FAQSection';
-import HeroCarousel from '../components/HeroCarousel';
+import HeroSection from '../components/HeroSection';
 import ValuePillars from '../components/ValuePillars';
 import ProductList from './ProductList';
 import './Home.css';
@@ -15,8 +15,8 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
     return (
         <PageTransition>
             <div className="home-container">
-                {/* 1. NEW HERO CAROUSEL */}
-                <HeroCarousel />
+                {/* 1. NEW HERO SECTION */}
+                <HeroSection />
 
                 {/* 2. VALUE PILLARS */}
                 <ValuePillars />
