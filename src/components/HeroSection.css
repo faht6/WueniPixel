@@ -187,8 +187,30 @@
     display: block;
     width: 100%;
     height: auto;
-    /* Let the image display at natural ratio */
-    /* The white background blends with #F5F5F7 */
+}
+
+/* ── Gradient Mask — fade edges into background ── */
+.hero-phone-left img {
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 100%),
+        linear-gradient(to top, transparent 0%, black 20%, black 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 100%),
+        linear-gradient(to top, transparent 0%, black 20%, black 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+}
+
+.hero-phone-center img {
+    mask-image: linear-gradient(to top, transparent 0%, black 18%, black 100%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 18%, black 100%);
+}
+
+.hero-phone-right img {
+    mask-image: linear-gradient(to left, transparent 0%, black 15%, black 100%),
+        linear-gradient(to top, transparent 0%, black 20%, black 100%);
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 15%, black 100%),
+        linear-gradient(to top, transparent 0%, black 20%, black 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
 }
 
 /* ── Left Phone ── */
