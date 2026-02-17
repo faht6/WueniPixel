@@ -1304,5 +1304,175 @@
             "battery": "4410 mAh"
         },
         "featured": false
+    },
+    {
+        "id": 120,
+        "name": "iPhone 13",
+        "brand": "Apple",
+        "price": 1899,
+        "condition": "used",
+        "image": "/products/iphone13_midnight.jpg",
+        "description": "Rendimiento brillante. Modo Cinemático y batería para todo el día.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Blue",
+            "Green",
+            "Midnight",
+            "Pink",
+            "Starlight"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.1\" Super Retina XDR OLED",
+            "processor": "A15 Bionic (4GB RAM)",
+            "camera": "12MP Dual (Ancho + Ultra Ancho)",
+            "battery": "3,227 mAh"
+        },
+        "colorImages": {
+            "Blue": [
+                "/products/iphone13_blue.jpg",
+                "/products/iphone13_blue1.jpg",
+                "/products/iphone13_blue2.jpg"
+            ],
+            "Green": [
+                "/products/iphone13_green.jpg",
+                "/products/iphone13_green1.jpg",
+                "/products/iphone13_green2.jpg"
+            ],
+            "Midnight": [
+                "/products/iphone13_midnight.jpg",
+                "/products/iphone13_midnight1.jpg",
+                "/products/iphone13_midnight2.jpg"
+            ],
+            "Pink": [
+                "/products/iphone13_pink.jpg",
+                "/products/iphone13_pink1.jpg",
+                "/products/iphone13_pink2.jpg"
+            ],
+            "Starlight": [
+                "/products/iphone13_starlight.jpg",
+                "/products/iphone13_starlight1.jpg",
+                "/products/iphone13_starlight2.jpg"
+            ]
+        },
+        "featured": false
+    },
+    {
+        "id": 121,
+        "name": "iPhone 13 Pro",
+        "brand": "Apple",
+        "price": 2299,
+        "condition": "used",
+        "image": "/products/iphone13pro_grafito.jpg",
+        "description": "Sistema de cámaras Pro con Macro. ProMotion 120Hz. Grabación ProRes.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Azul Sierra",
+            "Grafito",
+            "Oro",
+            "Plata",
+            "Verde Alpino"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.1\" ProMotion 120Hz OLED",
+            "processor": "A15 Bionic (6GB RAM)",
+            "camera": "12MP Triple (Ancho + Ultra + Tele 3x)",
+            "battery": "3,095 mAh"
+        },
+        "colorImages": {
+            "Azul Sierra": [
+                "/products/iphone13pro_azulsierra.jpg",
+                "/products/iphone13pro_azulsierra1.jpg",
+                "/products/iphone13pro_azulsierra2.jpg"
+            ],
+            "Grafito": [
+                "/products/iphone13pro_grafito.jpg",
+                "/products/iphone13pro_grafito1.jpg",
+                "/products/iphone13pro_grafito2.jpg"
+            ],
+            "Oro": [
+                "/products/iphone13pro_oro.jpg",
+                "/products/iphone13pro_oro1.jpg",
+                "/products/iphone13pro_oro2.jpg"
+            ],
+            "Plata": [
+                "/products/iphone13pro_plata.jpg",
+                "/products/iphone13pro_plata1.jpg",
+                "/products/iphone13pro_plata2.jpg"
+            ],
+            "Verde Alpino": [
+                "/products/iphone13pro_verdealpino.jpg",
+                "/products/iphone13pro_verdealpino1.jpg",
+                "/products/iphone13pro_verdealpino2.jpg"
+            ]
+        },
+        "featured": false
+    },
+    {
+        "id": 122,
+        "name": "iPhone 13 Pro Max",
+        "brand": "Apple",
+        "price": 2699,
+        "condition": "used",
+        "image": "/products/iphone13promax_grafito.jpg",
+        "description": "La pantalla más grande. ProMotion 120Hz. Batería que dura todo el día y más.",
+        "grade": "Grado A+ Impecable",
+        "colors": [
+            "Azul Sierra",
+            "Grafito",
+            "Oro",
+            "Plata",
+            "Verde Alpino"
+        ],
+        "storage": [
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.7\" ProMotion 120Hz OLED",
+            "processor": "A15 Bionic (6GB RAM)",
+            "camera": "12MP Triple (Ancho + Ultra + Tele 3x)",
+            "battery": "4,352 mAh"
+        },
+        "colorImages": {
+            "Azul Sierra": [
+                "/products/iphone13promax_azulsierra.jpg",
+                "/products/iphone13promax_azulsierra1.jpg",
+                "/products/iphone13promax_azulsierra2.jpg"
+            ],
+            "Grafito": [
+                "/products/iphone13promax_grafito.jpg",
+                "/products/iphone13promax_grafito1.jpg",
+                "/products/iphone13promax_grafito2.jpg"
+            ],
+            "Oro": [
+                "/products/iphone13promax_oro.jpg",
+                "/products/iphone13promax_oro1.jpg",
+                "/products/iphone13promax_oro2.jpg"
+            ],
+            "Plata": [
+                "/products/iphone13promax_plata.jpg",
+                "/products/iphone13promax_plata1.jpg",
+                "/products/iphone13promax_plata2.jpg"
+            ],
+            "Verde Alpino": [
+                "/products/iphone13promax_verdealpino.jpg",
+                "/products/iphone13promax_verdealpino1.jpg",
+                "/products/iphone13promax_verdealpino2.jpg"
+            ]
+        },
+        "featured": false
     }
 ]
