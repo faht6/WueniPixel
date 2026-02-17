@@ -34,7 +34,7 @@ export const ProductProvider = ({ children }) => {
 
         const fetchLocalCatalog = async () => {
             try {
-                const response = await fetch('/catalog.json');
+                const response = await fetch(`/catalog.json?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error('Local catalog failed');
                 const data = await response.json();
                 setProducts(data);

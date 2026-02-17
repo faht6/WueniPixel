@@ -1222,7 +1222,7 @@
         "brand": "Apple",
         "price": 1899,
         "condition": "used",
-        "image": "/products/iphone13_midnight.jpg",
+        "image": "/products/iphone13.jpg?v=2",
         "description": "Rendimiento brillante. Modo Cinemático y batería para todo el día.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1245,29 +1245,29 @@
         },
         "colorImages": {
             "Blue": [
-                "/products/iphone13_blue.jpg",
-                "/products/iphone13_blue1.jpg",
-                "/products/iphone13_blue2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Green": [
-                "/products/iphone13_green.jpg",
-                "/products/iphone13_green1.jpg",
-                "/products/iphone13_green2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Midnight": [
-                "/products/iphone13_midnight.jpg",
-                "/products/iphone13_midnight1.jpg",
-                "/products/iphone13_midnight2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Pink": [
-                "/products/iphone13_pink.jpg",
-                "/products/iphone13_pink1.jpg",
-                "/products/iphone13_pink2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Starlight": [
-                "/products/iphone13_starlight.jpg",
-                "/products/iphone13_starlight1.jpg",
-                "/products/iphone13_starlight2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ]
         },
         "featured": false
@@ -1278,7 +1278,7 @@
         "brand": "Apple",
         "price": 2299,
         "condition": "used",
-        "image": "/products/iphone13pro_grafito.jpg",
+        "image": "/products/iphone13.jpg?v=2",
         "description": "Sistema de cámaras Pro con Macro. ProMotion 120Hz. Grabación ProRes.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1302,29 +1302,29 @@
         },
         "colorImages": {
             "Azul Sierra": [
-                "/products/iphone13pro_azulsierra.jpg",
-                "/products/iphone13pro_azulsierra1.jpg",
-                "/products/iphone13pro_azulsierra2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Grafito": [
-                "/products/iphone13pro_grafito.jpg",
-                "/products/iphone13pro_grafito1.jpg",
-                "/products/iphone13pro_grafito2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Oro": [
-                "/products/iphone13pro_oro.jpg",
-                "/products/iphone13pro_oro1.jpg",
-                "/products/iphone13pro_oro2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Plata": [
-                "/products/iphone13pro_plata.jpg",
-                "/products/iphone13pro_plata1.jpg",
-                "/products/iphone13pro_plata2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Verde Alpino": [
-                "/products/iphone13pro_verdealpino.jpg",
-                "/products/iphone13pro_verdealpino1.jpg",
-                "/products/iphone13pro_verdealpino2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ]
         },
         "featured": false
@@ -1335,7 +1335,7 @@
         "brand": "Apple",
         "price": 2699,
         "condition": "used",
-        "image": "/products/iphone13promax_grafito.jpg",
+        "image": "/products/iphone13.jpg?v=2",
         "description": "La pantalla más grande. ProMotion 120Hz. Batería que dura todo el día y más.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1359,29 +1359,29 @@
         },
         "colorImages": {
             "Azul Sierra": [
-                "/products/iphone13promax_azulsierra.jpg",
-                "/products/iphone13promax_azulsierra1.jpg",
-                "/products/iphone13promax_azulsierra2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Grafito": [
-                "/products/iphone13promax_grafito.jpg",
-                "/products/iphone13promax_grafito1.jpg",
-                "/products/iphone13promax_grafito2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Oro": [
-                "/products/iphone13promax_oro.jpg",
-                "/products/iphone13promax_oro1.jpg",
-                "/products/iphone13promax_oro2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Plata": [
-                "/products/iphone13promax_plata.jpg",
-                "/products/iphone13promax_plata1.jpg",
-                "/products/iphone13promax_plata2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ],
             "Verde Alpino": [
-                "/products/iphone13promax_verdealpino.jpg",
-                "/products/iphone13promax_verdealpino1.jpg",
-                "/products/iphone13promax_verdealpino2.jpg"
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2",
+                "/products/iphone13.jpg?v=2"
             ]
         },
         "featured": false
