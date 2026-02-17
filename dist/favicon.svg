@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+  <!-- Shutter / Aperture Blades stylized -->
+  <path d="M50 20 C33.4 20 20 33.4 20 50 C20 66.6 33.4 80 50 80 C66.6 80 80 66.6 80 50 C80 33.4 66.6 20 50 20 Z M50 70 C39 70 30 61 30 50 C30 39 39 30 50 30 C61 30 70 39 70 50 C70 61 61 70 50 70 Z" />
+  <path d="M50 30 L60 50 L40 50 Z" transform="rotate(0 50 50)" />
+  <path d="M50 30 L60 50 L40 50 Z" transform="rotate(60 50 50)" />
+  <path d="M50 30 L60 50 L40 50 Z" transform="rotate(120 50 50)" />
+  <path d="M50 30 L60 50 L40 50 Z" transform="rotate(180 50 50)" />
+  <path d="M50 30 L60 50 L40 50 Z" transform="rotate(240 50 50)" />
+  <path d="M50 30 L60 50 L40 50 Z" transform="rotate(300 50 50)" />
+  
+  <!-- Pixels (Square dots) -->
+  <rect x="75" y="15" width="8" height="8" />
+  <rect x="85" y="25" width="6" height="6" />
+  <rect x="15" y="75" width="8" height="8" />
+  <rect x="10" y="65" width="6" height="6" />
+  
+  <!-- Stylized Arcs -->
+  <path d="M25 25 Q 10 50 25 75" fill="none" stroke="currentColor" stroke-width="3" />
+  <path d="M75 75 Q 90 50 75 25" fill="none" stroke="currentColor" stroke-width="3" />
+</svg>
