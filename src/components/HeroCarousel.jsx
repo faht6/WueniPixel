@@ -15,7 +15,7 @@ const HeroCarousel = () => {
             description: "La máxima expresión de tecnología Apple, ahora disponible en Cañete con entrega inmediata.",
             image: "/products/iphone16pro_titanionegro.jpg", // Ensure this path exists or use a fallback
             cta: "Ver Colección",
-            link: "/catalog?brand=Apple",
+            link: "/products?brand=Apple",
             theme: "dark"
         },
         {
@@ -25,7 +25,7 @@ const HeroCarousel = () => {
             description: "Fotografía computacional de otro nivel y la experiencia Android más pura.",
             image: "/products/iphone15_blue.jpg", // Placeholder until we have a pixel hero, or use generic
             cta: "Descubrir Pixel",
-            link: "/catalog?brand=Google",
+            link: "/products?brand=Google",
             theme: "light"
         },
         {

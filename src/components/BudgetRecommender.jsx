@@ -124,107 +124,109 @@ const BudgetRecommender = ({ district }) => {
     };
 
     return (
-        <section className="hero-section">
-            <div className="hero-background-aurora"></div>
+        <div className="budget-recommender">
+            <section className="hero-section">
+                <div className="hero-background-aurora"></div>
 
-            <div className="hero-container">
-                {/* LEFT COLUMN: Search & Text */}
-                <div className="hero-content">
-                    <div className="hero-badge">
-                        <Sparkles size={14} />
-                        <span>Nueva Generación 2025</span>
-                    </div>
-
-                    <h1 className="hero-title">
-                        Encuentra tu <br />
-                        <span className="text-gradient">Celular Ideal</span>
-                    </h1>
-
-                    <p className="hero-subtitle">
-                        Súmate a la economía circular con tecnología premium certificada.
-                    </p>
-
-                    {/* USE CASE SELECTOR */}
-                    <div className="hero-selector-group">
-                        <button
-                            className={`hero-chip ${useCase === 'photo' ? 'active' : ''}`}
-                            onClick={() => { setUseCase('photo'); setRecommendation(null); }}
-                        >
-                            <Camera size={18} /> Fotografía
-                        </button>
-                        <button
-                            className={`hero-chip ${useCase === 'gaming' ? 'active' : ''}`}
-                            onClick={() => { setUseCase('gaming'); setRecommendation(null); }}
-                        >
-                            <Gamepad2 size={18} /> Gaming
-                        </button>
-                        <button
-                            className={`hero-chip ${useCase === 'work' ? 'active' : ''}`}
-                            onClick={() => { setUseCase('work'); setRecommendation(null); }}
-                        >
-                            <Briefcase size={18} /> Trabajo
-                        </button>
-                        <button
-                            className={`hero-chip ${useCase === 'social' ? 'active' : ''}`}
-                            onClick={() => { setUseCase('social'); setRecommendation(null); }}
-                        >
-                            <Instagram size={18} /> Estilo
-                        </button>
-                    </div>
-
-                    {/* INPUTS */}
-                    <div className="hero-search-box">
-                        <div className="hero-input-wrapper">
-                            <span className="currency-prefix">S/</span>
-                            <input
-                                type="number"
-                                value={budget}
-                                onChange={(e) => setBudget(e.target.value)}
-                                onKeyDown={(e) => e.key === 'Enter' && handleRecommend()}
-                                placeholder="Ej. 3500"
-                                className="hero-budget-input"
-                            />
+                <div className="hero-container">
+                    {/* LEFT COLUMN: Search & Text */}
+                    <div className="hero-content">
+                        <div className="hero-badge">
+                            <Sparkles size={14} />
+                            <span>Nueva Generación 2025</span>
                         </div>
-                        <button onClick={() => handleRecommend()} className="hero-search-btn">
-                            ENCONTRAR MATCH
-                        </button>
+
+                        <h1 className="hero-title">
+                            Encuentra tu <br />
+                            <span className="text-gradient">Celular Ideal</span>
+                        </h1>
+
+                        <p className="hero-subtitle">
+                            Súmate a la economía circular con tecnología premium certificada.
+                        </p>
+
+                        {/* USE CASE SELECTOR */}
+                        <div className="hero-selector-group">
+                            <button
+                                className={`hero-chip ${useCase === 'photo' ? 'active' : ''}`}
+                                onClick={() => { setUseCase('photo'); setRecommendation(null); }}
+                            >
+                                <Camera size={18} /> Fotografía
+                            </button>
+                            <button
+                                className={`hero-chip ${useCase === 'gaming' ? 'active' : ''}`}
+                                onClick={() => { setUseCase('gaming'); setRecommendation(null); }}
+                            >
+                                <Gamepad2 size={18} /> Gaming
+                            </button>
+                            <button
+                                className={`hero-chip ${useCase === 'work' ? 'active' : ''}`}
+                                onClick={() => { setUseCase('work'); setRecommendation(null); }}
+                            >
+                                <Briefcase size={18} /> Trabajo
+                            </button>
+                            <button
+                                className={`hero-chip ${useCase === 'social' ? 'active' : ''}`}
+                                onClick={() => { setUseCase('social'); setRecommendation(null); }}
+                            >
+                                <Instagram size={18} /> Estilo
+                            </button>
+                        </div>
+
+                        {/* INPUTS */}
+                        <div className="hero-search-box">
+                            <div className="hero-input-wrapper">
+                                <span className="currency-prefix">S/</span>
+                                <input
+                                    type="number"
+                                    value={budget}
+                                    onChange={(e) => setBudget(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && handleRecommend()}
+                                    placeholder="Ej. 3500"
+                                    className="hero-budget-input"
+                                />
+                            </div>
+                            <button onClick={() => handleRecommend()} className="hero-search-btn">
+                                ENCONTRAR MATCH
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* RIGHT COLUMN: VISUALS */}
+                    <div className="hero-visuals">
+                        {recommendation ? (
+                            // RESULT CARD (Replaces Phones)
+                            <div className="hero-result-card animate-pop-in">
+                                <div className="result-header">
+                                    <span className="match-badge">✨ Match Perfecto</span>
+                                    <button className="close-result" onClick={() => setRecommendation(null)}>×</button>
+                                </div>
+
+                                <div className="result-img-wrapper">
+                                    <img src={recommendation.image} alt={recommendation.name} />
+                                </div>
+
+                                <h3>{recommendation.name}</h3>
+                                <p className="result-price">{formatCurrency(recommendation.calculatedPrice)}</p>
+
+                                <p className="result-reason">{recommendation.reasonText}</p>
+
+                                <div className="result-actions">
+                                    <Link to={`/products/${recommendation.id}`} className="btn-result-view">
+                                        Ver Detalles
+                                    </Link>
+                                </div>
+                            </div>
+                        ) : (
+                            // SINGLE HERO IMAGE (User Provided)
+                            <div className="hero-single-image-container">
+                                <img src="/hero-devices.png" alt="Premium Devices" className="hero-main-image" />
+                            </div>
+                        )}
                     </div>
                 </div>
-
-                {/* RIGHT COLUMN: VISUALS */}
-                <div className="hero-visuals">
-                    {recommendation ? (
-                        // RESULT CARD (Replaces Phones)
-                        <div className="hero-result-card animate-pop-in">
-                            <div className="result-header">
-                                <span className="match-badge">✨ Match Perfecto</span>
-                                <button className="close-result" onClick={() => setRecommendation(null)}>×</button>
-                            </div>
-
-                            <div className="result-img-wrapper">
-                                <img src={recommendation.image} alt={recommendation.name} />
-                            </div>
-
-                            <h3>{recommendation.name}</h3>
-                            <p className="result-price">{formatCurrency(recommendation.calculatedPrice)}</p>
-
-                            <p className="result-reason">{recommendation.reasonText}</p>
-
-                            <div className="result-actions">
-                                <Link to={`/products/${recommendation.id}`} className="btn-result-view">
-                                    Ver Detalles
-                                </Link>
-                            </div>
-                        </div>
-                    ) : (
-                        // SINGLE HERO IMAGE (User Provided)
-                        <div className="hero-single-image-container">
-                            <img src="/hero-devices.png" alt="Premium Devices" className="hero-main-image" />
-                        </div>
-                    )}
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 };
 

@@ -77,11 +77,11 @@ const HeroSection = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    <Link to="/catalog?brand=Apple" className="hero-cta-primary">
+                    <Link to="/products?brand=Apple" className="hero-cta-primary">
                         <span>Ver Colección</span>
                         <ArrowRight size={16} className="cta-icon" />
                     </Link>
-                    <Link to="/catalog" className="hero-cta-outline">
+                    <Link to="/products" className="hero-cta-outline">
                         <span>Explorar Todo</span>
                         <ChevronRight size={16} className="cta-icon" />
                     </Link>
