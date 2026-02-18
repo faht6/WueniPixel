@@ -6,17 +6,23 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
     overflow: hidden;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 0.4s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* Box-shadow removed for cleaner look, handled by image drop-shadow on hover */
+    transform-style: preserve-3d;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    /* Very subtle card shadow */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-glare {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    border-radius: inherit;
 }
 
 .card-image-container {
@@ -134,10 +140,61 @@
     gap: 4px;
 }
 
+/* Pulse animation for Featured Badge */
+.badge-featured-pulse {
+    animation: featuredPulse 2s infinite;
+}
+
+@keyframes featuredPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(128, 0, 32, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(128, 0, 32, 0);
+    }
+}
+
 .card-actions {
     display: flex;
     gap: 8px;
     margin-top: 1rem;
+    transform-style: preserve-3d;
+}
+
+/* Pulse animation for Buy Button */
+.btn-pulse {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-pulse::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    border-radius: inherit;
+    animation: btnPulse 3s infinite;
+}
+
+@keyframes btnPulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
 }
 
 .btn-view-details,

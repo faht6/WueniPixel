@@ -9,6 +9,15 @@ import './Navbar.css';
 const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
   const { products } = useProducts();
   const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Estado del menú móvil y búsqueda
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -96,7 +105,7 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
 
   return (
     <>
-      <nav className="navbar" ref={menuRef}>
+      <nav className={`navbar ${isScrolled ? 'is-scrolled' : ''}`} ref={menuRef}>
         <div className="nav-container">
           <Link
             to="/"

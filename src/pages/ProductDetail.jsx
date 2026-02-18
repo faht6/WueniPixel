@@ -9,6 +9,8 @@ import PageTransition from '../components/PageTransition';
 import './ProductDetail.css';
 import { calculateSellingPrice, formatCurrency, fetchExchangeRate } from '../utils/pricing';
 import { getColorHex } from '../utils/productColors';
+import StickyBuyBar from '../components/StickyBuyBar';
+
 
 const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compareList }) => {
     const { id } = useParams();
@@ -23,6 +25,17 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [reservationSuccess, setReservationSuccess] = useState(false);
     const [added, setAdded] = useState(false);
+    const [isStickyVisible, setIsStickyVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Show sticky bar after scrolling 600px (approx past the buy box on mobile)
+            setIsStickyVisible(window.scrollY > 600);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
 
     // Dynamic Pricing State
 
@@ -273,8 +286,15 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                     selectedStorage={selectedStorage}
                 />
 
+                <StickyBuyBar
+                    product={product}
+                    price={finalPrice}
+                    visible={isStickyVisible}
+                    onBuy={() => setIsModalOpen(true)}
+                />
             </div >
         </PageTransition >
+
     );
 };
 
