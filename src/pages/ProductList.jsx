@@ -9,7 +9,7 @@ import { useProducts } from '../context/ProductContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProductList.css';
 
-const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false }) => {
+const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false, featuredSeries = null }) => {
     const { products, loading, error } = useProducts();
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -65,6 +65,11 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
 
     // Filter Logic
     const filteredProducts = products.filter(product => {
+        // Feature: Filter by specific series if featuredSeries prop is provided (used for Home page)
+        const matchesFeaturedSeries = !featuredSeries || (
+            featuredSeries.some(series => product.name.includes(series))
+        );
+
         const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesBrand = selectedBrand === 'All' || product.brand === selectedBrand;
         const matchesCondition = (() => {
@@ -75,7 +80,7 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
             if (selectedCondition === 'Excelente') {
                 return product.grade && (product.grade.includes('A+') || product.grade.toLowerCase().includes('impecable'));
             }
-            if (selectedCondition === 'Good') {
+            if (selectedCondition === 'Bueno') {
                 // Matches "Grado A" (not plus), "Grado B", or just generic "Used" not A+
                 const g = product.grade ? product.grade.toLowerCase() : '';
                 return (g.includes('grado a') && !g.includes('a+')) || g.includes('grado b') || g.includes('bueno');
@@ -83,7 +88,7 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
             return false;
         })();
 
-        return matchesSearch && matchesBrand && matchesCondition;
+        return matchesFeaturedSeries && matchesSearch && matchesBrand && matchesCondition;
     }).sort((a, b) => {
         if (sortBy === 'price-asc') return a.price - b.price;
         if (sortBy === 'price-desc') return b.price - a.price;

@@ -121,6 +121,10 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
               Inicio
             </Link>
 
+            <Link to="/products" className={`nav-link ${location.pathname === '/products' && !location.search ? 'active-tab' : ''}`}>
+              Catálogo
+            </Link>
+
             {/* Dropdown iPhone */}
             <div className="nav-item-dropdown">
               <button

@@ -78,6 +78,12 @@ const MobileMenu = ({ isOpen, onClose, onSearchOpen }) => {
                                 </button>
                             </motion.div>
 
+                            <motion.div variants={linkVariants} custom={0.5}>
+                                <button className="mobile-nav-item" onClick={() => handleNavigation('/products')}>
+                                    Catálogo
+                                </button>
+                            </motion.div>
+
                             {/* Apple Section */}
                             <motion.div variants={linkVariants} custom={1}>
                                 <div className="mobile-nav-group">

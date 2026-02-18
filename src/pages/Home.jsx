@@ -44,7 +44,23 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                             addToCompare={addToCompare}
                             compareList={compareList}
                             isEmbedded={true}
+                            featuredSeries={['iPhone 17', 'iPhone Air', 'iPhone 13', 'Pixel 10', 'Pixel 7']}
                         />
+                        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                            <Link
+                                to="/products"
+                                className="btn-buy-now"
+                                style={{
+                                    padding: '12px 24px',
+                                    textDecoration: 'none',
+                                    backgroundColor: 'transparent',
+                                    border: '2px solid #800020',
+                                    color: '#800020'
+                                }}
+                            >
+                                Ver todos los modelos
+                            </Link>
+                        </div>
                     </div>
                 </section>
 
