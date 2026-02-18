@@ -146,7 +146,7 @@ const MobileMenu = ({ isOpen, onClose, onSearchOpen }) => {
 
                             {/* Info Links */}
                             <motion.div variants={linkVariants} custom={3}>
-                                <button className="mobile-nav-item" onClick={() => handleNavigation('/tracking')}>
+                                <button className="mobile-nav-item" onClick={() => handleNavigation('/help/order-status')}>
                                     <Zap size={18} style={{ marginRight: 8 }} /> Rastrear Pedido
                                 </button>
                             </motion.div>
