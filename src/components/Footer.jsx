@@ -11,9 +11,9 @@ const Footer = () => {
                         <h3>WueniPixel</h3>
                         <p>Tecnología que inspira. Llevamos a tus manos los dispositivos más avanzados con una experiencia de compra inigualable.</p>
                         <div className="social-links">
-                            <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
-                            <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-                            <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
+                            <a href="https://facebook.com/wuenipixel" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={20} /></a>
+                            <a href="https://instagram.com/wuenipixel" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
+                            <a href="https://tiktok.com/@wuenipixel" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><Smartphone size={20} /></a>
                         </div>
                     </div>
 

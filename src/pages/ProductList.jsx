@@ -155,7 +155,7 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
                             <div className="filter-section">
                                 <span className="filter-label"><Sparkles size={14} /> Condición:</span>
                                 <div className="chips-row">
-                                    {['All', 'Nuevo', 'Excelente', 'Good'].map(cond => (
+                                    {['All', 'Nuevo', 'Excelente', 'Bueno'].map(cond => (
                                         <button
                                             key={cond}
                                             className={`filter-chip ${selectedCondition === cond ? 'active' : ''}`}
@@ -211,6 +211,7 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false 
                                         addToCompare={addToCompare}
                                         compareList={compareList}
                                         onQuickView={(p) => setQuickViewProduct(p)}
+                                        loading="lazy"
                                     />
                                 </motion.div>
                             ))}

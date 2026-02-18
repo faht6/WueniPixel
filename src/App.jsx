@@ -18,6 +18,7 @@ import WhatsAppFloat from './components/WhatsAppFloat';
 import CompareBar from './components/CompareBar';
 import { ProductProvider } from './context/ProductContext';
 import ComplaintsBook from './pages/ComplaintsBook';
+import NotFound from './pages/NotFound';
 
 function App() {
     // Estado del Carrito
@@ -136,7 +137,7 @@ function App() {
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content="WueniPixel | Tecnología Premium al Mejor Precio" />
                     <meta property="og:description" content="iPhones y Pixels con garantía, envío gratis y soporte personalizado." />
-                    <meta property="og:image" content="https://wuenipixel.com/og-image.jpg" /> {/* Pending real image */}
+                    <meta property="og:image" content="https://wuenipixel.vercel.app/og-image.jpg" /> {/* Fixed placeholder URL */}
                 </Helmet>
 
                 <PromoBanner />
@@ -193,6 +194,7 @@ function App() {
 
                             <Route path="/help/:slug" element={<InfoPage />} />
                             <Route path="/legal/:slug" element={<InfoPage />} />
+                            <Route path="*" element={<NotFound />} />
                         </Routes>
                     </AnimatePresence>
                 </main>

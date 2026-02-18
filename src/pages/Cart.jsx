@@ -39,19 +39,19 @@ const Cart = ({ items, removeFromCart, updateQuantity }) => {
                                     </button>
                                 </div>
 
-                                <div className="item-price">${item.price}</div>
+                                <div className="item-price">S/ {item.price}</div>
 
                                 <div className="item-controls">
                                     <button
                                         className="quantity-btn"
-                                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                                        onClick={() => updateQuantity(item.id, -1)}
                                     >
                                         <Minus size={14} />
                                     </button>
                                     <span className="quantity">{item.quantity}</span>
                                     <button
                                         className="quantity-btn"
-                                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                        onClick={() => updateQuantity(item.id, 1)}
                                     >
                                         <Plus size={14} />
                                     </button>
@@ -65,7 +65,7 @@ const Cart = ({ items, removeFromCart, updateQuantity }) => {
                     <h2>Resumen de Orden</h2>
                     <div className="summary-row">
                         <span>Subtotal</span>
-                        <span>${totalPrice}</span>
+                        <span>S/ {totalPrice}</span>
                     </div>
                     <div className="summary-row">
                         <span>Envío</span>

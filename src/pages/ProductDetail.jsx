@@ -200,7 +200,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
 
                             <div className="battery-health-badge">
                                 <Battery size={20} color="#50C878" />
-                                <span>Salud de Batería: 85% - 100%</span>
+                                <span>Salud de Batería: {product.condition === 'new' ? '100%' : '85% - 100%'}</span>
                             </div>
                         </div>
 
@@ -224,6 +224,22 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
 
                                 <div className="buy-actions">
                                     <button
+                                        onClick={() => addToCart(product)}
+                                        className="btn-add-to-cart"
+                                        style={{
+                                            backgroundColor: 'transparent',
+                                            border: '2px solid #800020',
+                                            color: '#800020',
+                                            padding: '12px',
+                                            borderRadius: '8px',
+                                            fontWeight: 'bold',
+                                            cursor: 'pointer',
+                                            marginBottom: '10px'
+                                        }}
+                                    >
+                                        Agregar al Carrito
+                                    </button>
+                                    <button
                                         onClick={() => setIsModalOpen(true)}
                                         className="btn-buy-now"
                                         style={{
@@ -235,12 +251,13 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                             fontWeight: 'bold',
                                             color: 'white',
                                             border: 'none',
+                                            padding: '12px',
+                                            borderRadius: '8px',
                                             cursor: 'pointer'
                                         }}
                                     >
                                         Consultar Stock Real
                                     </button>
-                                    {/* Optional Add to Cart */}
                                 </div>
                             </div>
                         </div>
