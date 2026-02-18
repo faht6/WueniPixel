@@ -3,7 +3,7 @@ import PageTransition from '../components/PageTransition';
 import { useProducts } from '../context/ProductContext';
 import BudgetRecommender from '../components/BudgetRecommender';
 import BrandMarquee from '../components/BrandMarquee';
-import CameraComparison from '../components/CameraComparison';
+import BrandComparison from '../components/BrandComparison';
 import LogisticsSection from '../components/LogisticsSection';
 import FAQSection from '../components/FAQSection';
 import HeroSection from '../components/HeroSection';
@@ -48,8 +48,8 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                     </div>
                 </section>
 
-                {/* 5. CAMERA COMPARISON */}
-                <CameraComparison />
+                {/* 5. BRAND COMPARISON (iPhone vs Pixel) */}
+                <BrandComparison />
 
                 {/* 6. LOGISTICS & PAYMENTS */}
                 <LogisticsSection />
