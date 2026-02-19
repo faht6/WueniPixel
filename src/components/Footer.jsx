@@ -59,7 +59,7 @@ const Footer = () => {
                             <span style={{ marginRight: '4px' }}>📖</span> Libro de Reclamaciones
                         </Link>
                     </div>
-                    <p>&copy; {new Date().getFullYear()} WueniPixel v9.0. Diseñado con precisión.</p>
+                    <p>&copy; {new Date().getFullYear()} WueniPixel v10.0. Diseñado con precisión.</p>
                 </div>
             </div>
         </footer>
