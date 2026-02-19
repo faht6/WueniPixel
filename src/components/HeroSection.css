@@ -152,6 +152,8 @@
     justify-content: center;
     gap: 1.5rem;
     padding: 0 2rem;
+    isolation: isolate;
+    /* Create new stacking context for blending */
 }
 
 .phone-wrap-v10 {
@@ -162,8 +164,8 @@
     width: 100%;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));
     mix-blend-mode: multiply;
+    /* Blends white background with the page gradient */
     transition: all 0.5s ease-out;
 }
 
