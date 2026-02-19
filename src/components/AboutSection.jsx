@@ -49,7 +49,7 @@ const AboutSection = () => {
                 >
                     <div className="visual-card">
                         <div className="visual-badge">100% Digital</div>
-                        <img src="/products/iphone16pro_titanionegro.jpg" alt="WueniPixel Experience" className="about-img" />
+                        <img src="/products/wueni-phone-table.jpg" alt="Experiencia real WueniPixel" className="about-img" />
                     </div>
                 </motion.div>
             </div>
