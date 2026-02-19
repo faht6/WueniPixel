@@ -131,6 +131,9 @@ function App() {
     return (
         <ProductProvider>
             <div className="app">
+                <div style={{ backgroundColor: '#8B0000', color: 'white', textAlign: 'center', padding: '10px', fontWeight: 'bold', zIndex: 9999, position: 'relative' }}>
+                    SISTEMA ACTUALIZADO - VERSIÓN 9.0 (Split Hero Active)
+                </div>
                 <Helmet>
                     <title>WueniPixel | Celulares en Cañete</title>
                     <meta name="description" content="La tienda de tecnología más confiable del Perú. Encuentra iPhones y Google Pixels seminuevos certificados y nuevos con garantía real." />
