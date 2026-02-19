@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight, Camera, Gamepad2, Briefcase, Sparkles } from 'lucide-react';
 import './HeroSection.css';
 
 const fadeUp = (delay = 0) => ({
@@ -8,136 +8,143 @@ const fadeUp = (delay = 0) => ({
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay }
+        transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay }
     }
 });
 
-const bounceIn = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: {
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.6, ease: [0.34, 1.56, 0.64, 1], delay: 0.05 }
+const floatAnim = {
+    animate: {
+        y: [0, -6, 0],
+        transition: {
+            duration: 3,
+            ease: "easeInOut",
+            repeat: Infinity
+        }
     }
 };
 
-const phoneSlide = (delay = 0, yStart = 80) => ({
-    hidden: { opacity: 0, y: yStart, scale: 0.92 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay }
-    }
-});
-
 const HeroSection = () => {
+    const categories = [
+        { icon: <Camera size={16} />, label: "Fotografía" },
+        { icon: <Gamepad2 size={16} />, label: "Gaming" },
+        { icon: <Briefcase size={16} />, label: "Trabajo" },
+        { icon: <Sparkles size={16} />, label: "Estilo" }
+    ];
+
     return (
         <section className="hero-section">
-            {/* BG layers */}
-            <div className="hero-bg" />
-            <div className="hero-orb hero-orb-1" />
-            <div className="hero-orb hero-orb-2" />
+            <div className="hero-container">
+                {/* ── LEFT SIDE: TEXT ── */}
+                <div className="hero-left">
+                    <motion.div
+                        className="hero-badge-v9"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <span className="pulse-dot" />
+                        NUEVO EN WUENIPIXEL
+                    </motion.div>
 
-            {/* ── Centered Text ── */}
-            <div className="hero-content">
-                <motion.div
-                    className="hero-badge"
-                    variants={bounceIn}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <span className="hero-badge-dot" />
-                    NUEVO EN WUENIPIXEL
-                </motion.div>
+                    <motion.h1
+                        className="hero-title-v9"
+                        variants={fadeUp(0.1)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        iPhone 17 <span className="text-wine">Pro Max</span>
+                    </motion.h1>
 
-                <motion.h1
-                    className="hero-title"
-                    variants={fadeUp(0.12)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    iPhone <span className="hero-accent">17</span> Pro Max
-                </motion.h1>
+                    <motion.p
+                        className="hero-subtitle-v9"
+                        variants={fadeUp(0.2)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        Titanio. Chip A19 Pro. La cámara más avanzada jamás creada.
+                    </motion.p>
 
-                <motion.p
-                    className="hero-subtitle"
-                    variants={fadeUp(0.25)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    Titanio. Chip A19 Pro. La cámara más avanzada jamás creada.
-                    <br className="hero-br-desktop" />
-                    <p className="hero-subtitle">Directo desde USA con entrega programada (2 a 3 semanas).</p>
-                </motion.p>
+                    <motion.p
+                        className="hero-availability"
+                        variants={fadeUp(0.3)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        Disponible en Cañete · Entrega ~2 semanas
+                    </motion.p>
 
-                <motion.div
-                    className="hero-ctas"
-                    variants={fadeUp(0.4)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <Link to="/products?brand=Apple" className="hero-cta-primary">
-                        <span>Ver Colección</span>
-                        <ArrowRight size={16} className="cta-icon" />
-                    </Link>
-                    <Link to="/products" className="hero-cta-outline">
-                        <span>Explorar Todo</span>
-                        <ChevronRight size={16} className="cta-icon" />
-                    </Link>
-                </motion.div>
+                    <motion.div
+                        className="hero-ctas-v9"
+                        variants={fadeUp(0.4)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <Link to="/products?brand=Apple" className="btn-primary-wine">
+                            Ver Colección <ArrowRight size={18} />
+                        </Link>
+                        <Link to="/products" className="btn-secondary-outline">
+                            Explorar Todo <ChevronRight size={18} />
+                        </Link>
+                    </motion.div>
+
+                    <motion.div
+                        className="hero-categories"
+                        variants={fadeUp(0.5)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {categories.map((cat, i) => (
+                            <div key={i} className="category-pill">
+                                {cat.icon} <span>{cat.label}</span>
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+
+                {/* ── RIGHT SIDE: IMAGES ── */}
+                <div className="hero-right">
+                    <div className="hero-visual-wrapper">
+                        <div className="hero-gradient-bg" />
+
+                        <motion.div
+                            className="staggered-phone phone-1"
+                            variants={floatAnim}
+                            animate="animate"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.6, duration: 1 }}
+                        >
+                            <img src="/products/iphone17promax_cosmicorange.jpg" alt="iPhone 17 Pro Max Orange" />
+                        </motion.div>
+
+                        <motion.div
+                            className="staggered-phone phone-2"
+                            variants={floatAnim}
+                            animate="animate"
+                            initial={{ opacity: 0, y: 60 }}
+                            whileInView={{ opacity: 1, y: 15 }} // Slight offset
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.7, duration: 1 }}
+                        >
+                            <img src="/products/iphone17promax_deepblue.jpg" alt="iPhone 17 Pro Max Blue" />
+                        </motion.div>
+
+                        <motion.div
+                            className="staggered-phone phone-3"
+                            variants={floatAnim}
+                            animate="animate"
+                            initial={{ opacity: 0, y: 80 }}
+                            whileInView={{ opacity: 1, y: 30 }} // More offset
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.8, duration: 1 }}
+                        >
+                            <img src="/products/iphone17promax_silver.jpg" alt="iPhone 17 Pro Max Silver" />
+                        </motion.div>
+                    </div>
+                </div>
             </div>
-
-            {/* ── Phone Composition ── */}
-            <div className="hero-phones">
-                {/* Glow behind center phone */}
-                <div className="hero-center-glow" />
-
-                {/* Left — Cosmic Orange */}
-                <motion.div
-                    className="hero-phone hero-phone-side hero-phone-left"
-                    variants={phoneSlide(0.5, 100)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <img
-                        src="/products/iphone17promax_cosmicorange.jpg"
-                        alt="iPhone 17 Pro Max — Cosmic Orange"
-                        loading="eager"
-                    />
-                </motion.div>
-
-                {/* Center — Deep Blue (10% bigger) */}
-                <motion.div
-                    className="hero-phone hero-phone-center"
-                    variants={phoneSlide(0.6, 120)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <img
-                        src="/products/iphone17promax_deepblue.jpg"
-                        alt="iPhone 17 Pro Max — Deep Blue"
-                        loading="eager"
-                    />
-                </motion.div>
-
-                {/* Right — Silver */}
-                <motion.div
-                    className="hero-phone hero-phone-side hero-phone-right"
-                    variants={phoneSlide(0.7, 100)}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <img
-                        src="/products/iphone17promax_silver.jpg"
-                        alt="iPhone 17 Pro Max — Silver"
-                        loading="eager"
-                    />
-                </motion.div>
-            </div>
-
-            {/* Bottom fade */}
-            <div className="hero-fade" />
+            <div className="hero-bottom-fade" />
         </section>
     );
 };
