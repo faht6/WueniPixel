@@ -131,10 +131,10 @@
 /* .yape-option replaced by .primary-option inline styles for robustness */
 
 .yape-premium-card {
-    background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+    background: linear-gradient(135deg, #800020, #400010);
     color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(128, 0, 32, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .yape-premium-card p {

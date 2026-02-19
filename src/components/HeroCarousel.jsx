@@ -12,7 +12,7 @@ const HeroCarousel = () => {
             id: 1,
             title: "iPhone 16 Pro",
             subtitle: "Diseño en Titanio. Potencia A18 Pro.",
-            description: "La máxima expresión de tecnología Apple, ahora disponible en Cañete con entrega inmediata.",
+            description: "La máxima expresión de tecnología Apple, ahora disponible en Cañete bajo pedido (importación ~2 semanas).",
             image: "/products/iphone16pro_titanionegro.jpg", // Ensure this path exists or use a fallback
             cta: "Ver Colección",
             link: "/products?brand=Apple",
@@ -32,7 +32,7 @@ const HeroCarousel = () => {
             id: 3,
             title: "Garantía WueniPixel",
             subtitle: "Compra local, soporte real.",
-            description: "Olvídate de las esperas. Equipos Grado A+ con garantía directa en San Vicente y alrededores.",
+            description: "Seguridad y confianza en cada compra. Equipos Grado A+ con garantía técnica directa en San Vicente.",
             image: "/products/iphone15promax_naturaltitanium.jpg",
             cta: "Conocer Más",
             link: "/info",

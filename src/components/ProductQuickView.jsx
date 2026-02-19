@@ -91,13 +91,13 @@ const ProductQuickView = ({ product, isOpen, onClose }) => {
                                         <span>Batería: {product.battery_health || '85%+'}</span>
                                     </div>
                                     <div className="qv-feature">
-                                        <Zap size={16} className="text-green" />
-                                        <span>Entrega Inmediata en Cañete</span>
+                                        <Zap size={16} className="text-accent" />
+                                        <span>Entrega en Cañete (~2 semanas)</span>
                                     </div>
                                 </div>
 
                                 <p className="qv-desc">
-                                    {product.description || `Disfruta del rendimiento premium del ${product.name}. Disponible para entrega personal hoy mismo.`}
+                                    {product.description || `Disfruta del rendimiento premium del ${product.name}. Importación directa de USA con entrega personal en San Vicente.`}
                                 </p>
 
                                 <div className="qv-actions">

@@ -897,7 +897,7 @@
         "brand": "Apple",
         "price": 1599,
         "condition": "used",
-        "image": "/products/iphone12.jpg",
+        "image": "/products/iphone12_black.jpg",
         "description": "Entrada al 5G y diseño plano. Pantalla OLED.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -913,11 +913,37 @@
             "128GB",
             "256GB"
         ],
-        "specs": {
-            "screen": "6.1\" Super Retina XDR",
-            "processor": "A14 Bionic",
-            "camera": "12MP Dual",
-            "battery": "2815 mAh"
+        "colorImages": {
+            "Black": [
+                "/products/iphone12_black.jpg",
+                "/products/iphone12_black1.jpg",
+                "/products/iphone12_black2.jpg"
+            ],
+            "White": [
+                "/products/iphone12_white.jpg",
+                "/products/iphone12_white1.jpg",
+                "/products/iphone12_white2.jpg"
+            ],
+            "Blue": [
+                "/products/iphone12_blue.jpg",
+                "/products/iphone12_blue1.jpg",
+                "/products/iphone12_blue2.jpg"
+            ],
+            "Green": [
+                "/products/iphone12_green.jpg",
+                "/products/iphone12_green1.jpg",
+                "/products/iphone12_green2.jpg"
+            ],
+            "Purple": [
+                "/products/iphone12_purple.jpg",
+                "/products/iphone12_purple1.jpg",
+                "/products/iphone12_purple2.jpg"
+            ],
+            "Product Red": [
+                "/products/iphone12_red.jpg",
+                "/products/iphone12_red1.jpg",
+                "/products/iphone12_red2.jpg"
+            ]
         },
         "featured": false
     },

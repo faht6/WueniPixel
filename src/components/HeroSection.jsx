@@ -68,7 +68,7 @@ const HeroSection = () => {
                 >
                     Titanio. Chip A19 Pro. La cámara más avanzada jamás creada.
                     <br className="hero-br-desktop" />
-                    Disponible ahora en Cañete con entrega inmediata.
+                    Disponible ahora en Cañete con entrega programada (~2 semanas).
                 </motion.p>
 
                 <motion.div

@@ -8,6 +8,8 @@ import LogisticsSection from '../components/LogisticsSection';
 import FAQSection from '../components/FAQSection';
 import HeroSection from '../components/HeroSection';
 import ValuePillars from '../components/ValuePillars';
+import AboutSection from '../components/AboutSection';
+import TradeInSection from '../components/TradeInSection';
 import ProductList from './ProductList';
 import './Home.css';
 
@@ -18,7 +20,10 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                 {/* 1. NEW HERO SECTION */}
                 <HeroSection />
 
-                {/* 2. VALUE PILLARS */}
+                {/* 2. ABOUT US (NEW) */}
+                <AboutSection />
+
+                {/* 3. VALUE PILLARS */}
                 <ValuePillars />
 
                 {/* 3. ORIGINAL BUDGET RECOMMENDER (Renamed/Contextualized) */}
@@ -66,6 +71,9 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
 
                 {/* 5. BRAND COMPARISON (iPhone vs Pixel) */}
                 <BrandComparison />
+
+                {/* 5.5 RENEWAL PROGRAM (NEW) */}
+                <TradeInSection />
 
                 {/* 6. LOGISTICS & PAYMENTS */}
                 <LogisticsSection />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Package, CreditCard, MapPin, Truck } from 'lucide-react';
+import { Package, CreditCard, MapPin, Truck, ShieldCheck, FileText } from 'lucide-react';
 import './LogisticsSection.css';
 
 const LogisticsSection = () => {
@@ -13,7 +13,7 @@ const LogisticsSection = () => {
                         <div className="icon-box">
                             <Truck size={24} />
                         </div>
-                        <h3>Opciones de Entrega</h3>
+                        <h3>Logística y Entregas</h3>
                     </div>
 
                     <div className="options-list">
@@ -21,51 +21,66 @@ const LogisticsSection = () => {
                             <div className="option-info">
                                 <div className="dot accent"></div>
                                 <div>
-                                    <h4>Envío Express</h4>
-                                    <p>San Vicente de Cañete, Imperial, San Luis y Cerro Azul</p>
+                                    <h4>Tiempo de Entrega</h4>
+                                    <p>Importación directa de USA: **~2 semanas** desde la confirmación.</p>
                                 </div>
                             </div>
-                            <span className="price-free">GRATIS</span>
                         </div>
 
                         <div className="option-item">
                             <div className="option-info">
                                 <div className="dot accent"></div>
                                 <div>
-                                    <h4>Envío Nacional</h4>
-                                    <p>Todo el Perú (Shalom / Olva)</p>
+                                    <h4>Puntos de Entrega Seguros</h4>
+                                    <p>Exclusivamente en **San Vicente de Cañete** (Plaza de Armas o C.C.).</p>
                                 </div>
                             </div>
-                            <span className="price-free">GRATIS</span>
+                        </div>
+
+                        <div className="option-item">
+                            <div className="option-info">
+                                <div className="dot accent"></div>
+                                <div>
+                                    <h4>Garantía y Documentación</h4>
+                                    <p>Emitimos **Boleta de Venta** (RUS). 3 días de prueba técnica.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* PAYMENT CARD */}
+                {/* PAYMENT & RESERVATION CARD */}
                 <div className="feature-card payment-card">
                     <div className="card-header">
                         <div className="icon-box">
                             <CreditCard size={24} />
                         </div>
-                        <h3>Métodos de Pago</h3>
+                        <h3>Sistema de Reserva</h3>
                     </div>
 
                     <div className="payment-options">
-                        {/* DARK OPTION: Premium Gradient */}
                         <div className="payment-option yape-premium-card">
                             <div className="payment-content">
-                                <h4>Yape / Transferencia</h4>
-                                <p>Sin comisiones adicionales</p>
+                                <h4>Adelanto de Reserva</h4>
+                                <p>Se requiere un adelanto de **S/ 50.00** para iniciar el pedido.</p>
                             </div>
-                            <div className="badge-free">0% Comisión</div>
+                            <div className="badge-free">Obligatorio</div>
+                        </div>
+
+                        <div className="reservation-footer">
+                            <p className="policy-note">
+                                * El adelanto de S/ 50.00 **no es reembolsable**, ya que cubre gastos logísticos y operativos de importación.
+                            </p>
                         </div>
 
                         <div className="payment-option card-option">
                             <div className="payment-content">
-                                <h4>Tarjeta de Crédito</h4>
-                                <p>Visa, Mastercard, Amex</p>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <FileText size={16} />
+                                    <h4>Formalidad total</h4>
+                                </div>
+                                <p>Aceptamos Yape, Plin y Transferencias.</p>
                             </div>
-                            <div className="badge-fee">+5% Recargo</div>
                         </div>
                     </div>
                 </div>

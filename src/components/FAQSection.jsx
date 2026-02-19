@@ -5,28 +5,28 @@ import './FAQSection.css';
 const faqs = [
     {
         question: "¿Dónde realizan las entregas?",
-        answer: "Realizamos entregas inmediatas en Cañete (San Vicente, Imperial, San Luis). Para Lima y provincias, enviamos por Shalom u Olva Courier con seguro de envío incluido.",
+        answer: "Las entregas se coordinan exclusivamente en puntos seguros de San Vicente de Cañete (Plaza de Armas o centros comerciales) previa programación.",
         icon: <Truck size={20} />
     },
     {
-        question: "¿Medios de Pago?",
-        answer: "Aceptamos transferencias, Yape/Plin sin comisiones. También aceptamos todas las tarjetas de crédito (Visa, Mastercard, Amex) con un recargo del 5%.",
-        icon: <CreditCard size={20} />
+        question: "¿Cuál es el tiempo de espera?",
+        answer: "Trabajamos mediante importación directa bajo pedido. El tiempo estimado de entrega es de aproximadamente 2 semanas tras confirmar la reserva.",
+        icon: <Smartphone size={20} />
     },
     {
         question: "¿Qué garantía ofrecen?",
-        answer: "Brindamos 1 año de garantía en equipos nuevos (Apple/Google) y 3 meses de garantía técnica en equipos seminuevos. Tu inversión está protegida.",
+        answer: "Ofrecemos una garantía de 3 días (periodo de prueba técnica) para asegurar que recibas el equipo en óptimas condiciones de funcionamiento.",
         icon: <ShieldCheck size={20} />
     },
     {
-        question: "¿Cómo garantizan la batería?",
-        answer: "Solo seleccionamos equipos con batería superior al 85% de vida útil real. Garantizamos que tu equipo rinda al máximo desde el primer día.",
-        icon: <Battery size={20} />
+        question: "¿Emiten comprobante de pago?",
+        answer: "Sí, emitimos Boleta de Venta electrónica bajo el Régimen Nuevo RUS, garantizando la formalidad de tu compra.",
+        icon: <CreditCard size={20} />
     },
     {
-        question: "¿Tienen tienda física?",
-        answer: "Somos una Tienda 100% Online. Operamos digitalmente para ofrecerte los mejores precios del mercado sin costos de alquiler inflados. Garantizamos seguridad y confianza en cada envío.",
-        icon: <Smartphone size={20} />
+        question: "¿Aceptan mi equipo actual?",
+        answer: "Contamos con un programa de renovación exclusivo para iPhone. Evaluamos tu equipo actual Apple como parte de pago (Sujeto a evaluación técnica).",
+        icon: <Battery size={20} />
     }
 ];
 

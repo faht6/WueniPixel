@@ -105,8 +105,8 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
             <div className="detail-page container">
                 <Helmet>
                     <title>{`${product.name} - ${product.storage?.[0] || ''} | WueniPixel`}</title>
-                    <meta name="description" content={`Compra ${product.name} en WueniPixel. ${product.description} Garantía de 1 año y envío gratis.`} />
-                    <meta property="og:title" content={`${product.name} en Oferta | WueniPixel`} />
+                    <meta name="description" content={`Consigue tu ${product.name} en WueniPixel. ${product.description} Garantía de prueba técnica y entrega programada en Cañete.`} />
+                    <meta property="og:title" content={`${product.name} | WueniPixel Store`} />
                     <meta property="og:description" content={product.description} />
                     <meta property="og:image" content={product.image} />
                 </Helmet>
@@ -119,8 +119,8 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                     <div className="reservation-success-message animate-fade-in">
                         <div className="success-content">
                             <Check size={48} color="#50C878" />
-                            <h2>¡Gracias! Tu reserva ha sido enviada.</h2>
-                            <p>Te contactaremos en breve para coordinar la entrega.</p>
+                            <h2>¡Gracias! Tu solicitud ha sido enviada.</h2>
+                            <p>Te contactaremos para iniciar el proceso de reserva (S/ 50.00).</p>
                             <button onClick={() => setReservationSuccess(false)} className="btn-reset">Volver al producto</button>
                         </div>
                     </div>
@@ -157,12 +157,12 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
 
                         {/* COLUMNA 2: INFO CENTRAL */}
                         <div className="info-section-meli">
-                            <span className="condition-text">{product.condition === 'new' ? 'Nuevo' : 'Seminuevo Certificado'}</span>
+                            <span className="condition-text">{product.name.includes('Pixel') ? 'Nuevo Sellado' : 'Seminuevo Premium'}</span>
                             <h1 className="meli-title">{product.name}</h1>
 
                             <div className="aesthetics-grade">
-                                <span className="grade-label">Grado Estético:</span>
-                                <span className="grade-value">{product.grade || 'A+ (Impecable)'}</span>
+                                <span className="grade-label">Estado:</span>
+                                <span className="grade-value">{product.grade || 'Impecable (10/10)'}</span>
                             </div>
 
                             <div className="meli-selector">
@@ -202,7 +202,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                             </div>
 
                             <div className="specs-list-meli">
-                                <h3>Lo que tienes que saber de este producto</h3>
+                                <h3>Especificaciones Destacadas</h3>
                                 <ul>
                                     <li><strong>Pantalla:</strong> {product.specs.screen}</li>
                                     <li><strong>Procesador:</strong> {product.specs.processor}</li>
@@ -213,7 +213,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
 
                             <div className="battery-health-badge">
                                 <Battery size={20} color="#50C878" />
-                                <span>Salud de Batería: {product.condition === 'new' ? '100%' : '85% - 100%'}</span>
+                                <span>Salud Mínima: {product.condition === 'new' ? '100%' : '85%'}</span>
                             </div>
                         </div>
 
@@ -221,17 +221,13 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                         <div className="buy-box-section">
                             <div className="buy-box">
                                 <p className="meli-price">{formatCurrency(finalPrice)}</p>
-                                <p className="price-neto-label">Precio neto al contado (Efectivo/Yape/Plin)</p>
+                                <p className="price-neto-label">Precio final al contado</p>
 
                                 {/* LOGISTICA LOCAL */}
-                                {['San Vicente', 'Imperial'].includes(district) ? (
-                                    <div className="local-shipping-badge">
-                                        <MapPin size={16} />
-                                        <p>Stock físico en Cañete - <strong>Entrega hoy mismo</strong></p>
-                                    </div>
-                                ) : (
-                                    <p className="meli-shipping-free"><Truck size={16} style={{ display: 'inline', marginRight: '6px' }} />Envío Gratis a todo el Perú</p>
-                                )}
+                                <div className="local-shipping-badge">
+                                    <MapPin size={16} />
+                                    <p>Entrega programada en **Cañete** (~2 semanas)</p>
+                                </div>
 
                                 <p className="stock-label">Stock disponible (Pocas unidades)</p>
 

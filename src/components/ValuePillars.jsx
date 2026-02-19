@@ -21,8 +21,8 @@ const ValuePillars = () => {
         {
             id: 3,
             icon: <MapPin size={40} />,
-            title: "Stock Real en Cañete",
-            desc: "Sin adelantos ni esperas de importación. Lo ves, lo pruebas y te lo llevas hoy.",
+            title: "Entregas en Cañete",
+            desc: "Puntos de entrega seguros en San Vicente. Equipos importados bajo pedido (~2 semanas).",
             color: "#800020" // Vino Tinto
         }
     ];
