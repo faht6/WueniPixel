@@ -78,7 +78,7 @@ const BudgetRecommender = ({ district }) => {
                 });
                 recommendedProduct = affordableProducts[0];
                 reasonText = "Potencia bruta y estabilidad. El chip ideal para renderizar gráficos complejos.";
-                analysisText = `Análisis WueniPixel: En ${district || 'Lima'}, recomendamos este modelo por su frialdad bajo carga extrema y FPS estables.`;
+                analysisText = `En ${district || 'Lima'}, recomendamos este modelo por su frialdad bajo carga extrema y FPS estables.`;
 
             } else if (selectedUseCase === 'social') {
                 // Prioritize Apple (Ecosystem)
@@ -142,7 +142,7 @@ const BudgetRecommender = ({ district }) => {
                         </h1>
 
                         <p className="hero-subtitle">
-                            Súmate a la economía circular con tecnología premium certificada.
+                            Súmate a la economía circular con tecnología certificada.
                         </p>
 
                         {/* USE CASE SELECTOR */}

@@ -118,7 +118,7 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
             }}
           >
             <Smartphone className="logo-icon" size={24} />
-            WueniPixel <span style={{ fontSize: '0.7em', opacity: 0.5, marginLeft: '5px' }}>v6.0</span>
+            WueniPixel <span style={{ fontSize: '0.7em', opacity: 0.5, marginLeft: '5px' }}>v8.0</span>
           </Link>
 
           {/* Desktop Links con Dropdowns */}

@@ -10,7 +10,7 @@ const faqs = [
     },
     {
         question: "¿Cuál es el tiempo de espera?",
-        answer: "Trabajamos mediante importación directa bajo pedido. El tiempo estimado de entrega es de aproximadamente 2 semanas tras confirmar la reserva.",
+        answer: "Los equipos son traídos directamente desde USA bajo pedido. El tiempo estimado de entrega es de 2 a 3 semanas desde la confirmación de la reserva.",
         icon: <Smartphone size={20} />
     },
     {

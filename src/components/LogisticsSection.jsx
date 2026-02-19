@@ -10,8 +10,8 @@ const LogisticsSection = () => {
                 {/* LOGISTICS CARD */}
                 <div className="feature-card logistics-card">
                     <div className="card-header">
-                        <div className="icon-box">
-                            <Truck size={24} />
+                        <div className="icon-box" style={{ width: '64px', height: '64px', borderRadius: '16px' }}>
+                            <Truck size={32} />
                         </div>
                         <h3>Logística y Entregas</h3>
                     </div>
@@ -22,7 +22,7 @@ const LogisticsSection = () => {
                                 <div className="dot accent"></div>
                                 <div>
                                     <h4>Tiempo de Entrega</h4>
-                                    <p>Importación directa de USA: **~2 semanas** desde la confirmación.</p>
+                                    <p>Directo desde USA: **2 a 3 semanas** desde la confirmación.</p>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@ const LogisticsSection = () => {
                                 <div className="dot accent"></div>
                                 <div>
                                     <h4>Garantía y Documentación</h4>
-                                    <p>Emitimos **Boleta de Venta** (RUS). 3 días de prueba técnica.</p>
+                                    <p>Emitimos **Boleta de Venta**. Soporte técnico incluido.</p>
                                 </div>
                             </div>
                         </div>
@@ -52,8 +52,8 @@ const LogisticsSection = () => {
                 {/* PAYMENT & RESERVATION CARD */}
                 <div className="feature-card payment-card">
                     <div className="card-header">
-                        <div className="icon-box">
-                            <CreditCard size={24} />
+                        <div className="icon-box" style={{ width: '64px', height: '64px', borderRadius: '16px' }}>
+                            <CreditCard size={32} />
                         </div>
                         <h3>Sistema de Reserva</h3>
                     </div>
@@ -69,7 +69,7 @@ const LogisticsSection = () => {
 
                         <div className="reservation-footer">
                             <p className="policy-note">
-                                * El adelanto de S/ 50.00 **no es reembolsable**, ya que cubre gastos logísticos y operativos de importación.
+                                * El adelanto de S/ 50.00 **no es reembolsable**, ya que cubre gastos logísticos y operativos.
                             </p>
                         </div>
 

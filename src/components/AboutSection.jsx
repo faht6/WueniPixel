@@ -15,11 +15,11 @@ const AboutSection = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="section-tag">Nuestra Identidad</h2>
-                    <h1 className="about-title">Tienda Online Premium en Cañete</h1>
+                    <h1 className="about-title">Tienda Online en Cañete</h1>
                     <p className="about-description">
                         En WueniPixel, redefinimos la experiencia de adquirir tecnología Apple y Google en nuestra comunidad.
-                        Somos una **Tienda Online especializada** que opera con un modelo de importación directa desde USA,
-                        eliminando intermediarios para ofrecerte equipos impecables al mejor precio del mercado.
+                        Somos una tienda que opera con un modelo directo desde USA,
+                        para ofrecerte equipos impecables al mejor precio del mercado.
                     </p>
 
                     <div className="about-points">
@@ -34,7 +34,7 @@ const AboutSection = () => {
                             <div className="point-icon"><ShieldCheck size={20} /></div>
                             <div>
                                 <h4>Formalidad y Garantía</h4>
-                                <p>Emitimos boleta de venta (Nuevo RUS) y ofrecemos soporte técnico especializado.</p>
+                                <p>Emitimos boleta de venta y ofrecemos soporte técnico.</p>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const AboutSection = () => {
                 >
                     <div className="visual-card">
                         <div className="visual-badge">100% Digital</div>
-                        <img src="/products/iphone12_all.jpg" alt="WueniPixel Experience" className="about-img" />
+                        <img src="/products/iphone16pro_titanionegro.jpg" alt="WueniPixel Experience" className="about-img" />
                     </div>
                 </motion.div>
             </div>

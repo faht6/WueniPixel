@@ -92,12 +92,12 @@ const ProductQuickView = ({ product, isOpen, onClose }) => {
                                     </div>
                                     <div className="qv-feature">
                                         <Zap size={16} className="text-accent" />
-                                        <span>Entrega en Cañete (~2 semanas)</span>
+                                        <span>Estado estético Excelente/God</span>
                                     </div>
                                 </div>
 
                                 <p className="qv-desc">
-                                    {product.description || `Disfruta del rendimiento premium del ${product.name}. Importación directa de USA con entrega personal en San Vicente.`}
+                                    {product.description || `Disfruta del rendimiento premium del ${product.name}. Directa de USA con entrega personal en San Vicente.`}
                                 </p>
 
                                 <div className="qv-actions">

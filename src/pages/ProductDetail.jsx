@@ -226,7 +226,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                 {/* LOGISTICA LOCAL */}
                                 <div className="local-shipping-badge">
                                     <MapPin size={16} />
-                                    <p>Entrega programada en **Cañete** (~2 semanas)</p>
+                                    <p>Entrega programada por importación (2-3 semanas).</p>
                                 </div>
 
                                 <p className="stock-label">Stock disponible (Pocas unidades)</p>

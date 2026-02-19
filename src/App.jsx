@@ -132,10 +132,10 @@ function App() {
         <ProductProvider>
             <div className="app">
                 <Helmet>
-                    <title>WueniPixel | iPhones y Pixels Seminuevos con Garantía</title>
+                    <title>WueniPixel | Celulares en Cañete</title>
                     <meta name="description" content="La tienda de tecnología más confiable del Perú. Encuentra iPhones y Google Pixels seminuevos certificados y nuevos con garantía real." />
                     <meta property="og:type" content="website" />
-                    <meta property="og:title" content="WueniPixel | Tecnología Premium al Mejor Precio" />
+                    <meta property="og:title" content="WueniPixel | Tecnología al Mejor Precio" />
                     <meta property="og:description" content="iPhones y Pixels con garantía, envío gratis y soporte personalizado." />
                     <meta property="og:image" content="https://wuenipixel.vercel.app/og-image.jpg" /> {/* Fixed placeholder URL */}
                 </Helmet>

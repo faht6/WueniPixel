@@ -86,17 +86,20 @@
 
 .btn-trade-wa {
     display: inline-block;
-    background: #25D366;
-    color: white;
-    padding: 14px 28px;
+    background: #FFFFFF;
+    color: var(--color-accent);
+    padding: 14px 32px;
     border-radius: 100px;
     font-weight: 700;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-trade-wa:hover {
     transform: scale(1.05);
+    background: #f8f8f8;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 900px) {

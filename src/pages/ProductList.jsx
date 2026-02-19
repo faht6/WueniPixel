@@ -103,7 +103,7 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false,
             {/* Header & Controls */}
             {!isEmbedded && (
                 <div className="list-header">
-                    <h1 className="list-title">Catálogo Premium</h1>
+                    <h1 className="catalog-title">Catálogo Completo</h1>
                     <p className="list-subtitle">Tecnología certificada con estilo.</p>
                 </div>
             )}

@@ -87,8 +87,9 @@
 }
 
 .budget-recommender .text-gradient {
-    background: linear-gradient(90deg, #A855F7 0%, #EC4899 100%);
+    background: linear-gradient(90deg, var(--color-accent) 0%, #A52A2A 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -177,10 +178,11 @@
 .budget-recommender .hero-budget-input {
     width: 100%;
     padding: 20px 20px 20px 50px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #FFFFFF;
+    border: 1px solid var(--color-border-subtle);
     border-radius: 16px;
-    color: #fff;
+    color: #1D1D1F !important;
+    /* Force visible text */
     font-size: 18px;
     font-weight: 600;
     outline: none;

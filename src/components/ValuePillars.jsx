@@ -7,8 +7,8 @@ const ValuePillars = () => {
         {
             id: 1,
             icon: <Award size={40} />,
-            title: "Calidad Grado A+",
-            desc: "Dispositivos impecables, seleccionados manualmente para garantizar estética 10/10.",
+            title: "Calidad Excelente/God",
+            desc: "Dispositivos impecables, seleccionados manualmente para garantizar calidad Excelente/God.",
             color: "#FFD700" // Gold
         },
         {
@@ -22,7 +22,7 @@ const ValuePillars = () => {
             id: 3,
             icon: <MapPin size={40} />,
             title: "Entregas en Cañete",
-            desc: "Puntos de entrega seguros en San Vicente. Equipos importados bajo pedido (~2 semanas).",
+            desc: "Puntos de entrega seguros en San Vicente. Equipos bajo pedido (2 a 3 semanas).",
             color: "#800020" // Vino Tinto
         }
     ];

@@ -12,7 +12,7 @@ const HeroCarousel = () => {
             id: 1,
             title: "iPhone 16 Pro",
             subtitle: "Diseño en Titanio. Potencia A18 Pro.",
-            description: "La máxima expresión de tecnología Apple, ahora disponible en Cañete bajo pedido (importación ~2 semanas).",
+            description: "La máxima expresión de tecnología Apple, ahora disponible en Cañete bajo pedido (2 a 3 semanas).",
             image: "/products/iphone16pro_titanionegro.jpg", // Ensure this path exists or use a fallback
             cta: "Ver Colección",
             link: "/products?brand=Apple",
