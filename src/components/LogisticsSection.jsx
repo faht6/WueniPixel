@@ -22,7 +22,7 @@ const LogisticsSection = () => {
                                 <div className="dot accent"></div>
                                 <div>
                                     <h4>Tiempo de Entrega</h4>
-                                    <p>Directo desde USA: **2 a 3 semanas** desde la confirmación.</p>
+                                    <p>Directo desde USA: <strong>2 a 3 semanas</strong> desde la confirmación.</p>
                                 </div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@ const LogisticsSection = () => {
                                 <div className="dot accent"></div>
                                 <div>
                                     <h4>Puntos de Entrega Seguros</h4>
-                                    <p>Exclusivamente en **San Vicente de Cañete** (Plaza de Armas o C.C.).</p>
+                                    <p>Exclusivamente en <strong>San Vicente de Cañete</strong> (Plaza de Armas o C.C.).</p>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@ const LogisticsSection = () => {
                                 <div className="dot accent"></div>
                                 <div>
                                     <h4>Garantía y Documentación</h4>
-                                    <p>Emitimos **Boleta de Venta**. Soporte técnico incluido.</p>
+                                    <p>Emitimos <strong>Boleta de Venta</strong>. Soporte técnico incluido.</p>
                                 </div>
                             </div>
                         </div>
@@ -62,14 +62,14 @@ const LogisticsSection = () => {
                         <div className="payment-option yape-premium-card">
                             <div className="payment-content">
                                 <h4>Adelanto de Reserva</h4>
-                                <p>Se requiere un adelanto de **S/ 50.00** para iniciar el pedido.</p>
+                                <p>Se requiere un adelanto de <strong>S/ 50.00</strong> para iniciar el pedido.</p>
                             </div>
                             <div className="badge-free">Obligatorio</div>
                         </div>
 
                         <div className="reservation-footer">
                             <p className="policy-note">
-                                * El adelanto de S/ 50.00 **no es reembolsable**, ya que cubre gastos logísticos y operativos.
+                                El adelanto de S/ 50.00 <strong>no es reembolsable</strong>, ya que cubre gastos logísticos y operativos.
                             </p>
                         </div>
 

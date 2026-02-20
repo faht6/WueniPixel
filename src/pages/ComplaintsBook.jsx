@@ -166,7 +166,7 @@ const ComplaintsBook = () => {
                             Enviar Hoja de Reclamación <Send size={18} />
                         </button>
                         <p className="declaration">
-                            * Al enviar este formulario acepto que la información es verdadera y acepto la Política de Privacidad.
+                            Al enviar este formulario acepto que la información es verdadera y acepto la Política de Privacidad.
                         </p>
                     </div>
 

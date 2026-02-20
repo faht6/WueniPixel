@@ -20,7 +20,7 @@ const TradeInSection = () => {
                         <h1 className="trade-title">Actualiza tu iPhone</h1>
                         <p className="trade-subtitle">
                             ¿Tienes un iPhone? Lo aceptamos como parte de pago para tu próximo equipo.
-                            <br /><span>*Especialmente válido para teléfonos Apple (sujeto a evaluación técnica).</span>
+                            <br /><span>Especialmente válido para teléfonos Apple (sujeto a evaluación técnica).</span>
                         </p>
                     </div>
 
