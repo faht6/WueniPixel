@@ -88,11 +88,11 @@ const ProductQuickView = ({ product, isOpen, onClose }) => {
                                     </div>
                                     <div className="qv-feature">
                                         <Battery size={16} className="text-green" />
-                                        <span>Batería: {product.battery_health || '85%+'}</span>
+                                        <span>Batería: {product.battery_health || product.specs?.battery || '85%+'}</span>
                                     </div>
                                     <div className="qv-feature">
                                         <Zap size={16} className="text-accent" />
-                                        <span>Estado estético Excelente/God</span>
+                                        <span>Estado estético Excelente/Good</span>
                                     </div>
                                 </div>
 

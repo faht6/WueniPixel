@@ -132,7 +132,7 @@ function App() {
         <ProductProvider>
             <div className="app">
                 <Helmet>
-                    <title>WueniPixel | Celulares en Cañete</title>
+                    <title>WueniPixel v11.0 | Celulares en Cañete</title>
                     <meta name="description" content="La tienda de tecnología más confiable del Perú. Encuentra iPhones y Google Pixels seminuevos certificados y nuevos con garantía real." />
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content="WueniPixel | Tecnología al Mejor Precio" />

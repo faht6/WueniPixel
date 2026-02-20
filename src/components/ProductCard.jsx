@@ -90,7 +90,7 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
         {product.condition === 'used' && (
           <div className="badge-battery">
             <Zap size={10} color="#50C878" fill="#50C878" />
-            <span>Batería 85%+</span>
+            <span>Batería {product.battery_health || product.specs?.battery || '85%+'}</span>
           </div>
         )}
       </Link>

@@ -32,6 +32,7 @@ const BudgetRecommender = ({ district }) => {
 
         // Parse battery helper
         const getBatteryMah = (specs) => {
+            if (!specs || !specs.battery) return 0;
             const match = specs.battery.match(/(\d+)\s*mAh/i);
             return match ? parseInt(match[1]) : 0;
         };
@@ -100,7 +101,7 @@ const BudgetRecommender = ({ district }) => {
                 });
                 recommendedProduct = affordableProducts[0];
                 reasonText = "Productividad non-stop. La mayor batería disponible para tu presupuesto.";
-                analysisText = `Para jornadas largas en ${district || 'la región'}, priorizamos la autonomía de este equipo (${recommendedProduct?.specs?.battery}).`;
+                analysisText = `Para jornadas largas en ${district || 'la región'}, priorizamos la autonomía de este equipo (${recommendedProduct?.specs?.battery || 'N/A'}).`;
             }
         } else {
             // Fallback: Cheapest

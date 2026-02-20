@@ -169,15 +169,41 @@ img {
   }
 }
 
-/* Floating Animations v10 */
+/* Floating Animations v11 */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-14px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
 }
+
 @keyframes float-delayed {
-  0%, 100% { transform: translateY(10px); }
-  50%       { transform: translateY(-4px); }
+
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
-.animate-float          { animation: float 4s ease-in-out infinite; }
-.animate-float-delayed  { animation: float-delayed 4s ease-in-out infinite; animation-delay: 0.8s; }
-.animate-float-delayed-2{ animation: float-delayed 4s ease-in-out infinite; animation-delay: 1.6s; }
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-float-delayed-2 {
+  animation: float-delayed 4s ease-in-out infinite;
+  animation-delay: 1.6s;
+}

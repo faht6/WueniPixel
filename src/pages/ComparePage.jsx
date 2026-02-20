@@ -87,10 +87,10 @@ const ComparePage = ({ addToCart }) => {
                                 <div className="data-row price-row">
                                     {formatCurrency(getPrice(product))}
                                 </div>
-                                <div className="data-row">{product.specs.screen}</div>
-                                <div className="data-row">{product.specs.processor}</div>
-                                <div className="data-row">{product.specs.camera}</div>
-                                <div className="data-row">{product.specs.battery}</div>
+                                <div className="data-row">{product.specs?.screen || 'N/A'}</div>
+                                <div className="data-row">{product.specs?.processor || 'N/A'}</div>
+                                <div className="data-row">{product.specs?.camera || 'N/A'}</div>
+                                <div className="data-row">{product.specs?.battery || 'N/A'}</div>
                                 <div className="data-row">
                                     {product.condition === 'new' ? 'Nuevo' : 'Seminuevo'}
                                 </div>

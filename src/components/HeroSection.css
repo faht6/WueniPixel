@@ -1,8 +1,8 @@
 /* ============================================
-   HERO v10.0 — Apple-Style Centered
+   HERO v11.0 — Apple-Style Centered
    ============================================ */
 
-.hero-section-v10 {
+.hero-section-v11 {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -14,7 +14,7 @@
     padding-top: 80px;
 }
 
-.hero-container-v10 {
+.hero-container-v11 {
     max-width: 1400px;
     width: 90%;
     display: flex;
@@ -23,7 +23,7 @@
 }
 
 /* ── TOP CONTENT ── */
-.hero-header-v10 {
+.hero-header-v11 {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
     margin-bottom: 2rem;
 }
 
-.hero-badge-v10 {
+.hero-badge-v11 {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -74,7 +74,7 @@
     }
 }
 
-.hero-title-v10 {
+.hero-title-v11 {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 900;
     line-height: 1;
@@ -83,11 +83,11 @@
     white-space: nowrap;
 }
 
-.text-wine-v10 {
+.text-wine-v11 {
     color: #8B0000;
 }
 
-.hero-subtitle-container-v10 {
+.hero-subtitle-container-v11 {
     font-size: 1.1rem;
     color: #6b7280;
     max-width: 600px;
@@ -95,17 +95,17 @@
     line-height: 1.6;
 }
 
-.hero-subtitle-container-v10 p {
+.hero-subtitle-container-v11 p {
     margin: 0;
 }
 
-.hero-ctas-v10 {
+.hero-ctas-v11 {
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
 
-.btn-primary-v10 {
+.btn-primary-v11 {
     background: #8B0000;
     color: #ffffff;
     padding: 0.875rem 2rem;
@@ -119,12 +119,12 @@
     transition: all 0.3s;
 }
 
-.btn-primary-v10:hover {
+.btn-primary-v11:hover {
     background: #6b0000;
     transform: translateY(-2px);
 }
 
-.btn-secondary-v10 {
+.btn-secondary-v11 {
     background: #ffffff;
     color: #1a1a1a;
     padding: 0.875rem 2rem;
@@ -138,12 +138,12 @@
     transition: all 0.3s;
 }
 
-.btn-secondary-v10:hover {
+.btn-secondary-v11:hover {
     background: #f9fafb;
 }
 
 /* ── STAGGERED PHONES ── */
-.hero-phones-v10 {
+.hero-phones-v11 {
     position: relative;
     width: 100%;
     margin-top: 4rem;
@@ -156,11 +156,11 @@
     /* Create new stacking context for blending */
 }
 
-.phone-wrap-v10 {
+.phone-wrap-v11 {
     position: relative;
 }
 
-.phone-img-v10 {
+.phone-img-v11 {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -169,69 +169,69 @@
     transition: all 0.5s ease-out;
 }
 
-.side-phone-v10 {
+.side-phone-v11 {
     width: 220px;
     transform: translateY(40px);
     opacity: 0.85;
 }
 
-.side-phone-v10:hover {
+.side-phone-v11:hover {
     opacity: 1;
     transform: translateY(24px);
 }
 
-.hero-phone-v10 {
+.hero-phone-v11 {
     width: 300px;
     z-index: 10;
 }
 
-.hero-phone-v10:hover {
+.hero-phone-v11:hover {
     transform: translateY(-12px);
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-    .side-phone-v10 {
+    .side-phone-v11 {
         width: 180px;
     }
 
-    .hero-phone-v10 {
+    .hero-phone-v11 {
         width: 250px;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-title-v10 {
+    .hero-title-v11 {
         font-size: 3rem;
         white-space: normal;
     }
 
-    .hero-ctas-v10 {
+    .hero-ctas-v11 {
         flex-direction: column;
         width: 100%;
         max-width: 300px;
     }
 
-    .btn-primary-v10,
-    .btn-secondary-v10 {
+    .btn-primary-v11,
+    .btn-secondary-v11 {
         width: 100%;
         justify-content: center;
     }
 
-    .hero-phones-v10 {
+    .hero-phones-v11 {
         padding-bottom: 2rem;
     }
 
-    .left-phone-v10,
-    .right-phone-v10 {
+    .left-phone-v11,
+    .right-phone-v11 {
         display: none;
     }
 
-    .center-phone-v10 {
+    .center-phone-v11 {
         margin: 0 auto;
     }
 
-    .hero-phone-v10 {
+    .hero-phone-v11 {
         width: 260px;
     }
 }

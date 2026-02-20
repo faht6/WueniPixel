@@ -8,7 +8,7 @@ const TradeInSection = () => {
         { icon: <Smartphone size={18} />, text: "Pantalla e integridad física impecable (sin rajaduras)." },
         { icon: <Battery size={18} />, text: "Salud de batería mínima de 85%." },
         { icon: <Unlock size={18} />, text: "Libre de operador (Unlocked) y sin bloqueos de iCloud." },
-        { icon: <CheckCircle2 size={18} />, text: "Se acepta con o sin caja (valoración variará)." },
+        { icon: <CheckCircle2 size={18} />, text: "Se acepta con o sin caja" },
     ];
 
     return (

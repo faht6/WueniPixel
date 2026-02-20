@@ -7,8 +7,8 @@ const ValuePillars = () => {
         {
             id: 1,
             icon: <Award size={40} />,
-            title: "Calidad Excelente/God",
-            desc: "Dispositivos impecables, seleccionados manualmente para garantizar calidad Excelente/God.",
+            title: "Calidad Excelente/Good",
+            desc: "Dispositivos impecables, seleccionados manualmente para garantizar calidad Excelente/Good.",
             color: "#FFD700" // Gold
         },
         {
