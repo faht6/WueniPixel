@@ -131,7 +131,7 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
           </button>
 
           <a
-            href={`https://wa.me/51900000000?text=${encodeURIComponent(`Hola WueniPixel, quiero información del ${product.name} que vi en la web.`)}`}
+            href={`https://wa.me/51941126123?text=${encodeURIComponent(`Hola WueniPixel, quiero información del ${product.name} que vi en la web.`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-add-cart btn-pulse"

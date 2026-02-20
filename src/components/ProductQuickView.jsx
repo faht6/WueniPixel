@@ -102,7 +102,7 @@ const ProductQuickView = ({ product, isOpen, onClose }) => {
 
                                 <div className="qv-actions">
                                     <a
-                                        href={`https://wa.me/51900000000?text=${encodeURIComponent(`Hola WueniPixel, estoy interesado en el ${product.name} que vi en la Vista Rápida.`)}`}
+                                        href={`https://wa.me/51941126123?text=${encodeURIComponent(`Hola WueniPixel, estoy interesado en el ${product.name} que vi en la Vista Rápida.`)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn-whatsapp-qv"

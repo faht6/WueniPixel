@@ -47,7 +47,7 @@ const TradeInSection = () => {
                             <div className="cta-content">
                                 <h3>Cotiza tu equipo hoy</h3>
                                 <p>Envíanos fotos y detalles de tu iPhone para una pre-valoración inmediata vía WhatsApp.</p>
-                                <a href="https://wa.me/51924614605" className="btn-trade-wa">
+                                <a href="https://wa.me/51941126123" className="btn-trade-wa">
                                     Iniciar Evaluación
                                 </a>
                             </div>

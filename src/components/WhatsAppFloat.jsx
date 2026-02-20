@@ -5,7 +5,7 @@ import './WhatsAppFloat.css';
 const WhatsAppFloat = () => {
     return (
         <motion.a
-            href="https://wa.me/51900000000?text=Hola%20WueniPixel,%20tengo%20una%20consulta."
+            href="https://wa.me/51941126123?text=Hola%20WueniPixel,%20tengo%20una%20consulta."
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-float"

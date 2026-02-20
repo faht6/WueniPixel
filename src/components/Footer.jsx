@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="footer-top">
                     <div className="footer-col brand-col">
                         <h3>WueniPixel</h3>
-                        <p>Tecnología que inspira. Llevamos a tus manos los dispositivos más avanzados con una experiencia de compra inigualable.</p>
+                        <p>WueniPixel Tecnología sin límites. Creamos el puente entre las mejores innovaciones y tu día a día con total confianza</p>
                         <div className="social-links">
                             <a href="https://facebook.com/wuenipixel" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={20} /></a>
                             <a href="https://instagram.com/wuenipixel" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
@@ -59,7 +59,7 @@ const Footer = () => {
                             <span style={{ marginRight: '4px' }}>📖</span> Libro de Reclamaciones
                         </Link>
                     </div>
-                    <p>&copy; {new Date().getFullYear()} WueniPixel v11.0. Diseñado con precisión por © {new Date().getFullYear()} WueniPixel</p>
+                    <p>&copy; 2026 WueniPixel</p>
                 </div>
             </div>
         </footer>

@@ -53,7 +53,7 @@ const ReservationModal = ({ isOpen, onClose, product, selectedColor, selectedSto
         const locationString = `${formData.district}, ${formData.province} (${formData.department})`;
         const message = `Hola WueniPixel, quiero reservar el ${product.name} de ${selectedStorage || 'N/A'} en ${selectedColor || 'N/A'}. Estoy en ${locationString} y pagaré con ${formData.paymentMethod}. ¿Está disponible?`;
 
-        const whatsappUrl = `https://wa.me/51906912300?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/51941126123?text=${encodeURIComponent(message)}`;
 
         // Open WhatsApp
         window.open(whatsappUrl, '_blank');
