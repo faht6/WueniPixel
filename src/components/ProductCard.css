@@ -26,19 +26,24 @@
 }
 
 .card-image-container {
-    width: 100%;
-    /* Generous padding for "Boutique" air */
-    padding: 2.5rem 1.5rem 1.5rem;
+    width: calc(100% - 24px);
+    margin: 12px;
+    padding: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent;
-    /* Changed from gray to transparent for blending */
+    background: #F5F5F7;
+    /* Apple Spotlight Gray */
+    border-radius: 20px;
     position: relative;
-    height: 280px;
-    /* Fixed height for consistency */
-    overflow: visible;
-    /* Allow drop-shadow to bleed if needed */
+    height: 240px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-theme='dark'] .card-image-container {
+    background: #E8E8ED;
+    /* Slightly darker light gray for dark mode blending */
 }
 
 .card-image {
@@ -54,7 +59,8 @@
     filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.06));
 
     /* 2. Background Blending */
-    mix-blend-mode: normal;
+    mix-blend-mode: multiply;
+    /* This makes the white background of the image disappear into the #F5F5F7 container */
 
     /* 3. Initial State */
     transform-origin: center bottom;
