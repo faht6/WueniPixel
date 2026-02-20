@@ -47,10 +47,11 @@
 }
 
 .point-icon {
-    background: white;
+    background: var(--color-surface-secondary);
     padding: 10px;
     border-radius: 12px;
     color: var(--color-accent);
+    border: 1px solid var(--color-border-subtle);
     box-shadow: 0 4px 12px rgba(128, 0, 32, 0.1);
 }
 
@@ -69,10 +70,11 @@
 }
 
 .visual-card {
-    background: white;
+    background: var(--color-surface-secondary);
     border-radius: var(--radius-lg);
     overflow: hidden;
     position: relative;
+    border: 1px solid var(--color-border-subtle);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 

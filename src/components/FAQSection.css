@@ -10,6 +10,7 @@
     margin-bottom: 40px;
     background: linear-gradient(90deg, #800020, #4a0012);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -37,7 +38,7 @@
 
 .faq-item.open {
     border-color: #800020;
-    background: white;
+    background: var(--color-surface-secondary);
     box-shadow: 0 8px 24px rgba(128, 0, 32, 0.08);
 }
 

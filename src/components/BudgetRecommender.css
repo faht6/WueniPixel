@@ -178,10 +178,10 @@
 .budget-recommender .hero-budget-input {
     width: 100%;
     padding: 20px 20px 20px 50px;
-    background: #FFFFFF;
+    background: var(--color-surface-secondary);
     border: 1px solid var(--color-border-subtle);
     border-radius: 16px;
-    color: #1D1D1F !important;
+    color: var(--color-text-primary) !important;
     /* Force visible text */
     font-size: 18px;
     font-weight: 600;
@@ -203,8 +203,8 @@
 
 .budget-recommender .hero-search-btn {
     padding: 0 32px;
-    background: #fff;
-    color: #000;
+    background: var(--color-accent);
+    color: #fff;
     font-weight: 700;
     border-radius: 16px;
     border: none;
@@ -327,8 +327,8 @@
 
 /* RESULT CARD */
 .budget-recommender .hero-result-card {
-    background: rgba(20, 20, 20, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-surface-secondary);
+    border: 1px solid var(--color-border-subtle);
     backdrop-filter: blur(20px);
     padding: 30px;
     border-radius: 32px;
@@ -413,8 +413,8 @@
     display: block;
     width: 100%;
     padding: 16px;
-    background: #fff;
-    color: #000;
+    background: var(--color-accent);
+    color: #fff;
     text-align: center;
     border-radius: 16px;
     font-weight: 700;
@@ -422,13 +422,8 @@
     transition: background 0.2s;
 }
 
-[data-theme='light'] .budget-recommender .btn-result-view {
-    background: #000;
-    color: #fff;
-}
-
 .budget-recommender .btn-result-view:hover {
-    background: #eee;
+    background: #a00028;
 }
 
 /* ANIMATIONS */

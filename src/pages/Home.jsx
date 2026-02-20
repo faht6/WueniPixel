@@ -27,9 +27,9 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                 <ValuePillars />
 
                 {/* 3. ORIGINAL BUDGET RECOMMENDER (Renamed/Contextualized) */}
-                <section className="bg-white py-4">
+                <section className="recommender-section" style={{ padding: '4rem 0' }}>
                     <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-                        <p style={{ color: '#666', marginBottom: '1rem' }}>¿Indeciso? Déjanos ayudarte.</p>
+                        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem' }}>¿Indeciso? Déjanos ayudarte.</p>
                         <BudgetRecommender district={district} />
                     </div>
                 </section>
@@ -38,7 +38,7 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                 <BrandMarquee />
 
                 {/* 4. MAIN CATALOG EMBEDDED */}
-                <section id="catalog" className="catalog-section" style={{ background: '#F5F5F5', paddingBottom: '4rem' }}>
+                <section id="catalog" className="catalog-section" style={{ background: 'var(--color-background)', paddingBottom: '4rem' }}>
                     <div className="container" style={{ paddingTop: '4rem' }}>
                         <div className="section-header center" style={{ textAlign: 'center', marginBottom: '2rem' }}>
                             <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: 800 }}>Nuestro Catálogo</h2>

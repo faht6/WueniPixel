@@ -84,7 +84,7 @@
 }
 
 .dot.gray {
-    background: #ccc;
+    background: var(--color-text-secondary);
 }
 
 .option-item h4 {
@@ -177,9 +177,11 @@
 }
 
 .badge-fee {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--color-surface-secondary);
+    border: 1px solid var(--color-border-subtle);
     padding: 4px 8px;
     border-radius: 6px;
     font-size: 12px;
     font-weight: 700;
+    color: var(--color-text-secondary);
 }

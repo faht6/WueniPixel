@@ -1,9 +1,9 @@
 .product-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--color-surface-secondary);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color-border-subtle);
     overflow: hidden;
     position: relative;
     transition: box-shadow 0.4s ease;
@@ -54,7 +54,7 @@
     filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.06));
 
     /* 2. Background Blending */
-    mix-blend-mode: multiply;
+    mix-blend-mode: normal;
 
     /* 3. Initial State */
     transform-origin: center bottom;
@@ -204,7 +204,7 @@
     border-radius: 50%;
     /* Circle */
     border: 1px solid var(--color-border-subtle);
-    background: white;
+    background: var(--color-background);
     color: var(--color-text-primary);
     display: flex;
     align-items: center;

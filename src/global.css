@@ -50,8 +50,8 @@
 /* DARK MODE REFINEMENTS */
 [data-theme='dark'] {
   --color-background: #000000;
-  --color-surface-secondary: #161617;
-  --color-text-primary: #F5F5F7;
+  --color-surface-secondary: #0D0D0E;
+  --color-text-primary: #FFFFFF;
   --color-text-secondary: #A1A1A6;
   --color-border-subtle: #424245;
 
@@ -62,6 +62,9 @@
   --text-primary: var(--color-text-primary);
   --text-secondary: var(--color-text-secondary);
   --border-color: var(--color-border-subtle);
+
+  /* Glass Effect Token */
+  --color-glass: rgba(22, 22, 23, 0.8);
 }
 
 
