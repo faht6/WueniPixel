@@ -253,3 +253,19 @@
     cursor: not-allowed;
     background: #eee;
 }
+@media (max-width: 600px) {
+    .card-image-container {
+        height: 200px;
+        margin: 8px;
+        width: calc(100% - 16px);
+        padding: 1rem;
+    }
+    
+    .card-content {
+        padding: 1.25rem;
+    }
+    
+    .card-title {
+        font-size: 1rem;
+    }
+}
