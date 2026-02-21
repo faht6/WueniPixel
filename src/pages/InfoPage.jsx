@@ -37,10 +37,10 @@ const contentMap = {
                 <p>Queremos que ames tu nuevo dispositivo. Si no estás satisfecho, tienes hasta 7 días calendario para solicitar una devolución.</p>
                 <h3>Requisitos</h3>
                 <ul>
-                    <li>El producto debe estar sellado y en su empaque original.</li>
+                    <li>El producto debe estar en las mismas condiciones que fue entregado.</li>
                     <li>Presentar el comprobante de pago.</li>
                 </ul>
-                <p>Contáctanos a devoluciones@wuenipixel.pe para iniciar el proceso.</p>
+                <p>Contáctanos a <strong>wuenipixel@gmail.com</strong> para iniciar el proceso.</p>
             </>
         )
     },
@@ -52,9 +52,8 @@ const contentMap = {
                 <p>Estamos aquí para ayudarte. Nuestro equipo de soporte está disponible de Lunes a Sábado de 9:00 AM a 6:00 PM.</p>
                 <h3>Canales de Atención</h3>
                 <ul>
-                    <li><strong>Email:</strong> contacto@wuenipixel.pe</li>
-                    <li><strong>WhatsApp:</strong> +51 987 654 321</li>
-                    <li><strong>Teléfono:</strong> (01) 123-4567</li>
+                    <li><strong>Email:</strong> wuenipixel@gmail.com</li>
+                    <li><strong>WhatsApp:</strong> +51 941126123</li>
                 </ul>
             </>
         )
@@ -65,11 +64,11 @@ const contentMap = {
         icon: <Shield size={48} />,
         content: (
             <>
-                <p>En WueniPixel, nos tomamos tu privacidad muy en serio. Esta política describe cómo recopilamos, usamos y protegemos tu información personal.</p>
+                <p>En WueniPixel, nos tomamos tu privacidad muy en serio. Esta política describe cómo recopilamos, usamos y protegemos tu información personal conforme a la Ley N° 29733.</p>
                 <h3>Recopilación de Datos</h3>
                 <p>Solo recopilamos la información necesaria para procesar tus pedidos y mejorar tu experiencia de compra (Nombre, Dirección, Email).</p>
                 <h3>Seguridad</h3>
-                <p>Tus datos están encriptados y nunca compartimos información financiera con terceros.</p>
+                <p>Tus datos están protegidos y nunca compartimos información financiera con terceros sin tu consentimiento.</p>
             </>
         )
     },
@@ -78,11 +77,25 @@ const contentMap = {
         icon: <FileText size={48} />,
         content: (
             <>
-                <p>Bienvenido a WueniPixel. Al usar nuestro sitio web, aceptas cumplir con los siguientes términos y condiciones.</p>
-                <h3>Uso del Sitio</h3>
-                <p>El contenido de este sitio es para tu información general y uso personal. Está sujeto a cambios sin previo aviso.</p>
-                <h3>Propiedad Intelectual</h3>
-                <p>Todo el material contenido en este sitio web es propiedad de o tiene licencia para nosotros.</p>
+                <p>Bienvenido a WueniPixel. Al utilizar nuestro sitio web, aceptas los siguientes términos y condiciones establecidos bajo la legislación peruana (Ley N° 29571).</p>
+
+                <h3>1. Objeto</h3>
+                <p>WueniPixel se dedica a la comercialización de dispositivos móviles nuevos y seminuevos (refurbished) importados directamente de USA.</p>
+
+                <h3>2. Precios y Pagos</h3>
+                <p>Todos los precios están expresados en Soles (S/). Los métodos de pago aceptados incluyen transferencias bancarias, billeteras digitales (Yape/Plin), pagos con tarjeta (+5% comisión) y efectivo contraentrega en zonas autorizadas.</p>
+
+                <h3>3. Proceso de Venta</h3>
+                <p>Debido a que los equipos son importados bajo pedido, el tiempo estimado de entrega es de 2 a 3 semanas. La reserva se confirma con el adelanto acordado vía WhatsApp.</p>
+
+                <h3>4. Garantía</h3>
+                <p>Ofrecemos una garantía técnica limitada de 3 meses para equipos seminuevos, cubriendo únicamente fallos de fabricación no atribuibles al mal uso por parte del usuario.</p>
+
+                <h3>5. Entregas y Envíos</h3>
+                <p>Realizamos entregas personales en San Vicente de Cañete y envíos a todo el Perú mediante agencias certificadas. El riesgo de pérdida se transfiere al cliente al momento del despacho.</p>
+
+                <h3>6. Limitación de Responsabilidad</h3>
+                <p>WueniPixel no se responsabiliza por retrasos derivados de trámites aduaneros o logísticos internacionales ajenos a nuestro control directo.</p>
             </>
         )
     },

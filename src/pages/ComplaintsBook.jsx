@@ -33,9 +33,31 @@ const ComplaintsBook = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically send to backend.
-        // For now, simulate success.
-        console.log('Complaint submitted:', formData);
+
+        // Construct the complaint message
+        const message = `HOJA DE RECLAMACIÓN VIRTUAL - WueniPixel\n` +
+            `----------------------------------\n` +
+            `Fecha: ${formData.date}\n` +
+            `Cliente: ${formData.fullName}\n` +
+            `Documento: ${formData.documentType} ${formData.documentNumber}\n` +
+            `Email: ${formData.email}\n` +
+            `Teléfono: ${formData.phone}\n\n` +
+            `DETALLE DEL RECLAMO:\n` +
+            `Tipo: ${formData.claimType}\n` +
+            `Bien: ${formData.productType}\n` +
+            `Monto: S/ ${formData.amount}\n` +
+            `Producto: ${formData.description}\n` +
+            `Detalle: ${formData.detail}`;
+
+        // Send via WhatsApp (central contact)
+        const waUrl = `https://wa.me/51941126123?text=${encodeURIComponent(message)}`;
+
+        // Also prepare mailto link as fallback/alternative
+        const mailtoUrl = `mailto:wuenipixel@gmail.com?subject=Libro de Reclamaciones - ${formData.fullName}&body=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp
+        window.open(waUrl, '_blank');
+
         setSubmitted(true);
         window.scrollTo(0, 0);
     };
@@ -70,9 +92,9 @@ const ComplaintsBook = () => {
                 </div>
 
                 <div className="legal-info">
-                    <p><strong>Razón Social:</strong> WUENIPIXEL S.A.C.</p>
-                    <p><strong>RUC:</strong> 20600000001</p>
-                    <p><strong>Dirección:</strong> Av. Ejemplo 123, Cañete, Lima, Perú</p>
+                    <p><strong>Razón Social:</strong> WueniPixel - Venta de Equipos Tecnológicos</p>
+                    <p><strong>Ubicación:</strong> San Vicente de Cañete, Lima, Perú</p>
+                    <p><strong>Email:</strong> wuenipixel@gmail.com</p>
                 </div>
 
                 <form className="complaints-form" onSubmit={handleSubmit}>

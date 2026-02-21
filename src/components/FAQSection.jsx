@@ -20,7 +20,7 @@ const faqs = [
     },
     {
         question: "¿Emiten comprobante de pago?",
-        answer: "Sí, emitimos Boleta de Venta electrónica bajo el Régimen Nuevo RUS, garantizando la formalidad de tu compra.",
+        answer: "Sí, emitimos Boleta de Venta electrónica, garantizando la formalidad de tu compra.",
         icon: <CreditCard size={20} />
     },
     {
