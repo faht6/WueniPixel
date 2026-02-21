@@ -68,10 +68,10 @@ export const ProductProvider = ({ children }) => {
                 colors: row.colors ? row.colors.split(',').map(c => c.trim()) : [],
                 storage: row.storage ? row.storage.split(',').map(s => s.trim()) : [],
                 specs: {
-                    screen: row.screen,
-                    processor: row.processor,
-                    camera: row.camera,
-                    battery: row.battery
+                    screen: row.screen || 'N/A',
+                    processor: row.processor || 'N/A',
+                    camera: row.camera || 'N/A',
+                    battery: row.battery || 'N/A'
                 },
                 featured: row.featured === 'TRUE' || row.featured === 'true'
             };

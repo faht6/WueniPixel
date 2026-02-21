@@ -204,10 +204,10 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                             <div className="specs-list-meli">
                                 <h3>Especificaciones Destacadas</h3>
                                 <ul>
-                                    <li><strong>Pantalla:</strong> {product.specs.screen}</li>
-                                    <li><strong>Procesador:</strong> {product.specs.processor}</li>
-                                    <li><strong>Cámara:</strong> {product.specs.camera}</li>
-                                    <li><strong>Batería:</strong> {product.specs.battery}</li>
+                                    <li><strong>Pantalla:</strong> {product.specs?.screen || 'N/A'}</li>
+                                    <li><strong>Procesador:</strong> {product.specs?.processor || 'N/A'}</li>
+                                    <li><strong>Cámara:</strong> {product.specs?.camera || 'N/A'}</li>
+                                    <li><strong>Batería:</strong> {product.specs?.battery || 'N/A'}</li>
                                 </ul>
                             </div>
 
