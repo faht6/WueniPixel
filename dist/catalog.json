@@ -841,7 +841,7 @@
         "brand": "Apple",
         "price": 2399,
         "condition": "used",
-        "image": "/products/iphone13_midnight.jpg",
+        "image": "/products/iphone12promax_grafito.jpg",
         "description": "El fotógrafo profesional. Sensor Shift.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -861,6 +861,28 @@
             "camera": "Triple 12MP + LiDAR",
             "battery": "3,687 mAh"
         },
+        "colorImages": {
+            "Plata": [
+                "/products/iphone12promax_plata.jpg",
+                "/products/iphone12promax_plata1.jpg",
+                "/products/iphone12promax_plata2.jpg"
+            ],
+            "Grafito": [
+                "/products/iphone12promax_grafito.jpg",
+                "/products/iphone12promax_grafito1.jpg",
+                "/products/iphone12promax_grafito2.jpg"
+            ],
+            "Oro": [
+                "/products/iphone12promax_oro.jpg",
+                "/products/iphone12promax_oro1.jpg",
+                "/products/iphone12promax_oro2.jpg"
+            ],
+            "Azul Pacífico": [
+                "/products/iphone12promax_azulpacifico.jpg",
+                "/products/iphone12promax_azulpacifico1.jpg",
+                "/products/iphone12promax_azulpacifico2.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -869,7 +891,7 @@
         "brand": "Apple",
         "price": 2099,
         "condition": "used",
-        "image": "/products/iphone12.jpg",
+        "image": "/products/iphone12pro_grafito.jpg",
         "description": "Acero inoxidable y potencia A14.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -889,6 +911,28 @@
             "camera": "Triple 12MP + LiDAR",
             "battery": "2,815 mAh"
         },
+        "colorImages": {
+            "Plata": [
+                "/products/iphone12pro_plata.jpg",
+                "/products/iphone12pro_plata1.jpg",
+                "/products/iphone12pro_plata2.jpg"
+            ],
+            "Grafito": [
+                "/products/iphone12pro_grafito.jpg",
+                "/products/iphone12pro_grafito1.jpg",
+                "/products/iphone12pro_grafito2.jpg"
+            ],
+            "Oro": [
+                "/products/iphone12pro_oro.jpg",
+                "/products/iphone12pro_oro1.jpg",
+                "/products/iphone12pro_oro2.jpg"
+            ],
+            "Azul Pacífico": [
+                "/products/iphone12pro_azulpacifico.jpg",
+                "/products/iphone12pro_azulpacifico1.jpg",
+                "/products/iphone12pro_azulpacifico2.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -900,13 +944,18 @@
         "image": "/products/iphone12_black.jpg",
         "description": "Entrada al 5G y diseño plano. Pantalla OLED.",
         "grade": "Grado A+ Impecable",
+        "specs": {
+            "screen": "6.1\" Super Retina XDR",
+            "processor": "A14 Bionic",
+            "camera": "Dual 12MP",
+            "battery": "2,815 mAh"
+        },
         "colors": [
             "Black",
             "White",
             "Blue",
             "Green",
-            "Purple",
-            "Product Red"
+            "Purple"
         ],
         "storage": [
             "64GB",
@@ -938,11 +987,6 @@
                 "/products/iphone12_purple.jpg",
                 "/products/iphone12_purple1.jpg",
                 "/products/iphone12_purple2.jpg"
-            ],
-            "Product Red": [
-                "/products/iphone12_red.jpg",
-                "/products/iphone12_red1.jpg",
-                "/products/iphone12_red2.jpg"
             ]
         },
         "featured": false

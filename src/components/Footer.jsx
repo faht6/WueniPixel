@@ -59,7 +59,7 @@ const Footer = () => {
                             <span style={{ marginRight: '4px' }}>📖</span> Libro de Reclamaciones
                         </Link>
                     </div>
-                    <p>&copy; 2026 WueniPixel</p>
+                    <p>&copy; 2026 WueniPixel | <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v12.0.0</span></p>
                 </div>
             </div>
         </footer>
