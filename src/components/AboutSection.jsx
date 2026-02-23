@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, ShieldCheck, MapPin } from 'lucide-react';
+import { Smartphone, ShieldCheck, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import './AboutSection.css';
 
+const images = [
+    { src: '/products/wueni-about-main.jpg', alt: 'WueniPixel Tienda' },
+    { src: '/products/wueni-phone-table.jpg', alt: 'Experiencia real WueniPixel' },
+];
+
 const AboutSection = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const goTo = (index) => setCurrentIndex(index);
+    const goPrev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    const goNext = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+
     return (
         <section className="about-section container" id="about">
             <div className="about-grid">
@@ -49,7 +67,41 @@ const AboutSection = () => {
                 >
                     <div className="visual-card">
                         <div className="visual-badge">100% Digital</div>
-                        <img src="/products/wueni-phone-table.jpg" alt="Experiencia real WueniPixel" className="about-img" />
+                        <div className="about-carousel">
+                            <div
+                                className="carousel-track"
+                                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                            >
+                                {images.map((img, i) => (
+                                    <img
+                                        key={i}
+                                        src={img.src}
+                                        alt={img.alt}
+                                        className="about-img"
+                                    />
+                                ))}
+                            </div>
+
+                            {/* Navigation Arrows */}
+                            <button className="carousel-arrow carousel-arrow-left" onClick={goPrev} aria-label="Anterior">
+                                <ChevronLeft size={20} />
+                            </button>
+                            <button className="carousel-arrow carousel-arrow-right" onClick={goNext} aria-label="Siguiente">
+                                <ChevronRight size={20} />
+                            </button>
+
+                            {/* Dots */}
+                            <div className="carousel-dots">
+                                {images.map((_, i) => (
+                                    <button
+                                        key={i}
+                                        className={`carousel-dot ${i === currentIndex ? 'active' : ''}`}
+                                        onClick={() => goTo(i)}
+                                        aria-label={`Imagen ${i + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
             </div>
