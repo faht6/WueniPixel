@@ -1027,7 +1027,7 @@
         "brand": "Google",
         "price": 4999,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel10pro_allcolors.jpg",
         "description": "La experiencia Pixel definitiva. Pantalla gigante y batería de larga duración.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1047,6 +1047,24 @@
             "camera": "50MP + 48MP + 48MP Tele 5x",
             "battery": "5200 mAh"
         },
+        "colorImages": {
+            "Jade": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_jade.jpg"
+            ],
+            "Moonstone": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_moonstone.jpg"
+            ],
+            "Obsidian": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_obsidian.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_porcelain.jpg"
+            ]
+        },
         "featured": true
     },
     {
@@ -1055,7 +1073,7 @@
         "brand": "Google",
         "price": 4499,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel10pro_allcolors.jpg",
         "description": "Potencia compacta. El Pro que cabe en tu mano con Tensor G5.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1075,6 +1093,24 @@
             "processor": "Google Tensor G5",
             "camera": "50MP + 48MP + 48MP Tele 5x",
             "battery": "4870 mAh"
+        },
+        "colorImages": {
+            "Jade": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_jade.jpg"
+            ],
+            "Moonstone": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_moonstone.jpg"
+            ],
+            "Obsidian": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_obsidian.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel10pro_allcolors.jpg",
+                "/products/pixel10pro_porcelain.jpg"
+            ]
         },
         "featured": true
     },
