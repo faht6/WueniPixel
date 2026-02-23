@@ -1084,7 +1084,7 @@
         "brand": "Google",
         "price": 3499,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel10_allcolors.jpg",
         "description": "Chip Tensor G5. La inteligencia artificial llevada al siguiente nivel.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1102,6 +1102,24 @@
             "processor": "Google Tensor G5",
             "camera": "48MP + 13MP + 10.8MP Tele",
             "battery": "4970 mAh"
+        },
+        "colorImages": {
+            "Frost": [
+                "/products/pixel10_allcolors.jpg",
+                "/products/pixel10_frost.jpg"
+            ],
+            "Indigo": [
+                "/products/pixel10_allcolors.jpg",
+                "/products/pixel10_indigo.jpg"
+            ],
+            "Lemongrass": [
+                "/products/pixel10_allcolors.jpg",
+                "/products/pixel10_lemongrass.jpg"
+            ],
+            "Obsidian": [
+                "/products/pixel10_allcolors.jpg",
+                "/products/pixel10_obsidian.jpg"
+            ]
         },
         "featured": true
     },
