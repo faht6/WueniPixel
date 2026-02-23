@@ -1165,7 +1165,7 @@
         "brand": "Google",
         "price": 2299,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel10_allcolors.jpg",
         "description": "La entrada al mundo Tensor G5. Económico y potente.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1192,7 +1192,7 @@
         "brand": "Google",
         "price": 3999,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel9pro_allcolors.jpg",
         "description": "Más pantalla, más batería. El flagship de Google.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1213,6 +1213,24 @@
             "camera": "50MP + 48MP + 48MP Tele 5x",
             "battery": "5060 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_obsidian.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_porcelain.jpg"
+            ],
+            "Hazel": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_hazel.jpg"
+            ],
+            "Rose Quartz": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_rosequartz.jpg"
+            ]
+        },
         "featured": true
     },
     {
@@ -1221,7 +1239,7 @@
         "brand": "Google",
         "price": 3499,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel9pro_allcolors.jpg",
         "description": "El Pro perfecto. Cámaras de nivel profesional en tamaño ideal.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1242,6 +1260,24 @@
             "camera": "50MP + 48MP + 48MP Tele 5x",
             "battery": "4700 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_obsidian.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_porcelain.jpg"
+            ],
+            "Hazel": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_hazel.jpg"
+            ],
+            "Rose Quartz": [
+                "/products/pixel9pro_allcolors.jpg",
+                "/products/pixel9pro_rosequartz.jpg"
+            ]
+        },
         "featured": true
     },
     {
@@ -1250,7 +1286,7 @@
         "brand": "Google",
         "price": 2799,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel9_allcolors.jpg",
         "description": "Diseño renovado y chip Tensor G4. Elegancia y poder.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1269,6 +1305,69 @@
             "camera": "50MP + 48MP UGA",
             "battery": "4700 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel9_allcolors.jpg",
+                "/products/pixel9_obsidian.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel9_allcolors.jpg",
+                "/products/pixel9_porcelain.jpg"
+            ],
+            "Wintergreen": [
+                "/products/pixel9_allcolors.jpg",
+                "/products/pixel9_wintergreen.jpg"
+            ],
+            "Peony": [
+                "/products/pixel9_allcolors.jpg",
+                "/products/pixel9_peony.jpg"
+            ]
+        },
+        "featured": true
+    },
+    {
+        "id": 217,
+        "name": "Google Pixel 9a",
+        "brand": "Google",
+        "price": 1999,
+        "condition": "new",
+        "image": "/products/pixel9a_allcolors.jpg",
+        "description": "El Pixel más accesible con Tensor G4. Cámara inteligente y gran batería.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Iris",
+            "Obsidian",
+            "Peony",
+            "Porcelain"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.3\" OLED 120Hz",
+            "processor": "Google Tensor G4",
+            "camera": "48MP + 13MP UGA",
+            "battery": "5000 mAh"
+        },
+        "colorImages": {
+            "Iris": [
+                "/products/pixel9a_allcolors.jpg",
+                "/products/pixel9a_iris.jpg"
+            ],
+            "Obsidian": [
+                "/products/pixel9a_allcolors.jpg",
+                "/products/pixel9a_obsidian.jpg"
+            ],
+            "Peony": [
+                "/products/pixel9a_allcolors.jpg",
+                "/products/pixel9a_peony.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel9a_allcolors.jpg",
+                "/products/pixel9a_porcelain.jpg"
+            ]
+        },
         "featured": true
     },
     {
@@ -1277,7 +1376,7 @@
         "brand": "Google",
         "price": 3699,
         "condition": "used",
-        "image": "/products/pixel8pro.jpg",
+        "image": "/products/pixel8pro_allcolors.jpg",
         "description": "IA Generativa en tu mano. Magic Editor.",
         "grade": "Como Nuevo (Open Box)",
         "colors": [
@@ -1297,6 +1396,24 @@
             "camera": "50MP Triple",
             "battery": "5050 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel8pro_allcolors.jpg",
+                "/products/pixel8pro_obsidian.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel8pro_allcolors.jpg",
+                "/products/pixel8pro_porcelain.jpg"
+            ],
+            "Bay": [
+                "/products/pixel8pro_allcolors.jpg",
+                "/products/pixel8pro_bay.jpg"
+            ],
+            "Mint": [
+                "/products/pixel8pro_allcolors.jpg",
+                "/products/pixel8pro_mint.jpg"
+            ]
+        },
         "featured": true
     },
     {
@@ -1305,7 +1422,7 @@
         "brand": "Google",
         "price": 2799,
         "condition": "used",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel8_allcolors.jpg",
         "description": "7 años de actualizaciones. El futuro hoy.",
         "grade": "Como Nuevo (Open Box)",
         "colors": [
@@ -1324,6 +1441,24 @@
             "camera": "50MP Dual",
             "battery": "4575 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel8_allcolors.jpg",
+                "/products/pixel8_obsidian.jpg"
+            ],
+            "Hazel": [
+                "/products/pixel8_allcolors.jpg",
+                "/products/pixel8_hazel.jpg"
+            ],
+            "Rose": [
+                "/products/pixel8_allcolors.jpg",
+                "/products/pixel8_rose.jpg"
+            ],
+            "Mint": [
+                "/products/pixel8_allcolors.jpg",
+                "/products/pixel8_mint.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -1332,7 +1467,7 @@
         "brand": "Google",
         "price": 1499,
         "condition": "new",
-        "image": "/products/pixel8.jpg",
+        "image": "/products/pixel8a_allcolors.jpg",
         "description": "La magia de Pixel a un precio increíble. Pantalla 120Hz.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1351,6 +1486,24 @@
             "camera": "64MP + 13MP UGA",
             "battery": "4492 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel8a_allcolors.jpg",
+                "/products/pixel8a_obsidian.jpg"
+            ],
+            "Porcelain": [
+                "/products/pixel8a_allcolors.jpg",
+                "/products/pixel8a_porcelain.jpg"
+            ],
+            "Bay": [
+                "/products/pixel8a_allcolors.jpg",
+                "/products/pixel8a_bay.jpg"
+            ],
+            "Aloe": [
+                "/products/pixel8a_allcolors.jpg",
+                "/products/pixel8a_aloe.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -1359,7 +1512,7 @@
         "brand": "Google",
         "price": 2499,
         "condition": "used",
-        "image": "/products/pixel7pro.jpg",
+        "image": "/products/pixel7pro_allcolors.jpg",
         "description": "Zoom Super Res y Macro Focus. Fotografía top.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1378,6 +1531,20 @@
             "camera": "50MP Triple",
             "battery": "5000 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel7pro_allcolors.jpg",
+                "/products/pixel7pro_obsidian.jpg"
+            ],
+            "Snow": [
+                "/products/pixel7pro_allcolors.jpg",
+                "/products/pixel7pro_snow.jpg"
+            ],
+            "Hazel": [
+                "/products/pixel7pro_allcolors.jpg",
+                "/products/pixel7pro_hazel.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -1386,7 +1553,7 @@
         "brand": "Google",
         "price": 1899,
         "condition": "used",
-        "image": "/products/pixel7.jpg",
+        "image": "/products/pixel7_allcolors.jpg",
         "description": "Refinamiento total. Más compacto y brillante.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1404,6 +1571,20 @@
             "camera": "50MP Dual",
             "battery": "4355 mAh"
         },
+        "colorImages": {
+            "Obsidian": [
+                "/products/pixel7_allcolors.jpg",
+                "/products/pixel7_obsidian.jpg"
+            ],
+            "Snow": [
+                "/products/pixel7_allcolors.jpg",
+                "/products/pixel7_snow.jpg"
+            ],
+            "Lemongrass": [
+                "/products/pixel7_allcolors.jpg",
+                "/products/pixel7_lemongrass.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -1412,7 +1593,7 @@
         "brand": "Google",
         "price": 1199,
         "condition": "new",
-        "image": "/products/pixel7.jpg",
+        "image": "/products/pixel7a_allcolors.jpg",
         "description": "Increíble valor. Carga inalámbrica y gran cámara.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1430,6 +1611,24 @@
             "camera": "64MP + 13MP UGA",
             "battery": "4385 mAh"
         },
+        "colorImages": {
+            "Charcoal": [
+                "/products/pixel7a_allcolors.jpg",
+                "/products/pixel7a_charcoal.jpg"
+            ],
+            "Snow": [
+                "/products/pixel7a_allcolors.jpg",
+                "/products/pixel7a_snow.jpg"
+            ],
+            "Sea": [
+                "/products/pixel7a_allcolors.jpg",
+                "/products/pixel7a_sea.jpg"
+            ],
+            "Coral": [
+                "/products/pixel7a_allcolors.jpg",
+                "/products/pixel7a_coral.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -1438,7 +1637,7 @@
         "brand": "Google",
         "price": 1399,
         "condition": "used",
-        "image": "/products/pixel6pro.jpg",
+        "image": "/products/pixel6pro_allcolors.jpg",
         "description": "Experiencia premium de Google a bajo costo.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1457,6 +1656,20 @@
             "camera": "50MP Triple",
             "battery": "5003 mAh"
         },
+        "colorImages": {
+            "Stormy Black": [
+                "/products/pixel6pro_allcolors.jpg",
+                "/products/pixel6pro_stormyblack.jpg"
+            ],
+            "Cloudy White": [
+                "/products/pixel6pro_allcolors.jpg",
+                "/products/pixel6pro_cloudywhite.jpg"
+            ],
+            "Sorta Sunny": [
+                "/products/pixel6pro_allcolors.jpg",
+                "/products/pixel6pro_sortasunny.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -1465,7 +1678,7 @@
         "brand": "Google",
         "price": 1099,
         "condition": "used",
-        "image": "/products/pixel6.jpg",
+        "image": "/products/pixel6_allcolors.jpg",
         "description": "El reinicio de Pixel. Chip Tensor original.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1483,6 +1696,20 @@
             "camera": "50MP Dual",
             "battery": "4614 mAh"
         },
+        "colorImages": {
+            "Stormy Black": [
+                "/products/pixel6_allcolors.jpg",
+                "/products/pixel6_stormyblack.jpg"
+            ],
+            "Sorta Seafoam": [
+                "/products/pixel6_allcolors.jpg",
+                "/products/pixel6_sortaseafom.jpg"
+            ],
+            "Kinda Coral": [
+                "/products/pixel6_allcolors.jpg",
+                "/products/pixel6_kindacoral.jpg"
+            ]
+        },
         "featured": false
     },
     {
@@ -1491,7 +1718,7 @@
         "brand": "Google",
         "price": 899,
         "condition": "used",
-        "image": "/products/pixel6.jpg",
+        "image": "/products/pixel6a_allcolors.jpg",
         "description": "Pequeño pero poderoso. La esencia de Pixel.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1507,6 +1734,20 @@
             "processor": "Google Tensor",
             "camera": "12.2MP + 12MP UGA",
             "battery": "4410 mAh"
+        },
+        "colorImages": {
+            "Charcoal": [
+                "/products/pixel6a_allcolors.jpg",
+                "/products/pixel6a_charcoal.jpg"
+            ],
+            "Chalk": [
+                "/products/pixel6a_allcolors.jpg",
+                "/products/pixel6a_chalk.jpg"
+            ],
+            "Sage": [
+                "/products/pixel6a_allcolors.jpg",
+                "/products/pixel6a_sage.jpg"
+            ]
         },
         "featured": false
     }

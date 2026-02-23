@@ -390,6 +390,7 @@
 .main-image-meli {
     width: 100%;
     max-width: 100%;
+    max-height: 500px;
     height: auto;
     object-fit: contain;
     mix-blend-mode: multiply;
