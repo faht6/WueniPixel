@@ -5,6 +5,7 @@ import './AboutSection.css';
 
 const images = [
     { src: '/products/wueni-about-main.jpg', alt: 'WueniPixel Tienda' },
+    { src: '/products/wueni-about-2.jpg', alt: 'WueniPixel Experiencia' },
     { src: '/products/wueni-phone-table.jpg', alt: 'Experiencia real WueniPixel' },
 ];
 
