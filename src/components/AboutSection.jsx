@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, ShieldCheck, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import './AboutSection.css';
@@ -11,6 +11,8 @@ const images = [
 
 const AboutSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -22,6 +24,21 @@ const AboutSection = () => {
     const goTo = (index) => setCurrentIndex(index);
     const goPrev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
     const goNext = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+
+    const handleTouchStart = useCallback((e) => {
+        touchStartX.current = e.touches[0].clientX;
+    }, []);
+
+    const handleTouchMove = useCallback((e) => {
+        touchEndX.current = e.touches[0].clientX;
+    }, []);
+
+    const handleTouchEnd = useCallback(() => {
+        const diff = touchStartX.current - touchEndX.current;
+        const threshold = 50;
+        if (diff > threshold) goNext();
+        else if (diff < -threshold) goPrev();
+    }, []);
 
     return (
         <section className="about-section container" id="about">
@@ -68,7 +85,12 @@ const AboutSection = () => {
                 >
                     <div className="visual-card">
                         <div className="visual-badge">100% Digital</div>
-                        <div className="about-carousel">
+                        <div
+                            className="about-carousel"
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                        >
                             <div
                                 className="carousel-track"
                                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}

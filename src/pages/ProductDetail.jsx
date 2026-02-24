@@ -157,7 +157,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
 
                         {/* COLUMNA 2: INFO CENTRAL */}
                         <div className="info-section-meli">
-                            <span className="condition-text">{product.name.includes('Pixel') ? 'Nuevo Sellado' : 'Seminuevo Premium'}</span>
+                            <span className="condition-text">{product.condition === 'new' ? 'Nuevo Sellado' : 'Seminuevo Premium'}</span>
                             <h1 className="meli-title">{product.name}</h1>
 
                             <div className="aesthetics-grade">
@@ -234,36 +234,13 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                 <div className="buy-actions">
                                     <button
                                         onClick={() => addToCart(product)}
-                                        className="btn-add-to-cart"
-                                        style={{
-                                            backgroundColor: 'transparent',
-                                            border: '2px solid #800020',
-                                            color: '#800020',
-                                            padding: '12px',
-                                            borderRadius: '8px',
-                                            fontWeight: 'bold',
-                                            cursor: 'pointer',
-                                            marginBottom: '10px'
-                                        }}
+                                        className="btn-add-to-cart-detail"
                                     >
                                         Agregar al Carrito
                                     </button>
                                     <button
                                         onClick={() => setIsModalOpen(true)}
-                                        className="btn-buy-now"
-                                        style={{
-                                            backgroundColor: '#800020', // Vino Tinto
-                                            textDecoration: 'none',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            fontWeight: 'bold',
-                                            color: 'white',
-                                            border: 'none',
-                                            padding: '12px',
-                                            borderRadius: '8px',
-                                            cursor: 'pointer'
-                                        }}
+                                        className="btn-buy-now-detail"
                                     >
                                         Consultar Stock Real
                                     </button>

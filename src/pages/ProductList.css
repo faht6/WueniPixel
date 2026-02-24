@@ -17,10 +17,7 @@
     font-weight: 800;
     letter-spacing: -0.05em;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #fff 0%, #aaa 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color-text-primary);
 }
 
 .list-subtitle {
@@ -56,7 +53,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    background: white;
+    background: var(--color-background);
     border: 1px solid var(--color-border-subtle);
     border-radius: 99px;
     padding: 8px 16px;
@@ -118,8 +115,7 @@
 .filter-chip {
     padding: 8px 16px;
     border-radius: 12px;
-    /* Soft square */
-    background: white;
+    background: var(--color-background);
     border: 1px solid var(--color-border-subtle);
     color: var(--color-text-secondary);
     font-size: 0.9rem;
@@ -129,7 +125,7 @@
 }
 
 .filter-chip:hover {
-    background: #f0f0f0;
+    background: var(--color-surface-secondary);
 }
 
 .filter-chip.active {
@@ -181,7 +177,7 @@
     gap: 8px;
     padding: 10px 20px;
     background: transparent;
-    color: white;
+    color: var(--color-text-primary);
     border: none;
     font-size: 0.95rem;
     font-weight: 500;
@@ -194,10 +190,10 @@
     right: 0;
     margin-top: 8px;
     width: 200px;
-    background: #1a1a1a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-background);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     z-index: 50;
     padding: 8px;
@@ -211,7 +207,7 @@
     padding: 10px 16px;
     background: transparent;
     border: none;
-    color: var(--text-secondary);
+    color: var(--color-text-secondary);
     text-align: left;
     cursor: pointer;
     border-radius: 8px;
@@ -219,13 +215,13 @@
 }
 
 .sort-option:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
+    background: var(--color-surface-secondary);
+    color: var(--color-text-primary);
 }
 
 .sort-option.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: var(--color-surface-secondary);
+    color: var(--color-text-primary);
 }
 
 /* GRID LAYOUT */
@@ -247,6 +243,10 @@
 
     .list-title {
         font-size: 2.5rem;
+    }
+
+    .products-grid {
+        gap: 20px;
     }
 }
 

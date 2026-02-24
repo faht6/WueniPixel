@@ -49,7 +49,7 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                             addToCompare={addToCompare}
                             compareList={compareList}
                             isEmbedded={true}
-                            featuredSeries={['iPhone 17', 'iPhone Air', 'iPhone 13', 'Pixel 10', 'Pixel 7']}
+                            featuredSeries={['iPhone 17', 'iPhone Air', 'iPhone 16', 'Pixel 10', 'Pixel 9a']}
                         />
                         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                             <Link

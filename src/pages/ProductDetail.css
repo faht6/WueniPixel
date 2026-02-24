@@ -478,6 +478,10 @@
     font-weight: 600;
 }
 
+[data-theme='dark'] .storage-chip-meli.active {
+    background-color: rgba(0, 113, 227, 0.15);
+}
+
 /* Specs List */
 .specs-list-meli {
     margin-top: 20px;
@@ -542,7 +546,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #F0F0F2;
+    background: var(--color-surface-secondary);
     padding: 6px 12px;
     border-radius: 6px;
     margin-bottom: 24px;
@@ -601,7 +605,7 @@
 
 .success-content {
     text-align: center;
-    background: white;
+    background: var(--color-background);
     padding: 60px;
     border-radius: 24px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
@@ -610,26 +614,26 @@
 .success-content h2 {
     font-size: 24px;
     margin: 20px 0 10px;
-    color: #1D1D1F;
+    color: var(--color-text-primary);
 }
 
 .success-content p {
-    color: #86868B;
+    color: var(--color-text-secondary);
     margin-bottom: 30px;
 }
 
 .btn-reset {
     background: transparent;
-    border: 1px solid #D2D2D7;
+    border: 1px solid var(--color-border-subtle);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
-    color: #1D1D1F;
+    color: var(--color-text-primary);
 }
 
 .btn-reset:hover {
-    background: #F5F5F7;
+    background: var(--color-surface-secondary);
 }
 
 [data-theme='dark'] .buy-box {
@@ -681,6 +685,48 @@
     flex-direction: column;
     gap: 12px;
     margin-bottom: 24px;
+}
+
+.btn-add-to-cart-detail {
+    background-color: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.btn-add-to-cart-detail:hover {
+    background-color: rgba(128, 0, 32, 0.05);
+}
+
+[data-theme='dark'] .btn-add-to-cart-detail:hover {
+    background-color: rgba(128, 0, 32, 0.15);
+}
+
+.btn-buy-now-detail {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.btn-buy-now-detail:hover {
+    background-color: #600018;
+    transform: translateY(-1px);
 }
 
 .btn-buy-now {
