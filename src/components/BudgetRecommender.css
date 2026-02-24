@@ -1,70 +1,279 @@
 /* ═══════════════════════════════════════════════
-   BUDGET RECOMMENDER — Scoped under .budget-recommender
-   to avoid collisions with HeroSection.css
+   BUDGET RECOMMENDER v12.5.4 — Complete Rewrite
+   Premium "Find Your Phone" Interactive Section
    ═══════════════════════════════════════════════ */
 
-/* SECTION LAYOUT */
+/* ─── SECTION WRAPPER ─── */
 .budget-recommender .hero-section {
     position: relative;
     width: 100%;
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 40px 20px;
-    margin-bottom: 20px;
+    padding: 60px 20px;
 }
 
-/* STUDIO DARK BACKGROUND - FORCED DARK FOR PREMIUM LOOK */
+/* ─── BACKGROUND: Always Dark Spotlight ─── */
 .budget-recommender .hero-background-aurora {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, #1a1b26 0%, #0a0b10 80%) !important;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, #1a1b26 0%, #0d0e17 100%);
     z-index: 0;
 }
 
-/* Hide light mode override for this section */
+/* Force dark even in light mode */
 [data-theme='light'] .budget-recommender .hero-background-aurora {
-    background: radial-gradient(circle at 50% 50%, #1a1b26 0%, #0a0b10 80%) !important;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(139, 92, 246, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, #1a1b26 0%, #0d0e17 100%);
 }
 
-/* STUDIO COMPOSITION */
+/* ─── LAYOUT GRID ─── */
+.budget-recommender .hero-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+/* ─── LEFT: TEXT & CONTROLS ─── */
+.budget-recommender .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Badge */
+.budget-recommender .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #a78bfa;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    width: fit-content;
+    backdrop-filter: blur(10px);
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 20px 4px rgba(139, 92, 246, 0.15);
+    }
+}
+
+/* Title — always white since section is always dark */
+.budget-recommender .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+}
+
+.budget-recommender .text-gradient {
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #ef4444 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Subtitle */
+.budget-recommender .hero-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+/* ─── USE CASE CHIPS ─── */
+.budget-recommender .hero-selector-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.budget-recommender .hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(8px);
+}
+
+.budget-recommender .hero-chip:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.budget-recommender .hero-chip.active {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(168, 85, 247, 0.2));
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+}
+
+/* ─── SEARCH BOX ─── */
+.budget-recommender .hero-search-box {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+}
+
+.budget-recommender .hero-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 0 16px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.budget-recommender .hero-input-wrapper:focus-within {
+    border-color: rgba(239, 68, 68, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.1);
+}
+
+.budget-recommender .currency-prefix {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.budget-recommender .hero-budget-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    padding: 14px 0;
+    font-family: inherit;
+}
+
+.budget-recommender .hero-budget-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Remove number arrows */
+.budget-recommender .hero-budget-input::-webkit-outer-spin-button,
+.budget-recommender .hero-budget-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.budget-recommender .hero-search-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.budget-recommender .hero-search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
+}
+
+.budget-recommender .hero-search-btn:active {
+    transform: translateY(0);
+}
+
+/* ─── RIGHT: VISUALS ─── */
+.budget-recommender .hero-visuals {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+}
+
+/* ─── STUDIO COMPOSITION ─── */
 .budget-recommender .studio-composition {
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1200px;
 }
 
 .budget-recommender .studio-phone-wrapper {
     position: absolute;
-    width: 320px;
-    /* Reduced from 450px */
+    width: 240px;
     height: auto;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6));
     animation: studioFloat 6s ease-in-out infinite;
-    max-width: 45vw;
-    /* Constraint for mobile */
 }
 
 .budget-recommender .left-phone {
-    left: 10%;
-    transform: rotateY(25deg) rotateX(5deg) scale(1.3);
+    left: 5%;
+    top: 50%;
+    transform: translateY(-55%) rotate(-6deg);
     z-index: 5;
-    animation-delay: -1s;
+    animation-delay: -1.5s;
 }
 
 .budget-recommender .right-phone {
-    right: 10%;
-    transform: rotateY(-25deg) rotateX(5deg) scale(1.3);
+    right: 5%;
+    top: 50%;
+    transform: translateY(-45%) rotate(6deg);
     z-index: 10;
 }
 
@@ -73,55 +282,53 @@
     height: auto;
     display: block;
     object-fit: contain;
-    filter: url("#remove-bg");
+    border-radius: 20px;
 }
 
 @keyframes studioFloat {
 
     0%,
     100% {
-        transform: translateY(0) rotateY(var(--rotY, 25deg)) rotateX(5deg) scale(1.3);
+        transform: translateY(-50%) rotate(var(--rot, -6deg));
     }
 
     50% {
-        transform: translateY(-15px) rotateY(var(--rotY, 25deg)) rotateX(5deg) scale(1.3);
+        transform: translateY(calc(-50% - 12px)) rotate(var(--rot, -6deg));
     }
 }
 
 .budget-recommender .left-phone {
-    --rotY: 25deg;
+    --rot: -6deg;
 }
 
 .budget-recommender .right-phone {
-    --rotY: -25deg;
+    --rot: 6deg;
 }
 
-/* Interactive Hover */
+/* Hover interaction */
 .budget-recommender .hero-visuals:hover .left-phone {
-    transform: translateX(-10px) rotateY(15deg) scale(1.35);
+    transform: translateY(-55%) rotate(-3deg) scale(1.05);
+    filter: drop-shadow(0 30px 60px rgba(139, 92, 246, 0.3));
 }
 
 .budget-recommender .hero-visuals:hover .right-phone {
-    transform: translateX(10px) rotateY(-15deg) scale(1.35);
+    transform: translateY(-45%) rotate(3deg) scale(1.05);
+    filter: drop-shadow(0 30px 60px rgba(239, 68, 68, 0.3));
 }
 
-/* RESULT CARD */
+/* ─── RESULT CARD ─── */
 .budget-recommender .hero-result-card {
-    background: var(--color-surface-secondary);
-    border: 1px solid var(--color-border-subtle);
-    backdrop-filter: blur(20px);
-    padding: 30px;
-    border-radius: 32px;
-    width: 380px;
+    background: rgba(26, 27, 38, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(24px);
+    padding: 32px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-    position: relative;
-}
-
-[data-theme='light'] .budget-recommender .hero-result-card {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(0, 0, 0, 0.05);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .budget-recommender .result-header {
@@ -132,81 +339,88 @@
 }
 
 .budget-recommender .match-badge {
-    background: #A855F7;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
     color: white;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 100px;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .budget-recommender .close-result {
-    background: none;
+    background: rgba(255, 255, 255, 0.1);
     border: none;
-    color: #fff;
-    font-size: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
     cursor: pointer;
     line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
 }
 
-[data-theme='light'] .budget-recommender .close-result {
-    color: #000;
+.budget-recommender .close-result:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
 .budget-recommender .result-img-wrapper img {
-    height: 250px;
+    height: 220px;
     object-fit: contain;
     margin-bottom: 20px;
-    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.4));
 }
 
 .budget-recommender .hero-result-card h3 {
     margin: 0;
     color: #fff;
-    font-size: 24px;
-}
-
-[data-theme='light'] .budget-recommender .hero-result-card h3 {
-    color: #000;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .budget-recommender .result-price {
     font-size: 32px;
     font-weight: 800;
-    color: #50C878;
+    background: linear-gradient(135deg, #34d399, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin: 8px 0 16px;
 }
 
 .budget-recommender .result-reason {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.5);
     margin-bottom: 24px;
-    line-height: 1.4;
-}
-
-[data-theme='light'] .budget-recommender .result-reason {
-    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
 }
 
 .budget-recommender .btn-result-view {
     display: block;
     width: 100%;
     padding: 16px;
-    background: var(--color-accent);
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
     color: #fff;
     text-align: center;
     border-radius: 16px;
     font-weight: 700;
+    font-size: 15px;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: all 0.3s;
 }
 
 .budget-recommender .btn-result-view:hover {
-    background: #a00028;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.35);
 }
 
-/* ANIMATIONS */
+/* ─── POP-IN ANIMATION ─── */
 .budget-recommender .animate-pop-in {
     animation: br-popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -223,19 +437,25 @@
     }
 }
 
-/* RESPONSIVE */
+/* ─── RESPONSIVE ─── */
 @media (max-width: 968px) {
+    .budget-recommender .hero-section {
+        padding: 40px 16px;
+        min-height: auto;
+    }
+
     .budget-recommender .hero-container {
-        flex-direction: column;
-        padding-top: 40px;
+        grid-template-columns: 1fr;
+        gap: 24px;
         text-align: center;
     }
 
     .budget-recommender .hero-content {
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
         align-items: center;
+    }
+
+    .budget-recommender .hero-subtitle {
+        max-width: 100%;
     }
 
     .budget-recommender .hero-selector-group {
@@ -243,12 +463,34 @@
     }
 
     .budget-recommender .hero-search-box {
+        flex-direction: column;
         width: 100%;
+        max-width: 380px;
     }
 
     .budget-recommender .hero-visuals {
-        height: 400px;
-        width: 100%;
-        margin-top: -40px;
+        min-height: 320px;
+    }
+
+    .budget-recommender .studio-composition {
+        min-height: 320px;
+    }
+
+    .budget-recommender .studio-phone-wrapper {
+        width: 180px;
+    }
+
+    .budget-recommender .hero-result-card {
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 480px) {
+    .budget-recommender .studio-phone-wrapper {
+        width: 140px;
+    }
+
+    .budget-recommender .hero-title {
+        font-size: 2rem;
     }
 }
