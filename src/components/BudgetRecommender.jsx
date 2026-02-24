@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, ArrowRight, Camera, Gamepad2, Briefcase, Share2, Zap, Shield, TrendingUp } from 'lucide-react';
+import { Sparkles, ArrowRight, Camera, Gamepad2, Briefcase, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import './BudgetRecommender.css';
@@ -119,11 +119,7 @@ const BudgetRecommender = ({ district }) => {
         { id: 'social', label: 'Redes', icon: Share2, desc: 'Contenido viral' },
     ];
 
-    const stats = [
-        { icon: Zap, value: '500+', label: 'Equipos vendidos' },
-        { icon: Shield, value: '100%', label: 'Garantía real' },
-        { icon: TrendingUp, value: '4.9★', label: 'Satisfacción' },
-    ];
+
 
     return (
         <div className="budget-recommender" ref={sectionRef}>
@@ -199,16 +195,7 @@ const BudgetRecommender = ({ district }) => {
                             </button>
                         </div>
 
-                        {/* Trust Stats */}
-                        <div className="br-stats">
-                            {stats.map((stat, i) => (
-                                <div key={i} className="br-stat">
-                                    <stat.icon size={16} className="br-stat-icon" />
-                                    <span className="br-stat-value">{stat.value}</span>
-                                    <span className="br-stat-label">{stat.label}</span>
-                                </div>
-                            ))}
-                        </div>
+
                     </div>
 
                     {/* RIGHT: Visual */}
