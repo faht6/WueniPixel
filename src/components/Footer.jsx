@@ -77,7 +77,7 @@ const Footer = () => {
                         <span>|</span>
                         <a href="https://wa.me/51941126123" target="_blank" rel="noopener noreferrer">WhatsApp: 941 126 123</a>
                     </div>
-                    <p>&copy; 2026 WueniPixel | <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v12.5.2</span></p>
+                    <p>&copy; 2026 WueniPixel | <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v12.5.3</span></p>
                 </div>
             </div>
         </footer>
