@@ -9,11 +9,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-C4Q6Pv4w.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-uTzDr4iS.css">
+  <script type="module" crossorigin src="/assets/index-DjA6k9ty.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-85_J6SQc.css">
 </head>
 
 <body>
+  <!-- Global SVG Filter for Background Removal (removes white/light grey) -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true" highlight-remove-bg-filter>
+    <filter id="remove-bg" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          -1.5 -1.5 -1.5 1 4
+      " />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="10" intercept="-8" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
   <div id="root"></div>
 </body>
 

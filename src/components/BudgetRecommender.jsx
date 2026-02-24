@@ -118,10 +118,10 @@ const BudgetRecommender = ({ district }) => {
         }
     };
 
-    // Hero Images (Hardcoded for aesthetics, referencing existing assets)
+    // Hero Images (High Quality for Studio Dark)
     const heroImages = {
-        pixel: "/products/pixel8pro.jpg",
-        iphone: "/products/iphone15promax.jpg"
+        pixel: "/products/pixel8.jpg",
+        iphone: "/products/iphone14promax_deeppurple.jpg"
     };
 
     return (
@@ -193,7 +193,7 @@ const BudgetRecommender = ({ district }) => {
                         </div>
                     </div>
 
-                    {/* RIGHT COLUMN: VISUALS */}
+                    {/* RIGHT COLUMN: VISUALS (Studio Dark Refinement) */}
                     <div className="hero-visuals">
                         {recommendation ? (
                             // RESULT CARD (Replaces Phones)
@@ -219,9 +219,14 @@ const BudgetRecommender = ({ district }) => {
                                 </div>
                             </div>
                         ) : (
-                            // SINGLE HERO IMAGE (User Provided)
-                            <div className="hero-single-image-container">
-                                <img src="/hero-devices.png" alt="Premium Devices" className="hero-main-image" />
+                            // STUDIO DARK COMPOSITION
+                            <div className="studio-composition">
+                                <div className="studio-phone-wrapper left-phone">
+                                    <img src={heroImages.pixel} alt="Google Pixel" className="studio-phone-img" />
+                                </div>
+                                <div className="studio-phone-wrapper right-phone">
+                                    <img src={heroImages.iphone} alt="iPhone" className="studio-phone-img" />
+                                </div>
                             </div>
                         )}
                     </div>

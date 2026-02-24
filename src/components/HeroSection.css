@@ -279,5 +279,6 @@
 
 [data-theme='dark'] .phone-img-v11 {
     mix-blend-mode: normal;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+    filter: url("#remove-bg") drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+    background-color: transparent !important;
 }
