@@ -1003,7 +1003,7 @@
         "brand": "Apple",
         "price": 1299,
         "condition": "used",
-        "image": "/products/iphone11.jpg",
+        "image": "/products/iphone11_allcolors.jpg",
         "description": "El favorito de todos. Colores y doble cámara.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1024,6 +1024,32 @@
             "processor": "A13 Bionic",
             "camera": "12MP Dual",
             "battery": "3110 mAh"
+        },
+        "colorImages": {
+            "Black": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_black.jpg"
+            ],
+            "White": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_white.jpg"
+            ],
+            "Purple": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_purple.jpg"
+            ],
+            "Green": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_green.jpg"
+            ],
+            "Yellow": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_yellow.jpg"
+            ],
+            "Red": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_red.jpg"
+            ]
         },
         "featured": false
     },
