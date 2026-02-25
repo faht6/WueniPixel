@@ -142,9 +142,15 @@ export const ProductProvider = ({ children }) => {
             // SYNC BASE PRICE: Find the minimum price among all available capacities
             // This ensures the Catalog view (ProductCard) stays updated.
             const prices = Object.values(sheetData.storagePrices).filter(p => p !== null && p !== undefined && p > 0);
-            if (prices.length > 0) {
-                merged.price = Math.min(...prices);
+
+            // INVENTORY CONTROL: If the product is in Sheets but has ZERO prices,
+            // the user has chosen not to sell it. Flag it for removal.
+            if (prices.length === 0) {
+                merged._noStock = true;
+                return merged;
             }
+
+            merged.price = Math.min(...prices);
 
             // DYNAMIC STORAGE: Combine original storage with capacities that have prices in Sheets
             const allPossibleCapacities = ['64GB', '128GB', '256GB', '512GB', '1TB', '2TB'];
@@ -162,7 +168,7 @@ export const ProductProvider = ({ children }) => {
             if (sheetData.featured !== null) merged.featured = sheetData.featured;
 
             return merged;
-        });
+        }).filter(p => !p._noStock); // Remove products without any price in Sheets
     };
 
     // Helper to get product by ID
