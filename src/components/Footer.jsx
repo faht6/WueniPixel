@@ -1,7 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Mail, Smartphone, Building2 } from 'lucide-react';
+import { Instagram, Mail, Smartphone, Building2, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import './Footer.css';
+
+// ─── EmailJS Credentials ───
+// 1. Crea cuenta en https://www.emailjs.com/
+// 2. Añade un "Email Service" (Gmail) → copia el Service ID
+// 3. Crea un "Email Template" con variables: {{from_email}}, {{message}}
+// 4. Copia tu Public Key de Account → General
+const EMAILJS_SERVICE_ID = 'service_wuenipixel';  // ← Reemplaza con tu Service ID
+const EMAILJS_TEMPLATE_ID = 'template_newsletter'; // ← Reemplaza con tu Template ID
+const EMAILJS_PUBLIC_KEY = 'TU_PUBLIC_KEY_AQUI';   // ← Reemplaza con tu Public Key
 
 const TikTokIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -10,12 +20,45 @@ const TikTokIcon = () => (
 );
 
 const Footer = () => {
+    const [email, setEmail] = useState('');
     const [subscribed, setSubscribed] = useState(false);
+    const [sending, setSending] = useState(false);
+    const [error, setError] = useState('');
 
-    const handleNewsletterSubmit = (e) => {
+    const handleNewsletterSubmit = async (e) => {
         e.preventDefault();
-        setSubscribed(true);
-        setTimeout(() => setSubscribed(false), 4000);
+        setError('');
+
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError('Ingresa un email válido');
+            return;
+        }
+
+        setSending(true);
+
+        try {
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    from_email: email,
+                    to_email: 'wuenipixel@gmail.com',
+                    message: `Nueva suscripción al newsletter de WueniPixel: ${email}`
+                },
+                EMAILJS_PUBLIC_KEY
+            );
+
+            setSubscribed(true);
+            setEmail('');
+            setTimeout(() => setSubscribed(false), 5000);
+        } catch (err) {
+            setError('Error al suscribir. Intenta de nuevo.');
+            console.error('EmailJS error:', err);
+        } finally {
+            setSending(false);
+        }
     };
 
     return (
@@ -63,11 +106,23 @@ const Footer = () => {
                                     ✅ ¡Gracias! Te mantendremos informado.
                                 </div>
                             ) : (
-                                <div className="input-group">
-                                    <Mail size={16} className="input-icon" />
-                                    <input type="email" placeholder="Tu correo electrónico" required />
-                                    <button type="submit">→</button>
-                                </div>
+                                <>
+                                    <div className="input-group">
+                                        <Mail size={16} className="input-icon" />
+                                        <input
+                                            type="email"
+                                            placeholder="Tu correo electrónico"
+                                            required
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            disabled={sending}
+                                        />
+                                        <button type="submit" disabled={sending}>
+                                            {sending ? <Loader2 size={16} className="spin-icon" /> : '→'}
+                                        </button>
+                                    </div>
+                                    {error && <p className="newsletter-error">{error}</p>}
+                                </>
                             )}
                         </form>
                     </div>
@@ -161,14 +216,18 @@ const Footer = () => {
                                         type="email"
                                         placeholder="tuemail@ejemplo.com"
                                         required
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        disabled={sending}
                                         className="newsletter-banner-input"
                                     />
-                                    <button type="submit" className="newsletter-banner-btn">
-                                        Suscríbete
+                                    <button type="submit" className="newsletter-banner-btn" disabled={sending}>
+                                        {sending ? 'Enviando...' : 'Suscríbete'}
                                     </button>
                                 </>
                             )}
                         </form>
+                        {error && <p className="newsletter-error" style={{ color: '#ff6b6b', fontSize: '13px', marginTop: '8px' }}>{error}</p>}
                         <p className="newsletter-banner-guarantee">Sin spam. Solo ofertas reales. Puedes cancelar cuando quieras.</p>
                     </div>
                 </div>

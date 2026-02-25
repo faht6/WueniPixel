@@ -384,3 +384,35 @@
         font-size: 1.3rem;
     }
 }
+
+/* ── Newsletter EmailJS States ── */
+.spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.newsletter-error {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.newsletter-banner-btn:disabled,
+.input-group button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.newsletter-banner-input:disabled,
+.input-group input:disabled {
+    opacity: 0.5;
+}
