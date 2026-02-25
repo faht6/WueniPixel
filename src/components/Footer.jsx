@@ -71,11 +71,11 @@ const Footer = () => {
                         </Link>
                         <p>Tecnología sin límites. Creamos el puente entre las mejores innovaciones y tu día a día con total confianza.</p>
                         <div className="social-links">
-                            <a href="https://www.facebook.com/profile.php?id=61574088498219" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <a href="https://www.facebook.com/share/1B92YVW719/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                             </a>
                             <a href="https://instagram.com/wuenipixel" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
-                            <a href="https://tiktok.com/@wuenipixel" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><TikTokIcon /></a>
+                            <a href="https://www.tiktok.com/@wuenipixel?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><TikTokIcon /></a>
                         </div>
                     </div>
 
@@ -238,7 +238,7 @@ const Footer = () => {
                         <span>|</span>
                         <a href="https://wa.me/51941126123" target="_blank" rel="noopener noreferrer">WhatsApp: 941 126 123</a>
                     </div>
-                    <p>&copy; 2026 WueniPixel | <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v12.6.0</span></p>
+                    <p>&copy; 2026 WueniPixel</p>
                 </div>
             </div>
         </footer>

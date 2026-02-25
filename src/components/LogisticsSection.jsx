@@ -42,7 +42,7 @@ const LogisticsSection = () => {
                                 <div className="dot accent"></div>
                                 <div>
                                     <h4>Garantía y Documentación</h4>
-                                    <p>Emitimos <strong>Boleta de Venta</strong>. Soporte técnico incluido.</p>
+                                    <p>Emitimos <strong>Boleta de Venta</strong>.</p>
                                 </div>
                             </div>
                         </div>

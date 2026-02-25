@@ -70,7 +70,7 @@ const AboutSection = () => {
                             <div className="point-icon"><ShieldCheck size={20} /></div>
                             <div>
                                 <h4>Formalidad y Garantía</h4>
-                                <p>Emitimos boleta de venta y ofrecemos soporte técnico.</p>
+                                <p>Emitimos boleta de venta.</p>
                             </div>
                         </div>
                     </div>

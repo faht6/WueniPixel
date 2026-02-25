@@ -6,7 +6,7 @@ import { calculateSellingPrice, formatCurrency, fetchExchangeRate } from '../uti
 import MobileMenu from './MobileMenu';
 import './Navbar.css';
 
-const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
+const Navbar = ({ cartCount, onCartClick }) => {
   const { products } = useProducts();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -118,7 +118,7 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
             }}
           >
             <Smartphone className="logo-icon" size={24} />
-            WueniPixel <span style={{ fontSize: '0.7em', opacity: 0.5, marginLeft: '5px' }}>v12.6.0</span>
+            WueniPixel
           </Link>
 
           {/* Desktop Links con Dropdowns */}
@@ -195,9 +195,7 @@ const Navbar = ({ cartCount, onCartClick, theme, toggleTheme }) => {
 
           {/* Actions */}
           <div className="nav-actions">
-            <button className="icon-btn" onClick={toggleTheme} aria-label="Toggle Theme">
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+
 
             <button className="icon-btn" onClick={() => setIsSearchOpen(true)} aria-label="Search">
               <Search size={20} />

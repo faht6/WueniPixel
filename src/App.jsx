@@ -50,25 +50,10 @@ function App() {
         }
     }, [district]);
 
-    // Estado del Tema (Dark Mode) con Persistencia y Detección Automática
-    const [theme, setTheme] = useState(() => {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) return savedTheme;
-
-        // Auto Dark Mode: 7 PM - 6 AM
-        const hour = new Date().getHours();
-        return (hour >= 19 || hour < 6) ? 'dark' : 'light';
-    });
-
-    // Efecto para aplicar tema al body y guardar preferencia
+    // Forzamos el tema a light ya que el usuario solicitó eliminar el modo oscuro
     useEffect(() => {
-        document.body.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-        setTheme(prev => prev === 'light' ? 'dark' : 'light');
-    };
+        document.body.setAttribute('data-theme', 'light');
+    }, []);
 
     const showToast = (message) => {
         setNotification(message);
@@ -132,7 +117,7 @@ function App() {
         <ProductProvider>
             <div className="app">
                 <Helmet>
-                    <title>WueniPixel v12.3 | Celulares en Cañete</title>
+                    <title>WueniPixel | Celulares en Cañete</title>
                     <meta name="description" content="La tienda de tecnología más confiable del Perú. Encuentra iPhones y Google Pixels seminuevos certificados y nuevos con garantía real." />
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content="WueniPixel | Tecnología al Mejor Precio" />
@@ -145,8 +130,6 @@ function App() {
                 <Navbar
                     cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)}
                     onCartClick={() => setIsCartOpen(true)}
-                    theme={theme}
-                    toggleTheme={toggleTheme}
                     district={district}
                     setDistrict={setDistrict}
                 />
