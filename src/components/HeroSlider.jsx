@@ -126,7 +126,7 @@ const PixelSlide = () => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
             >
                 <span className="pixel-badge-dot" />
-                NUEVO · PREVENTA EXCLUSIVA
+                NUEVO · PREVENTA
             </motion.div>
 
             {/* Title */}
@@ -146,7 +146,7 @@ const PixelSlide = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             >
-                <p>La nueva generación Pixel llega primero a WueniPixel.</p>
+                <p>La nueva generación Pixel llega a WueniPixel.</p>
                 <p>IA de Google, Night Sight y la mejor cámara por tu presupuesto.</p>
             </motion.div>
 
