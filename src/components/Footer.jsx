@@ -49,7 +49,7 @@ const Footer = () => {
                         <h4>Información</h4>
                         <ul>
                             <li><a href="https://wa.me/51941126123?text=Hola%20WueniPixel%2C%20quiero%20consultar%20el%20estado%20de%20mi%20pedido." target="_blank" rel="noopener noreferrer">Estado de mi pedido</a></li>
-                            <li><Link to="/#about">Sobre nosotros</Link></li>
+                            <li><a href="/#about" onClick={(e) => { e.preventDefault(); const el = document.getElementById('about'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); } else { window.location.href = '/#about'; } }}>Sobre nosotros</a></li>
                             <li><a href="https://wa.me/51941126123?text=Hola%20WueniPixel%2C%20tengo%20una%20consulta." target="_blank" rel="noopener noreferrer">Contacto WhatsApp</a></li>
                         </ul>
                     </div>
