@@ -1,42 +1,89 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, CreditCard, Lock, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { ArrowLeft, MessageCircle, CreditCard, Check } from 'lucide-react';
+import locationsData from '../data/locations.json';
 import './Checkout.css';
 
 const Checkout = ({ cart, clearCart }) => {
     const navigate = useNavigate();
-    const [isProcessing, setIsProcessing] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [orderNumber, setOrderNumber] = useState('');
 
-    // Form state
+    // Location cascading selects
+    const [departments, setDepartments] = useState([]);
+    const [provinces, setProvinces] = useState([]);
+    const [districts, setDistricts] = useState([]);
+
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
-        address: '',
-        city: '',
-        card: '',
-        cvv: ''
+        whatsapp: '',
+        department: '',
+        province: '',
+        district: '',
+        paymentMethod: 'Yape/Plin'
     });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    useEffect(() => {
+        setDepartments(Object.keys(locationsData).sort((a, b) => a.localeCompare(b)));
+    }, []);
 
     const total = (cart || []).reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setIsProcessing(true);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
 
-        // Simulate API call
-        setTimeout(() => {
-            setIsProcessing(false);
-            setIsSuccess(true);
-            clearCart();
-        }, 2500);
+        if (name === 'department') {
+            setFormData({ ...formData, department: value, province: '', district: '' });
+            if (value && locationsData[value]) {
+                setProvinces(Object.keys(locationsData[value]).sort((a, b) => a.localeCompare(b)));
+            } else {
+                setProvinces([]);
+            }
+            setDistricts([]);
+        } else if (name === 'province') {
+            setFormData({ ...formData, province: value, district: '' });
+            if (value && locationsData[formData.department] && locationsData[formData.department][value]) {
+                setDistricts(locationsData[formData.department][value].sort((a, b) => a.localeCompare(b)));
+            } else {
+                setDistricts([]);
+            }
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Generate order number
+        const ordNum = `WUENI-${Math.floor(Math.random() * 90000) + 10000}`;
+        setOrderNumber(ordNum);
+
+        // Build product list for WhatsApp
+        const productList = cart.map(item => {
+            const variant = [item.selectedColor, item.selectedStorage].filter(Boolean).join(', ');
+            return `• ${item.name}${variant ? ` (${variant})` : ''} x${item.quantity} — S/ ${(item.price * item.quantity).toFixed(2)}`;
+        }).join('\n');
+
+        const locationString = `${formData.district}, ${formData.province} (${formData.department})`;
+
+        const message = `🛒 *Pedido ${ordNum}*\n\n` +
+            `*Cliente:* ${formData.name}\n` +
+            `*WhatsApp:* ${formData.whatsapp}\n` +
+            `*Ubicación:* ${locationString}\n` +
+            `*Método de pago:* ${formData.paymentMethod}\n\n` +
+            `*Productos:*\n${productList}\n\n` +
+            `*Total: S/ ${total.toFixed(2)}*\n\n` +
+            `¿Está disponible para envío?`;
+
+        const whatsappUrl = `https://wa.me/51941126123?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+
+        setIsSuccess(true);
+        clearCart();
+    };
+
+    // Success screen
     if (isSuccess) {
         return (
             <div className="checkout-success container">
@@ -44,18 +91,18 @@ const Checkout = ({ cart, clearCart }) => {
                     <div className="success-icon">
                         <Check size={48} strokeWidth={3} />
                     </div>
-                    <h1>¡Pago Exitoso!</h1>
-                    <p>Gracias por tu compra, {formData.name.split(' ')[0]}.</p>
-                    <p className="order-number">Orden #WUENI-{Math.floor(Math.random() * 10000)}</p>
-                    <p className="email-note">Te hemos enviado la confirmación a {formData.email}</p>
-
+                    <h1>¡Pedido Enviado!</h1>
+                    <p>Gracias, {formData.name.split(' ')[0]}. Tu pedido fue enviado por WhatsApp.</p>
+                    <p className="order-number">Orden #{orderNumber}</p>
+                    <p className="email-note">Te responderemos por WhatsApp a la brevedad para confirmar disponibilidad y coordinar el envío.</p>
                     <Link to="/" className="btn-home">Volver al Inicio</Link>
                 </div>
             </div>
         );
     }
 
-    if (cart.length === 0) {
+    // Empty cart
+    if (!cart || cart.length === 0) {
         return (
             <div className="checkout-empty container">
                 <h2>Tu carrito está vacío</h2>
@@ -71,88 +118,79 @@ const Checkout = ({ cart, clearCart }) => {
             </Link>
 
             <div className="checkout-grid">
-                {/* FORMULARIO */}
+                {/* FORMULARIO DE RESERVA */}
                 <div className="checkout-form-section">
-                    <h1>Finalizar Compra</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label>Contacto</label>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Correo electrónico"
-                                required
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                        </div>
+                    <h1>Finalizar Pedido</h1>
+                    <p className="checkout-subtitle">Completa tus datos para confirmar disponibilidad y envío por WhatsApp.</p>
 
+                    <form onSubmit={handleSubmit}>
+                        {/* Nombre */}
                         <div className="form-group">
-                            <label>Envío</label>
-                            <div className="row">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Nombre completo"
-                                    required
-                                    className="highlight"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                />
-                                <input
-                                    type="text"
-                                    name="city"
-                                    placeholder="Ciudad"
-                                    required
-                                    value={formData.city}
-                                    onChange={handleChange}
-                                />
-                            </div>
+                            <label>Nombre Completo</label>
                             <input
                                 type="text"
-                                name="address"
-                                placeholder="Dirección de entrega"
+                                name="name"
+                                placeholder="Ej. Juan Pérez"
                                 required
-                                value={formData.address}
+                                value={formData.name}
                                 onChange={handleChange}
                             />
                         </div>
 
+                        {/* WhatsApp */}
                         <div className="form-group">
-                            <label>Pago Seguro <Lock size={14} /></label>
-                            <div className="card-input-wrapper">
-                                <CreditCard className="card-icon" size={20} />
-                                <input
-                                    type="text"
-                                    name="card"
-                                    placeholder="Número de tarjeta (Simulado)"
-                                    required
-                                    maxLength="19"
-                                    value={formData.card}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="row">
-                                <input type="text" placeholder="MM / YY" required maxLength="5" />
-                                <input
-                                    type="text"
-                                    name="cvv"
-                                    placeholder="CVV"
-                                    required
-                                    maxLength="3"
-                                    value={formData.cvv}
-                                    onChange={handleChange}
-                                />
+                            <label>WhatsApp Contacto</label>
+                            <input
+                                type="tel"
+                                name="whatsapp"
+                                placeholder="Ej. 999 000 111"
+                                required
+                                value={formData.whatsapp}
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        {/* Ubicación */}
+                        <div className="form-group">
+                            <label>Ubicación de Envío</label>
+                            <div className="location-row">
+                                <select name="department" value={formData.department} onChange={handleChange} required>
+                                    <option value="">Departamento</option>
+                                    {departments.map(dept => (
+                                        <option key={dept} value={dept}>{dept}</option>
+                                    ))}
+                                </select>
+                                <select name="province" value={formData.province} onChange={handleChange} disabled={!formData.department} required>
+                                    <option value="">Provincia</option>
+                                    {provinces.map(prov => (
+                                        <option key={prov} value={prov}>{prov}</option>
+                                    ))}
+                                </select>
+                                <select name="district" value={formData.district} onChange={handleChange} disabled={!formData.province} required>
+                                    <option value="">Distrito</option>
+                                    {districts.map(dist => (
+                                        <option key={dist} value={dist}>{dist}</option>
+                                    ))}
+                                </select>
                             </div>
                         </div>
 
-                        <button
-                            type="submit"
-                            className="btn-pay"
-                            disabled={isProcessing}
-                        >
-                            {isProcessing ? 'Procesando...' : `Pagar S/ ${total.toFixed(2)}`}
+                        {/* Método de Pago */}
+                        <div className="form-group">
+                            <label>Método de Pago</label>
+                            <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange}>
+                                <option value="Yape/Plin">Yape / Plin (Digital)</option>
+                                <option value="Efectivo">Efectivo contraentrega (Solo Lima/Cañete)</option>
+                                <option value="Transferencia">Transferencia Bancaria</option>
+                                <option value="Tarjeta de Crédito">Tarjeta de Crédito (+5%)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" className="btn-pay">
+                            <MessageCircle size={20} />
+                            Confirmar pedido por WhatsApp
                         </button>
+                        <p className="secure-note"><CreditCard size={12} /> Pagos 100% Seguros · Envío coordinado por WhatsApp</p>
                     </form>
                 </div>
 

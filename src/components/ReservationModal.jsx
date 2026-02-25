@@ -137,7 +137,7 @@ const ReservationModal = ({ isOpen, onClose, product, selectedColor, selectedSto
                                 <option value="Yape/Plin">Yape / Plin (Digital)</option>
                                 <option value="Efectivo">Efectivo contraentrega (Solo Lima/Cañete)</option>
                                 <option value="Transferencia">Transferencia Bancaria</option>
-                                <option value="Tarjeta de Crédito">Tarjeta de Crédito (+5% Niubiz)</option>
+                                <option value="Tarjeta de Crédito">Tarjeta de Crédito (+5%)</option>
                             </select>
                         </div>
                     </div>
