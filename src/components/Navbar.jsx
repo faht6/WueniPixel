@@ -126,9 +126,7 @@ const Navbar = ({ cartCount, onCartClick }) => {
 
 
 
-            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active-tab' : ''}`}>
-              Inicio
-            </Link>
+
 
             <Link to="/products" className={`nav-link ${location.pathname === '/products' && !location.search ? 'active-tab' : ''}`}>
               Catálogo

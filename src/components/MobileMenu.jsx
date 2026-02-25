@@ -71,12 +71,7 @@ const MobileMenu = ({ isOpen, onClose, onSearchOpen }) => {
                         </div>
 
                         <nav className="mobile-nav-links">
-                            {/* Home */}
-                            <motion.div variants={linkVariants} custom={0}>
-                                <button className="mobile-nav-item" onClick={() => handleNavigation('/')}>
-                                    Inicio
-                                </button>
-                            </motion.div>
+
 
                             <motion.div variants={linkVariants} custom={0.5}>
                                 <button className="mobile-nav-item" onClick={() => handleNavigation('/products')}>

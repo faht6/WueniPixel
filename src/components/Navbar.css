@@ -87,7 +87,8 @@
 
 .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 40px;
+    /* Increased from 32px */
     height: 100%;
     align-items: center;
 }
@@ -97,7 +98,8 @@
     color: var(--color-text-primary);
     /* Texto normal */
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
+    /* Slightly larger from 12px */
     opacity: 0.8;
     transition: opacity 0.2s ease, color 0.2s ease;
     background: none;
@@ -204,7 +206,10 @@
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    /* Increased from 1.5rem (24px to 32px) */
+    margin-left: 20px;
+    /* Added margin to push away from nav-links */
 }
 
 .icon-btn,
