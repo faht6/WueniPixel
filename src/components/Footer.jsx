@@ -98,7 +98,7 @@ const Footer = () => {
 
                         {/* American Express */}
                         <div className="payment-logo-card" title="American Express">
-                            <img src="/images/logo_amex.jpg" alt="American Express" className="payment-brand-logo" />
+                            <img src="/images/logo_amex.svg" alt="American Express" className="payment-brand-logo" />
                         </div>
 
                         {/* Separator */}
