@@ -163,6 +163,86 @@
 }
 
 /* Responsive */
+
+/* ── Footer Logo ── */
+.footer-logo-link {
+    display: inline-block;
+    margin-bottom: 12px;
+    transition: opacity 0.2s;
+}
+
+.footer-logo-link:hover {
+    opacity: 0.85;
+}
+
+.footer-logo-img {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ── Payment Strip ── */
+.footer-payment-strip {
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding: 24px 0;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.payment-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 14px;
+}
+
+.payment-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.payment-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-background);
+    border-radius: 8px;
+    padding: 6px 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--color-border-subtle);
+}
+
+.payment-logo-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment-logo-card svg {
+    display: block;
+}
+
+.payment-text-badge {
+    padding: 6px 14px;
+    gap: 5px;
+    border: none !important;
+    border-radius: 6px;
+}
+
+.payment-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--color-border-subtle);
+    margin: 0 4px;
+}
+
+
 @media (max-width: 900px) {
     .footer-top {
         grid-template-columns: 1fr 1fr;
