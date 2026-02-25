@@ -214,7 +214,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
 
                         {/* COLUMNA 2: INFO CENTRAL */}
                         <div className="info-section-meli">
-                            <span className="condition-text">{product.condition === 'new' ? 'Nuevo Sellado' : 'Seminuevo Premium'}</span>
+                            <span className="condition-text">{product.condition === 'new' ? 'Nuevo Sellado' : 'Seminuevo'}</span>
                             <h1 className="meli-title">{product.name}</h1>
 
                             <div className="aesthetics-grade">

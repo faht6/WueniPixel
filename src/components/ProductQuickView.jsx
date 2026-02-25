@@ -97,7 +97,7 @@ const ProductQuickView = ({ product, isOpen, onClose }) => {
                                 </div>
 
                                 <p className="qv-desc">
-                                    {product.description || `Disfruta del rendimiento premium del ${product.name}. Directa de USA con entrega personal en San Vicente.`}
+                                    {product.description || `Disfruta del alto rendimiento del ${product.name}. Directa de USA con entrega personal en San Vicente.`}
                                 </p>
 
                                 <div className="qv-actions">
