@@ -128,6 +128,18 @@ export const ProductProvider = ({ children }) => {
             // Add per-capacity pricing
             merged.storagePrices = sheetData.storagePrices;
 
+            // DYNAMIC STORAGE: Combine original storage with capacities that have prices in Sheets
+            const allPossibleCapacities = ['64GB', '128GB', '256GB', '512GB', '1TB', '2TB'];
+            const activeFromSheets = allPossibleCapacities.filter(cap =>
+                sheetData.storagePrices[cap] !== null && sheetData.storagePrices[cap] !== undefined
+            );
+
+            // Union of original storage and capacities with prices in Sheets
+            const combinedStorage = Array.from(new Set([...(merged.storage || []), ...activeFromSheets]));
+
+            // Sort by the predefined capacity order
+            merged.storage = allPossibleCapacities.filter(cap => combinedStorage.includes(cap));
+
             // Override text fields only if Sheets has non-empty values
             if (sheetData.name) merged.name = sheetData.name;
             if (sheetData.description) merged.description = sheetData.description;
