@@ -143,13 +143,43 @@ const Footer = () => {
                     </div>
                 </div>
 
+                {/* ── Newsletter Banner ── */}
+                <div className="newsletter-banner">
+                    <div className="newsletter-banner-content">
+                        <h3 className="newsletter-banner-title">Ofertas exclusivas en tu email</h3>
+                        <p className="newsletter-banner-subtitle">
+                            Recibe alertas de nuevos iPhones y Pixels, preventas y ofertas limitadas en Cañete.
+                        </p>
+                        <form className="newsletter-banner-form" onSubmit={handleNewsletterSubmit}>
+                            {subscribed ? (
+                                <div className="newsletter-banner-success">
+                                    ✅ ¡Gracias! Te mantendremos informado.
+                                </div>
+                            ) : (
+                                <>
+                                    <input
+                                        type="email"
+                                        placeholder="tuemail@ejemplo.com"
+                                        required
+                                        className="newsletter-banner-input"
+                                    />
+                                    <button type="submit" className="newsletter-banner-btn">
+                                        Suscríbete
+                                    </button>
+                                </>
+                            )}
+                        </form>
+                        <p className="newsletter-banner-guarantee">Sin spam. Solo ofertas reales. Puedes cancelar cuando quieras.</p>
+                    </div>
+                </div>
+
                 <div className="footer-bottom">
                     <div className="legal-links">
                         <span>San Vicente de Cañete, Lima</span>
                         <span>|</span>
                         <a href="https://wa.me/51941126123" target="_blank" rel="noopener noreferrer">WhatsApp: 941 126 123</a>
                     </div>
-                    <p>&copy; 2026 WueniPixel | <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v12.5.5</span></p>
+                    <p>&copy; 2026 WueniPixel | <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v12.6.0</span></p>
                 </div>
             </div>
         </footer>
