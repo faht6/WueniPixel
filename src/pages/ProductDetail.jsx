@@ -44,14 +44,8 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
     // Update images when color changes
     useEffect(() => {
         if (product && selectedColor) {
-            const images = product.colorImages?.[selectedColor] || [product.image, product.image, product.image];
-            // Ensure we always have at least 3 images for the layout
-            const filledImages = [...images];
-            while (filledImages.length < 3) {
-                filledImages.push(product.image);
-            }
-            setCurrentImages(filledImages.slice(0, 3));
-            // Removed: setSelectedImageIndex(0); to persist view across color changes
+            const images = product.colorImages?.[selectedColor] || [product.image];
+            setCurrentImages(images);
         }
     }, [product, selectedColor]);
 
