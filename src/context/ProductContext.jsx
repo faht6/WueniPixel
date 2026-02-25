@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 const ProductContext = createContext();
 
 // CONFIGURACIÓN: URL de Google Sheets publicada como CSV
-const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ13YcoM57Rwi-JrPoxHwbJGjREPTlZvCAvVJJK2GW5fx46TMWCbSXLazIRUSUuBMlGHFtsgqySRATl/pub?gid=0&single=true&output=csv";
+const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRoFtNE3hMrKjGG22omYUG_kTyvc4Hp92z_Ni_cnZGISJk_nxSeDunBjn-8Fmx-xhFzgviOY7NSmFi-/pub?output=csv";
 
 export const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
