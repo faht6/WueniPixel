@@ -242,6 +242,14 @@
     margin: 0 4px;
 }
 
+.payment-brand-logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
+}
+
 
 @media (max-width: 900px) {
     .footer-top {

@@ -98,23 +98,20 @@ const Footer = () => {
 
                         {/* American Express */}
                         <div className="payment-logo-card" title="American Express">
-                            <svg viewBox="0 0 780 500" width="48" height="30">
-                                <rect width="780" height="500" rx="40" fill="#2E77BB" />
-                                <text x="390" y="285" textAnchor="middle" fill="#fff" fontFamily="Arial,Helvetica,sans-serif" fontSize="160" fontWeight="bold">AMEX</text>
-                            </svg>
+                            <img src="/images/logo_amex.jpg" alt="American Express" className="payment-brand-logo" />
                         </div>
 
                         {/* Separator */}
                         <span className="payment-divider" />
 
                         {/* Yape */}
-                        <div className="payment-logo-card payment-text-badge" title="Yape" style={{ background: '#742284' }}>
-                            <span style={{ color: '#fff', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '0.01em' }}>Yape</span>
+                        <div className="payment-logo-card" title="Yape">
+                            <img src="/images/logo_yape.png" alt="Yape" className="payment-brand-logo" />
                         </div>
 
                         {/* Plin */}
-                        <div className="payment-logo-card payment-text-badge" title="Plin" style={{ background: '#00D26A' }}>
-                            <span style={{ color: '#fff', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '0.01em' }}>Plin</span>
+                        <div className="payment-logo-card" title="Plin">
+                            <img src="/images/logo_plin.jpg" alt="Plin" className="payment-brand-logo" />
                         </div>
 
                         {/* Transferencia */}

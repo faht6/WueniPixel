@@ -1197,14 +1197,14 @@
         "brand": "Google",
         "price": 2299,
         "condition": "new",
-        "image": "/products/pixel10_allcolors.jpg",
+        "image": "/products/pixel10a_allcolors.jpg",
         "description": "La entrada al mundo Tensor G5. Económico y potente.",
         "grade": "Nuevo Sellado",
         "colors": [
-            "Indigo",
-            "Obsidian",
-            "Fog",
-            "Berry"
+            "Baya",
+            "Obsidiana",
+            "Niebla",
+            "Lavanda"
         ],
         "storage": [
             "128GB",
@@ -1215,6 +1215,24 @@
             "processor": "Google Tensor G5",
             "camera": "48MP + 13MP UGA",
             "battery": "5100 mAh"
+        },
+        "colorImages": {
+            "Baya": [
+                "/products/pixel10a_allcolors.jpg",
+                "/products/pixel10a_baya.jpg"
+            ],
+            "Obsidiana": [
+                "/products/pixel10a_allcolors.jpg",
+                "/products/pixel10a_obsidiana.jpg"
+            ],
+            "Niebla": [
+                "/products/pixel10a_allcolors.jpg",
+                "/products/pixel10a_niebla.jpg"
+            ],
+            "Lavanda": [
+                "/products/pixel10a_allcolors.jpg",
+                "/products/pixel10a_lavanda.jpg"
+            ]
         },
         "featured": false
     },
