@@ -102,7 +102,9 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
         </Link>
 
         <div className="card-price reverse-price">
-          <span className="price-soles">{formatCurrency(price)}</span>
+          <span className="price-soles">
+            {product.storagePrices ? 'Desde ' : ''}{formatCurrency(price)}
+          </span>
           <span className="price-neto-card">Precio neto al contado</span>
         </div>
 
