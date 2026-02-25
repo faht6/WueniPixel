@@ -60,21 +60,37 @@ const Checkout = ({ cart, clearCart }) => {
         setOrderNumber(ordNum);
 
         // Build product list for WhatsApp
-        const productList = cart.map(item => {
-            const variant = [item.selectedColor, item.selectedStorage].filter(Boolean).join(', ');
-            return `• ${item.name}${variant ? ` (${variant})` : ''} x${item.quantity} — S/ ${(item.price * item.quantity).toFixed(2)}`;
-        }).join('\n');
+        const productLines = cart.map(item => {
+            const variant = [item.selectedColor, item.selectedStorage].filter(Boolean).join(' · ');
+            const line = `   📱 ${item.name}`;
+            const details = variant ? `      ${variant}` : '';
+            const pricing = `      Cant: ${item.quantity} → S/ ${(item.price * item.quantity).toFixed(2)}`;
+            return [line, details, pricing].filter(Boolean).join('\n');
+        }).join('\n\n');
 
-        const locationString = `${formData.district}, ${formData.province} (${formData.department})`;
+        const locationString = `${formData.district}, ${formData.province}, ${formData.department}`;
+        const separator = '─────────────────────';
 
-        const message = `🛒 *Pedido ${ordNum}*\n\n` +
-            `*Cliente:* ${formData.name}\n` +
-            `*WhatsApp:* ${formData.whatsapp}\n` +
-            `*Ubicación:* ${locationString}\n` +
-            `*Método de pago:* ${formData.paymentMethod}\n\n` +
-            `*Productos:*\n${productList}\n\n` +
-            `*Total: S/ ${total.toFixed(2)}*\n\n` +
-            `¿Está disponible para envío?`;
+        const message = [
+            `🛒 *PEDIDO ${ordNum}*`,
+            separator,
+            ``,
+            `👤 *Cliente:* ${formData.name}`,
+            `📞 *WhatsApp:* ${formData.whatsapp}`,
+            `📍 *Envío a:* ${locationString}`,
+            `💳 *Pago:* ${formData.paymentMethod}`,
+            ``,
+            separator,
+            `📦 *PRODUCTOS*`,
+            ``,
+            productLines,
+            ``,
+            separator,
+            `💰 *TOTAL: S/ ${total.toFixed(2)}*`,
+            separator,
+            ``,
+            `Hola WueniPixel, quiero confirmar este pedido. ¿Está disponible para envío? 🙏`
+        ].join('\n');
 
         const whatsappUrl = `https://wa.me/51941126123?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');

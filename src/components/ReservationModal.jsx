@@ -50,8 +50,29 @@ const ReservationModal = ({ isOpen, onClose, product, selectedColor, selectedSto
         e.preventDefault();
 
         // Construct Dynamic WhatsApp Message
-        const locationString = `${formData.district}, ${formData.province} (${formData.department})`;
-        const message = `Hola WueniPixel, quiero reservar el ${product.name} de ${selectedStorage || 'N/A'} en ${selectedColor || 'N/A'}. Estoy en ${locationString} y pagaré con ${formData.paymentMethod}. ¿Está disponible?`;
+        const locationString = `${formData.district}, ${formData.province}, ${formData.department}`;
+        const separator = '─────────────────────';
+
+        const message = [
+            `🛒 *RESERVA WUENIPIXEL*`,
+            separator,
+            ``,
+            `👤 *Cliente:* ${formData.name}`,
+            `📞 *WhatsApp:* ${formData.whatsapp}`,
+            `📍 *Envío a:* ${locationString}`,
+            `💳 *Pago:* ${formData.paymentMethod}`,
+            ``,
+            separator,
+            `📱 *PRODUCTO*`,
+            ``,
+            `   ${product.name}`,
+            `   ${selectedStorage || ''} · ${selectedColor || ''}`,
+            `   💰 *Precio: S/ ${product.price.toFixed(2)}*`,
+            ``,
+            separator,
+            ``,
+            `Hola WueniPixel, quiero reservar este producto. ¿Está disponible? 🙏`
+        ].join('\n');
 
         const whatsappUrl = `https://wa.me/51941126123?text=${encodeURIComponent(message)}`;
 
