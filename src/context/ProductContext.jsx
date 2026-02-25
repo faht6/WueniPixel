@@ -139,6 +139,13 @@ export const ProductProvider = ({ children }) => {
             // Add per-capacity pricing
             merged.storagePrices = sheetData.storagePrices;
 
+            // SYNC BASE PRICE: Find the minimum price among all available capacities
+            // This ensures the Catalog view (ProductCard) stays updated.
+            const prices = Object.values(sheetData.storagePrices).filter(p => p !== null && p !== undefined && p > 0);
+            if (prices.length > 0) {
+                merged.price = Math.min(...prices);
+            }
+
             // DYNAMIC STORAGE: Combine original storage with capacities that have prices in Sheets
             const allPossibleCapacities = ['64GB', '128GB', '256GB', '512GB', '1TB', '2TB'];
             const activeFromSheets = allPossibleCapacities.filter(cap =>
