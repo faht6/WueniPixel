@@ -60,13 +60,14 @@
         "brand": "Apple",
         "price": 5499,
         "condition": "new",
-        "image": "/products/iphone17_negro.jpg",
+        "image": "/products/iphoneair_allcolors.jpg",
         "description": "Increíblemente delgado. Potencia Pro en un diseño aéreo.",
         "grade": "Nuevo Sellado",
         "colors": [
-            "Plata",
-            "Grafito",
-            "Oro"
+            "Blanco Nube",
+            "Oro Claro",
+            "Azul Cielo",
+            "Negro Espacial"
         ],
         "storage": [
             "256GB",
@@ -80,20 +81,25 @@
             "battery": "3,036 mAh"
         },
         "colorImages": {
-            "Plata": [
-                "/products/iphone17_negro.jpg",
-                "/products/iphone17_negro.jpg",
-                "/products/iphone17_negro.jpg"
+            "Blanco Nube": [
+                "/products/iphoneair_allcolors.jpg",
+                "/products/iphoneair_blanconube.jpg",
+                "/products/iphoneair_blanconube1.jpg"
             ],
-            "Grafito": [
-                "/products/iphone17_negro.jpg",
-                "/products/iphone17_negro.jpg",
-                "/products/iphone17_negro.jpg"
+            "Oro Claro": [
+                "/products/iphoneair_allcolors.jpg",
+                "/products/iphoneair_oroclaro.jpg",
+                "/products/iphoneair_oroclaro1.jpg"
             ],
-            "Oro": [
-                "/products/iphone17_negro.jpg",
-                "/products/iphone17_negro.jpg",
-                "/products/iphone17_negro.jpg"
+            "Azul Cielo": [
+                "/products/iphoneair_allcolors.jpg",
+                "/products/iphoneair_azulcielo.jpg",
+                "/products/iphoneair_azulcielo1.jpg"
+            ],
+            "Negro Espacial": [
+                "/products/iphoneair_allcolors.jpg",
+                "/products/iphoneair_negroespacial.jpg",
+                "/products/iphoneair_negroespacial1.jpg"
             ]
         },
         "featured": true
@@ -997,7 +1003,7 @@
         "brand": "Apple",
         "price": 1299,
         "condition": "used",
-        "image": "/products/iphone11.jpg",
+        "image": "/products/iphone11_allcolors.jpg",
         "description": "El favorito de todos. Colores y doble cámara.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1018,6 +1024,32 @@
             "processor": "A13 Bionic",
             "camera": "12MP Dual",
             "battery": "3110 mAh"
+        },
+        "colorImages": {
+            "Black": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_black.jpg"
+            ],
+            "White": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_white.jpg"
+            ],
+            "Purple": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_purple.jpg"
+            ],
+            "Green": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_green.jpg"
+            ],
+            "Yellow": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_yellow.jpg"
+            ],
+            "Red": [
+                "/products/iphone11_allcolors.jpg",
+                "/products/iphone11_red.jpg"
+            ]
         },
         "featured": false
     },

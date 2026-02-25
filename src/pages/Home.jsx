@@ -6,7 +6,7 @@ import BrandMarquee from '../components/BrandMarquee';
 import BrandComparison from '../components/BrandComparison';
 import LogisticsSection from '../components/LogisticsSection';
 import FAQSection from '../components/FAQSection';
-import HeroSection from '../components/HeroSection';
+import HeroSlider from '../components/HeroSlider';
 import ValuePillars from '../components/ValuePillars';
 import AboutSection from '../components/AboutSection';
 import TradeInSection from '../components/TradeInSection';
@@ -17,8 +17,8 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
     return (
         <PageTransition>
             <div className="home-container">
-                {/* 1. NEW HERO SECTION */}
-                <HeroSection />
+                {/* 1. HERO SLIDER — Pixel 10a + iPhone 17 Pro Max */}
+                <HeroSlider />
 
                 {/* 2. ABOUT US (NEW) */}
                 <AboutSection />
