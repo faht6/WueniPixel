@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import { useProducts } from '../context/ProductContext';
-import BudgetRecommender from '../components/BudgetRecommender';
+import SmartAssistantSection from '../components/SmartAssistantSection';
 import BrandMarquee from '../components/BrandMarquee';
 import BrandComparison from '../components/BrandComparison';
 import LogisticsSection from '../components/LogisticsSection';
@@ -26,13 +26,8 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
                 {/* 3. VALUE PILLARS */}
                 <ValuePillars />
 
-                {/* 3. ORIGINAL BUDGET RECOMMENDER (Renamed/Contextualized) */}
-                <section className="recommender-section" style={{ padding: '4rem 0' }}>
-                    <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-                        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1rem' }}>¿Indeciso? Déjanos ayudarte.</p>
-                        <BudgetRecommender district={district} />
-                    </div>
-                </section>
+                {/* 3. SMART ASSISTANT (AI Wizard) */}
+                <SmartAssistantSection />
 
                 {/* TRUST MARQUEE */}
                 <BrandMarquee />
