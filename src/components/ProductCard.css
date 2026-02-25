@@ -14,7 +14,9 @@
 }
 
 .product-card:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
 }
 
 .card-glare {
@@ -97,9 +99,9 @@
 }
 
 .price-soles {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-accent);
 }
 
 .price-neto-card {

@@ -422,6 +422,52 @@
     animation: pulseBadgePixel 2s infinite;
 }
 
+/* ── Scroll Indicator ── */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-indicator:hover {
+    color: #8B0000;
+}
+
+.scroll-indicator-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+[data-theme='dark'] .scroll-indicator {
+    color: #636366;
+}
+
+[data-theme='dark'] .scroll-indicator:hover {
+    color: #ff4d6a;
+}
+
 /* ══════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════ */
