@@ -79,51 +79,62 @@ export const ProductProvider = ({ children }) => {
 
     // Merge local products with Sheets pricing data
     const mergeWithSheetsPricing = (localProducts, sheetRows) => {
-        // Build a lookup map from Sheets rows by product ID
         const pricingMap = {};
+
         for (const row of sheetRows) {
-            if (!row.id) continue;
-            const id = parseInt(row.id);
+            // Helper to get value from row case-insensitively
+            const getVal = (searchKey) => {
+                const actualKey = Object.keys(row).find(
+                    k => k.toLowerCase().trim() === searchKey.toLowerCase()
+                );
+                return actualKey ? row[actualKey] : null;
+            };
+
+            const idStr = getVal('id');
+            if (!idStr) continue;
+            const id = parseInt(idStr);
             if (isNaN(id)) continue;
 
-            const parsePrice = (val) => {
+            const parsePrice = (key) => {
+                const val = getVal(key);
                 if (!val || val.trim() === '' || val.trim() === '0') return null;
-                const num = parseFloat(val);
+                // Remove currency symbols, commas for thousands, etc.
+                const cleanVal = val.replace(/[S/$.\s,]/g, (match) => {
+                    // We keep dots if they look like decimals, but usually CSVs use dots for thousands in some locales
+                    // To be safe, let's just use a more surgical approach
+                    return '';
+                });
+                // Simple approach: remove everything except numbers and decimal point
+                const numericString = val.replace(/[^0-9.]/g, '');
+                const num = parseFloat(numericString);
                 return isNaN(num) ? null : num;
             };
 
             pricingMap[id] = {
-                // Override base price if present in Sheets
-                price: row.price ? parseFloat(row.price) : null,
-                // Per-capacity pricing
+                price: parsePrice('price'),
                 storagePrices: {
-                    '64GB': parsePrice(row.Precio_64GB),
-                    '128GB': parsePrice(row.Precio_128GB),
-                    '256GB': parsePrice(row.Precio_256GB),
-                    '512GB': parsePrice(row.Precio_512GB),
-                    '1TB': parsePrice(row.Precio_1TB),
-                    '2TB': parsePrice(row.Precio_2TB),
+                    '64GB': parsePrice('Precio_64GB'),
+                    '128GB': parsePrice('Precio_128GB'),
+                    '256GB': parsePrice('Precio_256GB'),
+                    '512GB': parsePrice('Precio_512GB'),
+                    '1TB': parsePrice('Precio_1TB'),
+                    '2TB': parsePrice('Precio_2TB'),
                 },
-                // Override other fields ONLY if present and non-empty in Sheets
-                name: row.name && row.name.trim() ? row.name.trim() : null,
-                description: row.description && row.description.trim() ? row.description.trim() : null,
-                grade: row.grade && row.grade.trim() ? row.grade.trim() : null,
-                condition: row.condition && row.condition.trim() ? row.condition.trim() : null,
-                featured: row.featured !== undefined && row.featured !== '' ? (row.featured === 'TRUE' || row.featured === 'true') : null,
+                name: getVal('name'),
+                description: getVal('description'),
+                grade: getVal('grade'),
+                condition: getVal('condition'),
+                featured: getVal('featured') ? (getVal('featured').toLowerCase() === 'true') : null,
             };
         }
 
-        // Merge pricing into local products (local keeps all images, colorImages, specs, etc.)
         return localProducts.map(product => {
             const sheetData = pricingMap[product.id];
-            if (!sheetData) return product; // No Sheets data for this product, keep as-is
+            if (!sheetData) return product;
 
             const merged = { ...product };
 
-            // Override base price if Sheets has one
-            if (sheetData.price !== null) {
-                merged.price = sheetData.price;
-            }
+            if (sheetData.price !== null) merged.price = sheetData.price;
 
             // Add per-capacity pricing
             merged.storagePrices = sheetData.storagePrices;
@@ -134,17 +145,13 @@ export const ProductProvider = ({ children }) => {
                 sheetData.storagePrices[cap] !== null && sheetData.storagePrices[cap] !== undefined
             );
 
-            // Union of original storage and capacities with prices in Sheets
             const combinedStorage = Array.from(new Set([...(merged.storage || []), ...activeFromSheets]));
-
-            // Sort by the predefined capacity order
             merged.storage = allPossibleCapacities.filter(cap => combinedStorage.includes(cap));
 
-            // Override text fields only if Sheets has non-empty values
-            if (sheetData.name) merged.name = sheetData.name;
-            if (sheetData.description) merged.description = sheetData.description;
-            if (sheetData.grade) merged.grade = sheetData.grade;
-            if (sheetData.condition) merged.condition = sheetData.condition;
+            if (sheetData.name && sheetData.name.trim()) merged.name = sheetData.name;
+            if (sheetData.description && sheetData.description.trim()) merged.description = sheetData.description;
+            if (sheetData.grade && sheetData.grade.trim()) merged.grade = sheetData.grade;
+            if (sheetData.condition && sheetData.condition.trim()) merged.condition = sheetData.condition;
             if (sheetData.featured !== null) merged.featured = sheetData.featured;
 
             return merged;
