@@ -9,9 +9,9 @@ import './Footer.css';
 // 2. Añade un "Email Service" (Gmail) → copia el Service ID
 // 3. Crea un "Email Template" con variables: {{from_email}}, {{message}}
 // 4. Copia tu Public Key de Account → General
-const EMAILJS_SERVICE_ID = 'service_wuenipixel';  // ← Reemplaza con tu Service ID
-const EMAILJS_TEMPLATE_ID = 'template_newsletter'; // ← Reemplaza con tu Template ID
-const EMAILJS_PUBLIC_KEY = 'TU_PUBLIC_KEY_AQUI';   // ← Reemplaza con tu Public Key
+const EMAILJS_SERVICE_ID = 'service_qfiv2dt';
+const EMAILJS_TEMPLATE_ID = 'template_bndz7ej';
+const EMAILJS_PUBLIC_KEY = 'VQczes9LrC6_UjjVb';
 
 const TikTokIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
