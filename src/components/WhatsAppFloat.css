@@ -17,6 +17,7 @@
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
+    animation: pulse-green 2.5s infinite ease-in-out;
 }
 
 .whatsapp-float:hover {
@@ -81,16 +82,12 @@
     }
 }
 
-.whatsapp-float {
-    animation: pulse-green 2.5s infinite ease-in-out;
-}
-
 @media (max-width: 768px) {
     .whatsapp-float {
         bottom: 1rem;
         right: 1rem;
-        width: 56px;
-        height: 56px;
-        border-radius: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 18px;
     }
 }

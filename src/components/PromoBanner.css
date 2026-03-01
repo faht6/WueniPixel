@@ -7,7 +7,6 @@
     letter-spacing: 0.05em;
     position: relative;
     z-index: 10001;
-    /* Above Navbar */
 }
 
 .promo-content p {
@@ -18,4 +17,16 @@
 [data-theme='dark'] .promo-banner {
     background-color: #1c1c1e;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+    .promo-banner {
+        font-size: 9px;
+        padding: 6px 12px;
+        letter-spacing: 0.02em;
+    }
+
+    .promo-content p {
+        line-height: 1.4;
+    }
 }

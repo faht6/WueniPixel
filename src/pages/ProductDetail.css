@@ -25,23 +25,16 @@
 .detail-image,
 .image-section img {
     width: auto;
-    /* Auto width para mantener ratio */
     height: auto;
-    /* Auto height */
     max-height: 600px;
-    /* Límite máximo para pantallas grandes */
     max-width: 100%;
-    /* No salirse del contenedor */
     border-radius: var(--radius-lg);
     background-color: transparent;
-    /* Quitar fondo gris, dejar que respire */
     padding: 20px;
     box-sizing: border-box;
-    mix-blend-mode: multiply;
-    filter: none;
+    filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.14)) drop-shadow(0 6px 10px rgba(0, 0, 0, 0.08));
     object-fit: contain;
     margin: 0 auto;
-    /* Centrado */
     display: block;
 }
 
@@ -386,6 +379,22 @@
     justify-content: center;
     height: 480px;
     overflow: hidden;
+    position: relative;
+}
+
+/* Contact shadow for detail page main image */
+.main-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;
+    height: 24px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.16) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .main-image-meli {
@@ -394,7 +403,9 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    mix-blend-mode: multiply;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
+    position: relative;
+    z-index: 1;
 }
 
 [data-theme='dark'] .main-image-meli {
@@ -991,7 +1002,7 @@
 
     .buy-box-section {
         position: static;
-        margin-top: 40px;
+        margin-top: 24px;
     }
 
     .image-section-meli {
@@ -1001,6 +1012,36 @@
     .thumbnail-list {
         flex-direction: row;
         justify-content: center;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .thumbnail-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .thumb {
+        width: 56px;
+        height: 56px;
+        flex-shrink: 0;
+    }
+
+    .main-image-container {
+        height: 360px;
+    }
+
+    .meli-title {
+        font-size: 20px;
+    }
+
+    .meli-price {
+        font-size: 28px;
+    }
+
+    .color-swatch {
+        width: 36px;
+        height: 36px;
     }
 }
 

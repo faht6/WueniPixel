@@ -168,6 +168,36 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                     <meta property="og:title" content={`${product.name} | WueniPixel Store`} />
                     <meta property="og:description" content={product.description} />
                     <meta property="og:image" content={product.image} />
+                    <script type="application/ld+json">{JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "name": product.name,
+                        "image": product.image,
+                        "description": product.description || `${product.name} disponible en WueniPixel`,
+                        "brand": { "@type": "Brand", "name": product.brand },
+                        "sku": `WP-${product.id}`,
+                        "itemCondition": product.condition === 'new'
+                            ? "https://schema.org/NewCondition"
+                            : "https://schema.org/RefurbishedCondition",
+                        "offers": {
+                            "@type": "Offer",
+                            "url": `https://wuenipixel.com/products/${product.id}`,
+                            "priceCurrency": "PEN",
+                            "price": finalPrice,
+                            "priceValidUntil": new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                            "availability": "https://schema.org/InStock",
+                            "seller": {
+                                "@type": "LocalBusiness",
+                                "name": "WueniPixel",
+                                "address": {
+                                    "@type": "PostalAddress",
+                                    "addressLocality": "San Vicente de Cañete",
+                                    "addressRegion": "Lima",
+                                    "addressCountry": "PE"
+                                }
+                            }
+                        }
+                    })}</script>
                 </Helmet>
 
                 <Link to="/products" className="back-link">
