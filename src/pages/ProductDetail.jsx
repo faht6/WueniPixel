@@ -181,7 +181,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                             : "https://schema.org/RefurbishedCondition",
                         "offers": {
                             "@type": "Offer",
-                            "url": `https://wuenipixel.com/products/${product.id}`,
+                            "url": `https://wuenipixel.vercel.app/products/${product.id}`,
                             "priceCurrency": "PEN",
                             "price": finalPrice,
                             "priceValidUntil": new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
