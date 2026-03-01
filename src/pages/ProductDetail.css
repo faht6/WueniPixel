@@ -1002,7 +1002,7 @@
 
     .buy-box-section {
         position: static;
-        margin-top: 24px;
+        margin-top: 40px;
     }
 
     .image-section-meli {
@@ -1012,36 +1012,6 @@
     .thumbnail-list {
         flex-direction: row;
         justify-content: center;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .thumbnail-list::-webkit-scrollbar {
-        display: none;
-    }
-
-    .thumb {
-        width: 56px;
-        height: 56px;
-        flex-shrink: 0;
-    }
-
-    .main-image-container {
-        height: 360px;
-    }
-
-    .meli-title {
-        font-size: 20px;
-    }
-
-    .meli-price {
-        font-size: 28px;
-    }
-
-    .color-swatch {
-        width: 36px;
-        height: 36px;
     }
 }
 
