@@ -1,89 +1,122 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Camera, Gamepad2, Briefcase, Share2, Sparkles, MessageCircle, Send } from 'lucide-react';
+import { useProducts } from '../context/ProductContext';
 import './SmartAssistantSection.css';
 
 /* ─── Recommendation Engine ─── */
-const phoneDatabase = [
-    { name: 'Pixel 9 Pro', brand: 'Google', price: 3499, condition: 'Nuevo Sellado', image: '/products/pixel9pro_allcolors.jpg', id: 211 },
-    { name: 'iPhone 16 Pro', brand: 'Apple', price: 4699, condition: 'Nuevo Sellado', image: '/products/iphone16pro_titanionegro.jpg', id: 112 },
-    { name: 'iPhone 16', brand: 'Apple', price: 3999, condition: 'Nuevo Sellado', image: '/products/iphone16_negro.jpg', id: 111 },
-    { name: 'Pixel 9', brand: 'Google', price: 2799, condition: 'Nuevo Sellado', image: '/products/pixel9_allcolors.jpg', id: 210 },
-    { name: 'Pixel 8', brand: 'Google', price: 2799, condition: 'Como Nuevo', image: '/products/pixel8_allcolors.jpg', id: 205 },
-    { name: 'Pixel 9a', brand: 'Google', price: 1999, condition: 'Nuevo Sellado', image: '/products/pixel9a_allcolors.jpg', id: 217 },
-    { name: 'Pixel 7a', brand: 'Google', price: 1199, condition: 'Nuevo Sellado', image: '/products/pixel7a_allcolors.jpg', id: 208 },
-    { name: 'iPhone 14', brand: 'Apple', price: 2599, condition: 'Grado A+', image: '/products/iphone14_medianoche.jpg', id: 115 },
-    { name: 'iPhone 13', brand: 'Apple', price: 1899, condition: 'Grado A+', image: '/products/iphone13_midnight.jpg', id: 120 },
-    { name: 'iPhone 11', brand: 'Apple', price: 1299, condition: 'Grado A+', image: '/products/iphone11_allcolors.jpg', id: 101 },
-    { name: 'iPhone 17 Pro Max', brand: 'Apple', price: 6599, condition: 'Nuevo Sellado', image: '/products/iphone17promax_deepblue.jpg', id: 110 },
-    { name: 'Pixel 10 Pro', brand: 'Google', price: 4499, condition: 'Nuevo Sellado', image: '/products/pixel10pro_allcolors.jpg', id: 214 },
-    { name: 'iPhone 15 Pro', brand: 'Apple', price: 3899, condition: 'Nuevo Sellado', image: '/products/iphone15pro_titanionegro.jpg', id: 114 },
-];
-
-const getRecommendation = (usos, presupuesto) => {
+const getRecommendation = (usos, presupuesto, availableProducts) => {
     const budget = Number(presupuesto) || 2000;
 
-    // Score each phone
-    const scored = phoneDatabase
-        .filter(p => p.price <= budget * 1.1) // small margin
-        .map(phone => {
-            let score = 0;
-            const reasons = [];
+    // Filter available products around the budget (+15% margin)
+    const candidates = availableProducts.filter(p => !p._noStock && p.price && p.price <= budget * 1.15);
 
-            // Budget fit
-            if (phone.price <= budget) {
+    const scored = candidates.map(phone => {
+        let score = 0;
+        const reasons = [];
+        const isApple = phone.brand?.toLowerCase() === 'apple' || phone.name.toLowerCase().includes('iphone');
+        const isGoogle = phone.brand?.toLowerCase() === 'google' || phone.name.toLowerCase().includes('pixel');
+        const isPro = phone.name.toLowerCase().includes('pro');
+        const isMax = phone.name.toLowerCase().includes('max');
+        const isPlus = phone.name.toLowerCase().includes('plus');
+
+        // Budget match (Max 30 pts)
+        if (phone.price <= budget) {
+            score += 30;
+            reasons.push(`Totalmente dentro de tu presupuesto de S/ ${budget}.`);
+        } else {
+            score += 15;
+            reasons.push(`Supera ligeramente tu presupuesto, pero las specs lo justifican.`);
+        }
+
+        // Use-cases (Max 50 pts)
+        if (usos.includes('photo')) {
+            if (isGoogle) {
                 score += 25;
-                reasons.push('Dentro de tu presupuesto.');
+                reasons.push('Las cámaras Pixel ofrecen el mejor procesamiento de IA y el modo Night Sight es imbatible.');
+            } else if (isPro) {
+                score += 25;
+                reasons.push('Su sistema de cámaras Pro y formato RAW te dará resultados dignos de estudio fotográfico.');
             } else {
                 score += 10;
-                reasons.push('Ligeramente por encima, pero vale la pena.');
+                reasons.push('Excelente calidad de fotografía computacional para capturas rápidas y perfectas.');
             }
+        }
 
-            // Use-case scoring
-            if (usos.includes('photo')) {
-                if (phone.brand === 'Google') { score += 30; reasons.push('Mejor cámara nocturna con Night Sight e IA de Google.'); }
-                else if (phone.name.includes('Pro')) { score += 25; reasons.push('Sistema ProRes y cámara de nivel profesional.'); }
-                else { score += 10; }
+        if (usos.includes('gaming')) {
+            if (isApple && isPro) {
+                score += 25;
+                reasons.push('El chip A-Series Pro maneja juegos pesados ​​a 60FPS sin caídas.');
+            } else if (isApple) {
+                score += 20;
+                reasons.push('La increíble optimización de iOS garantiza una fluidez absoluta en juegos competitivos.');
+            } else {
+                score += 15;
+                reasons.push('Procesador muy solvente para mantener fluidez en gaming de alto rendimiento.');
             }
-            if (usos.includes('gaming')) {
-                if (phone.brand === 'Apple') { score += 25; reasons.push('Chip optimizado para FPS estables y gráficos AAA.'); }
-                else { score += 15; reasons.push('Rendimiento sólido para gaming móvil.'); }
+        }
+
+        if (usos.includes('work')) {
+            if (isMax || isPlus) {
+                score += 25;
+                reasons.push('Batería gigante y gran pantalla, ideal para leer documentos extensos y mucha multitarea.');
+            } else if (isPro) {
+                score += 20;
+                reasons.push('Potencia multitarea brutal para saltar entre múltiples apps de productividad al instante.');
+            } else {
+                score += 15;
+                reasons.push('Sistema profundamente confiable y veloz para acompañarte toda tu jornada laboral.');
             }
-            if (usos.includes('work')) {
-                if (phone.name.includes('Pro')) { score += 20; reasons.push('Multitarea avanzada y pantalla grande para productividad.'); }
-                else { score += 12; reasons.push('Ideal para apps de oficina y comunicación.'); }
+        }
+
+        if (usos.includes('social')) {
+            if (isApple) {
+                score += 25;
+                reasons.push('Los iPhones tienen la mejor optimización nativa para subir historias de Instagram y TikTok en máxima calidad.');
+            } else if (isGoogle) {
+                score += 20;
+                reasons.push('Herramientas geniales de IA (p.ej. Borrador Mágico) que salvan tus fotos para subirlas rápido a redes.');
             }
-            if (usos.includes('social')) {
-                if (phone.brand === 'Google') { score += 22; reasons.push('IA para fotos virales y edición inteligente.'); }
-                else { score += 18; reasons.push('Grabación 4K y edición de contenido fluida.'); }
-            }
+        }
 
-            // Price-to-value bonus
-            const ratio = budget / phone.price;
-            if (ratio >= 1.2) score += 10;
-            else if (ratio >= 1) score += 5;
+        // Value / Generation bonus (Max 20 pts)
+        const yearMatch = phone.name.match(/\d+/);
+        const generation = yearMatch ? parseInt(yearMatch[0]) : 0;
 
-            // Condition bonus
-            if (phone.condition === 'Nuevo Sellado') score += 5;
+        if (isApple && generation >= 14) score += 15;
+        if (isApple && generation === 13) score += 10;
+        if (isGoogle && generation >= 8) score += 15;
+        if (isGoogle && generation === 7) score += 10;
 
-            // Normalize to percentage
-            const maxPossible = 25 + 30 + 10 + 5;
-            const matchScore = Math.min(98, Math.round((score / maxPossible) * 100));
+        if (phone.condition?.toLowerCase().includes('nuevo') || phone.condition?.toLowerCase().includes('sellado')) {
+            score += 5;
+            reasons.push('Ventaja adicional: vas a estrenar el equipo con batería virgen al 100%.');
+        }
 
-            return { ...phone, matchScore, reasons: reasons.slice(0, 3) };
-        })
-        .sort((a, b) => b.matchScore - a.matchScore);
+        // Normalize
+        const matchScore = Math.min(99, Math.round((score / 100) * 100));
+
+        // Return 3 unique reasons
+        const uniqueReasons = [...new Set(reasons)].slice(0, 3);
+
+        return { ...phone, matchScore, reasons: uniqueReasons };
+    }).sort((a, b) => b.matchScore - a.matchScore);
 
     if (scored.length === 0) {
-        return {
-            main: { name: 'Pixel 7a', brand: 'Google', price: 1199, condition: 'Nuevo Sellado', image: '/products/pixel7a_allcolors.jpg', id: 208, matchScore: 85, reasons: ['El mejor valor en tu rango de precio.', 'Cámara de 64MP con IA de Google.', 'Disponible para entrega inmediata.'] },
-            alt: null,
-        };
+        // Fallback: the cheapest phone available
+        const cheapest = [...availableProducts].filter(p => !p._noStock && p.price).sort((a, b) => a.price - b.price)[0];
+        if (cheapest) {
+            return {
+                main: { ...cheapest, matchScore: 78, reasons: ['La opción más equilibrada y accesible actualmente en stock.', 'Un estupendo punto de entrada a la gama premium o alta.', 'Rendimiento y garantía certificados directamente por WueniPixel.'] },
+                alt: null
+            };
+        }
+        return null; // Entire catalog is empty
     }
 
     return {
         main: scored[0],
-        alt: scored[1] || null,
+        alt: scored.length > 1 ? scored[1] : null,
     };
 };
 
@@ -126,6 +159,7 @@ const chatBubbleVariants = {
    MAIN COMPONENT
    ═══════════════════════════════════════════════════════ */
 const SmartAssistantSection = () => {
+    const { products } = useProducts();
     const [currentStep, setCurrentStep] = useState(1);
     const [direction, setDirection] = useState(1);
     const [selectedUses, setSelectedUses] = useState([]);
@@ -146,7 +180,7 @@ const SmartAssistantSection = () => {
             setDirection(1);
             setCurrentStep(3);
             setTimeout(() => {
-                const result = getRecommendation(selectedUses, budget);
+                const result = getRecommendation(selectedUses, budget, products);
                 setRecommendation(result);
                 setIsThinking(false);
             }, 1500);
@@ -199,6 +233,11 @@ const SmartAssistantSection = () => {
             return [
                 { from: 'ai', text: `¡Encontré tu match! El ${recommendation.main.name}.` },
                 { from: 'ai', text: recommendation.main.reasons[0] || 'Excelente opción para tu perfil.' },
+            ];
+        }
+        if (currentStep === 3 && !recommendation && !isThinking) {
+            return [
+                { from: 'ai', text: 'Ups, parece que temporalmente no tenemos un equipo bajo esos criterios de presupuesto.' }
             ];
         }
         return [{ from: 'ai', text: '¡Hola! Empecemos.' }];
@@ -493,7 +532,22 @@ const Step3 = ({ isThinking, recommendation, getWhatsAppUrl, restart }) => {
         );
     }
 
-    if (!recommendation) return null;
+    if (!recommendation) {
+        return (
+            <div className="sa-step-content">
+                <h3 className="sa-step-title">Lo sentimos</h3>
+                <p className="sa-step-subtitle">No encontramos equipos bajo esos criterios.</p>
+                <div className="sa-rec-card" style={{ textAlign: 'center', padding: '2rem' }}>
+                    <p style={{ color: '#a0a0b0', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
+                        Nuestro catálogo de ofertas se actualiza constantemente. Por favor, intenta de nuevo ajustando tu rango de precio o usos.
+                    </p>
+                    <button className="sa-btn-outline" onClick={restart}>
+                        <ArrowLeft size={16} /> Volver a intentar
+                    </button>
+                </div>
+            </div>
+        );
+    }
 
     const { main, alt } = recommendation;
     const matchColor = main.matchScore >= 85 ? 'green' : main.matchScore >= 70 ? 'yellow' : 'red';
