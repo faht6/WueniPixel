@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 const ProductContext = createContext();
 
 // CONFIGURACIÓN: URL de Google Sheets publicada como CSV
-const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRoFtNE3hMrKjGG22omYUG_kTyvc4Hp92z_Ni_cnZGISJk_nxSeDunBjn-8Fmx-xhFzgviOY7NSmFi-/pub?output=csv";
+const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRoFtNE3hMrKjGG22omYUG_kTyvc4Hp92z_Ni_cnZGISJk_nxSeDunBjn-8Fmx-xhFzgviOY7NSmFi-/pub?gid=1480052043&single=true&output=csv";
 
 export const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
@@ -113,12 +113,12 @@ export const ProductProvider = ({ children }) => {
             pricingMap[id] = {
                 price: parsePrice('price'),
                 storagePrices: {
-                    '64GB': parsePrice('Precio_64GB'),
-                    '128GB': parsePrice('Precio_128GB'),
-                    '256GB': parsePrice('Precio_256GB'),
-                    '512GB': parsePrice('Precio_512GB'),
-                    '1TB': parsePrice('Precio_1TB'),
-                    '2TB': parsePrice('Precio_2TB'),
+                    '64GB': parsePrice('Precio_Venta_64GB_PEN'),
+                    '128GB': parsePrice('Precio_Venta_128GB_PEN'),
+                    '256GB': parsePrice('Precio_Venta_256GB_PEN'),
+                    '512GB': parsePrice('Precio_Venta_512GB_PEN'),
+                    '1TB': parsePrice('Precio_Venta_1TB_PEN'),
+                    '2TB': parsePrice('Precio_Venta_2TB_PEN'),
                 },
                 name: getVal('name'),
                 description: getVal('description'),
