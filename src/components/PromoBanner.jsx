@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { X } from 'lucide-react';
 import './PromoBanner.css';
 
 const PromoBanner = () => {
+    const [visible, setVisible] = useState(true);
+
+    if (!visible) return null;
+
     return (
-        <div className="promo-banner">
-            <div className="promo-content container">
-                <p>🚀 <strong>ENVÍO GRATIS</strong> A TODO EL PERÚ | 🛡️ <strong>RENDIMIENTO GARANTIZADO</strong> | 💎 <strong>NUEVOS Y SEMINUEVOS</strong></p>
+        <div className="announcement-bar">
+            <div className="announcement-content container">
+                <p>
+                    🚚 Envíos <strong>GRATIS</strong> a todo el Perú en todos los pedidos
+                    <span className="announcement-divider">·</span>
+                    💳 <strong>5% OFF</strong> pagando por transferencia
+                </p>
             </div>
+            <button
+                className="announcement-close"
+                onClick={() => setVisible(false)}
+                aria-label="Cerrar anuncio"
+            >
+                <X size={14} />
+            </button>
         </div>
     );
 };

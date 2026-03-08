@@ -7,6 +7,7 @@ import './ProductCard.css';
 
 const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList = [], onQuickView }) => {
   const [price, setPrice] = useState(product.price);
+  const [showTooltip, setShowTooltip] = useState(false);
   const cardRef = useRef(null);
 
   // Motion Values for 3D Tilt
@@ -41,6 +42,7 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
+    setShowTooltip(false);
   };
 
   useEffect(() => {
@@ -55,6 +57,9 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
     };
     initPrice();
   }, [product.price, product.ebayPrice]);
+
+  // Calculate discount price (5% off for transfer)
+  const discountPrice = price > 0 ? Math.round(price * 0.95) : 0;
 
   return (
     <motion.div
@@ -80,12 +85,19 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
         <img
           src={product.image}
           alt={product.name}
-          className="card-image"
+          className={`card-image ${product.name.includes('17e') ? 'scale-17e' : ''}`}
           onError={(e) => {
             e.target.onerror = null;
             e.target.src = 'https://placehold.co/400x400/1e1e2e/FFF?text=No+Image';
           }}
         />
+
+        {/* Badge: 5% OFF Transfer (top-left) */}
+        <span className="badge-discount">5% OFF · Transferencia</span>
+
+
+
+        {/* Existing badges */}
         {product.featured && <span className="badge badge-featured-pulse">Destacado</span>}
         {product.condition === 'used' && (
           <div className="badge-battery">
@@ -101,11 +113,27 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
           <h3 className="card-title">{product.name}</h3>
         </Link>
 
-        <div className="card-price reverse-price">
-          <span className="price-soles">
-            {product.storagePrices ? 'Desde ' : ''}{formatCurrency(price)}
+        {/* Pricing: Base Price as main + Discounted for transfer */}
+        <div
+          className="card-price"
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+        >
+          {price > 0 && (
+            <span className="price-soles">
+              {product.storagePrices ? 'Desde ' : ''}{formatCurrency(price)}
+            </span>
+          )}
+          <span className="price-transfer-label">
+            {formatCurrency(discountPrice)} pagando por transferencia
           </span>
-          <span className="price-neto-card">Precio neto al contado</span>
+
+          {/* Tooltip on hover */}
+          {showTooltip && (
+            <div className="price-tooltip">
+              Paga por Yape, BCP, Interbank o cualquier banco
+            </div>
+          )}
         </div>
 
         <div className="card-actions">

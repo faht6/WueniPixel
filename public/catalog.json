@@ -1,55 +1,89 @@
 [
     {
-        "id": 107,
-        "name": "iPhone 17",
+        "id": 110,
+        "name": "iPhone 17 Pro Max",
         "brand": "Apple",
-        "price": 4999,
+        "price": 6599,
         "condition": "new",
-        "image": "/products/iphone17_negro.jpg",
-        "description": "El futuro es hoy. Chip A19 y cámaras duales de 48MP.",
+        "image": "/products/iphone17promax_deepblue.jpg",
+        "description": "El iPhone definitivo. Máxima batería y pantalla gigante.",
         "grade": "Nuevo Sellado",
         "colors": [
-            "Negro",
-            "Blanco",
-            "Lavanda",
-            "Azul Mist",
-            "Salvia"
+            "Deep Blue",
+            "Silver",
+            "Cosmic Orange"
         ],
         "storage": [
             "256GB",
-            "512GB"
+            "512GB",
+            "1TB",
+            "2TB"
         ],
         "specs": {
-            "screen": "6.3\" 120Hz ProMotion",
-            "processor": "A19 (8GB RAM)",
-            "camera": "Dual 48MP + 48MP",
-            "battery": "3,692 mAh"
+            "screen": "6.9\" 3000 nits",
+            "processor": "A19 Pro (12GB RAM)",
+            "camera": "Triple 48MP (Tele 4x)",
+            "battery": "4,832 mAh"
         },
         "colorImages": {
-            "Negro": [
-                "/products/iphone17_negro.jpg",
-                "/products/iphone17_negro1.jpg",
-                "/products/iphone17_negro2.jpg"
+            "Deep Blue": [
+                "/products/iphone17promax_deepblue.jpg",
+                "/products/iphone17promax_deepblue1.jpg",
+                "/products/iphone17promax_deepblue2.jpg"
             ],
-            "Blanco": [
-                "/products/iphone17_blanco.jpg",
-                "/products/iphone17_blanco1.jpg",
-                "/products/iphone17_blanco2.jpg"
+            "Silver": [
+                "/products/iphone17promax_silver.jpg",
+                "/products/iphone17promax_silver1.jpg",
+                "/products/iphone17promax_silver2.jpg"
             ],
-            "Lavanda": [
-                "/products/iphone17_lavanda.jpg",
-                "/products/iphone17_lavanda1.jpg",
-                "/products/iphone17_lavanda2.jpg"
+            "Cosmic Orange": [
+                "/products/iphone17promax_cosmicorange.jpg",
+                "/products/iphone17promax_cosmicorange1.jpg",
+                "/products/iphone17promax_cosmicorange2.jpg"
+            ]
+        },
+        "featured": true
+    },
+    {
+        "id": 109,
+        "name": "iPhone 17 Pro",
+        "brand": "Apple",
+        "price": 5999,
+        "condition": "new",
+        "image": "/products/iphone17pro_deepblue.jpg",
+        "description": "Poder absoluto. Pantalla de 3000 nits y zoom óptico.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Deep Blue",
+            "Silver",
+            "Cosmic Orange"
+        ],
+        "storage": [
+            "256GB",
+            "512GB",
+            "1TB"
+        ],
+        "specs": {
+            "screen": "6.3\" 3000 nits",
+            "processor": "A19 Pro (12GB RAM)",
+            "camera": "Triple 48MP (Tele 4x)",
+            "battery": "3,988 mAh"
+        },
+        "colorImages": {
+            "Deep Blue": [
+                "/products/iphone17pro_deepblue.jpg",
+                "/products/iphone17pro_deepblue1.jpg",
+                "/products/iphone17pro_deepblue2.jpg"
             ],
-            "Azul Mist": [
-                "/products/iphone17_azulmist.jpg",
-                "/products/iphone17_azulmist1.jpg",
-                "/products/iphone17_azulmist2.jpg"
+            "Silver": [
+                "/products/iphone17pro_silver.jpg",
+                "/products/iphone17pro_silver1.jpg",
+                "/products/iphone17pro_silver2.jpg"
             ],
-            "Salvia": [
-                "/products/iphone17_salvia.jpg",
-                "/products/iphone17_salvia1.jpg",
-                "/products/iphone17_salvia2.jpg"
+            "Cosmic Orange": [
+                "/products/iphone17pro_cosmicorange.jpg",
+                "/products/iphone17pro_cosmicorange1.jpg",
+                "/products/iphone17pro_cosmicorange2.jpg"
             ]
         },
         "featured": true
@@ -105,18 +139,116 @@
         "featured": true
     },
     {
-        "id": 109,
-        "name": "iPhone 17 Pro",
+        "id": 107,
+        "name": "iPhone 17",
         "brand": "Apple",
-        "price": 5999,
+        "price": 4999,
         "condition": "new",
-        "image": "/products/iphone17pro_deepblue.jpg",
-        "description": "Poder absoluto. Pantalla de 3000 nits y zoom óptico.",
+        "image": "/products/iphone17_negro.jpg",
+        "description": "El futuro es hoy. Chip A19 y cámaras duales de 48MP.",
         "grade": "Nuevo Sellado",
         "colors": [
-            "Deep Blue",
-            "Silver",
-            "Cosmic Orange"
+            "Negro",
+            "Blanco",
+            "Lavanda",
+            "Azul Mist",
+            "Salvia"
+        ],
+        "storage": [
+            "256GB",
+            "512GB"
+        ],
+        "specs": {
+            "screen": "6.3\" 120Hz ProMotion",
+            "processor": "A19 (8GB RAM)",
+            "camera": "Dual 48MP + 48MP",
+            "battery": "3,692 mAh"
+        },
+        "colorImages": {
+            "Negro": [
+                "/products/iphone17_negro.jpg",
+                "/products/iphone17_negro1.jpg",
+                "/products/iphone17_negro2.jpg"
+            ],
+            "Blanco": [
+                "/products/iphone17_blanco.jpg",
+                "/products/iphone17_blanco1.jpg",
+                "/products/iphone17_blanco2.jpg"
+            ],
+            "Lavanda": [
+                "/products/iphone17_lavanda.jpg",
+                "/products/iphone17_lavanda1.jpg",
+                "/products/iphone17_lavanda2.jpg"
+            ],
+            "Azul Mist": [
+                "/products/iphone17_azulmist.jpg",
+                "/products/iphone17_azulmist1.jpg",
+                "/products/iphone17_azulmist2.jpg"
+            ],
+            "Salvia": [
+                "/products/iphone17_salvia.jpg",
+                "/products/iphone17_salvia1.jpg",
+                "/products/iphone17_salvia2.jpg"
+            ]
+        },
+        "featured": true
+    },
+    {
+        "id": 117,
+        "name": "iPhone 17e",
+        "brand": "Apple",
+        "price": 3499,
+        "condition": "new",
+        "image": "/products/iphone17e_black.jpg.webp",
+        "description": "Lo mejor de Apple al precio más inteligente.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Negro",
+            "Blanco",
+            "Rosa Suave"
+        ],
+        "storage": [
+            "128GB",
+            "256GB"
+        ],
+        "specs": {
+            "screen": "6.1\" OLED 120Hz",
+            "processor": "A18",
+            "camera": "Dual 48MP",
+            "battery": "3,400 mAh"
+        },
+        "colorImages": {
+            "Negro": [
+                "/products/iphone17e_black.jpg.webp",
+                "/products/iphone17e_black1.jpg.webp",
+                "/products/iphone17e_black2.jpg.webp"
+            ],
+            "Blanco": [
+                "/products/iphone17e_white.jpg.webp",
+                "/products/iphone17e_white1.jpg.webp",
+                "/products/iphone17e_white2.jpg.webp"
+            ],
+            "Rosa Suave": [
+                "/products/iphone17e_softpink.jpg.webp",
+                "/products/iphone17e_softpink1.jpg.webp"
+            ]
+        },
+        "featured": true
+    },
+    {
+        "id": 113,
+        "name": "iPhone 16 Pro Max",
+        "brand": "Apple",
+        "price": 5299,
+        "condition": "new",
+        "image": "/products/iphone16promax_titanionegro.jpg",
+        "description": "La mejor batería en un iPhone. Pantalla inmersiva.",
+        "grade": "Nuevo Sellado",
+        "colors": [
+            "Titanio Negro",
+            "Blanco",
+            "Natural",
+            "Desierto"
         ],
         "storage": [
             "256GB",
@@ -124,71 +256,82 @@
             "1TB"
         ],
         "specs": {
-            "screen": "6.3\" 3000 nits",
-            "processor": "A19 Pro (12GB RAM)",
-            "camera": "Triple 48MP (Tele 4x)",
-            "battery": "3,988 mAh"
+            "screen": "6.9\" 1-120Hz",
+            "processor": "A18 Pro (8GB RAM)",
+            "camera": "48MP + 48MP + 12MP (5x)",
+            "battery": "4,685 mAh"
         },
         "colorImages": {
-            "Deep Blue": [
-                "/products/iphone17pro_deepblue.jpg",
-                "/products/iphone17pro_deepblue1.jpg",
-                "/products/iphone17pro_deepblue2.jpg"
+            "Titanio Negro": [
+                "/products/iphone16promax_titanionegro.jpg",
+                "/products/iphone16promax_titanionegro1.jpg",
+                "/products/iphone16promax_titanionegro2.jpg"
             ],
-            "Silver": [
-                "/products/iphone17pro_silver.jpg",
-                "/products/iphone17pro_silver1.jpg",
-                "/products/iphone17pro_silver2.jpg"
+            "Blanco": [
+                "/products/iphone16promax_blanco.jpg",
+                "/products/iphone16promax_blanco1.jpg",
+                "/products/iphone16promax_blanco2.jpg"
             ],
-            "Cosmic Orange": [
-                "/products/iphone17pro_cosmicorange.jpg",
-                "/products/iphone17pro_cosmicorange1.jpg",
-                "/products/iphone17pro_cosmicorange2.jpg"
+            "Natural": [
+                "/products/iphone16promax_natural.jpg",
+                "/products/iphone16promax_natural1.jpg",
+                "/products/iphone16promax_natural2.jpg"
+            ],
+            "Desierto": [
+                "/products/iphone16promax_desierto.jpg",
+                "/products/iphone16promax_desierto1.jpg",
+                "/products/iphone16promax_desierto2.jpg"
             ]
         },
         "featured": true
     },
     {
-        "id": 110,
-        "name": "iPhone 17 Pro Max",
+        "id": 112,
+        "name": "iPhone 16 Pro",
         "brand": "Apple",
-        "price": 6599,
+        "price": 4699,
         "condition": "new",
-        "image": "/products/iphone17promax_deepblue.jpg",
-        "description": "El iPhone definitivo. Máxima batería y pantalla gigante.",
+        "image": "/products/iphone16pro_titanionegro.jpg",
+        "description": "Titanio pulido y botón de captura dedicado.",
         "grade": "Nuevo Sellado",
         "colors": [
-            "Deep Blue",
-            "Silver",
-            "Cosmic Orange"
+            "Titanio Negro",
+            "Blanco",
+            "Natural",
+            "Desierto"
         ],
         "storage": [
+            "128GB",
             "256GB",
             "512GB",
-            "1TB",
-            "2TB"
+            "1TB"
         ],
         "specs": {
-            "screen": "6.9\" 3000 nits",
-            "processor": "A19 Pro (12GB RAM)",
-            "camera": "Triple 48MP (Tele 4x)",
-            "battery": "4,832 mAh"
+            "screen": "6.3\" 1-120Hz",
+            "processor": "A18 Pro (8GB RAM)",
+            "camera": "48MP + 48MP + 12MP (5x)",
+            "battery": "3,582 mAh"
         },
         "colorImages": {
-            "Deep Blue": [
-                "/products/iphone17promax_deepblue.jpg",
-                "/products/iphone17promax_deepblue1.jpg",
-                "/products/iphone17promax_deepblue2.jpg"
+            "Titanio Negro": [
+                "/products/iphone16pro_titanionegro.jpg",
+                "/products/iphone16pro_titanionegro1.jpg",
+                "/products/iphone16pro_titanionegro2.jpg"
             ],
-            "Silver": [
-                "/products/iphone17promax_silver.jpg",
-                "/products/iphone17promax_silver1.jpg",
-                "/products/iphone17promax_silver2.jpg"
+            "Blanco": [
+                "/products/iphone16pro_blanco.jpg",
+                "/products/iphone16pro_blanco1.jpg",
+                "/products/iphone16pro_blanco2.jpg"
             ],
-            "Cosmic Orange": [
-                "/products/iphone17promax_cosmicorange.jpg",
-                "/products/iphone17promax_cosmicorange1.jpg",
-                "/products/iphone17promax_cosmicorange2.jpg"
+            "Natural": [
+                "/products/iphone16pro_natural.jpg",
+                "/products/iphone16pro_natural1.jpg",
+                "/products/iphone16pro_natural2.jpg"
+            ],
+            "Desierto": [
+                "/products/iphone16pro_desierto.jpg",
+                "/products/iphone16pro_desierto1.jpg",
+                "/products/iphone16pro_desierto2.jpg"
             ]
         },
         "featured": true
@@ -248,107 +391,6 @@
             ]
         },
         "featured": false
-    },
-    {
-        "id": 112,
-        "name": "iPhone 16 Pro",
-        "brand": "Apple",
-        "price": 4699,
-        "condition": "new",
-        "image": "/products/iphone16pro_titanionegro.jpg",
-        "description": "Titanio pulido y botón de captura dedicado.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Titanio Negro",
-            "Blanco",
-            "Natural",
-            "Desierto"
-        ],
-        "storage": [
-            "128GB",
-            "256GB",
-            "512GB",
-            "1TB"
-        ],
-        "specs": {
-            "screen": "6.3\" 1-120Hz",
-            "processor": "A18 Pro (8GB RAM)",
-            "camera": "48MP + 48MP + 12MP (5x)",
-            "battery": "3,582 mAh"
-        },
-        "colorImages": {
-            "Titanio Negro": [
-                "/products/iphone16pro_titanionegro.jpg",
-                "/products/iphone16pro_titanionegro1.jpg",
-                "/products/iphone16pro_titanionegro2.jpg"
-            ],
-            "Blanco": [
-                "/products/iphone16pro_blanco.jpg",
-                "/products/iphone16pro_blanco1.jpg",
-                "/products/iphone16pro_blanco2.jpg"
-            ],
-            "Natural": [
-                "/products/iphone16pro_natural.jpg",
-                "/products/iphone16pro_natural1.jpg",
-                "/products/iphone16pro_natural2.jpg"
-            ],
-            "Desierto": [
-                "/products/iphone16pro_desierto.jpg",
-                "/products/iphone16pro_desierto1.jpg",
-                "/products/iphone16pro_desierto2.jpg"
-            ]
-        },
-        "featured": true
-    },
-    {
-        "id": 113,
-        "name": "iPhone 16 Pro Max",
-        "brand": "Apple",
-        "price": 5299,
-        "condition": "new",
-        "image": "/products/iphone16promax_titanionegro.jpg",
-        "description": "La mejor batería en un iPhone. Pantalla inmersiva.",
-        "grade": "Nuevo Sellado",
-        "colors": [
-            "Titanio Negro",
-            "Blanco",
-            "Natural",
-            "Desierto"
-        ],
-        "storage": [
-            "256GB",
-            "512GB",
-            "1TB"
-        ],
-        "specs": {
-            "screen": "6.9\" 1-120Hz",
-            "processor": "A18 Pro (8GB RAM)",
-            "camera": "48MP + 48MP + 12MP (5x)",
-            "battery": "4,685 mAh"
-        },
-        "colorImages": {
-            "Titanio Negro": [
-                "/products/iphone16promax_titanionegro.jpg",
-                "/products/iphone16promax_titanionegro1.jpg",
-                "/products/iphone16promax_titanionegro2.jpg"
-            ],
-            "Blanco": [
-                "/products/iphone16promax_blanco.jpg",
-                "/products/iphone16promax_blanco1.jpg",
-                "/products/iphone16promax_blanco2.jpg"
-            ],
-            "Natural": [
-                "/products/iphone16promax_natural.jpg",
-                "/products/iphone16promax_natural1.jpg",
-                "/products/iphone16promax_natural2.jpg"
-            ],
-            "Desierto": [
-                "/products/iphone16promax_desierto.jpg",
-                "/products/iphone16promax_desierto1.jpg",
-                "/products/iphone16promax_desierto2.jpg"
-            ]
-        },
-        "featured": true
     },
     {
         "id": 106,

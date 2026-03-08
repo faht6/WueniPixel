@@ -408,6 +408,10 @@
     z-index: 1;
 }
 
+.main-image-meli.scale-17e-detail {
+    transform: scale(2.8) translateY(12%);
+}
+
 [data-theme='dark'] .main-image-meli {
     mix-blend-mode: normal;
 }

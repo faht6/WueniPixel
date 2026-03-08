@@ -81,6 +81,12 @@ export const ProductProvider = ({ children }) => {
     const mergeWithSheetsPricing = (localProducts, sheetRows) => {
         const pricingMap = {};
 
+        // Build a name to ID map from local products for fallback matching
+        const nameToId = {};
+        localProducts.forEach(p => {
+            if (p.name) nameToId[p.name.toLowerCase().trim()] = parseInt(p.id);
+        });
+
         for (const row of sheetRows) {
             // Helper to get value from row case-insensitively
             const getVal = (searchKey) => {
@@ -90,10 +96,16 @@ export const ProductProvider = ({ children }) => {
                 return actualKey ? row[actualKey] : null;
             };
 
-            const idStr = getVal('id');
-            if (!idStr) continue;
-            const id = parseInt(idStr);
-            if (isNaN(id)) continue;
+            const sheetName = getVal('name');
+            let idStr = getVal('id');
+            let id = parseInt(idStr);
+
+            // Critical fallback: If name matches perfectly but ID is wrong/conflicting, use local ID
+            if (sheetName && nameToId[sheetName.toLowerCase().trim()]) {
+                id = nameToId[sheetName.toLowerCase().trim()];
+            } else if (isNaN(id)) {
+                continue;
+            }
 
             const parsePrice = (key) => {
                 const val = getVal(key);

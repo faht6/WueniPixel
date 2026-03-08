@@ -74,7 +74,6 @@
 
 [data-theme='dark'] .card-image-container {
     background: #E8E8ED;
-    /* Slightly darker light gray for dark mode blending */
 }
 
 .card-image {
@@ -90,9 +89,18 @@
     z-index: 2;
 }
 
+/* Scaling specifically for iPhone 17e due to image padding */
+.card-image.scale-17e {
+    transform: scale(1.65) translateY(10%);
+}
+
 .product-card:hover .card-image {
     transform: translateY(-12px) scale(1.02);
     filter: drop-shadow(0 24px 35px rgba(0, 0, 0, 0.18)) drop-shadow(0 8px 12px rgba(0, 0, 0, 0.1));
+}
+
+.product-card:hover .card-image.scale-17e {
+    transform: translateY(-2px) scale(1.7);
 }
 
 .card-content {
@@ -120,17 +128,103 @@
     line-height: 1.4;
 }
 
+/* ══════════════════════════════════════
+   PROMOTIONAL BADGES (NEW)
+   ══════════════════════════════════════ */
+
+/* 5% OFF Badge (Top Left - Gold) */
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #CA8A04, #eab308);
+    color: #1a1a1a;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    z-index: 10;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(202, 138, 4, 0.3);
+}
+
+
+
+/* ══════════════════════════════════════
+   DUAL PRICING (NEW)
+   ══════════════════════════════════════ */
+
 .card-price {
     display: flex;
     flex-direction: column;
     margin-top: auto;
     padding-top: 1rem;
+    position: relative;
 }
 
+/* Original price (strikethrough) */
+.price-original {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: line-through;
+    text-decoration-color: rgba(128, 0, 32, 0.4);
+    opacity: 0.7;
+}
+
+/* Main price (highlighted) */
 .price-soles {
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--color-accent);
+}
+
+/* Transfer label */
+.price-transfer-label {
+    font-size: 0.7rem;
+    color: #CA8A04;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Tooltip */
+.price-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    animation: tooltipIn 0.2s ease-out;
+}
+
+.price-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background: #1a1a1a;
+    transform: rotate(45deg);
+}
+
+@keyframes tooltipIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .price-neto-card {
@@ -139,9 +233,13 @@
     font-weight: 500;
 }
 
+/* ══════════════════════════════════════
+   EXISTING BADGES
+   ══════════════════════════════════════ */
+
 .badge {
     position: absolute;
-    top: 12px;
+    top: 42px;
     right: 12px;
     background: var(--color-accent);
     color: white;
@@ -155,7 +253,7 @@
 
 .badge-battery {
     position: absolute;
-    top: 12px;
+    top: 42px;
     left: 12px;
     background: rgba(80, 200, 120, 0.1);
     color: #50C878;
@@ -231,7 +329,6 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    /* Circle */
     border: 1px solid var(--color-border-subtle);
     background: var(--color-background);
     color: var(--color-text-primary);
@@ -256,7 +353,6 @@
     color: white;
     border: none;
     border-radius: 20px;
-    /* Pill */
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
@@ -266,7 +362,6 @@
 
 .btn-add-cart:hover {
     background: #600018;
-    /* Darker vino */
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(128, 0, 32, 0.3);
 }
@@ -291,5 +386,21 @@
 
     .card-title {
         font-size: 1rem;
+    }
+
+    .badge-discount {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+
+    .badge-shipping {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+
+    .price-tooltip {
+        font-size: 0.65rem;
+        white-space: normal;
+        max-width: 200px;
     }
 }

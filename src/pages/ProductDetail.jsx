@@ -233,7 +233,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                 <img
                                     src={currentImages[selectedImageIndex]}
                                     alt={product.name}
-                                    className="main-image-meli"
+                                    className={`main-image-meli ${product.name.includes('17e') ? 'scale-17e-detail' : ''}`}
                                     onError={(e) => {
                                         console.error('IMG ERROR:', e.target.src);
                                     }}
