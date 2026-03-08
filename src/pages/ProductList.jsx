@@ -78,7 +78,8 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false,
                 return product.condition === 'new' || (product.grade && product.grade.toLowerCase().includes('nuevo'));
             }
             if (selectedCondition === 'Excelente') {
-                return product.grade && (product.grade.includes('A+') || product.grade.toLowerCase().includes('impecable'));
+                const g = product.grade ? product.grade.toLowerCase() : '';
+                return g.includes('a+') || g.includes('impecable') || g.includes('excelente');
             }
             if (selectedCondition === 'Bueno') {
                 // Matches "Grado A" (not plus), "Grado B", or just generic "Used" not A+
@@ -166,7 +167,7 @@ const ProductList = ({ addToCart, addToCompare, compareList, isEmbedded = false,
                                             className={`filter-chip ${selectedCondition === cond ? 'active' : ''}`}
                                             onClick={() => setSelectedCondition(cond)}
                                         >
-                                            {cond === 'All' ? 'Cualquiera' : cond}
+                                            {cond === 'All' ? 'Todos' : cond}
                                         </button>
                                     ))}
                                 </div>

@@ -6,7 +6,7 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
-    z-index: 2000;
+    z-index: 10000;
 }
 
 .mobile-menu-container {
@@ -17,7 +17,7 @@
     width: 300px;
     height: 100vh;
     background: var(--color-background);
-    z-index: 2001;
+    z-index: 10001;
     display: flex;
     flex-direction: column;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--color-border-subtle);
 }
 
@@ -53,7 +53,7 @@
 }
 
 .mobile-menu-search {
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
 }
 
 .mobile-search-btn {
