@@ -1043,3 +1043,107 @@
     position: static;
     width: 100%;
 }
+
+/* ====================================================
+   CRO & UX Enhancements (Breadcrumbs, Social Proof, Trust)
+   ==================================================== */
+
+.product-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.breadcrumb-link {
+    color: var(--color-text-secondary);
+    transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+    color: var(--color-accent);
+}
+
+.breadcrumb-separator {
+    opacity: 0.5;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+.breadcrumb-current {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.social-proof-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    background: rgba(220, 38, 38, 0.08);
+    /* #DC2626 user color */
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    border-radius: 8px;
+    color: #DC2626;
+    font-size: 13.5px;
+}
+
+[data-theme='dark'] .social-proof-badge {
+    color: #ff7e5f;
+}
+
+.social-proof-icon {
+    font-size: 16px;
+    animation: pulseFlame 2s infinite ease-in-out;
+}
+
+@keyframes pulseFlame {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.15);
+    }
+}
+
+.trust-badges-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.trust-badge svg {
+    color: #0A0A0A;
+    /* #0A0A0A user color */
+    opacity: 0.8;
+}
+
+[data-theme='dark'] .trust-badge svg {
+    color: var(--color-text-primary);
+}
+
+.secure-lock {
+    font-size: 16px;
+    opacity: 0.9;
+}

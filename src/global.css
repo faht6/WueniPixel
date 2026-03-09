@@ -98,6 +98,13 @@ button {
   font-family: inherit;
 }
 
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 .container {
   max-width: var(--container-max-width-grid);
   margin: 0 auto;

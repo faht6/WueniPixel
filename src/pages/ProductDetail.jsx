@@ -21,6 +21,7 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
     const [selectedStorage, setSelectedStorage] = useState('');
     const [currentImages, setCurrentImages] = useState([]);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const [viewers, setViewers] = useState(0);
 
     // Estados
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,6 +34,10 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
             setIsStickyVisible(window.scrollY > 600);
         };
         window.addEventListener('scroll', handleScroll);
+
+        // Generar número aleatorio de espectadores para dar "Social Proof" (FOMO)
+        setViewers(Math.floor(Math.random() * 9) + 3);
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -200,9 +205,13 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                     })}</script>
                 </Helmet>
 
-                <Link to="/products" className="back-link">
-                    <ArrowLeft size={20} /> Volver al listado
-                </Link>
+                <div className="product-breadcrumbs">
+                    <Link to="/" className="breadcrumb-link">Inicio</Link>
+                    <span className="breadcrumb-separator">›</span>
+                    <Link to="/products" className="breadcrumb-link">Catálogo</Link>
+                    <span className="breadcrumb-separator">›</span>
+                    <span className="breadcrumb-current">{product.name}</span>
+                </div>
 
                 {reservationSuccess ? (
                     <div className="reservation-success-message animate-fade-in">
@@ -330,6 +339,13 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                 </div>
                                 <p className="price-neto-label">Precio final al contado</p>
 
+                                {viewers > 0 && (
+                                    <div className="social-proof-badge animate-fade-in">
+                                        <span className="social-proof-icon">🔥</span>
+                                        <span><strong>{viewers} personas</strong> están viendo este modelo ahora.</span>
+                                    </div>
+                                )}
+
                                 {/* Sheets indicator */}
                                 {dataSource === 'sheets' && (
                                     <span className="sheets-live-badge">● Precio en tiempo real</span>
@@ -354,8 +370,23 @@ const ProductDetail = ({ addToCart, district, setDistrict, addToCompare, compare
                                         onClick={() => setIsModalOpen(true)}
                                         className="btn-buy-now-detail"
                                     >
-                                        Consultar Stock Real
+                                        Comprar por WhatsApp
                                     </button>
+                                </div>
+
+                                <div className="trust-badges-container">
+                                    <div className="trust-badge">
+                                        <ShieldCheck size={16} />
+                                        <span>Garantía Defecto de Fábrica</span>
+                                    </div>
+                                    <div className="trust-badge">
+                                        <MapPin size={16} />
+                                        <span>Envíos a todo el Perú</span>
+                                    </div>
+                                    <div className="trust-badge">
+                                        <span className="secure-lock">🔒</span>
+                                        <span>Comprobante de Pago Electrónico</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
