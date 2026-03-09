@@ -94,7 +94,7 @@
         "brand": "Apple",
         "price": 5499,
         "condition": "new",
-        "image": "/products/iphoneair_allcolors.jpg",
+        "image": "/products/iphoneair_blanconube.jpg",
         "description": "Increíblemente delgado. Potencia Pro en un diseño aéreo.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -116,22 +116,18 @@
         },
         "colorImages": {
             "Blanco Nube": [
-                "/products/iphoneair_allcolors.jpg",
                 "/products/iphoneair_blanconube.jpg",
                 "/products/iphoneair_blanconube1.jpg"
             ],
             "Oro Claro": [
-                "/products/iphoneair_allcolors.jpg",
                 "/products/iphoneair_oroclaro.jpg",
                 "/products/iphoneair_oroclaro1.jpg"
             ],
             "Azul Cielo": [
-                "/products/iphoneair_allcolors.jpg",
                 "/products/iphoneair_azulcielo.jpg",
                 "/products/iphoneair_azulcielo1.jpg"
             ],
             "Negro Espacial": [
-                "/products/iphoneair_allcolors.jpg",
                 "/products/iphoneair_negroespacial.jpg",
                 "/products/iphoneair_negroespacial1.jpg"
             ]
@@ -1044,7 +1040,7 @@
         "brand": "Apple",
         "price": 1299,
         "condition": "used",
-        "image": "/products/iphone11_allcolors.jpg",
+        "image": "/products/iphone11_black.jpg",
         "description": "El favorito de todos. Colores y doble cámara.",
         "grade": "Grado A+ Impecable",
         "colors": [
@@ -1068,27 +1064,21 @@
         },
         "colorImages": {
             "Black": [
-                "/products/iphone11_allcolors.jpg",
                 "/products/iphone11_black.jpg"
             ],
             "White": [
-                "/products/iphone11_allcolors.jpg",
                 "/products/iphone11_white.jpg"
             ],
             "Purple": [
-                "/products/iphone11_allcolors.jpg",
                 "/products/iphone11_purple.jpg"
             ],
             "Green": [
-                "/products/iphone11_allcolors.jpg",
                 "/products/iphone11_green.jpg"
             ],
             "Yellow": [
-                "/products/iphone11_allcolors.jpg",
                 "/products/iphone11_yellow.jpg"
             ],
             "Red": [
-                "/products/iphone11_allcolors.jpg",
                 "/products/iphone11_red.jpg"
             ]
         },
@@ -1100,7 +1090,7 @@
         "brand": "Google",
         "price": 4999,
         "condition": "new",
-        "image": "/products/pixel10pro_allcolors.jpg",
+        "image": "/products/pixel10pro_jade.jpg",
         "description": "La experiencia Pixel definitiva. Pantalla gigante y batería de larga duración.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1122,19 +1112,15 @@
         },
         "colorImages": {
             "Jade": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_jade.jpg"
             ],
             "Moonstone": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_moonstone.jpg"
             ],
             "Obsidian": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_obsidian.jpg"
             ],
             "Porcelain": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_porcelain.jpg"
             ]
         },
@@ -1146,7 +1132,7 @@
         "brand": "Google",
         "price": 4499,
         "condition": "new",
-        "image": "/products/pixel10pro_allcolors.jpg",
+        "image": "/products/pixel10pro_jade.jpg",
         "description": "Potencia compacta. El Pro que cabe en tu mano con Tensor G5.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1169,19 +1155,15 @@
         },
         "colorImages": {
             "Jade": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_jade.jpg"
             ],
             "Moonstone": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_moonstone.jpg"
             ],
             "Obsidian": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_obsidian.jpg"
             ],
             "Porcelain": [
-                "/products/pixel10pro_allcolors.jpg",
                 "/products/pixel10pro_porcelain.jpg"
             ]
         },
@@ -1193,7 +1175,7 @@
         "brand": "Google",
         "price": 3499,
         "condition": "new",
-        "image": "/products/pixel10_allcolors.jpg",
+        "image": "/products/pixel10_frost.jpg",
         "description": "Chip Tensor G5. La inteligencia artificial llevada al siguiente nivel.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1214,19 +1196,15 @@
         },
         "colorImages": {
             "Frost": [
-                "/products/pixel10_allcolors.jpg",
                 "/products/pixel10_frost.jpg"
             ],
             "Indigo": [
-                "/products/pixel10_allcolors.jpg",
                 "/products/pixel10_indigo.jpg"
             ],
             "Lemongrass": [
-                "/products/pixel10_allcolors.jpg",
                 "/products/pixel10_lemongrass.jpg"
             ],
             "Obsidian": [
-                "/products/pixel10_allcolors.jpg",
                 "/products/pixel10_obsidian.jpg"
             ]
         },
@@ -1238,7 +1216,7 @@
         "brand": "Google",
         "price": 2299,
         "condition": "new",
-        "image": "/products/pixel10a_allcolors.jpg",
+        "image": "/products/pixel10a_baya.jpg",
         "description": "La entrada al mundo Tensor G5. Económico y potente.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1259,19 +1237,15 @@
         },
         "colorImages": {
             "Baya": [
-                "/products/pixel10a_allcolors.jpg",
                 "/products/pixel10a_baya.jpg"
             ],
             "Obsidiana": [
-                "/products/pixel10a_allcolors.jpg",
                 "/products/pixel10a_obsidiana.jpg"
             ],
             "Niebla": [
-                "/products/pixel10a_allcolors.jpg",
                 "/products/pixel10a_niebla.jpg"
             ],
             "Lavanda": [
-                "/products/pixel10a_allcolors.jpg",
                 "/products/pixel10a_lavanda.jpg"
             ]
         },
@@ -1283,7 +1257,7 @@
         "brand": "Google",
         "price": 3999,
         "condition": "new",
-        "image": "/products/pixel9pro_allcolors.jpg",
+        "image": "/products/pixel9pro_obsidian.jpg",
         "description": "Más pantalla, más batería. El flagship de Google.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1306,19 +1280,15 @@
         },
         "colorImages": {
             "Obsidian": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_obsidian.jpg"
             ],
             "Porcelain": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_porcelain.jpg"
             ],
             "Hazel": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_hazel.jpg"
             ],
             "Rose Quartz": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_rosequartz.jpg"
             ]
         },
@@ -1330,7 +1300,7 @@
         "brand": "Google",
         "price": 3499,
         "condition": "new",
-        "image": "/products/pixel9pro_allcolors.jpg",
+        "image": "/products/pixel9pro_obsidian.jpg",
         "description": "El Pro perfecto. Cámaras de nivel profesional en tamaño ideal.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1353,19 +1323,15 @@
         },
         "colorImages": {
             "Obsidian": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_obsidian.jpg"
             ],
             "Porcelain": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_porcelain.jpg"
             ],
             "Hazel": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_hazel.jpg"
             ],
             "Rose Quartz": [
-                "/products/pixel9pro_allcolors.jpg",
                 "/products/pixel9pro_rosequartz.jpg"
             ]
         },
@@ -1377,7 +1343,7 @@
         "brand": "Google",
         "price": 2799,
         "condition": "new",
-        "image": "/products/pixel9_allcolors.jpg",
+        "image": "/products/pixel9_obsidian.jpg",
         "description": "Diseño renovado y chip Tensor G4. Elegancia y poder.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1398,19 +1364,15 @@
         },
         "colorImages": {
             "Obsidian": [
-                "/products/pixel9_allcolors.jpg",
                 "/products/pixel9_obsidian.jpg"
             ],
             "Porcelain": [
-                "/products/pixel9_allcolors.jpg",
                 "/products/pixel9_porcelain.jpg"
             ],
             "Wintergreen": [
-                "/products/pixel9_allcolors.jpg",
                 "/products/pixel9_wintergreen.jpg"
             ],
             "Peony": [
-                "/products/pixel9_allcolors.jpg",
                 "/products/pixel9_peony.jpg"
             ]
         },
@@ -1422,7 +1384,7 @@
         "brand": "Google",
         "price": 1999,
         "condition": "new",
-        "image": "/products/pixel9a_allcolors.jpg",
+        "image": "/products/pixel9a_iris.jpg",
         "description": "El Pixel más accesible con Tensor G4. Cámara inteligente y gran batería.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1443,19 +1405,15 @@
         },
         "colorImages": {
             "Iris": [
-                "/products/pixel9a_allcolors.jpg",
                 "/products/pixel9a_iris.jpg"
             ],
             "Obsidian": [
-                "/products/pixel9a_allcolors.jpg",
                 "/products/pixel9a_obsidian.jpg"
             ],
             "Peony": [
-                "/products/pixel9a_allcolors.jpg",
                 "/products/pixel9a_peony.jpg"
             ],
             "Porcelain": [
-                "/products/pixel9a_allcolors.jpg",
                 "/products/pixel9a_porcelain.jpg"
             ]
         },
@@ -1467,7 +1425,7 @@
         "brand": "Google",
         "price": 3699,
         "condition": "used",
-        "image": "/products/pixel8pro_allcolors.jpg",
+        "image": "/products/pixel8pro_obsidian.jpg",
         "description": "IA Generativa en tu mano. Magic Editor.",
         "grade": "Como Nuevo (Open Box)",
         "colors": [
@@ -1489,19 +1447,15 @@
         },
         "colorImages": {
             "Obsidian": [
-                "/products/pixel8pro_allcolors.jpg",
                 "/products/pixel8pro_obsidian.jpg"
             ],
             "Porcelain": [
-                "/products/pixel8pro_allcolors.jpg",
                 "/products/pixel8pro_porcelain.jpg"
             ],
             "Bay": [
-                "/products/pixel8pro_allcolors.jpg",
                 "/products/pixel8pro_bay.jpg"
             ],
             "Mint": [
-                "/products/pixel8pro_allcolors.jpg",
                 "/products/pixel8pro_mint.jpg"
             ]
         },
@@ -1513,7 +1467,7 @@
         "brand": "Google",
         "price": 2799,
         "condition": "used",
-        "image": "/products/pixel8_allcolors.jpg",
+        "image": "/products/pixel8_obsidian.jpg",
         "description": "7 años de actualizaciones. El futuro hoy.",
         "grade": "Como Nuevo (Open Box)",
         "colors": [
@@ -1534,19 +1488,15 @@
         },
         "colorImages": {
             "Obsidian": [
-                "/products/pixel8_allcolors.jpg",
                 "/products/pixel8_obsidian.jpg"
             ],
             "Hazel": [
-                "/products/pixel8_allcolors.jpg",
                 "/products/pixel8_hazel.jpg"
             ],
             "Rose": [
-                "/products/pixel8_allcolors.jpg",
                 "/products/pixel8_rose.jpg"
             ],
             "Mint": [
-                "/products/pixel8_allcolors.jpg",
                 "/products/pixel8_mint.jpg"
             ]
         },
@@ -1558,7 +1508,7 @@
         "brand": "Google",
         "price": 1499,
         "condition": "new",
-        "image": "/products/pixel8a_allcolors.jpg",
+        "image": "/products/pixel8a_obsidian.jpg",
         "description": "La magia de Pixel a un precio increíble. Pantalla 120Hz.",
         "grade": "Nuevo Sellado",
         "colors": [
@@ -1579,19 +1529,15 @@
         },
         "colorImages": {
             "Obsidian": [
-                "/products/pixel8a_allcolors.jpg",
                 "/products/pixel8a_obsidian.jpg"
             ],
             "Porcelain": [
-                "/products/pixel8a_allcolors.jpg",
                 "/products/pixel8a_porcelain.jpg"
             ],
             "Bay": [
-                "/products/pixel8a_allcolors.jpg",
                 "/products/pixel8a_bay.jpg"
             ],
             "Aloe": [
-                "/products/pixel8a_allcolors.jpg",
                 "/products/pixel8a_aloe.jpg"
             ]
         },
