@@ -78,7 +78,7 @@ export const productColors = {
     "Sage": "#6A7B6B",
     "Chalk": "#E6E6E6",
 
-    // Pixel 9 / 10
+    // Pixel 9 / 10 / 10a
     "Wintergreen": "#D2E6D8",
     "Peony": "#E8C2CA",
     "Rose Quartz": "#F3D8D9",
@@ -88,6 +88,11 @@ export const productColors = {
     "Indigo": "#5760F0", // Adjusted for Pixel 10
     "Berry": "#852655", // Adjusted for Pixel 10
     "Fog": "#DAE0E1",
+    "Baya": "#D3A5BC", // Pixel 10a
+    "Obsidiana": "#202124", // Pixel 10a
+    "Niebla": "#C0C9C2", // Pixel 10a
+    "Lavanda": "#D8D2E6", // Pixel 10a
+
 
     // Default Fallback
     "default": "#CCCCCC"

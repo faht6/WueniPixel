@@ -19,7 +19,8 @@ const slideVariants = {
 };
 
 const SLIDE_COUNT = 2;
-const AUTO_ADVANCE_MS = 6000;
+const AUTO_ADVANCE_MS = 9000; // Aumentado a 9 segundos a petición del usuario
+
 
 const HeroSlider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
