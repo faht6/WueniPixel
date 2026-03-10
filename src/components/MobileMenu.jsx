@@ -79,6 +79,13 @@ const MobileMenu = ({ isOpen, onClose, onSearchOpen }) => {
                                 </button>
                             </motion.div>
 
+                            {/* MacBook Link */}
+                            <motion.div variants={linkVariants} custom={0.75}>
+                                <button className="mobile-nav-item" onClick={() => handleNavigation('/#macbook-neo')}>
+                                    💻 MacBook
+                                </button>
+                            </motion.div>
+
                             {/* Apple Section */}
                             <motion.div variants={linkVariants} custom={1}>
                                 <div className="mobile-nav-group">

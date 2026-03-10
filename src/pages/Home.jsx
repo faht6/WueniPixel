@@ -7,6 +7,7 @@ import BrandComparison from '../components/BrandComparison';
 import LogisticsSection from '../components/LogisticsSection';
 import FAQSection from '../components/FAQSection';
 import HeroSlider from '../components/HeroSlider';
+import MacbookNeoLanding from '../components/MacbookNeoLanding';
 import ValuePillars from '../components/ValuePillars';
 import AboutSection from '../components/AboutSection';
 import TradeInSection from '../components/TradeInSection';
@@ -19,6 +20,9 @@ const Home = ({ addToCart, district, addToCompare, compareList }) => {
             <div className="home-container">
                 {/* 1. HERO SLIDER — Pixel 10a + iPhone 17 Pro Max */}
                 <HeroSlider />
+
+                {/* 1.5 MACBOOK NEO LANDING — Exclusive Launch Section */}
+                <MacbookNeoLanding />
 
                 {/* 2. ABOUT US (NEW) */}
                 <AboutSection />

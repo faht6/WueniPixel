@@ -1,0 +1,387 @@
+/* ============================================
+   MacBook Neo Landing — Premium Apple-Style
+   ============================================ */
+
+.macbook-neo-landing {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #FBFBFD;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+}
+
+/* ---- Hero Video Section ---- */
+.macbook-neo-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 420px;
+    max-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.macbook-neo-hero video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.macbook-neo-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.55) 100%);
+    z-index: 1;
+}
+
+.macbook-neo-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 0 1.5rem;
+}
+
+.macbook-neo-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 1.2rem;
+}
+
+.macbook-neo-hero-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FF3B30;
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0.6;
+    }
+}
+
+.macbook-neo-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin: 0 0 0.6rem 0;
+}
+
+.macbook-neo-hero h1 span {
+    color: #A6C8FF;
+}
+
+.macbook-neo-hero-sub {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 400;
+    opacity: 0.85;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ---- Product Showcase Section ---- */
+.macbook-neo-showcase {
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.macbook-neo-showcase h2 {
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: #1D1D1F;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.macbook-neo-showcase .subtitle {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    color: #6E6E73;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+/* Color Selector */
+.macbook-neo-colors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 2.5rem;
+}
+
+.macbook-neo-color-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    outline: none;
+}
+
+.macbook-neo-color-btn:hover {
+    transform: scale(1.15);
+}
+
+.macbook-neo-color-btn.active {
+    border-color: #0071E3;
+    box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.3);
+}
+
+.macbook-neo-color-label {
+    font-size: 0.85rem;
+    color: #6E6E73;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Product Image */
+.macbook-neo-product-image {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 1rem;
+    aspect-ratio: 16 / 11;
+}
+
+.macbook-neo-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Image Gallery thumbnails */
+.macbook-neo-thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 3rem;
+}
+
+.macbook-neo-thumb {
+    width: 64px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.macbook-neo-thumb:hover {
+    opacity: 0.85;
+}
+
+.macbook-neo-thumb.active {
+    border-color: #0071E3;
+    opacity: 1;
+}
+
+.macbook-neo-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- Value Propositions ---- */
+.macbook-neo-values {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.macbook-neo-value {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #F0F0F2;
+    transition: all 0.3s ease;
+}
+
+.macbook-neo-value:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    border-color: transparent;
+}
+
+.macbook-neo-value-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #F0F0F2, #E8E8ED);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+}
+
+.macbook-neo-value h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1D1D1F;
+    margin-bottom: 0.5rem;
+}
+
+.macbook-neo-value p {
+    font-size: 0.85rem;
+    color: #6E6E73;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ---- CTA Section ---- */
+.macbook-neo-cta {
+    text-align: center;
+    padding: 3rem 1.5rem 4rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.macbook-neo-trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F5F5F7;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #1D1D1F;
+    margin-bottom: 1.5rem;
+}
+
+.macbook-neo-trust-badge .shield-icon {
+    font-size: 1rem;
+}
+
+.macbook-neo-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    background: #0071E3;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 980px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    letter-spacing: -0.2px;
+}
+
+.macbook-neo-cta-btn:hover {
+    background: #0077ED;
+    transform: scale(1.04);
+    box-shadow: 0 8px 30px rgba(0, 113, 227, 0.35);
+}
+
+.macbook-neo-cta-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.macbook-neo-cta-btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .macbook-neo-values {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .macbook-neo-hero {
+        height: 55vh;
+        min-height: 340px;
+    }
+
+    .macbook-neo-showcase {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .macbook-neo-product-image {
+        max-width: 95%;
+    }
+
+    .macbook-neo-cta-btn {
+        padding: 14px 32px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .macbook-neo-hero {
+        height: 45vh;
+        min-height: 280px;
+    }
+
+    .macbook-neo-values {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 2rem 1rem;
+    }
+
+    .macbook-neo-value {
+        padding: 1.4rem 1rem;
+    }
+
+    .macbook-neo-color-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .macbook-neo-thumbs {
+        gap: 8px;
+    }
+
+    .macbook-neo-thumb {
+        width: 52px;
+        height: 40px;
+    }
+}

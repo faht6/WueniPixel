@@ -94,6 +94,11 @@ export const productColors = {
     "Lavanda": "#D8D2E6", // Pixel 10a
 
 
+    // MacBook Neo
+    "Rosa Rubor": "#E8A0B5",
+    "Amarillo Cítrico": "#E8D44D",
+    "Índigo": "#4B5FAA",
+
     // Default Fallback
     "default": "#CCCCCC"
 };

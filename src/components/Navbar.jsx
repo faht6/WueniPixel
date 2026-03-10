@@ -132,6 +132,20 @@ const Navbar = ({ cartCount, onCartClick }) => {
               Catálogo
             </Link>
 
+            {/* MacBook Link */}
+            <a
+              href="/#macbook-neo"
+              className="nav-link"
+              onClick={(e) => {
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  document.getElementById('macbook-neo')?.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              MacBook
+            </a>
+
             {/* Dropdown iPhone */}
             <div className="nav-item-dropdown">
               <button
