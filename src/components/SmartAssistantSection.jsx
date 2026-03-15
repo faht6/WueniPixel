@@ -366,7 +366,7 @@ const SmartAssistantSection = () => {
                             <AnimatePresence mode="wait">
                                 {getChatMessages().map((msg, i) => (
                                     <motion.div
-                                        key={`${currentStep}-${i}-${msg.text}`}
+                                        key={`${currentStep}-${i}`}
                                         className="sa-chat-bubble"
                                         custom={i}
                                         variants={chatBubbleVariants}
