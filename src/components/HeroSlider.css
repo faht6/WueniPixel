@@ -320,6 +320,10 @@
 .hero-phone-float {
     animation: heroFloat 3s ease-in-out infinite;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .hero-phone-float--pixel {
@@ -380,15 +384,13 @@
 /* Pixel slide image */
 .pixel-card-container {
     border-radius: 24px;
-    overflow: hidden;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    background: transparent;
     transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
 }
 
 .pixel-card-container:hover {
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
     transform: rotate(1deg) scale(1.02);
 }
 
@@ -398,6 +400,7 @@
     height: auto;
     display: block;
     object-fit: contain;
+    mix-blend-mode: darken; /* Remove the white background from the JPEG to make it frameless */
 }
 
 /* ── Dot Indicators ── */
@@ -507,11 +510,13 @@
     /* Mobile: image on top, text below */
     .hero-image-col {
         order: -1;
+        width: 100%;
     }
 
     .hero-text-col {
         text-align: center;
         align-items: center;
+        width: 100%;
     }
 
     .hero-title {
@@ -553,13 +558,14 @@
     .hero-phone-img {
         width: 100%;
         max-width: 500px;
-        margin: 0 auto;
+        margin: 0 auto !important;
         display: block;
         transform: translateY(5%);
     }
 
     .hero-pixel-img {
         width: 320px;
+        margin: 0 auto;
     }
 
     .hero-price {
@@ -584,7 +590,7 @@
     .hero-phone-img {
         width: 100%;
         max-width: 350px;
-        margin: 0 auto;
+        margin: 0 auto !important;
         transform: translateY(5%);
     }
 
