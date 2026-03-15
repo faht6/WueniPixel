@@ -278,7 +278,7 @@ const Navbar = ({ cartCount, onCartClick }) => {
               </div>
             ) : searchQuery.length > 0 ? (
               <div className="no-results">
-                <p>No encontramos resultados para "{searchQuery}"</p>
+                <p>No encontramos resultados para &quot;{searchQuery}&quot;</p>
               </div>
             ) : (
               <div className="search-suggestions">
