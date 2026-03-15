@@ -222,15 +222,15 @@
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 500;
-    color: #555;
+    color: #e0e0e0; /* Improved visibility for inactive */
     background: transparent;
-    border: 1px solid #2a2a40;
+    border: 1px solid #666; /* Lighter border for inactive */
     transition: all 0.3s;
 }
 
 .sa-step-dot.active {
-    color: #ccc;
-    border-color: #444;
+    color: #e0e0e0;
+    border-color: #555;
 }
 
 .sa-step-dot.current {
@@ -344,10 +344,11 @@
 }
 
 .sa-tip {
-    font-size: 0.75rem;
-    color: #555;
+    font-size: 0.85rem; /* Increased size slightly */
+    color: #b0b0cc; /* Increased opacity/brightness */
     font-style: italic;
     margin: 0;
+    text-align: center; /* Explicitly centered */
 }
 
 /* ── Step 2 — Slider ── */
@@ -357,7 +358,7 @@
 
 .sa-range-slider {
     width: 100%;
-    height: 6px;
+    height: 8px;
     -webkit-appearance: none;
     appearance: none;
     background: #2a2a40;
@@ -415,7 +416,7 @@
 .sa-currency-label {
     font-size: 0.95rem;
     font-weight: 700;
-    color: #FF4B2B;
+    color: #ffffff; /* Match the input text color directly */
 }
 
 .sa-budget-input {
@@ -725,6 +726,8 @@
     text-decoration: none;
     font-weight: 600;
     white-space: nowrap;
+    margin-left: auto; /* Push link to the far right for better alignment */
+    padding-left: 8px; /* Safe area */
 }
 
 .sa-alt-link:hover {
@@ -1032,19 +1035,52 @@
 
 @media (max-width: 640px) {
     .sa-section {
-        padding: 3rem 0;
+        padding: 3rem 0 7.5rem 0; /* Huge bottom padding to clear floating WhatsApp */
     }
 
     .sa-wizard-card {
-        padding: 1.25rem;
+        padding: 1.25rem 1rem; /* Reduce horizontal padding slightly */
+    }
+
+    .sa-step-content {
+        min-height: 440px; /* Reduced to avoid internal scroll on very small devices */
     }
 
     .sa-chips-grid {
         grid-template-columns: 1fr;
+        gap: 8px; /* Slightly tighter gap */
     }
 
     .sa-chip {
-        padding: 12px;
+        padding: 12px 16px; /* Optimized Touch target */
+    }
+
+    .sa-chip-icon {
+        width: 28px; /* Enlarge icon */
+        height: 28px;
+    }
+
+    .sa-chip-label {
+        font-size: 0.95rem; /* Better readability */
+    }
+
+    .sa-chip-desc {
+        font-size: 0.75rem; /* Compact description */
+    }
+
+    /* Slider Fixes */
+    .sa-range-slider {
+        height: 12px; /* Thicker slider line */
+    }
+
+    .sa-range-slider::-webkit-slider-thumb {
+        width: 26px; /* Larger thumb */
+        height: 26px;
+    }
+
+    .sa-range-slider::-moz-range-thumb {
+        width: 26px;
+        height: 26px;
     }
 
     .sa-step-content {
@@ -1066,8 +1102,15 @@
         text-align: center;
     }
 
+    .sa-rec-img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 0.75rem;
+    }
+
     .sa-rec-ctas {
         flex-direction: column;
+        margin-top: 1rem;
     }
 
     .sa-rec-ctas .sa-btn-primary,

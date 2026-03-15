@@ -239,6 +239,7 @@ const Footer = () => {
                         <a href="https://wa.me/51941126123" target="_blank" rel="noopener noreferrer">WhatsApp: 941 126 123</a>
                     </div>
                     <p>&copy; 2026 WueniPixel</p>
+                    <p className="footer-version">v12.5.0 — Premium Refurbished Store</p>
                 </div>
             </div>
         </footer>

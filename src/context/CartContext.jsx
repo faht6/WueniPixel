@@ -6,15 +6,24 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(() => {
+        if (typeof window === 'undefined') return [];
         const savedCart = localStorage.getItem('cart');
         return savedCart ? JSON.parse(savedCart) : [];
     });
 
     useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
     }, [cart]);
 
     const addToCart = (product) => {
+        // Validation: Prevent adding items marked as No Stock
+        if (product._noStock) {
+            console.warn(`Attempted to add out-of-stock item: ${product.name}`);
+            return;
+        }
+
         setCart(prev => {
             const existing = prev.find(item => item.id === product.id);
             if (existing) {

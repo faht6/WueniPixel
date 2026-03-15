@@ -86,6 +86,7 @@ const ProductCard = ({ product, addToCart, addToCompare = () => { }, compareList
           src={product.image}
           alt={product.name}
           className={`card-image ${product.name.includes('17e') ? 'scale-17e' : ''}`}
+          loading="lazy"
           onError={(e) => {
             e.target.onerror = null;
             e.target.src = 'https://placehold.co/400x400/1e1e2e/FFF?text=No+Image';
