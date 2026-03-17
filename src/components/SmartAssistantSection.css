@@ -1,6 +1,4 @@
-/* ============================================
    SMART ASSISTANT — AI Wizard Section
-   ============================================ */
 
 /* ── Section ── */
 .sa-section {
@@ -222,15 +220,12 @@
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 500;
-<<<<<<< HEAD
     color: #999;
     background: transparent;
     border: 1px solid #3a3a50;
-=======
     color: #e0e0e0; /* Improved visibility for inactive */
     background: transparent;
     border: 1px solid #666; /* Lighter border for inactive */
->>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
     transition: all 0.3s;
 }
 
@@ -350,19 +345,16 @@
 }
 
 .sa-tip {
-<<<<<<< HEAD
     font-size: 0.8rem;
     color: #888;
     font-style: italic;
     margin: 0;
     text-align: center;
-=======
     font-size: 0.85rem; /* Increased size slightly */
     color: #b0b0cc; /* Increased opacity/brightness */
     font-style: italic;
     margin: 0;
     text-align: center; /* Explicitly centered */
->>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
 }
 
 /* ── Step 2 — Slider ── */
@@ -430,11 +422,8 @@
 .sa-currency-label {
     font-size: 0.95rem;
     font-weight: 700;
-<<<<<<< HEAD
     color: #f0f0f5;
-=======
     color: #ffffff; /* Match the input text color directly */
->>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
 }
 
 .sa-budget-input {
@@ -1070,9 +1059,7 @@
     }
 
     .sa-chip {
-<<<<<<< HEAD
         padding: 14px 12px; /* Touch target */
-=======
         padding: 12px 16px; /* Optimized Touch target */
     }
 
@@ -1102,7 +1089,6 @@
     .sa-range-slider::-moz-range-thumb {
         width: 26px;
         height: 26px;
->>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
     }
 
     .sa-step-content {
@@ -1127,11 +1113,8 @@
     .sa-rec-img {
         width: 140px;
         height: 140px;
-<<<<<<< HEAD
         margin-bottom: 0.5rem;
-=======
         margin-bottom: 0.75rem;
->>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
     }
 
     .sa-rec-ctas {
