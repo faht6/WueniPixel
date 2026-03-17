@@ -46,10 +46,25 @@ const HeroSlider = () => {
     ];
 
     return (
-        <section className="hero-slider-section" id="hero">
-            {/* Animated radial gradient background */}
-            <div className="hero-bg-gradient" />
-            <div className="hero-bg-particles" />
+        <section 
+            className="hero-slider-section" 
+            id="hero"
+            style={{ 
+                backgroundColor: '#ffffff', 
+                color: '#000000',
+                position: 'relative',
+                width: '100%',
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+                paddingTop: '100px',
+                paddingBottom: '2rem'
+            }}
+        >
+            {/* Background elements removed for total white force */}
 
             {/* Slide Content */}
             <AnimatePresence mode="wait">
@@ -130,6 +145,7 @@ const IPhone17eSlide = () => {
                 {/* Title */}
                 <motion.h1
                     className="hero-title"
+                    style={{ color: '#000000', fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', fontWeight: 900, margin: '0 0 1rem 0' }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
@@ -140,6 +156,7 @@ const IPhone17eSlide = () => {
                 {/* Subtitle */}
                 <motion.p
                     className="hero-subtitle"
+                    style={{ color: '#444444', fontSize: '1.15rem', maxWidth: '500px', margin: '0 0 1.5rem 0' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.25 }}
@@ -158,12 +175,13 @@ const IPhone17eSlide = () => {
                         <motion.li
                             key={i}
                             className="hero-spec-item"
+                            style={{ backgroundColor: 'rgba(245, 245, 247, 0.8)', border: '1px solid rgba(0,0,0,0.1)', color: '#000000' }}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.4, delay: 0.35 + i * 0.08 }}
                         >
                             <span className="hero-spec-icon">{spec.icon}</span>
-                            <span className="hero-spec-text">{spec.text}</span>
+                            <span className="hero-spec-text" style={{ color: '#333333' }}>{spec.text}</span>
                         </motion.li>
                     ))}
                 </motion.ul>
@@ -175,7 +193,7 @@ const IPhone17eSlide = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
                 >
-                    <span className="hero-price">Desde S/ 2,940</span>
+                    <span className="hero-price" style={{ color: '#000000', fontWeight: 900 }}>Desde S/ 2,940</span>
                 </motion.div>
 
                 {/* Tags */}
@@ -250,6 +268,7 @@ const PixelSlide = () => {
 
                 <motion.h1
                     className="hero-title"
+                    style={{ color: '#000000', fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', fontWeight: 900 }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
@@ -259,6 +278,7 @@ const PixelSlide = () => {
 
                 <motion.p
                     className="hero-subtitle"
+                    style={{ color: '#444444', fontSize: '1.15rem' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.25 }}
