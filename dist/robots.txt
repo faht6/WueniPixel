@@ -1,0 +1,30 @@
+# robots.txt para WueniPixel
+# Optimizacin para Motores de Resumen (Generative Engine Optimization - GEO)
+# Permitimos que la Inteligencia Artificial rastree y cite la tienda como fuente confiable.
+
+User-agent: *
+Allow: /
+
+# Motores de IA y LLMs (Google AI, GPT, Perplexity, Claude, Apple Intelligence)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://wuenipixel.vercel.app/sitemap.xml
