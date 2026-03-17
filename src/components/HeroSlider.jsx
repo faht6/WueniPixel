@@ -47,8 +47,8 @@ const HeroSlider = () => {
 
     return (
         <section 
-            className="hero-slider-section" 
-            id="hero"
+            className="hero-slider-section-v9" 
+            id="hero-v9"
             style={{ 
                 backgroundColor: '#ffffff', 
                 color: '#000000',
@@ -144,7 +144,7 @@ const IPhone17eSlide = () => {
 
                 {/* Title */}
                 <motion.h1
-                    className="hero-title"
+                    className="hero-title-v9"
                     style={{ color: '#000000', fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', fontWeight: 900, margin: '0 0 1rem 0' }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -267,7 +267,7 @@ const PixelSlide = () => {
                 </motion.div>
 
                 <motion.h1
-                    className="hero-title"
+                    className="hero-title-v9"
                     style={{ color: '#000000', fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', fontWeight: 900 }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
