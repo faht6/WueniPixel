@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    HERO SLIDER v2 — Light Premium / Apple-Grade
    Palette: #FFFFFF, #F5F5F7, #DC2626, #1A1A1A, #16A34A, #CA8A04
    ============================================ */
@@ -350,7 +350,7 @@
     height: auto;
     display: block;
     object-fit: contain;
-    mix-blend-mode: multiply;
+    mix-blend-mode: darken;
     position: relative;
     z-index: 2;
     /* Still below text (z-index 10) */
@@ -400,7 +400,7 @@
     height: auto;
     display: block;
     object-fit: contain;
-    mix-blend-mode: multiply; /* Remove the white background from the JPEG to make it frameless */
+    mix-blend-mode: darken; /* Remove the white background from the JPEG to make it frameless */
 }
 
 /* ── Dot Indicators ── */
