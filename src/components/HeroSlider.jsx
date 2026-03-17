@@ -47,12 +47,13 @@ const HeroSlider = () => {
 
     return (
         <section 
-            className="hero-slider-section-v9" 
-            id="hero-v9"
+            className="hero-slider-section" 
+            id="hero"
             style={{ 
                 backgroundColor: '#ffffff', 
                 color: '#000000',
                 position: 'relative',
+                zIndex: 2,
                 width: '100%',
                 minHeight: '100vh',
                 display: 'flex',
@@ -144,7 +145,7 @@ const IPhone17eSlide = () => {
 
                 {/* Title */}
                 <motion.h1
-                    className="hero-title-v9"
+                    className="hero-title"
                     style={{ color: '#000000', fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', fontWeight: 900, margin: '0 0 1rem 0' }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
