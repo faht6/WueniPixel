@@ -142,9 +142,9 @@ const stepLabels = ['Uso', 'Presupuesto', 'Recomendación'];
 
 /* ─── Motion variants ─── */
 const stepVariants = {
-    enter: (dir) => ({ opacity: 0, x: dir > 0 ? 50 : -50 }),
-    center: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-    exit: (dir) => ({ opacity: 0, x: dir > 0 ? -50 : 50, transition: { duration: 0.15 } }),
+    enter: (dir) => ({ opacity: 0, x: dir > 0 ? 30 : -30 }),
+    center: { opacity: 1, x: 0, transition: { duration: 0.3, ease: 'easeOut' } },
+    exit: (dir) => ({ opacity: 0, x: dir > 0 ? -30 : 30, transition: { duration: 0.1 } }),
 };
 
 const chatBubbleVariants = {
@@ -366,7 +366,7 @@ const SmartAssistantSection = () => {
                             <AnimatePresence mode="wait">
                                 {getChatMessages().map((msg, i) => (
                                     <motion.div
-                                        key={`${currentStep}-${i}-${msg.text}`}
+                                        key={`${currentStep}-${i}`}
                                         className="sa-chat-bubble"
                                         custom={i}
                                         variants={chatBubbleVariants}

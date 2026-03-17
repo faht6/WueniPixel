@@ -17,33 +17,40 @@ export const ProductProvider = ({ children }) => {
             setLoading(true);
             setError(null);
 
-            // STEP 1: Always load local catalog first (has images, colorImages, specs, etc.)
+            // STEP 1: Load local catalog
             let localProducts = [];
             try {
                 const response = await fetch(`/catalog.json?t=${Date.now()}`);
                 if (!response.ok) throw new Error('Local catalog failed');
                 localProducts = await response.json();
-                console.log(`📦 ${localProducts.length} productos cargados desde catálogo local`);
             } catch (localErr) {
-                console.error("❌ Error crítico: no se pudo cargar catálogo local", localErr);
-                setError('No se pudo cargar el catálogo. Inténtalo de nuevo.');
+                console.error("❌ Error catálogo local", localErr);
+                setError('No se pudo cargar el catálogo.');
                 setLoading(false);
                 return;
             }
 
-            // STEP 2: Try to fetch pricing overlay from Google Sheets
+            // STEP 2: Try cache first
+            const cached = getCachedData();
+            if (cached) {
+                const merged = mergeWithSheetsPricing(localProducts, cached);
+                setProducts(merged);
+                setDataSource('sheets');
+                setLoading(false);
+                return;
+            }
+
+            // STEP 3: Fetch from Sheets
             try {
                 console.log("📡 Cargando precios desde Google Sheets...");
                 const sheetPricing = await fetchPricingFromSheets();
+                setCachedData(sheetPricing);
 
-                // Merge: local product data + Sheets pricing
-                const mergedProducts = mergeWithSheetsPricing(localProducts, sheetPricing);
-                setProducts(mergedProducts);
+                const merged = mergeWithSheetsPricing(localProducts, sheetPricing);
+                setProducts(merged);
                 setDataSource('sheets');
-                console.log(`✅ Precios actualizados desde Sheets para ${sheetPricing.length} productos`);
             } catch (sheetsErr) {
-                // Sheets failed — use local catalog as-is (no per-capacity pricing)
-                console.warn("⚠️ Sheets no disponible, usando precios locales:", sheetsErr.message);
+                console.warn("⚠️ Sheets no disponible:", sheetsErr.message);
                 setProducts(localProducts);
                 setDataSource('local');
             }
@@ -81,107 +88,139 @@ export const ProductProvider = ({ children }) => {
     const mergeWithSheetsPricing = (localProducts, sheetRows) => {
         const pricingMap = {};
 
-        // Build a name to ID map from local products for fallback matching
-        const nameToId = {};
-        localProducts.forEach(p => {
-            if (p.name) nameToId[p.name.toLowerCase().trim()] = parseInt(p.id);
-        });
+    // Build a name to ID map from local products for fallback matching
+    const nameToId = {};
+    localProducts.forEach(p => {
+        if (p.name) {
+            // Robust matching: remove accents, spaces, and lowercase
+            const cleanName = p.name.toLowerCase().trim()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            nameToId[cleanName] = parseInt(p.id);
+        }
+    });
 
-        for (const row of sheetRows) {
-            // Helper to get value from row case-insensitively
-            const getVal = (searchKey) => {
-                const actualKey = Object.keys(row).find(
-                    k => k.toLowerCase().trim() === searchKey.toLowerCase()
-                );
-                return actualKey ? row[actualKey] : null;
-            };
+    for (const row of sheetRows) {
+        // Helper to get value from row case-insensitively
+        const getVal = (searchKey) => {
+            const actualKey = Object.keys(row).find(
+                k => k.toLowerCase().trim() === searchKey.toLowerCase()
+            );
+            return actualKey ? row[actualKey] : null;
+        };
 
-            const sheetName = getVal('name');
-            let idStr = getVal('id');
-            let id = parseInt(idStr);
+        const sheetName = getVal('name');
+        let idStr = getVal('id');
+        let id = parseInt(idStr);
 
-            // Critical fallback: If name matches perfectly but ID is wrong/conflicting, use local ID
-            if (sheetName && nameToId[sheetName.toLowerCase().trim()]) {
-                id = nameToId[sheetName.toLowerCase().trim()];
-            } else if (isNaN(id)) {
-                continue;
+        // Critical fallback: If name matches perfectly (sanitized) but ID is wrong/conflicting, use local ID
+        if (sheetName) {
+            const cleanSheetName = sheetName.toLowerCase().trim()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            if (nameToId[cleanSheetName]) {
+                id = nameToId[cleanSheetName];
             }
-
-            const parsePrice = (key) => {
-                const val = getVal(key);
-                if (!val || val.trim() === '' || val.trim() === '0') return null;
-                // Remove currency symbols, commas for thousands, etc.
-                const cleanVal = val.replace(/[S/$.\s,]/g, (match) => {
-                    // We keep dots if they look like decimals, but usually CSVs use dots for thousands in some locales
-                    // To be safe, let's just use a more surgical approach
-                    return '';
-                });
-                // Simple approach: remove everything except numbers and decimal point
-                const numericString = val.replace(/[^0-9.]/g, '');
-                const num = parseFloat(numericString);
-                return isNaN(num) ? null : num;
-            };
-
-            pricingMap[id] = {
-                price: parsePrice('price'),
-                storagePrices: {
-                    '64GB': parsePrice('Precio_Venta_64GB_PEN'),
-                    '128GB': parsePrice('Precio_Venta_128GB_PEN'),
-                    '256GB': parsePrice('Precio_Venta_256GB_PEN'),
-                    '512GB': parsePrice('Precio_Venta_512GB_PEN'),
-                    '1TB': parsePrice('Precio_Venta_1TB_PEN'),
-                    '2TB': parsePrice('Precio_Venta_2TB_PEN'),
-                },
-                name: getVal('name'),
-                description: getVal('description'),
-                grade: getVal('grade'),
-                condition: getVal('condition'),
-                featured: getVal('featured') ? (getVal('featured').toLowerCase() === 'true') : null,
-            };
         }
 
-        return localProducts.map(product => {
-            const sheetData = pricingMap[product.id];
-            if (!sheetData) return product;
+        if (isNaN(id)) continue;
 
-            const merged = { ...product };
+        const parsePrice = (key) => {
+            const val = getVal(key);
+            if (!val || val.trim() === '' || val.trim() === '0') return null;
+            // Simple approach: remove everything except numbers and decimal point
+            const numericString = val.replace(/[^0-9.]/g, '');
+            const num = parseFloat(numericString);
+            return isNaN(num) ? null : num;
+        };
 
-            if (sheetData.price !== null) merged.price = sheetData.price;
+        pricingMap[id] = {
+            price: parsePrice('price'),
+            storagePrices: {
+                '64GB': parsePrice('Precio_Venta_64GB_PEN'),
+                '128GB': parsePrice('Precio_Venta_128GB_PEN'),
+                '256GB': parsePrice('Precio_Venta_256GB_PEN'),
+                '512GB': parsePrice('Precio_Venta_512GB_PEN'),
+                '1TB': parsePrice('Precio_Venta_1TB_PEN'),
+                '2TB': parsePrice('Precio_Venta_2TB_PEN'),
+            },
+            name: getVal('name'),
+            description: getVal('description'),
+            grade: getVal('grade'),
+            condition: getVal('condition'),
+            featured: getVal('featured') ? (getVal('featured').toLowerCase() === 'true') : null,
+        };
+    }
 
-            // Add per-capacity pricing
-            merged.storagePrices = sheetData.storagePrices;
+    return localProducts.map(product => {
+        const sheetData = pricingMap[product.id];
+        if (!sheetData) return product;
 
-            // SYNC BASE PRICE: Find the minimum price among all available capacities
-            // This ensures the Catalog view (ProductCard) stays updated.
-            const prices = Object.values(sheetData.storagePrices).filter(p => p !== null && p !== undefined && p > 0);
+        const merged = { ...product };
 
-            // INVENTORY CONTROL: If the product is in Sheets but has ZERO prices,
-            // the user has chosen not to sell it. Flag it for removal.
-            if (prices.length === 0) {
-                merged._noStock = true;
-                return merged;
-            }
+        if (sheetData.price !== null) merged.price = sheetData.price;
 
-            merged.price = Math.min(...prices);
+        // Add per-capacity pricing
+        merged.storagePrices = sheetData.storagePrices;
 
-            // DYNAMIC STORAGE: Combine original storage with capacities that have prices in Sheets
-            const allPossibleCapacities = ['64GB', '128GB', '256GB', '512GB', '1TB', '2TB'];
-            const activeFromSheets = allPossibleCapacities.filter(cap =>
-                sheetData.storagePrices[cap] !== null && sheetData.storagePrices[cap] !== undefined
-            );
+        // SYNC BASE PRICE: Find the minimum price among all available capacities
+        const prices = Object.values(sheetData.storagePrices).filter(p => p !== null && p !== undefined && p > 0);
 
-            const combinedStorage = Array.from(new Set([...(merged.storage || []), ...activeFromSheets]));
-            merged.storage = allPossibleCapacities.filter(cap => combinedStorage.includes(cap));
-
-            if (sheetData.name && sheetData.name.trim()) merged.name = sheetData.name;
-            if (sheetData.description && sheetData.description.trim()) merged.description = sheetData.description;
-            if (sheetData.grade && sheetData.grade.trim()) merged.grade = sheetData.grade;
-            if (sheetData.condition && sheetData.condition.trim()) merged.condition = sheetData.condition;
-            if (sheetData.featured !== null) merged.featured = sheetData.featured;
-
+        // INVENTORY CONTROL: If the product is in Sheets but has ZERO prices,
+        // the user has chosen not to sell it. Flag it for removal.
+        if (prices.length === 0) {
+            merged._noStock = true;
             return merged;
-        }).filter(p => !p._noStock); // Remove products without any price in Sheets
-    };
+        }
+
+        merged.price = Math.min(...prices);
+
+        // DYNAMIC STORAGE: Combine original storage with capacities that have prices in Sheets
+        const allPossibleCapacities = ['64GB', '128GB', '256GB', '512GB', '1TB', '2TB'];
+        const activeFromSheets = allPossibleCapacities.filter(cap =>
+            sheetData.storagePrices[cap] !== null && sheetData.storagePrices[cap] !== undefined
+        );
+
+        const combinedStorage = Array.from(new Set([...(merged.storage || []), ...activeFromSheets]));
+        merged.storage = allPossibleCapacities.filter(cap => combinedStorage.includes(cap));
+
+        if (sheetData.name && sheetData.name.trim()) merged.name = sheetData.name;
+        if (sheetData.description && sheetData.description.trim()) merged.description = sheetData.description;
+        if (sheetData.grade && sheetData.grade.trim()) merged.grade = sheetData.grade;
+        if (sheetData.condition && sheetData.condition.trim()) merged.condition = sheetData.condition;
+        if (sheetData.featured !== null) merged.featured = sheetData.featured;
+
+        return merged;
+    }).filter(p => !p._noStock);
+};
+
+// CACHE Logic for Google Sheets
+const CACHE_KEY = 'wueni_sheets_cache';
+const CACHE_EXPIRY = 5 * 60 * 1000; // 5 minutes
+
+const getCachedData = () => {
+    if (typeof window === 'undefined') return null;
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (!cached) return null;
+
+    try {
+        const { data, timestamp } = JSON.parse(cached);
+        if (Date.now() - timestamp < CACHE_EXPIRY) {
+            console.log("♻️ Usando caché de precios (válido por 5 min)");
+            return data;
+        }
+    } catch (e) {
+        localStorage.removeItem(CACHE_KEY);
+    }
+    return null;
+};
+
+const setCachedData = (data) => {
+    if (typeof window === 'undefined') return;
+    localStorage.setItem(CACHE_KEY, JSON.stringify({
+        data,
+        timestamp: Date.now()
+    }));
+};
+
 
     // Helper to get product by ID
     const getProductById = (id) => {

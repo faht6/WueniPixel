@@ -12,7 +12,7 @@ export const productColors = {
     "Morado": "#D1CDDA",
 
     // iPhone 17 / Air / 17 Pro
-    "Lavanda": "#D6D1E6",
+    // "Lavanda": "#D6D1E6", // Duplicate key removed
     "Azul Mist": "#A8C4D6",
     "Salvia": "#9CA78F",
     "Grafito": "#484848",
@@ -49,7 +49,7 @@ export const productColors = {
     "Starlight": "#F6F2EF",
 
     // iPhone 13 / 12
-    "Grafito": "#52514F",
+    // "Grafito": "#52514F", // Duplicate key removed
     "Azul Sierra": "#A6C2CF",
     "Verde Alpino": "#4E5844",
     "Azul Pacífico": "#2D4856",

@@ -222,9 +222,15 @@
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 500;
+<<<<<<< HEAD
     color: #999;
     background: transparent;
     border: 1px solid #3a3a50;
+=======
+    color: #e0e0e0; /* Improved visibility for inactive */
+    background: transparent;
+    border: 1px solid #666; /* Lighter border for inactive */
+>>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
     transition: all 0.3s;
 }
 
@@ -344,11 +350,19 @@
 }
 
 .sa-tip {
+<<<<<<< HEAD
     font-size: 0.8rem;
     color: #888;
     font-style: italic;
     margin: 0;
     text-align: center;
+=======
+    font-size: 0.85rem; /* Increased size slightly */
+    color: #b0b0cc; /* Increased opacity/brightness */
+    font-style: italic;
+    margin: 0;
+    text-align: center; /* Explicitly centered */
+>>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
 }
 
 /* ── Step 2 — Slider ── */
@@ -416,7 +430,11 @@
 .sa-currency-label {
     font-size: 0.95rem;
     font-weight: 700;
+<<<<<<< HEAD
     color: #f0f0f5;
+=======
+    color: #ffffff; /* Match the input text color directly */
+>>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
 }
 
 .sa-budget-input {
@@ -726,6 +744,8 @@
     text-decoration: none;
     font-weight: 600;
     white-space: nowrap;
+    margin-left: auto; /* Push link to the far right for better alignment */
+    padding-left: 8px; /* Safe area */
 }
 
 .sa-alt-link:hover {
@@ -1037,15 +1057,52 @@
     }
 
     .sa-wizard-card {
-        padding: 1.25rem;
+        padding: 1.25rem 1rem; /* Reduce horizontal padding slightly */
+    }
+
+    .sa-step-content {
+        min-height: 440px; /* Reduced to avoid internal scroll on very small devices */
     }
 
     .sa-chips-grid {
         grid-template-columns: 1fr;
+        gap: 8px; /* Slightly tighter gap */
     }
 
     .sa-chip {
+<<<<<<< HEAD
         padding: 14px 12px; /* Touch target */
+=======
+        padding: 12px 16px; /* Optimized Touch target */
+    }
+
+    .sa-chip-icon {
+        width: 28px; /* Enlarge icon */
+        height: 28px;
+    }
+
+    .sa-chip-label {
+        font-size: 0.95rem; /* Better readability */
+    }
+
+    .sa-chip-desc {
+        font-size: 0.75rem; /* Compact description */
+    }
+
+    /* Slider Fixes */
+    .sa-range-slider {
+        height: 12px; /* Thicker slider line */
+    }
+
+    .sa-range-slider::-webkit-slider-thumb {
+        width: 26px; /* Larger thumb */
+        height: 26px;
+    }
+
+    .sa-range-slider::-moz-range-thumb {
+        width: 26px;
+        height: 26px;
+>>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
     }
 
     .sa-step-content {
@@ -1070,7 +1127,11 @@
     .sa-rec-img {
         width: 140px;
         height: 140px;
+<<<<<<< HEAD
         margin-bottom: 0.5rem;
+=======
+        margin-bottom: 0.75rem;
+>>>>>>> 64fdd7037f37302aacf40cd5652c4292b1616950
     }
 
     .sa-rec-ctas {
