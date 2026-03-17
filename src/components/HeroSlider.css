@@ -210,12 +210,7 @@
 }
 
 .pixel-image-float {
-    animation: heroFloat 3s ease-in-out infinite;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    animation: pixelFloat 4s ease-in-out infinite;
 }
 
 .pixel-image-container {
@@ -367,83 +362,6 @@
     }
 }
 
-/* Red glow shadow beneath phone - DISABLED FOR CLEAN LOOK */
-.hero-phone-shadow {
-    display: none;
-}
-
-/* Subtle reflection */
-.hero-phone-reflection {
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%) scaleY(-1);
-    width: 60%;
-    height: 80px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), transparent);
-    border-radius: 20px;
-    z-index: 0;
-    filter: blur(8px);
-    opacity: 0.4;
-}
-
-/* Pixel slide image */
-.pixel-card-container {
-    border-radius: 24px;
-    background: transparent;
-    transition: all 0.5s ease;
-    display: flex;
-    justify-content: center;
-}
-
-.pixel-card-container:hover {
-    transform: rotate(1deg) scale(1.02);
-}
-
-.hero-pixel-img {
-    width: 600px;
-    max-width: 85vw;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    mix-blend-mode: darken; /* Remove the white background from the JPEG to make it frameless */
-}
-
-/* ── Dot Indicators ── */
-.hero-dots {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    position: relative;
-    z-index: 10;
-    margin-top: 2rem;
-}
-
-.hero-dot {
-    padding: 8px 22px;
-    border-radius: 9999px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: #ffffff;
-    color: #6b7280;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.hero-dot:hover {
-    border-color: rgba(0, 0, 0, 0.2);
-    color: #1a1a1a;
-}
-
-.hero-dot.active {
-    background: #DC2626;
-    border-color: #DC2626;
-}
-
 /* ── Reused Button Styles ── */
 .hero-slider-section .btn-primary-v11 {
     background: #8B0000;
@@ -573,25 +491,7 @@
         padding-top: 70px;
     }
 
-    .hero-slide {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        gap: 2rem;
-    }
-
-    /* Mobile: image on top, text below */
-    .hero-image-col {
-        order: -1;
-        width: 100%;
-    }
-
-    .hero-text-col {
-        text-align: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .hero-title {
+    .slide-title {
         font-size: 3rem;
         white-space: normal;
     }
@@ -617,14 +517,6 @@
     .slider-arrow-left {
         left: 8px;
     }
-    
-    .hero-phone-img {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto !important;
-        display: block;
-        transform: translateY(5%);
-    }
 
     .slider-arrow-right {
         right: 8px;
@@ -633,7 +525,6 @@
     /* Pixel image smaller */
     .pixel-hero-img {
         width: 320px;
-        margin: 0 auto;
     }
 
     /* iPhone: hide side phones */
@@ -668,13 +559,6 @@
 
     .slide-subtitles {
         font-size: 0.95rem;
-    }
-
-    .hero-phone-img {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto !important;
-        transform: translateY(5%);
     }
 
     .pixel-hero-img {

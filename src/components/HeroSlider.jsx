@@ -101,7 +101,7 @@ const HeroSlider = () => {
                         className={`slider-pill ${currentSlide === 1 ? 'active' : ''}`}
                         onClick={() => goToSlide(1)}
                     >
-                        iPhone 17e
+                        iPhone 17 Pro Max
                     </button>
                 </div>
             </div>
@@ -211,7 +211,7 @@ const PixelSlide = () => {
 };
 
 /* ═══════════════════════════════════════════════
-   SLIDE 2 — iPHONE 17e
+   SLIDE 2 — iPHONE 17 PRO MAX
    ═══════════════════════════════════════════════ */
 const IPhoneSlide = () => {
     return (
@@ -224,7 +224,7 @@ const IPhoneSlide = () => {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
             >
                 <span className="pulse-dot-red" />
-                NUEVO 2026
+                NUEVO EN WUENIPIXEL
             </motion.div>
 
             {/* Title */}
@@ -234,7 +234,7 @@ const IPhoneSlide = () => {
                 initial="hidden"
                 animate="visible"
             >
-                iPhone <span className="text-wine-v11">17e</span>
+                iPhone <span className="text-wine-v11">17</span> Pro Max
             </motion.h1>
 
             {/* Subtitles */}
@@ -244,8 +244,8 @@ const IPhoneSlide = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             >
-                <p>Lo mejor de Apple al precio más inteligente.</p>
-                <p>Chip A19 Bionic. Apple Intelligence. 5% dcto con transferencia.</p>
+                <p>Titanio. Chip A19 Pro. La cámara más avanzada jamás creada.</p>
+                <p>Directo desde USA con entrega programada (2 a 3 semanas).</p>
             </motion.div>
 
             {/* Buttons */}
@@ -255,30 +255,53 @@ const IPhoneSlide = () => {
                 initial="hidden"
                 animate="visible"
             >
-                <a href="https://wa.me/51941126123?text=Hola%2C%20quiero%20información%20del%20iPhone%2017e" target="_blank" rel="noopener noreferrer" className="btn-primary-v11">
-                    Ver iPhone 17e <ArrowRight size={18} />
+                <a href="/products?brand=Apple" className="btn-primary-v11">
+                    Ver Colección <ArrowRight size={18} />
                 </a>
-                <a href="/products?brand=Apple" className="btn-secondary-v11">
-                    Ver Colección Apple <ChevronRight size={18} />
+                <a href="/products" className="btn-secondary-v11">
+                    Explorar Todo <ChevronRight size={18} />
                 </a>
             </motion.div>
 
-            {/* iPhone Layout */}
-            <div className="pixel-image-wrapper">
+            {/* iPhone Triple Layout */}
+            <div className="iphone-phones-layout">
                 <motion.div
-                    className="pixel-image-float"
+                    className="iphone-phone-wrap iphone-phone-left"
+                    initial={{ opacity: 0, x: -60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+                >
+                    <img
+                        src="/products/iphone17promax_cosmicorange.jpg"
+                        alt="iPhone 17 Pro Max Orange"
+                        className="iphone-phone-img iphone-side"
+                    />
+                </motion.div>
+
+                <motion.div
+                    className="iphone-phone-wrap iphone-phone-center"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
                 >
-                    <div className="pixel-image-container">
-                        <img
-                            src="/products/iphone17e.webp"
-                            alt="iPhone 17e - Nuevo 2026"
-                            className="pixel-hero-img"
-                            style={{ maxWidth: '280px', margin: '0 auto' }}
-                        />
-                    </div>
+                    <img
+                        src="/products/iphone17promax_deepblue.jpg"
+                        alt="iPhone 17 Pro Max Blue"
+                        className="iphone-phone-img iphone-hero"
+                    />
+                </motion.div>
+
+                <motion.div
+                    className="iphone-phone-wrap iphone-phone-right"
+                    initial={{ opacity: 0, x: 60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+                >
+                    <img
+                        src="/products/iphone17promax_silver.jpg"
+                        alt="iPhone 17 Pro Max Silver"
+                        className="iphone-phone-img iphone-side"
+                    />
                 </motion.div>
             </div>
         </div>
