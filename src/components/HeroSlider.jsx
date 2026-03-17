@@ -46,10 +46,11 @@ const HeroSlider = () => {
     ];
 
     return (
-        <section className="hero-slider-section" id="hero">
-            {/* Animated radial gradient background */}
-            <div className="hero-bg-gradient" />
-            <div className="hero-bg-particles" />
+        <section 
+            className="hero-slider-section" 
+            id="hero" 
+            style={{ backgroundColor: '#ffffff', color: '#000000' }}
+        >
 
             {/* Slide Content */}
             <AnimatePresence mode="wait">
@@ -130,6 +131,7 @@ const IPhone17eSlide = () => {
                 {/* Title */}
                 <motion.h1
                     className="hero-title"
+                    style={{ color: '#000000' }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
@@ -140,6 +142,7 @@ const IPhone17eSlide = () => {
                 {/* Subtitle */}
                 <motion.p
                     className="hero-subtitle"
+                    style={{ color: '#444444' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.25 }}
@@ -250,6 +253,7 @@ const PixelSlide = () => {
 
                 <motion.h1
                     className="hero-title"
+                    style={{ color: '#000000' }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
@@ -259,6 +263,7 @@ const PixelSlide = () => {
 
                 <motion.p
                     className="hero-subtitle"
+                    style={{ color: '#444444' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.25 }}
