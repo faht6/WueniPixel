@@ -1,5 +1,5 @@
 .navbar {
-    position: fixed;
+    position: sticky; /* Sticky below relative banner */
     top: 0;
     left: 0;
     right: 0;
@@ -14,12 +14,12 @@
 }
 
 .navbar.is-scrolled {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-    height: calc(var(--header-height) + 10px);
+    /* height: fixed to var(--header-height) - no shift */
 }
 
 [data-theme='dark'] .navbar.is-scrolled {
