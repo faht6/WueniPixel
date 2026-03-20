@@ -494,20 +494,22 @@
 }
 
 @media (max-width: 768px) {
-    /* ... existing mobile styles ... */
-    
+    /* Mobile: image on top, text below */
+    .hero-image-col {
+        order: -1;
+        width: 100%;
+    }
+
     .hero-phone-img {
-        width: 90vw;
-        max-width: 440px;
-        min-width: 280px;
+        width: 100%;
+        max-width: 500px;
         margin: 0 auto !important;
         display: block;
-        transform: none;
+        transform: translateY(5%);
     }
 
     .hero-pixel-img {
-        width: 85vw;
-        max-width: 320px;
+        width: 320px;
         margin: 0 auto;
     }
 }
@@ -518,16 +520,13 @@
     }
 
     .hero-phone-img {
-        width: 95% !important;
-        max-width: 380px;
+        width: 100%;
+        max-width: 350px;
         margin: 0 auto !important;
-        display: block;
-        transform: none;
+        transform: translateY(5%);
     }
 
     .hero-pixel-img {
-        width: 85%;
-        max-width: 260px;
-        margin: 0 auto;
+        width: 260px;
     }
-}
+}
