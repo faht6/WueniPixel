@@ -345,16 +345,16 @@
 
 /* iPhone 17e hero image */
 .hero-phone-img {
-    width: 850px;
-    max-width: 140%; /* Prevent horizontal overflow on desktop */
+    width: 950px;
+    max-width: 190%;
     height: auto;
     display: block;
     object-fit: contain;
     mix-blend-mode: darken;
     position: relative;
     z-index: 2;
-    margin-left: -5%;
-    margin-right: -10%;
+    margin-left: -15%;
+    margin-right: -30%;
     transform-origin: center center;
 }
 
