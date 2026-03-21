@@ -36,14 +36,14 @@ const Navbar = ({ cartCount, onCartClick }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Bloquear scroll cuando el buscador está abierto
+  // Bloquear scroll cuando el buscador o menú móvil está abierto
   useEffect(() => {
-    if (isSearchOpen) {
+    if (isSearchOpen || isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [isSearchOpen]);
+  }, [isSearchOpen, isMobileMenuOpen]);
 
   // Cerrar menú al hacer click fuera
   useEffect(() => {

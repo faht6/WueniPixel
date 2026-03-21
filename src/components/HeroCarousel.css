@@ -227,7 +227,7 @@
     }
 
     .hero-carousel-wrapper {
-        height: 100vh;
+        height: 100dvh;
         /* Full mobile height */
     }
 }

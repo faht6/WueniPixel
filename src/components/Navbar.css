@@ -258,13 +258,21 @@
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    [data-theme='dark'] .navbar {
+        background: rgba(10, 10, 10, 0.98);
+    }
+
     .nav-links {
         display: none;
         position: fixed;
         top: var(--header-height);
         left: 0;
         width: 100%;
-        height: calc(100vh - var(--header-height));
+        height: calc(100dvh - var(--header-height));
         background: var(--color-background);
         flex-direction: column;
         align-items: flex-start;
@@ -363,7 +371,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     z-index: 10005;

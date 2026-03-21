@@ -69,6 +69,12 @@
 
 
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -81,6 +87,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 * {
@@ -131,10 +138,6 @@ a:focus-visible {
 }
 
 /* 2. GLOBAL REFINEMENTS (The "Premium" Feel) */
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
 
 ::selection {
   background-color: var(--color-accent);

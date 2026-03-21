@@ -2,7 +2,7 @@
     padding: 6rem 0;
     /* More breathing room */
     background: var(--bg-primary);
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 /* HEADER STYLES */
