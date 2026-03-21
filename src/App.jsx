@@ -16,6 +16,7 @@ import Toast from './components/Toast';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import CompareBar from './components/CompareBar';
+import BottomNav from './components/BottomNav';
 import { ProductProvider } from './context/ProductContext';
 import ComplaintsBook from './pages/ComplaintsBook';
 import NotFound from './pages/NotFound';
@@ -196,6 +197,7 @@ function App() {
                     />
                 )}
                 <WhatsAppFloat />
+                <BottomNav cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
             </div>
         </ProductProvider>
     );

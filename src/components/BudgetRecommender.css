@@ -19,7 +19,7 @@
 .budget-recommender .br-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, #0a0b14 0%, #0f1023 40%, #0a0b14 100%);
+    background: linear-gradient(160deg, #111111 0%, #1a1a1a 40%, #0a0a0a 100%);
     z-index: 0;
     overflow: hidden;
 }
@@ -28,14 +28,14 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.4;
-    animation: orbFloat 12s ease-in-out infinite;
+    opacity: 0.3;
+    animation: orbFloat 15s ease-in-out infinite;
 }
 
 .budget-recommender .br-orb-1 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.5), transparent 70%);
+    background: radial-gradient(circle, rgba(139, 0, 32, 0.4), transparent 70%); /* Wine */
     top: -10%;
     left: -5%;
     animation-delay: 0s;
@@ -44,7 +44,7 @@
 .budget-recommender .br-orb-2 {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, rgba(239, 68, 68, 0.4), transparent 70%);
+    background: radial-gradient(circle, rgba(128, 128, 128, 0.2), transparent 70%); /* Silver */
     bottom: -10%;
     right: -5%;
     animation-delay: -4s;
@@ -53,7 +53,7 @@
 .budget-recommender .br-orb-3 {
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.3), transparent 70%);
+    background: radial-gradient(circle, rgba(180, 0, 40, 0.2), transparent 70%); /* Red Accent */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -116,9 +116,9 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(139, 92, 246, 0.12);
-    border: 1px solid rgba(139, 92, 246, 0.25);
-    color: #c4b5fd;
+    background: rgba(139, 0, 32, 0.12); /* Wine */
+    border: 1px solid rgba(139, 0, 32, 0.25);
+    color: #ff99a8;
     padding: 8px 18px;
     border-radius: 100px;
     font-size: 13px;
@@ -132,11 +132,11 @@
 
     0%,
     100% {
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+        box-shadow: 0 0 0 0 rgba(139, 0, 32, 0);
     }
 
     50% {
-        box-shadow: 0 0 24px 2px rgba(139, 92, 246, 0.15);
+        box-shadow: 0 0 24px 2px rgba(139, 0, 32, 0.3);
     }
 }
 
@@ -151,7 +151,7 @@
 }
 
 .budget-recommender .br-title-accent {
-    background: linear-gradient(135deg, #ef4444 0%, #f97316 40%, #eab308 100%);
+    background: linear-gradient(135deg, #ff4040 0%, #aa0000 40%, #ff6666 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -174,7 +174,7 @@
 /* Subtitle */
 .budget-recommender .br-subtitle {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.65);
     line-height: 1.7;
     max-width: 420px;
     margin: 0;
@@ -193,9 +193,9 @@
     gap: 12px;
     padding: 14px 18px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     cursor: pointer;
     transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
@@ -203,22 +203,22 @@
 }
 
 .budget-recommender .br-chip:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
     color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .budget-recommender .br-chip.active {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(168, 85, 247, 0.15));
-    border-color: rgba(239, 68, 68, 0.45);
+    background: linear-gradient(135deg, rgba(139, 0, 32, 0.25), rgba(180, 0, 40, 0.15));
+    border-color: rgba(180, 0, 40, 0.5);
     color: #fff;
-    box-shadow: 0 0 30px rgba(239, 68, 68, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 30px rgba(139, 0, 32, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .budget-recommender .br-chip.active svg {
-    color: #f87171;
+    color: #ff6666;
 }
 
 .budget-recommender .br-chip-text {

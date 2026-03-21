@@ -234,12 +234,14 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <div className="legal-links">
+                        <Link to="/libro-de-reclamaciones" style={{ color: "var(--color-text-secondary)", textDecoration: "none" }}>Libro de Reclamaciones</Link>
+                        <span>|</span>
                         <span>San Vicente de Cañete, Lima</span>
                         <span>|</span>
                         <a href="https://wa.me/51941126123" target="_blank" rel="noopener noreferrer">WhatsApp: 941 126 123</a>
                     </div>
                     <p>&copy; 2026 WueniPixel</p>
-                    <p className="footer-version">v12.6.1 — Premium Refurbished Store</p>
+                    <p className="footer-version">v12.7.0 — Premium Refurbished Store</p>
                 </div>
             </div>
         </footer>
