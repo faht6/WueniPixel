@@ -1,7 +1,7 @@
 {
   "name": "tienda-celulares-premium",
   "private": true,
-  "version": "12.5.5",
+  "version": "12.6.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
