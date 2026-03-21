@@ -92,8 +92,9 @@ const ComplaintsBook = () => {
                 </div>
 
                 <div className="legal-info">
-                    <p><strong>Razón Social:</strong> WueniPixel - Venta de Equipos Tecnológicos</p>
-                    <p><strong>Ubicación:</strong> San Vicente de Cañete, Lima, Perú</p>
+                    <p><strong>Razón Social:</strong> WueniPixel</p>
+                    <p><strong>RUC:</strong> 10750025787</p>
+                    <p><strong>Ubicación:</strong> Tienda Virtual - San Vicente de Cañete, Lima, Perú</p>
                     <p><strong>Email:</strong> wuenipixel@gmail.com</p>
                 </div>
 
