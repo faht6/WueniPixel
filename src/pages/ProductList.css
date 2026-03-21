@@ -249,28 +249,9 @@
 
     .products-grid,
     .product-grid {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 16px;
         padding-bottom: 20px;
-        scroll-padding-left: 20px;
-        -webkit-overflow-scrolling: touch;
-        /* Hide scrollbar for a cleaner look */
-        scrollbar-width: none; 
-    }
-    
-    .products-grid::-webkit-scrollbar,
-    .product-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .products-grid > *,
-    .product-grid > * {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-        min-width: 280px;
     }
 
     .filter-section {

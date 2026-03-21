@@ -166,7 +166,42 @@
     font-size: 0.85rem;
     color: #6E6E73;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Pricing Display */
+.macbook-neo-pricing-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 2rem;
+    background: #F5F5F7;
+    padding: 12px 24px;
+    border-radius: 98px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.macbook-neo-price-prefix {
+    font-size: 0.9rem;
+    color: #6E6E73;
+    font-weight: 500;
+}
+
+.macbook-neo-price-amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1D1D1F;
+    letter-spacing: -0.5px;
+}
+
+.macbook-neo-price-storage {
+    font-size: 0.9rem;
+    color: #86868B;
     font-weight: 500;
 }
 

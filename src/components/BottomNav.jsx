@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, Smartphone, GitCompare, ShoppingBag, User } from 'lucide-react';
+import { Home, Smartphone, GitCompare, ShoppingBag, User, Search } from 'lucide-react';
 import './BottomNav.css';
 
 const BottomNav = ({ cartCount }) => {
@@ -16,10 +16,10 @@ const BottomNav = ({ cartCount }) => {
                 <Smartphone size={22} />
                 <span>Tienda</span>
             </NavLink>
-            <NavLink to="/compare" className={`bottom-nav-item ${location.pathname === '/compare' ? 'active' : ''}`}>
-                <GitCompare size={22} />
-                <span>Comparar</span>
-            </NavLink>
+            <button className={`bottom-nav-item`} onClick={() => window.dispatchEvent(new Event('open-search'))}>
+                <Search size={22} />
+                <span>Buscar</span>
+            </button>
             <NavLink to="/cart" className={`bottom-nav-item ${location.pathname === '/cart' ? 'active' : ''}`}>
                 <div style={{ position: 'relative' }}>
                     <ShoppingBag size={22} />

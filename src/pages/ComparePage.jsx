@@ -84,17 +84,17 @@ const ComparePage = ({ addToCart }) => {
                             </div>
 
                             <div className="compare-data">
-                                <div className="data-row price-row">
+                                <div className="data-row price-row" data-label="Precio">
                                     {formatCurrency(getPrice(product))}
                                 </div>
-                                <div className="data-row">{product.specs?.screen || 'N/A'}</div>
-                                <div className="data-row">{product.specs?.processor || 'N/A'}</div>
-                                <div className="data-row">{product.specs?.camera || 'N/A'}</div>
-                                <div className="data-row">{product.specs?.battery || 'N/A'}</div>
-                                <div className="data-row">
+                                <div className="data-row" data-label="Pantalla">{product.specs?.screen || 'N/A'}</div>
+                                <div className="data-row" data-label="Procesador">{product.specs?.processor || 'N/A'}</div>
+                                <div className="data-row" data-label="Cámara">{product.specs?.camera || 'N/A'}</div>
+                                <div className="data-row" data-label="Batería">{product.specs?.battery || 'N/A'}</div>
+                                <div className="data-row" data-label="Condición">
                                     {product.condition === 'new' ? 'Nuevo' : 'Seminuevo'}
                                 </div>
-                                <div className="data-row colors-row">
+                                <div className="data-row colors-row" data-label="Colores">
                                     {product.colors.map(c => (
                                         <span key={c} className="color-dot" title={c} style={{ backgroundColor: c.toLowerCase() }}></span>
                                     ))}

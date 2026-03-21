@@ -170,6 +170,13 @@ const MacbookNeoLanding = () => {
                     </div>
                     <p className="macbook-neo-color-label">{currentColor.name}</p>
 
+                    {/* Pricing Display */}
+                    <div className="macbook-neo-pricing-display">
+                        <span className="macbook-neo-price-prefix">Desde</span>
+                        <span className="macbook-neo-price-amount">S/ {PRICE_TIERS[0].price}</span>
+                        <span className="macbook-neo-price-storage">| {PRICE_TIERS[0].storage}</span>
+                    </div>
+
                     {/* Main Product Image */}
                     <div className="macbook-neo-product-image">
                         <motion.img

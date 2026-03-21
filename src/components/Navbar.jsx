@@ -63,6 +63,13 @@ const Navbar = ({ cartCount, onCartClick }) => {
     setIsSearchOpen(false);
   }, [location]);
 
+  // Escuchar evento custom de BottomNav
+  useEffect(() => {
+    const handleOpenSearch = () => setIsSearchOpen(true);
+    window.addEventListener('open-search', handleOpenSearch);
+    return () => window.removeEventListener('open-search', handleOpenSearch);
+  }, []);
+
   const toggleMenu = (menu) => {
     if (activeMenu === menu) {
       setActiveMenu(null);
