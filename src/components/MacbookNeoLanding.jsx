@@ -5,7 +5,7 @@ import './MacbookNeoLanding.css';
 
 // Price tiers per storage — keeps in sync with the Google Sheets pricing policy
 const PRICE_TIERS = [
-    { storage: '256 GB', price: 3150, label: 'Desde' },
+    { storage: '256 GB', price: 2549, label: 'Desde' },
     { storage: '512 GB', price: 3750, label: '' },
     { storage: '1 TB', price: 4650, label: '' },
 ];
